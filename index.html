@@ -1,0 +1,1495 @@
+<!DOCTYPE html> <html lang="fr"> <head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width,initial-scale=1"> <title>One Click Dungeon</title> <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=IM+Fell+English:ital@0;1&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" media="print" onload="this.media='all'" onerror="this.remove()"> <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=IM+Fell+English:ital@0;1&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap"></noscript> <style>:root{--paper:#efe6d0;--paper2:#e7dcc0;--ink:#23201a;--ink-soft:#5b5345;--line:#2a2620;--grid:rgba(60,52,38,.16);--accent:#7a3b2e;--water:#9fb7b0;--panel:#f6efdc;--edge:#cdbd97}[data-theme=plan]{--paper:#16314a;--paper2:#12283c;--ink:#dce9f4;--ink-soft:#9db8cf;--line:#cfe2f2;--grid:rgba(200,224,245,.16);--accent:#e8b04b;--water:#2c5a6e;--panel:#102a3f;--edge:#27506f}[data-theme=encre]{--paper:#1c1a17;--paper2:#161412;--ink:#e9e2d2;--ink-soft:#a99f8a;--line:#e9e2d2;--grid:rgba(233,226,210,.13);--accent:#c8693f;--water:#324b4b;--panel:#211e19;--edge:#3a342b}:root{--field:color-mix(in srgb, var(--ink) 8%, var(--panel));--chip:color-mix(in srgb, var(--ink) 6%, var(--panel));--chip-on:color-mix(in srgb, var(--accent) 16%, var(--panel));--hair:color-mix(in srgb, var(--ink) 12%, transparent);--shadow:0 18px 50px -12px rgba(0,0,0,.35)}*{box-sizing:border-box}body,html{margin:0;height:100%}body{background:radial-gradient(120% 120% at 50% 0,var(--paper) 0,var(--paper2) 100%);color:var(--ink);font-family:"EB Garamond",Georgia,serif;-webkit-font-smoothing:antialiased;height:100vh;overflow:hidden;display:flex;flex-direction:column}.app{flex:1 1 auto;display:flex;flex-direction:column;min-height:0}.topbar{flex:0 0 auto;height:56px;display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--panel);box-shadow:0 1px 0 var(--hair),0 8px 22px -16px rgba(0,0,0,.4);z-index:50}.brand{font-family:"IM Fell English SC","EB Garamond",Georgia,"Times New Roman",serif;font-size:18px;letter-spacing:.5px;white-space:nowrap}.brand span{color:var(--ink-soft)}.grow{flex:1}.btn{cursor:pointer;border:0;border-radius:999px;padding:9px 16px;font-family:"EB Garamond",serif;font-size:14px;background:var(--field);color:var(--ink);transition:transform .06s ease,background .15s ease;white-space:nowrap}.btn:hover{background:var(--chip-on)}.btn:active{transform:translateY(1px)}.btn.primary{background:var(--accent);color:#fff;font-weight:600}.btn.ghost{background:0 0}.btn.ghost:hover{background:var(--field)}.btn.small{padding:7px 12px;font-size:13px}.stage{flex:1 1 auto;min-height:0;position:relative;overflow:auto;display:flex;align-items:flex-start;justify-content:center;padding:18px}.stage-col{display:flex;flex-direction:column;align-items:center;gap:18px;width:100%;max-width:1100px;margin:0 auto}.stage svg{max-width:100%;height:auto;filter:drop-shadow(0 14px 34px rgba(0,0,0,.22))}#notesInline{display:none;width:100%;max-width:780px;background:var(--panel);border-radius:16px;padding:18px 22px 24px;box-shadow:0 16px 40px -22px rgba(0,0,0,.45)}body.notes-inline-on #notesInline{display:block}.inline-title{font-family:"IM Fell English","EB Garamond",Georgia,"Times New Roman",serif;font-style:italic;font-size:22px;margin:0 0 4px;line-height:1.15}.seg{display:flex;width:100%;background:var(--chip);border-radius:12px;padding:3px}.seg button{flex:1;border:0;background:0 0;color:var(--ink-soft);padding:8px 6px;border-radius:10px;font-family:"EB Garamond",serif;font-size:13px;cursor:pointer;white-space:nowrap;transition:background .15s ease,color .15s ease}.seg button.on{background:var(--accent);color:#fff;font-weight:600}input[type=text],select{background:var(--field);color:var(--ink);border:0;border-radius:10px;padding:9px 11px;font-family:"EB Garamond",serif;font-size:14px;width:100%}select{appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--ink-soft) 50%),linear-gradient(135deg,var(--ink-soft) 50%,transparent 50%);background-position:calc(100% - 16px) 17px,calc(100% - 11px) 17px;background-size:5px 5px,5px 5px;background-repeat:no-repeat;padding-right:30px}.row{display:flex;gap:8px;align-items:center}.row .btn{flex:0 0 auto}.chips{display:flex;flex-wrap:wrap;gap:8px}.chip{display:inline-flex;align-items:center;gap:7px;padding:8px 13px;border-radius:999px;background:var(--chip);cursor:pointer;font-size:13px;color:var(--ink-soft);user-select:none;transition:background .15s ease,color .15s ease}.chip input{position:absolute;opacity:0;pointer-events:none}.chip:has(input:checked){background:var(--chip-on);color:var(--accent);font-weight:600}.rng{display:grid;grid-template-columns:1fr auto;align-items:center;gap:2px 8px;font-size:13px;color:var(--ink-soft);margin:10px 0}.rng input[type=range]{grid-column:1/-1;width:100%;accent-color:var(--accent)}.rng output{font-variant-numeric:tabular-nums}.rng.sub{margin:6px 0 12px;padding-left:13px;opacity:.92}.sec{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-soft);margin:20px 0 9px}.sec:first-child{margin-top:4px}.stack{display:grid;gap:9px}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:9px 14px}.note-mini{font-size:11px;color:var(--ink-soft);opacity:.75;margin:8px 0 0}.fld{display:grid;gap:5px;font-size:11px;letter-spacing:.6px;text-transform:uppercase;color:var(--ink-soft)}.diff{margin:12px 0 2px;background:var(--chip);border-radius:12px;padding:12px 13px}.diff .dhead{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--ink-soft);margin-bottom:9px}.diff .dl{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:14px;margin:6px 0}.diff .dn{display:flex;align-items:center;gap:9px;color:var(--ink-soft)}.diff .dot{width:9px;height:9px;border-radius:50%;flex:0 0 auto}.diff .dv{font-variant-numeric:tabular-nums;font-weight:600;color:var(--ink)}.diff .dfoot{font-size:11px;color:var(--ink-soft);opacity:.82;margin-top:10px;line-height:1.45}.sheet{position:fixed;z-index:40;background:var(--panel);color:var(--ink);box-shadow:var(--shadow);display:flex;flex-direction:column;transition:transform .28s cubic-bezier(.4,0,.2,1);overscroll-behavior:contain;z-index:60;top:56px;height:calc(100vh - 56px);width:min(390px,94vw)}#optionsPanel{left:0;transform:translateX(-103%)}#optionsPanel.open{transform:translateX(0)}#notesPanel{right:0;transform:translateX(103%)}#notesPanel.open{transform:translateX(0)}.sheet.open{transform:none}.sheet-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:16px 18px 6px;position:relative}.sheet-head h2{margin:0;font-family:"IM Fell English","EB Garamond",Georgia,"Times New Roman",serif;font-style:italic;font-size:20px;line-height:1.15}.sheet .x{border:0;background:0 0;font-size:16px;cursor:pointer;color:var(--ink-soft);padding:8px;border-radius:10px;line-height:1}.sheet .x:hover{background:var(--field)}.sheet-body{padding:6px 18px 30px;overflow:auto}#scrim{position:fixed;inset:0;background:rgba(0,0,0,.4);opacity:0;visibility:hidden;transition:opacity .25s ease;z-index:40}#scrim.show{opacity:1;visibility:visible}@media (min-width:721px){#scrim.show{opacity:0;visibility:hidden}}.sub{font-size:12px;color:var(--ink-soft);margin:0 0 14px}.notes{list-style:none;margin:0;padding:0}.notes li{display:flex;gap:10px;padding:11px 0;font-size:14px;line-height:1.4}.notes li+li{box-shadow:0 -1px 0 var(--hair)}.num{flex:0 0 auto;width:22px;height:22px;border-radius:50%;background:var(--field);color:var(--ink);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600}.notes li.has-gm .num{background:var(--chip-on);color:var(--accent)}.gm-line{display:block;font-size:12.5px;color:var(--accent);margin-top:3px}.gm-line b{font-weight:600}.legend{margin-top:20px}.legend h3{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-soft);margin:0 0 8px}.legend .row{display:flex;align-items:center;gap:10px;font-size:13px;margin:6px 0;color:var(--ink-soft)}.legend svg{flex:0 0 auto}.hint{font-size:11px;color:var(--ink-soft);opacity:.8;margin-top:18px}@media (max-width:720px){.brand span{display:none}.stage{padding:10px}#notesPanel,#optionsPanel,.sheet{top:auto;left:0;right:0;bottom:0;width:auto;height:auto;max-height:86vh;transform:translateY(103%);border-radius:18px 18px 0 0}#notesPanel.open,#optionsPanel.open,.sheet.open{transform:translateY(0)}.sheet-head{padding-top:22px}.sheet-head::before{content:"";position:absolute;top:8px;left:50%;transform:translateX(-50%);width:42px;height:4px;border-radius:2px;background:var(--hair)}.grid2{grid-template-columns:1fr 1fr}}#printArea{display:none}#printArea .ptitle{font-family:"IM Fell English SC","EB Garamond",Georgia,"Times New Roman",serif;font-weight:400;font-size:26px;text-align:center;margin:0 0 4px}#printArea .tag{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#7a3b2e;text-align:center;margin-bottom:12px}#printArea .phook{font-style:italic;text-align:center;max-width:60ch;margin:0 auto 10px;font-size:15px}#printArea .pmeta{text-align:center;color:#5b5345;font-size:12px;margin:0 0 18px}#printArea .pnotes{list-style:none;padding:0;margin:0;columns:2;column-gap:28px}#printArea .pnotes li{break-inside:avoid;display:flex;gap:8px;margin:0 0 10px;font-size:13px;line-height:1.35}#printArea .pnum{flex:0 0 auto;width:20px;height:20px;border:1.4px solid #23201a;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600}#printArea .pgm{display:block;color:#7a3b2e;font-size:12px;margin-top:2px}#printArea .plegend{margin-top:16px;border-top:1px solid #cdbd97;padding-top:10px;break-inside:avoid}#printArea .plegend h2{font-family:"IM Fell English SC","EB Garamond",Georgia,"Times New Roman",serif;font-weight:400;font-size:14px;letter-spacing:1px;margin:0 0 8px}#printArea .prow{display:inline-flex;align-items:center;gap:8px;margin:4px 16px 4px 0;font-size:12px;color:#5b5345}@media print{@page{margin:1cm}body{overflow:visible;background:#fff;display:block}body>:not(#printArea){display:none!important}#printArea{display:block!important}#printArea .page{page-break-after:always;padding:0 0 .5cm;display:flex;flex-direction:column;align-items:center}#printArea .page:last-child{page-break-after:auto}#printArea .page.map svg{width:auto;max-width:100%;max-height:23cm;display:block}#printArea .page.doc{align-items:stretch}}</style> </head> <body data-theme="parchemin"> <div class="app"> <header class="topbar"> <div class="brand">One Click<span> Dungeon</span></div> <div class="grow"></div> <button id="btn-options" class="btn ghost small">Options</button> <button id="gen" class="btn primary">Générer</button> <button id="btn-notes" class="btn ghost small">Notes</button> <div class="grow"></div> </header> <main class="stage"><div class="stage-col"><div id="map"></div><section id="notesInline"></section></div></main> </div> <section id="optionsPanel" class="sheet" aria-label="Options"> <div class="sheet-head"><h2>Options</h2><button class="x" data-close aria-label="Fermer">✕</button></div> <div class="sheet-body"> <div class="sec">Donjon</div> <div class="stack"> <div class="row"> <input id="seed" type="text" spellcheck="false" placeholder="graine"> <button id="rand" class="btn small" title="Graine aléatoire">Aléatoire</button> </div> <div class="grid2"> <select id="size" aria-label="Taille"> <option value="9">Petit</option> <option value="16" selected="selected">Moyen</option> <option value="26">Grand</option> <option value="38">Vaste</option> </select> <select id="view" aria-label="Vue"> <option value="mj" selected="selected">Vue MJ</option> <option value="player">Vue joueur</option> </select> <select id="biome" aria-label="Biome"> <option value="" selected="selected">Générique</option> <option value="auto">Auto</option> <option value="crypte">Crypte</option> <option value="donjon">Donjon / Prison</option> <option value="grotte">Grotte</option> <option value="temple">Temple</option> <option value="egout">Égout</option> <option value="mine">Mine</option> <option value="catacombes">Catacombes</option> <option value="manoir">Manoir hanté</option> <option value="sanctuaire">Sanctuaire</option> <option value="ruines">Ruines</option> <option value="postapo">Post-apocalyptique</option> <option value="cyberpunk">Cyberpunk</option> <option value="moderne">Moderne</option> <option value="dcc">Dungeon Crawler Carl</option> </select> <select id="theme" aria-label="Thème"> <option value="parchemin" selected="selected">Parchemin</option> <option value="plan">Plan bleu</option> <option value="encre">Encre sombre</option> </select> </div> </div> <div class="sec">Groupe d'aventuriers</div> <div class="grid2"> <label class="fld">Joueurs <select id="party-size" aria-label="Nombre de joueurs"> <option>1</option><option>2</option><option>3</option> <option value="4" selected="selected">4</option><option>5</option><option>6</option> <option>7</option><option>8</option><option>9</option><option>10</option> </select> </label> <label class="fld">Niveau du groupe <select id="party-level" aria-label="Niveau du groupe"> <option>1</option><option>2</option><option value="3" selected="selected">3</option> <option>4</option><option>5</option><option>6</option><option>7</option> <option>8</option><option>9</option><option>10</option><option>11</option> <option>12</option><option>13</option><option>14</option><option>15</option> <option>16</option><option>17</option><option>18</option><option>19</option><option>20</option> </select> </label> </div> <div id="diffPanel" class="diff" aria-live="polite"></div> <div class="sec">Affichage des notes</div> <div class="seg" id="notesSeg"> <button type="button" data-nmode="hidden">Masqué</button> <button type="button" data-nmode="drawer" class="on">Tiroir</button> <button type="button" data-nmode="inline">Sous la carte</button> </div> <div class="sec">Structure</div> <div class="chips"> <label class="chip"><input type="checkbox" id="t-sym" checked="checked"><span>Symétrie locale</span></label> <label class="chip"><input type="checkbox" id="t-corr"><span>Longs couloirs</span></label> <label class="chip"><input type="checkbox" id="t-water" checked="checked"><span>Eau</span></label> <label class="chip"><input type="checkbox" id="t-col" checked="checked"><span>Colonnades</span></label> </div> <div class="sec">Portes</div> <div class="rng">Proportion de portes <output id="o-density">70%</output> <input type="range" id="d-density" min="0" max="100" value="70"></div> <div class="grid2"> <div class="rng">Simple <output id="o-simple"></output><input type="range" id="w-simple" min="0" max="100" value="55"></div> <div class="rng">Double <output id="o-double"></output><input type="range" id="w-double" min="0" max="100" value="15"></div> <div class="rng">Herse <output id="o-barred"></output><input type="range" id="w-barred" min="0" max="100" value="15"></div> <div class="rng">Secrète <output id="o-secret"></output><input type="range" id="w-secret" min="0" max="100" value="15"></div> </div> <p class="note-mini">Le reste des ouvertures devient des passages ouverts (arches).</p> <div class="sec">Contenu (repères MJ)</div> <div class="chips"> <label class="chip"><input type="checkbox" id="pp-locks"><span>Verrous et clés</span></label> <label class="chip"><input type="checkbox" id="pp-traps"><span>Pièges</span></label> <label class="chip"><input type="checkbox" id="pp-treasure"><span>Trésors</span></label> <label class="chip"><input type="checkbox" id="pp-occ"><span>Occupants</span></label> <label class="chip"><input type="checkbox" id="pp-rubble"><span>Éboulis</span></label> <label class="chip"><input type="checkbox" id="pp-light"><span>Éclairage</span></label> <label class="chip"><input type="checkbox" id="pp-props"><span>Props</span></label> </div> <div class="rng sub">Taux de verrous <output id="o-lock">25%</output><input type="range" id="lock-rate" min="0" max="100" value="25"></div> <div class="rng sub">Salles éclairées <output id="o-light">40%</output><input type="range" id="light-rate" min="0" max="100" value="40"></div> <div class="rng sub">Densité de props <output id="o-props">35%</output><input type="range" id="props-rate" min="0" max="100" value="35"></div> <div class="sec">Exporter</div> <div class="chips"> <button id="png" class="btn small">PNG</button> <button id="svg" class="btn small">SVG</button> <button id="json" class="btn small">JSON</button> <button id="print" class="btn small">Imprimer</button> <button id="share" class="btn small">Partager</button> </div> <p class="hint">Astuce : barre d'espace pour régénérer. La même graine redonne toujours le même donjon.</p> </div> </section> <section id="notesPanel" class="sheet" aria-label="Notes"> <div class="sheet-head"><h2 id="dname">Donjon</h2><button class="x" data-close aria-label="Fermer">✕</button></div> <div class="sheet-body"> <div id="notesHostDrawer"></div> <p class="hint">Les repères en couleur (clé, piège, trésor, DC des verrous) sont destinés au MJ.</p> </div> </section> <div id="scrim"></div> <div id="printArea"></div> <script> "use strict";
+
+/* ============ RNG deterministe ============ */
+function makeRng(seedStr){
+  let h = 1779033703 ^ seedStr.length;
+  for(let i=0;i<seedStr.length;i++){
+    h = Math.imul(h ^ seedStr.charCodeAt(i), 3432918353);
+    h = (h<<13)|(h>>>19);
+  }
+  let a = h>>>0;
+  return function(){
+    a|=0; a=(a+0x6D2B79F5)|0;
+    let t=Math.imul(a^(a>>>15),1|a);
+    t=(t+Math.imul(t^(t>>>7),61|t))^t;
+    return ((t^(t>>>14))>>>0)/4294967296;
+  };
+}
+
+/* ============ contenu francais ============ */
+const NAME_A = ["Les Catacombes de","Le Tombeau de","La Crypte de","Le Repaire de","Les Cavernes de",
+  "Le Sanctuaire de","Les Ruines de","Le Donjon de","La Forteresse engloutie de","Les Geôles de",
+  "Le Labyrinthe de","Le Caveau de","Le Hall oublié de","La Demeure de"];
+const NAME_B = ["Morgaroth","la Veuve Noire","Sombrelune","Varghul","l'Œil Brisé","Khazun","la Reine Pâle",
+  "Drakemor","Eldevin","la Main Rouge","Ysolde","Grimbold","la Cendre","Nyx","Ossaria","Belzagor","Maldorne"];
+const FEAT = [
+  "Une statue brisée gît au centre, le visage effacé par le temps.",
+  "Des ossements jonchent le sol, certains encore vêtus d'armures rouillées.",
+  "Une fresque pâle représente une procession oubliée.",
+  "Un autel de pierre porte des traces de cire et de sang séché.",
+  "Des champignons phosphorescents tapissent les murs humides.",
+  "Une fontaine tarie occupe un coin, son bassin fendu.",
+  "Des chaînes pendent du plafond au-dessus d'une dalle suspecte.",
+  "Un coffre éventré a déjà été pillé, il y a longtemps.",
+  "L'air est lourd d'une odeur de moisi et de fer.",
+  "Des cages vides s'alignent contre le mur du fond.",
+  "Une bibliothèque effondrée a réduit les ouvrages en bouillie.",
+  "Des inscriptions gravées couvrent les murs dans une langue morte.",
+  "Un brasero froid contient encore des cendres étranges.",
+  "Le plafond s'est partiellement effondré, laissant filtrer un mince jour.",
+];
+const MOB = [
+  "Un groupe de gobelins y a installé un campement de fortune.",
+  "Une araignée géante guette dans les hauteurs.",
+  "Des squelettes montent une garde silencieuse.",
+  "Une vase grise rampe lentement le long du mur.",
+  "Une goule affamée se terre dans l'ombre.",
+  "Des rats géants pullulent dans les recoins.",
+  "Un cultiste solitaire psalmodie devant un symbole interdit.",
+];
+const LOOT = [
+  "Une bourse de pièces d'argent est cachée sous une dalle.",
+  "Un anneau terni brille faiblement dans la poussière.",
+  "Une potion intacte repose dans une niche.",
+  "Une arme ancienne est plantée dans le sol.",
+  "Un parchemin scellé attend d'être lu.",
+];
+const HAZ = [
+  "Le sol cède par endroits, gare aux chutes.",
+  "Un piège à flèches est dissimulé dans le seuil.",
+  "Une dalle sous pression déclenche un mécanisme.",
+];
+const TRAPS = [
+  "Fosse dissimulée sous une fausse dalle",
+  "Dard empoisonné jaillissant du mur",
+  "Lames pivotantes derrière le seuil",
+  "Plafond effondrable relié à un fil tendu",
+  "Nappe de gaz somnifère libérée par un coffre",
+  "Filet lesté tombant du plafond",
+  "Glyphe explosif gravé au sol",
+];
+const TREASURE = [
+  "quelques poignées de pièces d'argent",
+  "une bourse de 40 pièces d'or et une gemme bleue",
+  "un objet magique mineur enveloppé de lin",
+  "un coffre verrouillé contenant 200 pièces d'or",
+  "un reliquaire serti de pierres semi-précieuses",
+  "une fiole de potion et une carte déchirée",
+];
+const FACTIONS = {
+  "gobelins":["Des gobelins y ont dressé un campement crasseux.","Un guetteur gobelin somnole près d'un feu.","Des gobelins se disputent un butin."],
+  "morts-vivants":["Des squelettes patrouillent sans relâche.","Une goule ronge des restes dans l'ombre.","Des ombres glissent le long des murs."],
+  "cultistes":["Des cultistes encapuchonnés psalmodient à voix basse.","Un autel de fortune est maculé de sang frais.","Un acolyte monte la garde, dague à la main."],
+  "bandits":["Des bandits jouent aux dés sur une caisse renversée.","Une sentinelle bandit surveille l'entrée.","Un coffre de butin mal caché traîne ici."],
+  "kobolds":["Des kobolds ont truffé la salle de pièges grossiers.","Une nichée de kobolds siffle dans un coin.","Des kobolds traînent du matériel volé."],
+  "araignées":["Des toiles épaisses tapissent les coins.","Une araignée géante guette au plafond.","Des cocons suspendus frémissent encore."],
+};
+const FACTION_NAMES = Object.keys(FACTIONS);
+const DIFF = [{n:"facile",dc:10},{n:"moyenne",dc:15},{n:"difficile",dc:20}];
+
+/* ============ R5 : biomes (option desactivable) ============ */
+// Config generique = comportement actuel (biome desactive)
+const GENERIC = {
+  label:"Générique", namesA:NAME_A, feat:FEAT,
+  props:["statue","autel","caisses","ossements","table","puits","cage","bibliotheque","sarcophage","fontaine","colonne_brisee","tonneau"],
+  rates:{water:0.12,columns:0.22,rubble:0.30},
+  creatures:[{name:"gobelins",cr:0.25,xp:50},{name:"squelettes",cr:0.25,xp:50},{name:"rats géants",cr:0.125,xp:25},{name:"araignée géante",cr:1,xp:200},{name:"goule",cr:1,xp:200}],
+};
+const BIOMES = {
+  crypte:{ label:"Crypte",
+    namesA:["Les Catacombes de","La Crypte de","Le Tombeau de","Le Mausolée de"],
+    feat:["Des niches funéraires s'alignent dans la pierre.","Un sarcophage fissuré exhale une odeur de poussière.","Des épitaphes effacées couvrent les murs.","Des cierges éteints ont fondu sur un autel froid.","Une dalle gravée scelle un caveau."],
+    props:["sarcophage","autel","statue","ossements","bibliotheque","colonne_brisee"],
+    rates:{water:0.05,columns:0.25,rubble:0.20},
+    creatures:[{name:"squelettes",cr:0.25,xp:50},{name:"zombis",cr:0.25,xp:50},{name:"goule",cr:1,xp:200},{name:"ombre",cr:0.5,xp:100},{name:"spectre",cr:1,xp:200}] },
+  donjon:{ label:"Donjon / Prison",
+    namesA:["Les Geôles de","Le Donjon de","Les Oubliettes de","La Forteresse de"],
+    feat:["Des chaînes rouillées pendent aux murs.","Une cellule éventrée révèle un grabat pourri.","Des graffitis de prisonniers couvrent la pierre.","Un billot taché occupe un coin.","Une herse rouillée bloque un passage."],
+    props:["cage","table","caisses","ossements","brasero_eteint","trone"],
+    rates:{water:0.06,columns:0.18,rubble:0.30},
+    creatures:[{name:"gardes squelettes",cr:0.25,xp:50},{name:"bandits",cr:0.125,xp:25},{name:"molosse",cr:1,xp:200},{name:"geôlier ogre",cr:2,xp:450}] },
+  grotte:{ label:"Grotte",
+    namesA:["Les Cavernes de","La Grotte de","Le Gouffre de","Les Galeries de"],
+    feat:["Des stalactites gouttent dans le noir.","Le sol inégal est jonché de gravats.","Une eau claire suinte des parois.","Des champignons pâles luisent faiblement.","Un courant d'air froid souffle d'une faille."],
+    props:["stalagmite","tonneau","ossements","caisses"],
+    rates:{water:0.22,columns:0.05,rubble:0.45},
+    creatures:[{name:"gobelins",cr:0.25,xp:50},{name:"ours-hibou",cr:3,xp:700},{name:"araignée géante",cr:1,xp:200},{name:"vase grise",cr:0.5,xp:100}] },
+  temple:{ label:"Temple",
+    namesA:["Le Temple de","Le Sanctuaire de","Le Hall sacré de","La Nef de"],
+    feat:["Des colonnes gravées soutiennent la voûte.","Un autel monumental domine la salle.","Des fresques dorées s'écaillent lentement.","Un brasero sacré couve encore.","Des dalles forment un motif rituel."],
+    props:["autel","idole","statue","colonne_brisee","bibliotheque"],
+    rates:{water:0.08,columns:0.45,rubble:0.18},
+    creatures:[{name:"cultistes",cr:0.125,xp:25},{name:"acolytes",cr:0.25,xp:50},{name:"prêtre noir",cr:2,xp:450},{name:"gargouille",cr:2,xp:450}] },
+  egout:{ label:"Égout",
+    namesA:["Les Égouts de","Les Conduits de","Le Cloaque de","Les Canalisations de"],
+    feat:["Une eau noire stagne dans le caniveau.","Des relents méphitiques saturent l'air.","Des grilles rouillées barrent les conduits.","Des déchets s'accumulent dans les coins.","De la mousse visqueuse tapisse la pierre."],
+    props:["tonneau","caisses","ossements","cage"],
+    rates:{water:0.40,columns:0.08,rubble:0.25},
+    creatures:[{name:"rats géants",cr:0.125,xp:25},{name:"vase ocre",cr:2,xp:450},{name:"crocodile",cr:0.5,xp:100},{name:"hommes-rats",cr:0.25,xp:50}] },
+  mine:{ label:"Mine",
+    namesA:["Les Mines de","La Galerie de","Le Filon de","Les Profondeurs de"],
+    feat:["Des wagonnets renversés encombrent le passage.","Des étais de bois ploient sous la roche.","Un filon scintille dans la paroi.","Des outils abandonnés rouillent au sol.","Un puits d'aération plonge dans le noir."],
+    props:["caisses","tonneau","stalagmite","table"],
+    rates:{water:0.10,columns:0.12,rubble:0.45},
+    creatures:[{name:"kobolds",cr:0.125,xp:25},{name:"gobelins",cr:0.25,xp:50},{name:"myrmidon de pierre",cr:2,xp:450},{name:"araignées",cr:0.5,xp:100}] },
+  catacombes:{ label:"Catacombes",
+    namesA:["Les Catacombes de","L'Ossuaire de","Les Galeries funéraires de"],
+    feat:["Des murs entiers sont tapissés de crânes.","Des piles d'ossements s'effondrent par endroits.","Une chapelle souterraine sent l'encens froid.","Des inscriptions latines courent au plafond."],
+    props:["ossements","sarcophage","autel","statue"],
+    rates:{water:0.05,columns:0.20,rubble:0.25},
+    creatures:[{name:"squelettes",cr:0.25,xp:50},{name:"goule",cr:1,xp:200},{name:"spectre",cr:1,xp:200},{name:"âmes en peine",cr:0.5,xp:100}] },
+  manoir:{ label:"Manoir hanté",
+    namesA:["Le Manoir de","La Demeure de","La Villa abandonnée de"],
+    feat:["Des meubles sont drapés de housses poussiéreuses.","Un lustre brisé gît au sol.","Des portraits aux yeux grattés fixent les lieux.","Un escalier grince sans raison.","Une cheminée froide crache une suie ancienne."],
+    props:["table","bibliotheque","trone","statue","caisses"],
+    rates:{water:0.06,columns:0.15,rubble:0.20},
+    creatures:[{name:"spectre",cr:1,xp:200},{name:"armure animée",cr:1,xp:200},{name:"ombre",cr:0.5,xp:100},{name:"nuée de chauves-souris",cr:0.25,xp:50}] },
+  sanctuaire:{ label:"Sanctuaire",
+    namesA:["Le Sanctuaire de","L'Oratoire de","Le Reliquaire de"],
+    feat:["Un reliquaire scellé repose sur un socle.","Des vitraux maculés filtrent une lumière trouble.","Des offrandes pourrissent sur un autel.","Des bénitiers taris longent le mur."],
+    props:["autel","idole","statue","colonne_brisee"],
+    rates:{water:0.08,columns:0.35,rubble:0.18},
+    creatures:[{name:"acolytes",cr:0.25,xp:50},{name:"gargouille",cr:2,xp:450},{name:"cultistes",cr:0.125,xp:25},{name:"clerc déchu",cr:2,xp:450}] },
+  ruines:{ label:"Ruines",
+    namesA:["Les Ruines de","Les Vestiges de","Les Décombres de"],
+    feat:["Des pans de mur effondrés ouvrent sur le vide.","La végétation reprend ses droits sur la pierre.","Des colonnes brisées jonchent le sol.","Le toit manquant laisse entrer la pluie."],
+    props:["colonne_brisee","statue","ossements","caisses"],
+    rates:{water:0.12,columns:0.25,rubble:0.40},
+    creatures:[{name:"gobelins",cr:0.25,xp:50},{name:"loups",cr:0.25,xp:50},{name:"pillards",cr:0.125,xp:25},{name:"golem de mousse",cr:1,xp:200}] },
+  postapo:{ label:"Post-apocalyptique",
+    namesA:["Le Bunker de","L'Abri de","La Station de","Le Secteur de","Les Ruines de","Le Parking de","Le Refuge de"],
+    namesB:["Néo-Kowloon","le Secteur 9","la Zone Morte","Block C-12","la Friche Nord","le Cratère 7","la Quarantaine","Vault-19","la Périphérie","Kilomètre Zéro","la Dalle Rouge","le Point de Chute"],
+    feat:["Une poussière radioactive fige tout sous un voile gris.","Des néons morts pendent au bout de leurs câbles.","Le béton lézardé suinte une eau rouillée.","Des panneaux de signalisation troués grincent au vent.","Un compteur Geiger oublié crépite encore faiblement.","Des graffitis de survivants couvrent les cloisons rouillées.","Le sol est jonché de débris calcinés et de verre brisé."],
+    mob:["Des pillards montent la garde derrière une barricade de tôles.","Une meute de chiens errants gronde dans la pénombre.","Un mutant difforme rôde parmi les gravats.","Des charognards fouillent fébrilement les décombres.","Un cyber-chien scrute la pièce de ses optiques rouges.","Une horde de rats irradiés grouille dans les conduits."],
+    haz:["Une flaque irradiée fait crépiter les dosimètres, danger mortel.","Un câble dénudé crépite au ras d'une flaque.","Le plancher rouillé menace de céder sous le poids.","Une fuite de gaz sature l'air confiné.","Des fûts éventrés répandent une boue corrosive.","Un fil tendu relie une mine artisanale à la porte."],
+    loot:["Une trousse de premiers soins intacte traîne dans un casier.","Des cartouches de munitions reposent dans une caisse.","Une bonbonne d'eau potable scellée attend un assoiffé.","Un masque à gaz en bon état pend à un crochet.","Une batterie chargée luit dans la poussière.","Des conserves oubliées s'empilent au fond d'un placard."],
+    props:["barricade","bidon","generateur","epave","caisses","tonneau","casier","ossements"],
+    rates:{water:0.18,columns:0.08,rubble:0.45},
+    creatures:[{name:"chiens errants",cr:0.25,xp:50},{name:"charognards",cr:0.125,xp:25},{name:"pillards",cr:0.25,xp:50},{name:"rôdeur mutant",cr:1,xp:200},{name:"abomination irradiée",cr:3,xp:700},{name:"molosse mutant",cr:2,xp:450}],
+    factions:{"pillards":["Des pillards jouent aux cartes sur une caisse renversée.","Un guetteur pillard surveille la rue depuis une meurtrière.","Des pillards dépècent une épave pour ses pièces."], "charognards":["Des charognards trient leur récolte du jour en tas.","Un charognard recompte ses munitions près d'un bidon.","Des charognards troquent des vivres à voix basse."], "mutants":["Des mutants se terrent dans la pénombre humide.","Un mutant trace des marques étranges sur le mur.","Des mutants gémissent autour d'un fût fissuré."]} },
+  cyberpunk:{ label:"Cyberpunk",
+    namesA:["Le Bunker de","La Station de","Le Data-Center de","Le Complexe de","Les Sous-Sols de","Le Secteur de","L'Arcologie de"],
+    namesB:["Néo-Kowloon","le Secteur 9","la Zone Morte","Block C-12","Néo-Shibuya","la Dalle Basse","Arasaka-3","le District Néon","la Friche Industrielle","Sprawl-7","la Tour Hélix","le Quartier Noir"],
+    feat:["Des néons grésillants baignent la salle de rose et de cyan.","Des câbles arrachés pendent du plafond et crachent des étincelles.","Une pluie acide ruisselle le long des vitres blindées.","Un hologramme publicitaire boucle en silence dans un coin.","Des écrans morts couvrent un mur entier de statique grise.","L'air vibre du grondement sourd de la climatisation.","Une enseigne au néon clignote, à demi morte, au-dessus d'un sas.","Des traces de fumée et de pluie strient le béton brut."],
+    mob:["Des mercenaires en armure souple montent la garde près d'un sas.","Un drone de sécurité patrouille en quadrillant la pièce d'un laser rouge.","Un netrunner immobile, branché, fixe le vide derrière ses implants.","Des membres d'un gang taguent un mur sous une caméra crevée.","Une tourelle automatisée pivote vers le moindre mouvement.","Un cyborg lourdement modifié recharge ses batteries contre une baie.","Une meute de chiens-robots renifle les intrus le long du couloir.","Un agent corpo en costume sombre note tout sur une tablette."],
+    haz:["Un câble dénudé baigne dans une flaque, le sol est sous tension.","Une fuite de gaz siffle d'un conduit fissuré et sature l'air.","Des lasers de sécurité quadrillent le passage à hauteur de cheville.","Une grille électrifiée barre l'accès, le métal crépite.","Le plancher technique cède sur un vide de câbles et de servomoteurs.","Un capteur de mouvement déclenche un verrouillage des issues."],
+    loot:["Une puce de données chiffrée attend dans un lecteur ouvert.","Un pistolet à impulsion repose, chargé, dans un casier forcé.","Une carte d'accès corpo traîne près d'un terminal verrouillé.","Un stimulant injectable luit dans une mallette entrouverte.","Un implant cybernétique neuf gît sur un plateau stérile.","Une liasse d'eddies plastifiés est cachée sous un panneau."],
+    props:["terminal","serveur","generateur","casier","caisses","bidon","ventilation","table"],
+    rates:{water:0.18,columns:0.08,rubble:0.28},
+    creatures:[{name:"drones de sécurité",cr:0.25,xp:50},{name:"mercenaires",cr:1,xp:200},{name:"netrunner",cr:2,xp:450},{name:"cyborg de combat",cr:3,xp:700},{name:"tourelle automatisée",cr:0.5,xp:100},{name:"chiens-robots",cr:0.125,xp:25}],
+    factions:{"mercenaires":["Des mercenaires nettoient leurs armes sur un établi.","Des mercenaires se partagent une ration devant un écran de surveillance.","Des mercenaires verrouillent un sas et montent une position de tir."], "gang":["Des membres du gang taguent leur sigle sur une baie de serveurs.","Des membres du gang revendent des implants volés sur une caisse renversée.","Des membres du gang écoutent une musique saturée près d'un générateur."], "drones":["Un essaim de drones recharge ses batteries sur des racks muraux.","Des drones de sécurité patrouillent en formation autour de la pièce.","Des drones inertes attendent un ordre, diodes rouges en veille."]} },
+  moderne:{ label:"Moderne",
+    namesA:["Le Bunker de","La Station de","L'Entrepôt de","Le Complexe de","Le Bloc de","Le Parking de","La Tour de"],
+    namesB:["Néo-Kowloon","le Secteur 9","la Zone Morte","Block C-12","Sub-Niveau 4","la Friche Nord","Annexe 7","le Quartier Bas","la Dalle Ouest","Périmètre Zéro","le Hangar 13","Tranche B"],
+    feat:["Des néons cassés grésillent au plafond.","Des piles de paperasse moisie débordent des classeurs.","Le béton suinte d'une eau rouillée le long des murs.","Un panneau de sortie de secours clignote en vain.","Des câbles arrachés pendent des gaines techniques éventrées.","Un distributeur automatique éventré a vomi sa monnaie sur le carrelage.","Des stores métalliques tordus laissent filtrer une lumière grise.","Un détecteur de fumée bipe faiblement, batterie mourante.","Des cloisons de placoplâtre crevées ouvrent sur des bureaux vides.","Le faux plafond s'est effondré sur une moquette gorgée d'humidité."],
+    mob:["Un agent de sécurité monte la garde, taser au poing.","Une meute de chiens de garde rôde entre les rayonnages.","Des intrus armés fouillent les casiers à la lampe torche.","Un membre du gang surveille un écran de vidéosurveillance.","Un drone de patrouille balaie la salle de son projecteur.","Un veilleur de nuit somnole, radio crachotant à sa ceinture.","Des pillards démontent un panneau électrique à la disqueuse.","Un molosse enchaîné aboie dès qu'on approche."],
+    haz:["Un câble dénudé baigne dans une flaque, gare au courant.","Le sol du parking s'est affaissé, béton fissuré au-dessus du vide.","Des bidons éventrés répandent des vapeurs irritantes.","Une trappe de maintenance ouverte plonge dans une gaine noire.","Un détecteur de mouvement déclenche une alarme assourdissante.","Des éclats de verre brisé tapissent traîtreusement le passage.","Une fuite de gaz siffle derrière une cloison.","Un monte-charge bloqué peut lâcher à tout moment."],
+    loot:["Une carte d'accès magnétique traîne sous un clavier.","Une trousse de premiers secours intacte est vissée au mur.","Un ordinateur portable oublié attend dans un tiroir verrouillé.","Une mallette de billets dort dans un casier forcé.","Un gilet pare-balles est suspendu près de la sortie.","Une réserve de munitions est planquée dans une caisse à outils.","Un trousseau de clés étiquetées pend à un crochet rouillé."],
+    props:["casier","terminal","table","caisses","serveur","generateur","ventilation","bidon"],
+    rates:{water:0.18,columns:0.1,rubble:0.35},
+    creatures:[{name:"agents de sécurité",cr:0.125,xp:25},{name:"chiens de garde",cr:0.25,xp:50},{name:"intrus armés",cr:0.5,xp:100},{name:"chef de gang",cr:1,xp:200},{name:"drone de combat",cr:2,xp:450},{name:"exécuteur en exo-armure",cr:3,xp:700}],
+    factions:{"securite":["Des agents de sécurité jouent aux cartes sur une table de pause.","Une sentinelle scrute les écrans de surveillance, café à la main.","Des vigiles ont barricadé l'accès avec des casiers renversés."], "gang":["Des membres du gang taguent leur sigle sur la cloison.","Un guetteur du gang fume près d'une fenêtre brisée.","Des pillards trient leur butin sur un établi maculé de cambouis."], "drones":["Des drones en veille rechargent sur leurs socles alignés.","Un drone défectueux tourne en rond, capteur grésillant.","Une nuée de drones patrouille au ras du faux plafond."]} },
+  dcc:{ label:"Dungeon Crawler Carl",
+    namesA:["L'Étage de","Le Niveau de","Le Palier de","Le Donjon de","Le Quartier de","Le Secteur de","La Saison de"],
+    namesB:["l'Iron Tangle","l'Over City","Borant Corporation","la Salle Sûre 83","le Desperado Club","la Station Mimic","le Nightmare Express","Donjon Monde","la Valtay Corporation","le Système","le Skull Empire","la Saison Finale","les Hunting Grounds","la Calamité"],
+    feat:["Une notification bleue surgit dans l'air et clignote au-dessus de la porte.","Trois écrans muraux égrènent le compte à rebours et le nombre de crawlers encore en vie.","Le couloir taillé dans la roche s'étire à perte de vue, à peine éclairé par des torches.","Des pousses vert lichen luisent sur des murs de brique rouge sombre et humide.","Un faux ciel grésille au plafond, simulant un crépuscule pour les caméras.","Des néons de boîte de nuit clignotent au fond des ruines, façon Mardi Gras.","Une enseigne en forme de couteau dégoulinant de sang pend au-dessus d'un bar éventré.","Un fast-food entier a été arraché à la surface et déposé là, enseigne encore allumée.","Des rails luisants traversent la salle, vibrant au passage lointain d'une rame.","Un classement défile sur un écran, primes en lettres dorées sur les têtes des crawlers."],
+    mob:["Un gobelin chauve en haillons de cuir vous épie en couinant, un ananas planté au bout de son bâton.","Un barde-bombe gobelin lève sa dynamite au-dessus de sa tête, casque hérissé d'étincelles.","Un crocodilien en smoking monte la garde, bras croisés, mâchoire entrouverte.","Un troglodyte musclé en pagne bondit en sifflant, langue venimeuse fouettant l'air.","Un rat de niveau deux ronge un cadavre dans l'ombre et ne lève même pas la tête.","Une raie flottante glisse sous le plafond et tire un trait de lumière depuis son pédoncule oculaire.","Un automate industriel de la taille d'un bulldozer crache un souffle d'air chaud avant d'avancer pesamment vers vous.","Une araignée-traqueuse métallique déplie ses pattes, cliquette une fois et fonce vers vous."],
+    haz:["Un compte à rebours rouge clignote au plafond : l'étage entier s'effondrera à zéro.","Le plafond gronde et descend par à-coups, le sol commence déjà à se fissurer.","Une nappe de gaz toxique stagne au ras du sol, héritage de la Calamité.","Un piège-alarme se déclenche et hurle un tube pop à plein volume, ameutant tout le quartier.","Hors des toilettes désignées, le moindre besoin invoque un élémentaire de rage qui tue tout autour.","Des câbles arrachés crépitent dans une flaque sous tension, chaque pas devient mortel."],
+    loot:["Un coffre à butin flotte au centre de la salle, son couvercle prêt à sauter.","Trois coffres s'alignent par palier, du bronze terne à l'or scintillant.","Un Coffre de Bienfaiteur attend sur un socle, cadeau d'un sponsor au goût douteux.","Une potion de soin rouge repose dans sa fiole bouchée, à demi pleine.","Un bâton de Dynamite de Hobgobelin dépasse d'un coffre éventré.","Une assiette de Biscuits d'Expérience attend sur un comptoir, une portion par jour."],
+    props:["loot_box","ecran_systeme","terminal","serveur","casier","caisses","bidon","ventilation","table","barricade","epave","cage"],
+    rates:{water:0.18,columns:0.06,rubble:0.42},
+    creatures:[{name:"gobelins en haillons",cr:0.125,xp:25},{name:"rats charognards",cr:0.125,xp:25},{name:"troglodytes venimeux",cr:0.25,xp:50},{name:"crocodiliens en smoking",cr:1,xp:200},{name:"automate industriel",cr:2,xp:450},{name:"boss de quartier muté",cr:3,xp:700}],
+    factions:{"gobelins":["Des gobelins en haillons se disputent un butin en couinant, ananas brandis.","Un ingénieur gobelin bricole un engin coiffé de casseroles près d'une caisse.","Un guetteur gobelin somnole, casque cabossé enfoncé jusqu'aux oreilles pointues."], "crocodiliens":["Des crocodiliens en smoking montent la garde, bras croisés et mâchoires entrouvertes.","Un videur crocodilien recompte les pièces d'or arrachées aux nouveaux venus.","Des crocodiliens dévorent une carcasse pour tripler le buff qu'elle promet."], "production":["Une caméra de production pivote dans un coin et un voyant rouge s'allume : ça passe à l'antenne.","Un mob d'élite rejoue sa scène scénarisée, l'embuscade fait partie du spectacle.","Un panneau holographique vante un sponsor entre deux flaques de sang séché."], "Bopca":["Un Bopca gnomesque astique son comptoir, prêt à vendre une amélioration au prix fort.","Trois écrans diffusent le décompte d'effondrement au-dessus d'une odeur de curry.","Des crawlers épuisés se serrent autour des couchages, armes à portée de main."]} },
+};
+const BIOME_KEYS = Object.keys(BIOMES);
+const PROP_NOTES = {
+  statue:"Une statue de pierre se dresse ici.", autel:"Un autel de pierre occupe les lieux.",
+  puits:"Un puits sombre s'ouvre dans le sol.", fontaine:"Une fontaine tarie orne la salle.",
+  sarcophage:"Un sarcophage repose au centre.", bibliotheque:"Une bibliothèque vermoulue couvre un mur.",
+  trone:"Un trône délabré trône dans un coin.", cage:"Une cage rouillée est posée ici.",
+  caisses:"Des caisses et des tonneaux s'entassent.", ossements:"Un tas d'ossements blanchit dans un coin.",
+  colonne_brisee:"Une colonne brisée gît au sol.", table:"Une lourde table de bois occupe l'espace.",
+  stalagmite:"Des stalagmites percent le sol.", tonneau:"Des tonneaux éventrés traînent ici.",
+  idole:"Une idole grimaçante veille sur la salle.", brasero_eteint:"Un brasero éteint rouille dans un coin.",
+  terminal:"Un terminal grésille encore, l'écran zébré de parasites.", serveur:"Une baie de serveurs ronronne, ses voyants clignotant dans l'ombre.",
+  generateur:"Un générateur de secours rouille dans un coin, à sec.", bidon:"Des bidons cabossés laissent suinter un liquide douteux.",
+  barricade:"Une barricade de fortune barre le passage.", casier:"Une rangée de casiers métalliques bâille, portes arrachées.",
+  epave:"L'épave d'un véhicule achève de rouiller au milieu de la salle.", ventilation:"Une grille de ventilation descellée s'ouvre sur un conduit noir.",
+  loot_box:"Un coffre à butin du Système flotte ici, couvercle prêt à sauter.", ecran_systeme:"Un écran du Système clignote au mur, décompte d'effondrement affiché.",
+};
+
+/* ============ generateur ============ */
+const DIRS={N:{dx:0,dy:-1},S:{dx:0,dy:1},E:{dx:1,dy:0},W:{dx:-1,dy:0}};
+const OPP={N:'S',S:'N',E:'W',W:'E'};
+function perp(d){return (d==='N'||d==='S')?['E','W']:['N','S'];}
+function overlapStrict(a,b){return a.x<b.x+b.w&&b.x<a.x+a.w&&a.y<b.y+b.h&&b.y<a.y+a.h;}
+// Assemble "<Lieu> de" + nom propre avec contraction/elision francaise : de+le->du, de+les->des, de+voyelle->d'.
+function joinDe(a,b){
+  const base=a.replace(/\s+de$/i,'');
+  const bl=b.toLowerCase();
+  if(/^le\s/.test(bl))  return base+' du '+b.slice(3);
+  if(/^les\s/.test(bl)) return base+' des '+b.slice(4);
+  if(/^la\s/.test(bl)||/^l['’]/.test(bl)) return base+' de '+b;
+  if(/^[aeiouyàâäéèêëîïôöûüh]/.test(bl)) return base+" d'"+b;
+  return base+' de '+b;
+}
+
+function generateDungeon(opts){
+  const o=Object.assign({seed:'donjon',target:16,symmetry:0.6,longCorridors:false,water:true,columns:true,
+    doorDensity:0.7, doorWeights:{simple:55,double:15,barred:15,secret:15},
+    pp:{locks:false,traps:false,treasure:false,occupants:false,rubble:false,lighting:false},
+    lockRate:0.25, litRate:0.4, biome:'', props:false, propsRate:0.35},opts);
+  const rng=makeRng(o.seed);
+  const ri=(a,b)=>a+Math.floor(rng()*(b-a+1));
+  const pick=a=>a[Math.floor(rng()*a.length)];
+  const chance=p=>rng()<p;
+
+  // biome actif (option desactivable: '' = Generique)
+  const biomeKey = o.biome==='auto' ? BIOME_KEYS[Math.floor(rng()*BIOME_KEYS.length)] : (o.biome||null);
+  const B = biomeKey ? BIOMES[biomeKey] : GENERIC;
+
+  // tirage pondere d'un type de porte (ou 'arch' = passage ouvert)
+  const W=o.doorWeights, wsum=Math.max(1,(W.simple||0)+(W.double||0)+(W.barred||0)+(W.secret||0));
+  function chooseDoorType(){
+    if(rng()>=o.doorDensity)return 'arch';
+    let r=rng()*wsum;
+    if((r-=W.simple||0)<0)return 'simple';
+    if((r-=W.double||0)<0)return 'double';
+    if((r-=W.barred||0)<0)return 'barred';
+    return 'secret';
+  }
+
+  const spaces=[], doors=[]; let nextId=0;
+  const openKey={N:'openN',S:'openS',E:'openE',W:'openW'};
+  function addSpace(r,type){const s={id:nextId++,type,x:r.x,y:r.y,w:r.w,h:r.h,openN:[],openS:[],openE:[],openW:[],water:false,columns:false,stairsDown:false,number:null,note:null,gm:[],parentId:null,gateDoor:null,rubble:false,props:[]};spaces.push(s);return s;}
+  function open(s,d,a,b){s[openKey[d]].push([a,b]);}
+  function fits(rect,extra){for(const s of spaces)if(overlapStrict(rect,s))return false;if(extra)for(const e of extra)if(overlapStrict(rect,e))return false;return true;}
+
+  const root=addSpace({x:0,y:0,w:ri(3,5),h:ri(3,5)},'room');
+  const entranceDir=pick(['N','S','E','W']);
+  const stairs=[makeEntrance(root,entranceDir)];
+  function makeEntrance(room,dir){
+    // Le picto (cx,cy) doit pointer au centre de la cellule reellement ouverte (floor+0.5),
+    // pas au milieu geometrique de la salle - sinon decalage sur salles de largeur/hauteur paire.
+    let cx,cy;
+    if(dir==='N'){const k=Math.floor(room.x+room.w/2);cx=k+0.5;cy=room.y;open(room,'N',k,k+1);}
+    else if(dir==='S'){const k=Math.floor(room.x+room.w/2);cx=k+0.5;cy=room.y+room.h;open(room,'S',k,k+1);}
+    else if(dir==='W'){const k=Math.floor(room.y+room.h/2);cx=room.x;cy=k+0.5;open(room,'W',k,k+1);}
+    else{const k=Math.floor(room.y+room.h/2);cx=room.x+room.w;cy=k+0.5;open(room,'E',k,k+1);}
+    return {dir,cx,cy};
+  }
+  const queue=[{space:root,from:entranceDir}];
+
+  function line(parent,child,axis){
+    if(axis==='v'){const a=Math.max(parent.y,child.y),b=Math.min(parent.y+parent.h,child.y+child.h);return Math.floor((a+b)/2-0.5);}
+    const a=Math.max(parent.x,child.x),b=Math.min(parent.x+parent.w,child.x+child.w);return Math.floor((a+b)/2-0.5);
+  }
+  function connectAt(s,d,cell){if(d==='N'||d==='S')open(s,d,cell,cell+1);else open(s,d,cell,cell+1);}
+  function addDoor(s,d,cell,type){
+    let cx,cy,orient;
+    if(d==='N'){cx=cell+0.5;cy=s.y;orient='h';}
+    else if(d==='S'){cx=cell+0.5;cy=s.y+s.h;orient='h';}
+    else if(d==='W'){cx=s.x;cy=cell+0.5;orient='v';}
+    else{cx=s.x+s.w;cy=cell+0.5;orient='v';}
+    if(type==='arch')return null;
+    const door={cx,cy,orient,type}; doors.push(door); return door;
+  }
+  function tryChild(parent,dir,gap,cw,ch){
+    let x0,y0;
+    if(dir==='E'){x0=parent.x+parent.w+gap;y0=parent.y+Math.round((parent.h-ch)/2);}
+    else if(dir==='W'){x0=parent.x-gap-cw;y0=parent.y+Math.round((parent.h-ch)/2);}
+    else if(dir==='S'){y0=parent.y+parent.h+gap;x0=parent.x+Math.round((parent.w-cw)/2);}
+    else{y0=parent.y-gap-ch;x0=parent.x+Math.round((parent.w-cw)/2);}
+    const child={x:x0,y:y0,w:cw,h:ch};
+    let corr=null;
+    if(gap>0){
+      if(dir==='E')corr={x:parent.x+parent.w,y:line(parent,child,'v'),w:gap,h:1};
+      else if(dir==='W')corr={x:child.x+cw,y:line(parent,child,'v'),w:gap,h:1};
+      else if(dir==='S')corr={x:line(parent,child,'h'),y:parent.y+parent.h,w:1,h:gap};
+      else corr={x:line(parent,child,'h'),y:child.y+ch,w:1,h:gap};
+    }
+    if(!fits(child,corr?[corr]:null))return null;
+    if(corr&&!fits(corr,null))return null;
+    const c=addSpace(child,'room');
+    c.parentId=parent.id;
+    const dt=chooseDoorType();
+    let gate=null;
+    if(gap===0){
+      const cell=line(parent,c,(dir==='E'||dir==='W')?'v':'h');
+      connectAt(parent,dir,cell);connectAt(c,OPP[dir],cell);gate=addDoor(parent,dir,cell,dt);
+    }else{
+      const k=addSpace(corr,'corr'); k.parentId=parent.id;
+      if(dir==='E'||dir==='W'){open(k,'W',k.y,k.y+1);open(k,'E',k.y,k.y+1);
+        connectAt(parent,dir,k.y);connectAt(c,OPP[dir],k.y);gate=addDoor(parent,dir,k.y,dt);
+        if(chance(0.4))addDoor(c,OPP[dir],k.y,chooseDoorType());}
+      else{open(k,'N',k.x,k.x+1);open(k,'S',k.x,k.x+1);
+        connectAt(parent,dir,k.x);connectAt(c,OPP[dir],k.x);gate=addDoor(parent,dir,k.x,dt);
+        if(chance(0.4))addDoor(c,OPP[dir],k.x,chooseDoorType());}
+    }
+    c.gateDoor=gate;
+    return c;
+  }
+
+  let guard=0, restarts=0;
+  const isRoom=s=>s.type==='room';
+  while(spaces.filter(isRoom).length<o.target && guard<7000){
+    guard++;
+    if(!queue.length){
+      // file vide avant la cible: on relance depuis les salles existantes, nouvelles directions
+      if(restarts>=12)break;
+      restarts++;
+      for(const r of spaces.filter(isRoom))queue.push({space:r,from:pick(['N','S','E','W'])});
+      if(!queue.length)break;
+      continue;
+    }
+    const node=queue.shift(); const parent=node.space;
+    const forward=OPP[node.from]; const [pa,pb]=perp(forward);
+    const gapFor=()=>o.longCorridors?(chance(0.55)?ri(1,4):0):(chance(0.45)?ri(1,2):0);
+    if(chance(o.symmetry)){
+      const cw=ri(2,4),ch=ri(2,4),gap=gapFor();
+      const c1=tryChild(parent,pa,gap,cw,ch), c2=tryChild(parent,pb,gap,cw,ch);
+      if(c1)queue.push({space:c1,from:OPP[pa]}); if(c2)queue.push({space:c2,from:OPP[pb]});
+    }else{
+      const d=pick([pa,pb]); const c=tryChild(parent,d,gapFor(),ri(2,4),ri(2,4));
+      if(c)queue.push({space:c,from:OPP[d]});
+    }
+    if(chance(0.7)){const c=tryChild(parent,forward,gapFor(),ri(2,4),ri(2,4));if(c)queue.push({space:c,from:OPP[forward]});}
+  }
+
+  const rooms=spaces.filter(isRoom);
+  rooms.forEach((r,i)=>r.number=i+1);
+  for(const r of rooms){
+    if(o.water&&r.w>=3&&r.h>=3&&chance(B.rates.water))r.water=true;
+    if(o.columns&&r.w>=4&&r.h>=4&&chance(B.rates.columns))r.columns=true;
+  }
+  // Note : stairsDown est posee en post-traitement (cf. bloc "placement entree/sortie" en fin de fonction)
+  // pour eloigner au maximum entree et sortie via BFS sur le graphe de connectivite.
+
+  // Marches d'eau : sur chaque seuil entre un espace sec et un espace inonde
+  const waterSteps=[];
+  {
+    // index des cellules de chaque espace -> pour retrouver le voisin a travers une ouverture
+    const cellOf={};
+    for(const s of spaces)for(let cx=s.x;cx<s.x+s.w;cx++)for(let cy=s.y;cy<s.y+s.h;cy++)cellOf[cx+','+cy]=s;
+    const wet=s=>!!(s&&s.water);
+    const seen=new Set();
+    for(const s of spaces){
+      const edges=[['N',s.openN,0,-1],['S',s.openS,0,1],['W',s.openW,-1,0],['E',s.openE,1,0]];
+      for(const [dir,ivs,dx,dy] of edges){
+        for(const [a,b] of ivs){
+          for(let t=a;t<b;t++){
+            // cellule de bord cote s et cellule voisine
+            let cxN,cyN, sx,sy;
+            if(dir==='N'){sx=t;sy=s.y; cxN=t;cyN=s.y-1;}
+            else if(dir==='S'){sx=t;sy=s.y+s.h-1; cxN=t;cyN=s.y+s.h;}
+            else if(dir==='W'){sx=s.x;sy=t; cxN=s.x-1;cyN=t;}
+            else {sx=s.x+s.w-1;sy=t; cxN=s.x+s.w;cyN=t;}
+            const neigh=cellOf[cxN+','+cyN];
+            if(!neigh)continue;
+            if(wet(s)===wet(neigh))continue; // seuil pertinent uniquement si l'un est inonde et l'autre sec
+            // position et orientation du seuil (frontiere entre les deux cellules)
+            let mx,my,orient;
+            if(dir==='N'||dir==='S'){mx=t+0.5; my=(dir==='N')?s.y:s.y+s.h; orient='h';}
+            else {mx=(dir==='W')?s.x:s.x+s.w; my=t+0.5; orient='v';}
+            const key=mx+','+my+orient;
+            if(seen.has(key))continue; seen.add(key);
+            // centre de la cellule inondee (vers laquelle "descend" la marche)
+            const wetCell = wet(neigh) ? {x:cxN,y:cyN} : {x:sx,y:sy};
+            waterSteps.push({cx:mx, cy:my, orient, downX:wetCell.x+0.5, downY:wetCell.y+0.5});
+          }
+        }
+      }
+    }
+  }
+
+  /* ---- placement entree/sortie : BFS pour les eloigner au maximum ---- */
+  // S'execute avant la generation des notes (qui lit r.stairsDown) et avant les pp.*
+  // (verrous, pieges, etc.) qui dependent de r.isEntrance pour rester solvables.
+  // N'invoque pas rng : tiebreaker deterministe sur l'id le plus petit -> graines preservees.
+  // adjAll est partage avec le bloc verrous pour le calcul de solvabilite des cles.
+  const adjAll=new Map();
+  let entranceRoom=null;
+  {
+    // index cellule->space (reconstruit ici, le precedent est local au bloc waterSteps)
+    const cellOf={};
+    for(const s of spaces)for(let cx=s.x;cx<s.x+s.w;cx++)for(let cy=s.y;cy<s.y+s.h;cy++)cellOf[cx+','+cy]=s;
+    // graphe non oriente : pour chaque space, voisins via les ouvertures
+    for(const s of spaces)adjAll.set(s.id, new Set());
+    for(const s of spaces){
+      const edges=[['N',s.openN,0,-1],['S',s.openS,0,1],['W',s.openW,-1,0],['E',s.openE,1,0]];
+      for(const [dir,ivs,dx,dy] of edges){
+        for(const [a,b] of ivs){
+          for(let t=a;t<b;t++){
+            let cxN,cyN;
+            if(dir==='N'){cxN=t;cyN=s.y-1;}
+            else if(dir==='S'){cxN=t;cyN=s.y+s.h;}
+            else if(dir==='W'){cxN=s.x-1;cyN=t;}
+            else {cxN=s.x+s.w;cyN=t;}
+            const neigh=cellOf[cxN+','+cyN];
+            if(neigh && neigh.id!==s.id){ adjAll.get(s.id).add(neigh.id); adjAll.get(neigh.id).add(s.id); }
+          }
+        }
+      }
+    }
+    // BFS depuis un space de depart, distances vers tous les spaces atteints
+    function bfsDist(startId){
+      const dist=new Map(); dist.set(startId,0);
+      const q=[startId];
+      while(q.length){
+        const id=q.shift(); const d=dist.get(id);
+        for(const nb of adjAll.get(id)){
+          if(dist.has(nb))continue;
+          dist.set(nb, d+1); q.push(nb);
+        }
+      }
+      return dist;
+    }
+    // direction externe valide pour une room : la cellule centrale du bord (celle qu'utiliserait
+    // makeEntrance) n'a aucun space voisin ET aucune ouverture existante ne touche cette cellule
+    // (sinon makeEntrance creerait une seconde ouverture distincte sur la meme face).
+    function externalDirs(r){
+      const out=[];
+      const cN=Math.floor(r.x+r.w/2), cE=Math.floor(r.y+r.h/2);
+      const checks=[['N',cN,r.y-1,'openN',cN],['S',cN,r.y+r.h,'openS',cN],['W',r.x-1,cE,'openW',cE],['E',r.x+r.w,cE,'openE',cE]];
+      for(const [d,nx,ny,key,cell] of checks){
+        if(cellOf[nx+','+ny])continue; // voisin present -> pas externe
+        // verifier qu'aucun intervalle existant ne contient deja la cellule centrale
+        if(r[key].some(([a,b])=>a<=cell && cell<b))continue;
+        out.push(d);
+      }
+      return out;
+    }
+    // candidats a l'entree : rooms avec au moins une direction externe valide
+    const entranceCand=rooms.filter(r=>externalDirs(r).length>0);
+    // fallback : si aucune room valide (cas pathologique), garder l'entree initiale sur root
+    let bestEntrance=null, bestExit=null, bestDist=-1;
+    if(entranceCand.length>0 && rooms.length>1){
+      // pour chaque candidat a l'entree, BFS et selection de la room la plus loin
+      // tiebreaker deterministe : id le plus petit (donc room la plus tot creee)
+      // -> stable et sans rng. Ordre des candidats fixe par construction de "rooms".
+      for(const e of entranceCand){
+        const dist=bfsDist(e.id);
+        let far=null, farD=-1;
+        for(const r of rooms){
+          if(r.id===e.id)continue;
+          const d=dist.get(r.id); if(d==null)continue;
+          if(d>farD || (d===farD && (far==null||r.id<far.id))){ farD=d; far=r; }
+        }
+        if(far && (farD>bestDist || (farD===bestDist && (bestEntrance==null||e.id<bestEntrance.id)))){
+          bestDist=farD; bestEntrance=e; bestExit=far;
+        }
+      }
+    }
+    if(bestEntrance && bestExit){
+      // 1. retirer l'ouverture posee par makeEntrance initial sur root cote entranceDir
+      const rootOpenKey={N:'openN',S:'openS',E:'openE',W:'openW'}[entranceDir];
+      const initCell=(entranceDir==='N'||entranceDir==='S')?Math.floor(root.x+root.w/2):Math.floor(root.y+root.h/2);
+      root[rootOpenKey]=root[rootOpenKey].filter(([a,b])=>!(a===initCell && b===initCell+1));
+      // 2. choisir une direction externe pour la nouvelle entree (ordre stable N,S,E,W)
+      const dirs=externalDirs(bestEntrance);
+      const order=['N','S','E','W']; const newDir=order.find(d=>dirs.includes(d));
+      // 3. poser la nouvelle entree
+      stairs[0]=makeEntrance(bestEntrance, newDir);
+      bestEntrance.isEntrance=true;
+      entranceRoom=bestEntrance;
+      // 4. poser la sortie sur la room la plus eloignee
+      bestExit.stairsDown=true;
+    } else {
+      // fallback : entree reste sur root, sortie sur la derniere room (comportement legacy)
+      root.isEntrance=true;
+      entranceRoom=root;
+      if(rooms.length>3)rooms[rooms.length-1].stairsDown=true;
+    }
+    // 5. renumeroter les rooms par BFS depuis l'entree (salle 1 = entree, parcours naturel).
+    //    Doit etre fait AVANT les pp.* qui generent des messages MJ avec les numeros.
+    if(entranceRoom){
+      const order=[entranceRoom.id]; const visited=new Set([entranceRoom.id]);
+      for(let i=0;i<order.length;i++){
+        const id=order[i];
+        const nbs=[...(adjAll.get(id)||[])].sort((a,b)=>a-b);
+        for(const nb of nbs){ if(visited.has(nb))continue; visited.add(nb); order.push(nb); }
+      }
+      const localById={}; for(const s of spaces)localById[s.id]=s;
+      const rank=new Map(); let n=0;
+      for(const id of order){ const sp=localById[id]; if(sp && sp.type==='room')rank.set(id, ++n); }
+      for(const r of rooms)if(!rank.has(r.id))rank.set(r.id, ++n);
+      rooms.sort((a,b)=>rank.get(a.id)-rank.get(b.id));
+      rooms.forEach((r,i)=>r.number=i+1);
+    }
+  }
+
+  // notes francaises (deterministe via rng)
+  for(const r of rooms){
+    let parts=[];
+    if(r.water)parts.push("Une eau noire et stagnante recouvre le sol.");
+    if(r.columns)parts.push("Une rangée de colonnes soutient une voûte fissurée.");
+    if(r.stairsDown)parts.push("Un escalier en colimaçon s'enfonce vers un niveau inférieur.");
+    parts.push(pick(B.feat));
+    const roll=rng();
+    if(roll<0.45)parts.push(pick(B.mob||MOB));
+    else if(roll<0.7)parts.push(pick(B.loot||LOOT));
+    else if(roll<0.82)parts.push(pick(B.haz||HAZ));
+    r.note=parts.join(" ");
+  }
+
+  /* ---- post-traitements (deterministes via rng) ---- */
+  const byId={}; for(const s of spaces) byId[s.id]=s;
+  function roomParentId(r){ if(r.parentId==null)return null; const p=byId[r.parentId]; return (p&&p.type==='corr')?p.parentId:r.parentId; }
+  const childrenMap={};
+  for(const r of rooms){ const pid=roomParentId(r); if(pid!=null)(childrenMap[pid]=childrenMap[pid]||[]).push(r.id); }
+  function subtree(rid){const out=new Set(),st=[rid];while(st.length){const id=st.pop();if(out.has(id))continue;out.add(id);for(const ch of (childrenMap[id]||[]))st.push(ch);}return out;}
+  function shuffle(arr){for(let i=arr.length-1;i>0;i--){const j=Math.floor(rng()*(i+1));const t=arr[i];arr[i]=arr[j];arr[j]=t;}return arr;}
+
+  let faction=null;
+  const pp=o.pp||{};
+
+  // Verrous et cles
+  // Calcule "beyond" = ensemble des rooms inaccessibles depuis l'entree si on bloque la porte de r.
+  // On marque r comme infranchissable dans le BFS depuis l'entree : r et tout ce qui n'est
+  // accessible que via r se retrouvent dans "beyond". Garantit que la cle ne sera jamais placee
+  // derriere la porte qu'elle est censee ouvrir, meme si l'entree a ete deplacee.
+  function beyondFromEntrance(r){
+    if(!entranceRoom)return subtree(r.id);
+    if(entranceRoom.id===r.id)return new Set(rooms.map(rr=>rr.id));
+    const visited=new Set([entranceRoom.id]); const q=[entranceRoom.id];
+    while(q.length){
+      const id=q.shift();
+      if(id===r.id)continue; // r infranchissable -> on ne propage pas a travers
+      for(const nb of adjAll.get(id)){
+        if(visited.has(nb))continue;
+        visited.add(nb); q.push(nb);
+      }
+    }
+    const out=new Set();
+    for(const rr of rooms)if(!visited.has(rr.id))out.add(rr.id);
+    return out;
+  }
+  if(pp.locks){
+    // helper : pose un verrou sur la porte de r et place la cle dans une salle accessible
+    let lid=0;
+    function lockRoom(r){
+      const diff=pick(DIFF);
+      r.gateDoor.type='locked'; r.gateDoor.dc=diff.dc; r.gateDoor.diff=diff.n; r.gateDoor.lockId=++lid;
+      const beyond=beyondFromEntrance(r);
+      const keyCand=rooms.filter(k=>!beyond.has(k.id) && k.id!==r.id);
+      const keyRoom=keyCand.length?keyCand[Math.floor(rng()*keyCand.length)]:null;
+      r.gateDoor.keyRoom=keyRoom?keyRoom.number:null;
+      r.gm.push(`Porte d'accès verrouillée, difficulté ${diff.n} (DC ${diff.dc}).`+(keyRoom?` Clé en salle ${keyRoom.number}.`:` Clé absente du donjon.`));
+      if(keyRoom){ keyRoom.hasKey=true; keyRoom.gm.push(`Clé ouvrant la porte de la salle ${r.number}.`); }
+    }
+    // 1. garantir au moins un verrou sur le chemin entree -> sortie, idealement le plus proche
+    //    de la sortie pour forcer l'exploration complete avant de pouvoir descendre.
+    const exitRoom=rooms.find(r=>r.stairsDown);
+    const lockedOnPath=new Set();
+    if(entranceRoom && exitRoom && entranceRoom.id!==exitRoom.id){
+      // BFS pour reconstruire le chemin entree -> sortie sur le graphe non oriente
+      const prev=new Map(); prev.set(entranceRoom.id,null);
+      const q=[entranceRoom.id];
+      while(q.length){
+        const id=q.shift(); if(id===exitRoom.id)break;
+        for(const nb of adjAll.get(id)){ if(prev.has(nb))continue; prev.set(nb,id); q.push(nb); }
+      }
+      if(prev.has(exitRoom.id)){
+        const path=[]; for(let id=exitRoom.id;id!=null;id=prev.get(id))path.push(id);
+        // chercher la porte verrouillable la plus proche de la sortie en remontant le chemin
+        for(const id of path){
+          const sp=byId[id];
+          if(!sp || sp.type!=='room' || sp.isEntrance)continue;
+          if(sp.gateDoor && (sp.gateDoor.type==='simple'||sp.gateDoor.type==='double')){
+            lockRoom(sp); lockedOnPath.add(sp.id); break;
+          }
+        }
+      }
+    }
+    // 2. verrous additionnels selon lockRate (en excluant la porte deja verrouillee a l'etape 1)
+    const cand=shuffle(rooms.filter(r=>!r.isEntrance && !lockedOnPath.has(r.id) && r.gateDoor && (r.gateDoor.type==='simple'||r.gateDoor.type==='double')));
+    const count=Math.round(o.lockRate*cand.length);
+    for(let i=0;i<count;i++)lockRoom(cand[i]);
+  }
+  // Pieges
+  if(pp.traps){
+    const cand=shuffle(rooms.filter(r=>!r.isEntrance));
+    const count=Math.max(1,Math.round(cand.length*0.22));
+    for(let i=0;i<count;i++){const r=cand[i];const diff=pick(DIFF);r.trap={desc:pick(TRAPS),dc:diff.dc,diff:diff.n};
+      r.gm.push(`Piège: ${r.trap.desc} (détection et désamorçage difficulté ${diff.n}, DC ${diff.dc}).`);}
+  }
+  // Tresors
+  if(pp.treasure){
+    const cand=shuffle(rooms.slice());
+    const count=Math.max(1,Math.round(cand.length*0.25));
+    for(let i=0;i<count;i++){const r=cand[i];r.treasure=pick(TREASURE);r.gm.push(`Trésor caché: ${r.treasure}.`);}
+  }
+  // Occupants
+  if(pp.occupants){
+    const fpool=B.factions||FACTIONS;
+    const fnames=Object.keys(fpool);
+    faction=fnames[Math.floor(rng()*fnames.length)];
+    const lines=fpool[faction];
+    for(const r of rooms){ if(rng()<0.45){ r.occupant=lines[Math.floor(rng()*lines.length)]; r.gm.push(r.occupant); } }
+  }
+  // Eboulis
+  if(pp.rubble){
+    const corrs=shuffle(spaces.filter(s=>s.type==='corr'));
+    const count=Math.max(1,Math.round(corrs.length*B.rates.rubble));
+    for(let i=0;i<count&&i<corrs.length;i++){
+      const k=corrs[i]; k.rubble=true; const diff=pick(DIFF);
+      const beyondRoom=rooms.find(r=>r.parentId===k.id);
+      if(beyondRoom)beyondRoom.gm.push(`Passage d'accès obstrué par des éboulis (Force difficulté ${diff.n}, DC ${diff.dc} pour dégager).`);
+    }
+  }
+
+  // Eclairage
+  if(pp.lighting){
+    for(const r of rooms){
+      const x=rng();
+      r.light = x<o.litRate ? 'lit' : (x < o.litRate + (1-o.litRate)*0.5 ? 'dim' : 'dark');
+      if(r.light==='lit')r.lightSource=true;
+      r.note += r.light==='lit' ? " Un brasero allumé éclaire la salle."
+              : r.light==='dim' ? " Une lueur diffuse éclaire faiblement les lieux."
+              : " La salle est plongée dans l'obscurité.";
+    }
+    for(const k of spaces){
+      if(k.type!=='corr')continue;
+      const neigh=[byId[k.parentId], rooms.find(r=>r.parentId===k.id)];
+      k.light = neigh.some(n=>n&&n.light==='lit') ? 'dim' : 'dark';
+    }
+  }
+
+  // Props (mobilier) - option independante, jeu de props selon le biome
+  if(o.props){
+    for(const r of rooms){
+      if(r.w>=3 && r.h>=2 && rng()<o.propsRate){
+        const t=B.props[Math.floor(rng()*B.props.length)];
+        r.props.push(t);
+        if(PROP_NOTES[t]) r.note += " "+PROP_NOTES[t];
+      }
+    }
+  }
+
+  // Nom du donjon : tire en TOUTE FIN pour ne pas decaler le rng de la generation
+  // (les graines existantes gardent une structure identique ; le nom est un ajout).
+  const name=joinDe(pick(B.namesA), pick(B.namesB||NAME_B));
+
+  let minX=1e9,minY=1e9,maxX=-1e9,maxY=-1e9;
+  for(const s of spaces){minX=Math.min(minX,s.x);minY=Math.min(minY,s.y);maxX=Math.max(maxX,s.x+s.w);maxY=Math.max(maxY,s.y+s.h);}
+  return {name,faction,biome:biomeKey,spaces,doors,stairs,rooms,waterSteps,bounds:{minX,minY,maxX,maxY},seed:o.seed,opts:o};
+}
+
+/* ============ R3 : graphe de jeu (cellules + passabilite) ============ */
+// Construit la grille marchable et les fonctions de deplacement / vue, pour le futur mode Play.
+function buildGameGraph(d){
+  const floor=new Set();
+  const spaceAt=new Map();
+  for(const s of d.spaces)for(let cx=s.x;cx<s.x+s.w;cx++)for(let cy=s.y;cy<s.y+s.h;cy++){
+    const k=cx+','+cy; floor.add(k); spaceAt.set(k,s);
+  }
+  const walkable=(cx,cy)=>floor.has(cx+','+cy);
+
+  // Index des seuils (portes/passages) par arete entre deux cellules : "x1,y1|x2,y2" -> info
+  // Une ouverture existe entre la cellule de bord d'un espace et sa voisine.
+  const openings=new Map();
+  const addOpening=(ax,ay,bx,by,info)=>{ openings.set(edgeKey(ax,ay,bx,by), info); };
+  function edgeKey(ax,ay,bx,by){ return ax<=bx&&ay<=by ? `${ax},${ay}|${bx},${by}` : `${bx},${by}|${ax},${ay}`; }
+  for(const s of d.spaces){
+    const edges=[['N',s.openN,0,-1],['S',s.openS,0,1],['W',s.openW,-1,0],['E',s.openE,1,0]];
+    for(const [dir,ivs] of edges){
+      for(const [a,b] of ivs)for(let t=a;t<b;t++){
+        let sx,sy,nx,ny;
+        if(dir==='N'){sx=t;sy=s.y;nx=t;ny=s.y-1;}
+        else if(dir==='S'){sx=t;sy=s.y+s.h-1;nx=t;ny=s.y+s.h;}
+        else if(dir==='W'){sx=s.x;sy=t;nx=s.x-1;ny=t;}
+        else{sx=s.x+s.w-1;sy=t;nx=s.x+s.w;ny=t;}
+        if(walkable(nx,ny))addOpening(sx,sy,nx,ny,{open:true});
+      }
+    }
+  }
+  // portes typees sur ces aretes (pour bloquer verrou / secret)
+  function doorBetween(ax,ay,bx,by){
+    // une porte est positionnee sur la frontiere (mx,my) entre les deux cellules
+    const mx=(ax+bx)/2+ (ax===bx?0:0.5)*0; // calcul direct ci-dessous
+    let fx,fy,orient;
+    if(ax===bx){ orient='h'; fx=ax+0.5; fy=Math.max(ay,by); }
+    else { orient='v'; fx=Math.max(ax,bx); fy=ay+0.5; }
+    return d.doors.find(dr=>dr.orient===orient && Math.abs(dr.cx-fx)<0.01 && Math.abs(dr.cy-fy)<0.01)||null;
+  }
+
+  // passabilite : meme cellules marchables, arete ouverte, porte non bloquante
+  // opts.openedDoors : Set de cles de porte ouvertes par les joueurs (verrous), opts.foundSecrets : idem
+  function passable(ax,ay,bx,by,state){
+    if(!walkable(ax,ay)||!walkable(bx,by))return false;
+    if(Math.abs(ax-bx)+Math.abs(ay-by)!==1)return false; // 4-connexite
+    const sameSpace = spaceAt.get(ax+','+ay)===spaceAt.get(bx+','+by);
+    if(!sameSpace && !openings.has(edgeKey(ax,ay,bx,by)))return false; // mur plein
+    const dr=sameSpace?null:doorBetween(ax,ay,bx,by);
+    if(dr){
+      const id=dr.cx+','+dr.cy+dr.orient;
+      if(dr.type==='secret' && !(state&&state.foundSecrets&&state.foundSecrets.has(id)))return false;
+      if(dr.type==='locked' && !(state&&state.openedDoors&&state.openedDoors.has(id)))return false;
+    }
+    return true;
+  }
+
+  // BFS borne par un budget de pas -> ensemble des cellules atteignables
+  function reachable(cx,cy,steps,state){
+    const start=cx+','+cy; const dist=new Map([[start,0]]); const out=new Set([start]); const q=[[cx,cy]];
+    while(q.length){
+      const [x,y]=q.shift(); const dd=dist.get(x+','+y);
+      if(dd>=steps)continue;
+      for(const [dx,dy] of [[0,-1],[0,1],[-1,0],[1,0]]){
+        const nx=x+dx,ny=y+dy,nk=nx+','+ny;
+        if(dist.has(nk))continue;
+        if(!passable(x,y,nx,ny,state))continue;
+        dist.set(nk,dd+1); out.add(nk); q.push([nx,ny]);
+      }
+    }
+    return out;
+  }
+
+  // ligne de vue par tirage de rayon (supercover Bresenham), bloquee par un mur ou une porte fermee
+  function losClear(ax,ay,bx,by,state){
+    let x0=ax,y0=ay; const dx=Math.abs(bx-ax),dy=Math.abs(by-ay),sx=ax<bx?1:-1,sy=ay<by?1:-1;
+    let err=dx-dy, x=x0,y=y0, guard=0;
+    while(guard++<400){
+      if(x===bx&&y===by)return true;
+      const e2=2*err; let nx=x,ny=y;
+      if(e2>-dy){err-=dy;nx=x+sx;}
+      if(e2<dx){err+=dx;ny=y+sy;}
+      // franchir une arete : verifier qu'on peut "voir" au travers (meme regle que passable mais le verrou ne bloque PAS la vue)
+      if(nx!==x){ if(!seeThrough(x,y,nx,y,state))return false; x=nx; }
+      if(ny!==y){ if(!seeThrough(x,y,x,ny,state))return false; y=ny; }
+    }
+    return false;
+  }
+  function seeThrough(ax,ay,bx,by,state){
+    if(!walkable(ax,ay)||!walkable(bx,by))return false;
+    const sameSpace=spaceAt.get(ax+','+ay)===spaceAt.get(bx+','+by);
+    if(!sameSpace && !openings.has(edgeKey(ax,ay,bx,by)))return false;
+    const dr=sameSpace?null:doorBetween(ax,ay,bx,by);
+    if(dr){
+      const id=dr.cx+','+dr.cy+dr.orient;
+      // portes pleines bloquent la vue ; arche (pas de porte) laisse voir ; secrete non trouvee = mur
+      if(dr.type==='secret' && !(state&&state.foundSecrets&&state.foundSecrets.has(id)))return false;
+      if(dr.type==='double'||dr.type==='simple'||dr.type==='barred'||dr.type==='locked')return false;
+    }
+    return true;
+  }
+
+  // cellules visibles depuis une position (rayon, darkvision, lumiere)
+  function visibleFrom(cx,cy,radius,opts){
+    opts=opts||{}; const dark=!!opts.dark; const state=opts.state;
+    const out=new Set([cx+','+cy]);
+    for(let y=cy-radius;y<=cy+radius;y++)for(let x=cx-radius;x<=cx+radius;x++){
+      if(!walkable(x,y))continue;
+      if((x-cx)*(x-cx)+(y-cy)*(y-cy) > radius*radius)continue;
+      if(!losClear(cx,cy,x,y,state))continue;
+      if(!dark){
+        const sp=spaceAt.get(x+','+y);
+        const lvl=sp?sp.light:null;
+        // sans vision dans le noir : on ne voit pas les cellules sombres au-dela de 1 case
+        if(lvl==='dark' && ((x-cx)*(x-cx)+(y-cy)*(y-cy))>2)continue;
+      }
+      out.add(x+','+y);
+    }
+    return out;
+  }
+
+  return {floor, walkable, spaceAt, openings, doorBetween, passable, reachable, losClear, seeThrough, visibleFrom,
+    pixelToCell:(px,py,ox,oy)=>[Math.floor((px-ox)/S),Math.floor((py-oy)/S)]};
+}
+
+/* ============ rendu SVG ============ */
+const S=26, M=2; // px par case, marge en cases
+function svgEl(tag,attrs){const e=document.createElementNS('http://www.w3.org/2000/svg',tag);for(const k in attrs)e.setAttribute(k,attrs[k]);return e;}
+function subtract(full,intervals){
+  // full=[a,b], intervals=liste d'ouvertures -> segments restants
+  let segs=[[full[0],full[1]]];
+  for(const [oa,ob] of intervals){
+    const out=[];
+    for(const [a,b] of segs){
+      if(ob<=a||oa>=b){out.push([a,b]);continue;}
+      if(oa>a)out.push([a,oa]);
+      if(ob<b)out.push([ob,b]);
+    }
+    segs=out;
+  }
+  return segs;
+}
+
+function renderSVG(d, view){
+  view=Object.assign({gm:true, fog:false, light:false, reveal:null}, view||{});
+  const cs=getComputedStyle(document.body);
+  const c={ink:cs.getPropertyValue('--line').trim(),grid:cs.getPropertyValue('--grid').trim(),
+    paper:cs.getPropertyValue('--paper').trim(),water:cs.getPropertyValue('--water').trim(),
+    accent:cs.getPropertyValue('--accent').trim(),inkSoft:cs.getPropertyValue('--ink-soft').trim()};
+  const b=d.bounds;
+  const W=(b.maxX-b.minX+M*2)*S, H=(b.maxY-b.minY+M*2)*S;
+  const ox=(-b.minX+M)*S, oy=(-b.minY+M)*S;
+  const X=gx=>ox+gx*S, Y=gy=>oy+gy*S;
+  const svg=svgEl('svg',{xmlns:'http://www.w3.org/2000/svg',width:W,height:H,viewBox:`0 0 ${W} ${H}`,'font-family':'EB Garamond, Georgia, serif'});
+
+  const bg=svgEl('rect',{x:0,y:0,width:W,height:H,fill:c.paper});svg.appendChild(bg);
+
+  const gFloor=svgEl('g',{});const gGrid=svgEl('g',{stroke:c.grid,'stroke-width':1});
+  const gHatch=svgEl('g',{stroke:c.ink,fill:'none','stroke-linecap':'round'});
+  const gWall=svgEl('g',{stroke:c.ink,fill:'none','stroke-linecap':'round','stroke-linejoin':'round'});
+  const gDeco=svgEl('g',{});const gDoor=svgEl('g',{});const gLabel=svgEl('g',{});const gGM=svgEl('g',{});
+  const gLight=svgEl('g',{});const gFog=svgEl('g',{});
+
+  // rng de rendu, stable pour une meme graine
+  const rrng=makeRng(d.seed+':render');
+  const rr=(a,b)=>a+rrng()*(b-a);
+
+  // index cellule -> id d'espace (pour distinguer les cloisons entre espaces voisins)
+  if(!d._spaceIndex){
+    const idx=new Map();
+    for(const s of d.spaces){
+      const cells = s._cells || (()=>{const a=[];for(let cx=s.x;cx<s.x+s.w;cx++)for(let cy=s.y;cy<s.y+s.h;cy++)a.push([cx,cy]);return a;})();
+      for(const [cx,cy] of cells)idx.set(cx+','+cy,s.id);
+    }
+    d._spaceIndex=idx;
+  }
+  function spaceIdAt(dd,cx,cy){return dd._spaceIndex.get(cx+','+cy);}
+
+  // R2 : chaque espace expose son ensemble de cellules (rectangle plein par defaut ;
+  // un sous-ensemble pour les formes non rectangulaires de la tache 4).
+  function cellsOf(s){
+    if(s._cells)return s._cells; // deja calcule (formes speciales)
+    const arr=[]; for(let cx=s.x;cx<s.x+s.w;cx++)for(let cy=s.y;cy<s.y+s.h;cy++)arr.push([cx,cy]);
+    return arr;
+  }
+  // ensemble global des cellules de sol (pour distinguer mur exterieur / cloison interne)
+  const floorSet=new Set();
+  for(const s of d.spaces)for(const [cx,cy] of cellsOf(s))floorSet.add(cx+','+cy);
+  const isFloor=(cx,cy)=>floorSet.has(cx+','+cy);
+  const edgeOpen=(intervals,c)=>{for(const [a,b] of intervals)if(a<=c&&b>=c+1)return true;return false;};
+  // une ouverture (porte/passage) est-elle declaree sur ce bord de l'espace ?
+  function openOnEdge(s,dir,cx,cy){
+    if(dir==='N')return edgeOpen(s.openN,cx);
+    if(dir==='S')return edgeOpen(s.openS,cx);
+    if(dir==='W')return edgeOpen(s.openW,cy);
+    return edgeOpen(s.openE,cy);
+  }
+
+  // sols + grille interne (par cellule, gere les formes non rectangulaires)
+  for(const s of d.spaces){
+    const fill=s.water?c.water:c.paper;
+    for(const [cx,cy] of cellsOf(s)){
+      gFloor.appendChild(svgEl('rect',{x:X(cx),y:Y(cy),width:S,height:S,fill}));
+      // lignes de grille internes : seulement si la cellule voisine appartient au meme espace
+      if(isFloor(cx+1,cy))gGrid.appendChild(svgEl('line',{x1:X(cx+1),y1:Y(cy),x2:X(cx+1),y2:Y(cy+1)}));
+      if(isFloor(cx,cy+1))gGrid.appendChild(svgEl('line',{x1:X(cx),y1:Y(cy+1),x2:X(cx+1),y2:Y(cy+1)}));
+    }
+  }
+
+  // trait de mur legerement tremble (effet dessin a la main)
+  function roughLine(x1,y1,x2,y2,width){
+    const dx=x2-x1,dy=y2-y1,len=Math.hypot(dx,dy)||1;
+    const px=-dy/len,py=dx/len,n=Math.max(1,Math.round(len/7));
+    let p='M '+x1.toFixed(1)+' '+y1.toFixed(1);
+    for(let i=1;i<=n;i++){const t=i/n,j=(i<n)?rr(-0.9,0.9):0;
+      p+=' L '+(x1+dx*t+px*j).toFixed(1)+' '+(y1+dy*t+py*j).toFixed(1);}
+    gWall.appendChild(svgEl('path',{d:p,'stroke-width':width}));
+  }
+  // hachures vers l'exterieur le long d'un segment unitaire (1 case)
+  function hatchUnit(x0,y0,nx,ny,horizontal){
+    for(let k=0;k<8;k++){
+      const t=rr(0.04,0.96);
+      const bx=horizontal?x0+t*S:x0, by=horizontal?y0:y0+t*S;
+      const ang=Math.atan2(ny,nx)+rr(-0.55,0.55), len=rr(3,10);
+      const sx=bx-nx*rr(0,1), sy=by-ny*rr(0,1);
+      gHatch.appendChild(svgEl('line',{x1:sx.toFixed(1),y1:sy.toFixed(1),
+        x2:(bx+Math.cos(ang)*len).toFixed(1),y2:(by+Math.sin(ang)*len).toFixed(1),
+        'stroke-width':rr(0.5,1).toFixed(2),opacity:rr(0.55,0.95).toFixed(2)}));
+    }
+    for(let k=0;k<3;k++){
+      const t=rr(0.1,0.9);
+      const bx=horizontal?x0+t*S:x0, by=horizontal?y0:y0+t*S;
+      const ang=Math.atan2(ny,nx)+rr(-0.4,0.4), len=rr(9,16);
+      gHatch.appendChild(svgEl('line',{x1:bx.toFixed(1),y1:by.toFixed(1),
+        x2:(bx+Math.cos(ang)*len).toFixed(1),y2:(by+Math.sin(ang)*len).toFixed(1),
+        'stroke-width':rr(0.4,0.8).toFixed(2),opacity:rr(0.25,0.5).toFixed(2)}));
+    }
+  }
+  // murs : pour chaque cellule de sol, on regarde ses 4 cotes.
+  // - voisin hors sol -> mur exterieur (trait epais + hachures vers l'exterieur)
+  // - voisin d'un AUTRE espace -> cloison fine (tracee une seule fois)
+  // - ouverture declaree sur ce bord -> on ne trace rien (passage)
+  const drawnEdge=new Set();
+  const once=(ax,ay,bx,by)=>{const k=ax<=bx&&ay<=by?`${ax},${ay}|${bx},${by}`:`${bx},${by}|${ax},${ay}`; if(drawnEdge.has(k))return false; drawnEdge.add(k); return true;};
+  for(const s of d.spaces){
+    for(const [cx,cy] of cellsOf(s)){
+      // N
+      if(!isFloor(cx,cy-1)){ if(!openOnEdge(s,'N',cx,cy)){roughLine(X(cx),Y(cy),X(cx+1),Y(cy),1.8);hatchUnit(X(cx),Y(cy),0,-1,true);} }
+      else if(floorSet.has(cx+','+(cy-1)) && spaceIdAt(d,cx,cy)!==spaceIdAt(d,cx,cy-1)){ if(!openOnEdge(s,'N',cx,cy)&&once(cx,cy,cx,cy-1))roughLine(X(cx),Y(cy),X(cx+1),Y(cy),1.2); }
+      // S
+      if(!isFloor(cx,cy+1)){ if(!openOnEdge(s,'S',cx,cy)){roughLine(X(cx),Y(cy+1),X(cx+1),Y(cy+1),1.8);hatchUnit(X(cx),Y(cy+1),0,1,true);} }
+      else if(spaceIdAt(d,cx,cy)!==spaceIdAt(d,cx,cy+1)){ if(!openOnEdge(s,'S',cx,cy)&&once(cx,cy,cx,cy+1))roughLine(X(cx),Y(cy+1),X(cx+1),Y(cy+1),1.2); }
+      // W
+      if(!isFloor(cx-1,cy)){ if(!openOnEdge(s,'W',cx,cy)){roughLine(X(cx),Y(cy),X(cx),Y(cy+1),1.8);hatchUnit(X(cx),Y(cy),-1,0,false);} }
+      else if(spaceIdAt(d,cx,cy)!==spaceIdAt(d,cx-1,cy)){ if(!openOnEdge(s,'W',cx,cy)&&once(cx,cy,cx-1,cy))roughLine(X(cx),Y(cy),X(cx),Y(cy+1),1.2); }
+      // E
+      if(!isFloor(cx+1,cy)){ if(!openOnEdge(s,'E',cx,cy)){roughLine(X(cx+1),Y(cy),X(cx+1),Y(cy+1),1.8);hatchUnit(X(cx+1),Y(cy),1,0,false);} }
+      else if(spaceIdAt(d,cx,cy)!==spaceIdAt(d,cx+1,cy)){ if(!openOnEdge(s,'E',cx,cy)&&once(cx,cy,cx+1,cy))roughLine(X(cx+1),Y(cy),X(cx+1),Y(cy+1),1.2); }
+    }
+  }
+
+  // cailloux et eclats au sol (texture)
+  for(const s of d.rooms){
+    const n=Math.min(6,Math.round(s.w*s.h*0.05));
+    for(let i=0;i<n;i++){
+      const px=X(s.x+rr(0.4,s.w-0.4)),py=Y(s.y+rr(0.4,s.h-0.4));
+      gDeco.appendChild(svgEl('circle',{cx:px.toFixed(1),cy:py.toFixed(1),r:rr(0.7,1.5).toFixed(1),fill:c.ink,opacity:rr(0.2,0.45).toFixed(2)}));
+    }
+  }
+
+  // eau (ondulations)
+  for(const s of d.spaces){
+    if(!s.water)continue;
+    for(let i=1;i<s.h;i++){
+      const yy=Y(s.y+i)-0; let p=`M ${X(s.x)+4} ${yy}`;
+      for(let xx=s.x;xx<s.x+s.w;xx+=0.5){const off=Math.sin((xx+i)*2)*2.2;p+=` L ${X(xx)} ${yy+off}`;}
+      gDeco.appendChild(svgEl('path',{d:p,fill:'none',stroke:c.ink,'stroke-width':1,opacity:.35}));
+    }
+  }
+  // colonnes
+  for(const s of d.spaces){
+    if(!s.columns)continue;
+    for(let gx=s.x+1;gx<s.x+s.w-1;gx+=2)for(let gy=s.y+1;gy<s.y+s.h-1;gy+=2){
+      gDeco.appendChild(svgEl('circle',{cx:X(gx),cy:Y(gy),r:4.2,fill:c.ink}));
+      gDeco.appendChild(svgEl('circle',{cx:X(gx),cy:Y(gy),r:2,fill:c.paper}));
+    }
+  }
+  // eboulis (gravats dans les couloirs marques)
+  for(const s of d.spaces){
+    if(!s.rubble)continue;
+    const cxC=X(s.x+s.w/2),cyC=Y(s.y+s.h/2);
+    for(let k=0;k<10;k++){
+      const px=cxC+rr(-S*0.45,S*0.45),py=cyC+rr(-S*0.45,S*0.45),r=rr(1.4,3.2);
+      const pts=[];for(let a=0;a<5;a++){const ang=a/5*6.283+rr(-0.3,0.3),rad=r*rr(0.7,1.1);pts.push((px+Math.cos(ang)*rad).toFixed(1)+','+(py+Math.sin(ang)*rad).toFixed(1));}
+      gDeco.appendChild(svgEl('polygon',{points:pts.join(' '),fill:c.ink,opacity:rr(0.35,0.7).toFixed(2)}));
+    }
+  }
+
+  // props (mobilier)
+  for(const s of d.rooms){
+    if(!s.props||!s.props.length)continue;
+    s.props.forEach((t,i)=>{
+      const px=X(s.x + s.w*0.5 + (i? (i%2?0.8:-0.8):0)), py=Y(s.y + s.h - 0.62);
+      drawProp(gDeco,t,px,py,c);
+    });
+  }
+
+  // (les salles eclairees sont rendues uniquement via le degrade de gris du sol -
+  //  pas de picto de brasero superflu sur la carte)
+
+  // portes
+  for(const dr of d.doors)drawDoor(gDoor,dr,X,Y,c,view.gm);
+
+  // marches entre salle seche et salle inondee (3 traits paralleles au seuil, resserres vers l'eau)
+  if(d.waterSteps)for(const st of d.waterSteps){
+    const cx=X(st.cx), cy=Y(st.cy);
+    // vecteur unitaire vers l'eau (perpendiculaire au seuil)
+    let nx=0,ny=0;
+    if(st.orient==='h'){ ny = (st.downY>st.cy)?1:-1; } else { nx = (st.downX>st.cx)?1:-1; }
+    const half=S*0.34;
+    for(let i=0;i<3;i++){
+      const off=(i+1)*3.4*( (st.orient==='h')?ny:nx ); // decalage vers l'eau
+      const w=half*(1-i*0.18); // marches qui retrecissent vers l'eau
+      if(st.orient==='h'){
+        gDoor.appendChild(svgEl('line',{x1:cx-w,y1:cy+off,x2:cx+w,y2:cy+off,stroke:c.ink,'stroke-width':1.3,opacity:0.85}));
+      }else{
+        gDoor.appendChild(svgEl('line',{x1:cx+off,y1:cy-w,x2:cx+off,y2:cy+w,stroke:c.ink,'stroke-width':1.3,opacity:0.85}));
+      }
+    }
+  }
+
+  // escaliers d'entree
+  for(const st of d.stairs)drawEntrance(gDoor,st,X,Y,c);
+  // escaliers descendants
+  for(const s of d.spaces)if(s.stairsDown)drawStairsDown(gDeco,s,X,Y,c);
+
+  // numeros de salle (carte MJ uniquement)
+  if(view.gm) for(const s of d.rooms){
+    const cx=X(s.x+0.7),cy=Y(s.y+0.7);
+    gLabel.appendChild(svgEl('circle',{cx,cy,r:8.5,fill:c.paper,stroke:c.ink,'stroke-width':1.6}));
+    const t=svgEl('text',{x:cx,y:cy+0.5,'text-anchor':'middle','dominant-baseline':'middle','font-size':11,'font-weight':600,fill:c.ink});
+    t.textContent=s.number; gLabel.appendChild(t);
+  }
+
+  // reperes MJ: cle, piege, tresor (uniquement en vue MJ)
+  if(view.gm) for(const s of d.rooms){
+    if(s.hasKey){ // cle en haut a droite
+      const kx=X(s.x+s.w-0.55),ky=Y(s.y+0.55);
+      gGM.appendChild(svgEl('circle',{cx:kx,cy:ky,r:3.2,fill:'none',stroke:c.accent,'stroke-width':1.8}));
+      gGM.appendChild(svgEl('line',{x1:kx+2.6,y1:ky,x2:kx+9,y2:ky,stroke:c.accent,'stroke-width':1.8}));
+      gGM.appendChild(svgEl('line',{x1:kx+6,y1:ky,x2:kx+6,y2:ky+3,stroke:c.accent,'stroke-width':1.8}));
+      gGM.appendChild(svgEl('line',{x1:kx+9,y1:ky,x2:kx+9,y2:ky+3.5,stroke:c.accent,'stroke-width':1.8}));
+    }
+    if(s.trap){ // triangle d'alerte au centre
+      const tx=X(s.x+s.w/2),ty=Y(s.y+s.h/2);
+      gGM.appendChild(svgEl('polygon',{points:`${tx},${ty-6} ${tx-6},${ty+5} ${tx+6},${ty+5}`,fill:'none',stroke:c.accent,'stroke-width':1.6}));
+      const t=svgEl('text',{x:tx,y:ty+4,'text-anchor':'middle','font-size':8,'font-weight':700,fill:c.accent});t.textContent='!';gGM.appendChild(t);
+    }
+    if(s.treasure){ // petit coffre en bas a gauche
+      const bx=X(s.x+0.55),by=Y(s.y+s.h-0.7);
+      gGM.appendChild(svgEl('rect',{x:bx-0.5,y:by,width:11,height:8,fill:c.paper,stroke:c.ink,'stroke-width':1.4}));
+      gGM.appendChild(svgEl('line',{x1:bx-0.5,y1:by+3,x2:bx+10.5,y2:by+3,stroke:c.ink,'stroke-width':1.2}));
+      gGM.appendChild(svgEl('rect',{x:bx+4,y:by+2,width:2,height:3,fill:c.accent}));
+    }
+  }
+
+  // calque lumiere (tache 2) : voile sombre si une zone porte un etat .light
+  if(view.light) for(const s of d.spaces){
+    if(!s.light||s.light==='lit')continue;
+    const op = s.light==='dark'?0.42:0.18;
+    gLight.appendChild(svgEl('rect',{x:X(s.x),y:Y(s.y),width:s.w*S,height:s.h*S,fill:'#0a0a0f',opacity:op}));
+  }
+  // calque brouillard (tache 3) : masque les cellules non revelees ; reveal = Set("cx,cy")
+  if(view.fog && view.reveal){
+    for(const s of d.spaces)for(let cx=s.x;cx<s.x+s.w;cx++)for(let cy=s.y;cy<s.y+s.h;cy++){
+      if(!view.reveal.has(cx+','+cy))
+        gFog.appendChild(svgEl('rect',{x:X(cx)-0.5,y:Y(cy)-0.5,width:S+1,height:S+1,fill:'#0a0a0f',opacity:0.97}));
+    }
+  }
+
+  // titre du donjon en bas de page
+  const title=svgEl('text',{x:W/2,y:H-14,'text-anchor':'middle','font-size':18,'font-style':'italic',fill:c.inkSoft,'font-family':'IM Fell English, EB Garamond, serif'});
+  title.textContent=d.name; gLabel.appendChild(title);
+
+  svg.appendChild(gFloor);svg.appendChild(gGrid);svg.appendChild(gDeco);svg.appendChild(gHatch);svg.appendChild(gWall);svg.appendChild(gDoor);svg.appendChild(gGM);svg.appendChild(gLight);svg.appendChild(gFog);svg.appendChild(gLabel);
+  return svg;
+}
+
+function drawProp(g,type,cx,cy,c){
+  const ink=c.ink, paper=c.paper;
+  const R=(x,y,w,h,rx)=>{const e=svgEl('rect',{x:x,y:y,width:w,height:h,fill:paper,stroke:ink,'stroke-width':1.3});if(rx)e.setAttribute('rx',rx);g.appendChild(e);return e;};
+  const L=(x1,y1,x2,y2,sw)=>g.appendChild(svgEl('line',{x1,y1,x2,y2,stroke:ink,'stroke-width':sw||1.2}));
+  const C=(x,y,r,fill)=>g.appendChild(svgEl('circle',{cx:x,cy:y,r:r,fill:fill||'none',stroke:ink,'stroke-width':1.3}));
+  const P=(pts,fill)=>g.appendChild(svgEl('polygon',{points:pts,fill:fill||'none',stroke:ink,'stroke-width':1.2}));
+  switch(type){
+    case 'statue': R(cx-4,cy+4,8,3); P(`${cx},${cy-7} ${cx-3},${cy+4} ${cx+3},${cy+4}`,paper); C(cx,cy-7,2,paper); break;
+    case 'autel': R(cx-7,cy-1,14,6,1); L(cx-8,cy-1,cx+8,cy-1,1.6); break;
+    case 'puits': C(cx,cy,7,paper); C(cx,cy,3.5); break;
+    case 'fontaine': C(cx,cy,7,paper); for(let i=-1;i<=1;i++)g.appendChild(svgEl('path',{d:`M ${cx-3} ${cy+i*2} q 3 -2 6 0`,fill:'none',stroke:ink,'stroke-width':1})); break;
+    case 'sarcophage': R(cx-5,cy-7,10,14,3); L(cx,cy-4,cx,cy+4,1.2); C(cx,cy-3,1.4,ink); break;
+    case 'bibliotheque': R(cx-6,cy-7,12,14); L(cx-6,cy-2,cx+6,cy-2); L(cx-6,cy+3,cx+6,cy+3); for(let i=-4;i<=4;i+=2)L(cx+i,cy-7,cx+i,cy-2,0.8); break;
+    case 'trone': R(cx-4,cy-1,8,6); R(cx-4,cy-9,8,8,1); break;
+    case 'cage': R(cx-6,cy-7,12,14); for(let i=-3;i<=3;i+=3)L(cx+i,cy-7,cx+i,cy+7,0.9); break;
+    case 'caisses': R(cx-6,cy-1,7,7); R(cx,cy-6,7,7); break;
+    case 'ossements': C(cx-2,cy-1,2.4,paper); C(cx-2.8,cy-1,0.5,ink); C(cx-1.2,cy-1,0.5,ink); L(cx+1,cy-3,cx+6,cy+2,1.4); L(cx+1,cy+2,cx+6,cy-3,1.4); break;
+    case 'colonne_brisee': C(cx,cy+3,4,paper); P(`${cx-4},${cy} ${cx-2},${cy-4} ${cx},${cy-1} ${cx+2},${cy-5} ${cx+4},${cy}`,paper); break;
+    case 'table': R(cx-7,cy-3,14,3); L(cx-6,cy,cx-6,cy+5,1.2); L(cx+6,cy,cx+6,cy+5,1.2); break;
+    case 'stalagmite': P(`${cx-5},${cy+5} ${cx-2},${cy-5} ${cx+1},${cy+5}`,paper); P(`${cx},${cy+5} ${cx+3},${cy-2} ${cx+6},${cy+5}`,paper); break;
+    case 'tonneau': g.appendChild(svgEl('ellipse',{cx:cx,cy:cy,rx:5,ry:7,fill:paper,stroke:ink,'stroke-width':1.3})); L(cx-5,cy-2.5,cx+5,cy-2.5); L(cx-5,cy+2.5,cx+5,cy+2.5); break;
+    case 'idole': C(cx,cy-5,2,paper); L(cx,cy-3,cx,cy+4,1.4); L(cx,cy-1,cx-4,cy-4,1.2); L(cx,cy-1,cx+4,cy-4,1.2); R(cx-3,cy+4,6,3); break;
+    case 'brasero_eteint': g.appendChild(svgEl('path',{d:`M ${cx-6} ${cy} L ${cx+6} ${cy} L ${cx+4} ${cy+4} L ${cx-4} ${cy+4} Z`,fill:paper,stroke:ink,'stroke-width':1.3})); L(cx,cy+4,cx,cy+7,1.2); break;
+    case 'terminal': R(cx-6,cy-8,12,9,1); L(cx-4,cy-5,cx+2,cy-5,0.8); L(cx-4,cy-2.5,cx+4,cy-2.5,0.8); R(cx-1.5,cy+1,3,3); L(cx-4,cy+4,cx+4,cy+4,1.4); break;
+    case 'serveur': R(cx-5,cy-9,10,17); for(let i=-6;i<=4;i+=3)L(cx-5,cy+i,cx+5,cy+i,0.7); C(cx-3,cy-8,0.8,ink); C(cx-1,cy-8,0.8,ink); break;
+    case 'generateur': R(cx-7,cy-4,14,9,1); C(cx+2,cy+0.5,3,paper); C(cx+2,cy+0.5,1,ink); R(cx-6,cy-2,4,3); L(cx-7,cy-4,cx-7,cy-8,1.4); L(cx-8,cy-8,cx-6,cy-8,1.2); break;
+    case 'bidon': R(cx-5,cy-7,10,14,2); L(cx-5,cy-3,cx+5,cy-3,0.8); L(cx-5,cy+2,cx+5,cy+2,0.8); P(`${cx},${cy-4} ${cx-2.5},${cy} ${cx+2.5},${cy}`,paper); L(cx,cy-2.6,cx,cy-1.2,1); C(cx,cy-0.4,0.5,ink); break;
+    case 'barricade': R(cx-7,cy+1,5,4,2); R(cx-2,cy+1,5,4,2); R(cx+3,cy+1,5,4,2); R(cx-4.5,cy-3,5,4,2); R(cx+0.5,cy-3,5,4,2); break;
+    case 'casier': R(cx-6,cy-9,12,17); L(cx,cy-9,cx,cy+8,1); L(cx-6,cy-1,cx+6,cy-1,0.8); L(cx-1.5,cy-6,cx-1.5,cy-4,1.1); L(cx+1.5,cy-6,cx+1.5,cy-4,1.1); L(cx-1.5,cy+2,cx-1.5,cy+4,1.1); L(cx+1.5,cy+2,cx+1.5,cy+4,1.1); break;
+    case 'epave': R(cx-8,cy-1,16,4,1); P(`${cx-4},${cy-1} ${cx-2.5},${cy-5} ${cx+2.5},${cy-5} ${cx+4},${cy-1}`,paper); C(cx-4.5,cy+3.5,2,paper); C(cx+4.5,cy+3.5,2,paper); break;
+    case 'ventilation': R(cx-6,cy-6,12,12,1); for(let i=-3.5;i<=3.5;i+=2.3)L(cx-5,cy+i,cx+5,cy+i,0.9); C(cx-4.5,cy-4.5,0.6,ink); C(cx+4.5,cy-4.5,0.6,ink); C(cx-4.5,cy+4.5,0.6,ink); C(cx+4.5,cy+4.5,0.6,ink); break;
+    case 'loot_box': g.appendChild(svgEl('ellipse',{cx:cx,cy:cy+7,rx:6,ry:1.5,fill:ink,opacity:0.18,stroke:'none'})); R(cx-6,cy-2,12,7,1); R(cx-6,cy-6,12,4,1); L(cx-6,cy-2,cx+6,cy-2,1.3); R(cx-1.4,cy-3.6,2.8,3,0.5); L(cx-2.5,cy+1,cx-2.5,cy+5,0.7); L(cx+2.5,cy+1,cx+2.5,cy+5,0.7); L(cx+6,cy-9,cx+8,cy-7,0.9); L(cx+7,cy-9.5,cx+7,cy-6.5,0.9); break;
+    case 'ecran_systeme': R(cx-7,cy-6,14,11,1); L(cx-5,cy-3,cx+1,cy-3,0.8); L(cx-5,cy-0.5,cx+3,cy-0.5,0.8); L(cx-5,cy+2,cx-1,cy+2,0.8); R(cx+2.6,cy+0.5,3.4,4,0.4); L(cx-9,cy-8,cx-7,cy-6,0.7); L(cx+9,cy-8,cx+7,cy-6,0.7); L(cx-9,cy+7,cx-7,cy+5,0.7); L(cx+9,cy+7,cx+7,cy+5,0.7); break;
+    default: R(cx-4,cy-4,8,8);
+  }
+}
+function drawDoor(g,dr,X,Y,c,gm){
+  if(gm===undefined)gm=true;
+  const cx=X(dr.cx),cy=Y(dr.cy),L=S*0.78,T=S*0.16;
+  const horiz=dr.orient==='h';
+  const rect=(x,y,w,h)=>g.appendChild(svgEl('rect',{x:x,y:y,width:w,height:h,fill:c.paper,stroke:c.ink,'stroke-width':1.8}));
+  const bar=(x1,y1,x2,y2,sw)=>g.appendChild(svgEl('line',{x1,y1,x2,y2,stroke:c.ink,'stroke-width':sw||1.6}));
+  if(dr.type==='secret' && !gm){ // vue joueur: la porte secrete reste un mur
+    if(horiz)bar(cx-S/2,cy,cx+S/2,cy,1.8);else bar(cx,cy-S/2,cx,cy+S/2,1.8);
+    return;
+  }
+  if(dr.type==='simple'){
+    if(horiz)rect(cx-L/2,cy-T/2,L,T);else rect(cx-T/2,cy-L/2,T,L);
+  }else if(dr.type==='locked'){
+    const fill=svgEl('rect',{x:horiz?cx-L/2:cx-T/2,y:horiz?cy-T/2:cy-L/2,width:horiz?L:T,height:horiz?T:L,fill:c.accent,stroke:c.ink,'stroke-width':1.8});g.appendChild(fill);
+    g.appendChild(svgEl('circle',{cx,cy,r:2.1,fill:c.paper}));
+    if(dr.dc&&gm){const t=svgEl('text',{x:horiz?cx:cx+9,y:horiz?cy-7:cy+3,'text-anchor':'middle','font-size':8,'font-weight':700,fill:c.accent});t.textContent='DC'+dr.dc;g.appendChild(t);}
+  }else if(dr.type==='double'){
+    if(horiz){rect(cx-L/2,cy-T/2,L/2-1.5,T);rect(cx+1.5,cy-T/2,L/2-1.5,T);}
+    else{rect(cx-T/2,cy-L/2,T,L/2-1.5);rect(cx-T/2,cy+1.5,T,L/2-1.5);}
+  }else if(dr.type==='barred'){
+    if(horiz){rect(cx-L/2,cy-T/2,L,T);for(let i=-1;i<=1;i++)bar(cx+i*7,cy-S*0.28,cx+i*7,cy+S*0.28,1.4);}
+    else{rect(cx-T/2,cy-L/2,T,L);for(let i=-1;i<=1;i++)bar(cx-S*0.28,cy+i*7,cx+S*0.28,cy+i*7,1.4);}
+  }else if(dr.type==='secret'){
+    const r=svgEl('rect',{x:horiz?cx-L/2:cx-T/2,y:horiz?cy-T/2:cy-L/2,width:horiz?L:T,height:horiz?T:L,fill:c.paper,stroke:c.ink,'stroke-width':1.4,'stroke-dasharray':'2 2'});g.appendChild(r);
+    const t=svgEl('text',{x:cx,y:cy+0.5,'text-anchor':'middle','dominant-baseline':'middle','font-size':8,fill:c.ink,opacity:.7});t.textContent='S';g.appendChild(t);
+  }
+}
+function drawEntrance(g,st,X,Y,c){
+  // L'entree est dessinee comme une "porte" calee sur le bord de la salle, dans la couleur
+  // d'accent pour se distinguer des portes normales. Memes dimensions que drawDoor (L/T).
+  const cx=X(st.cx),cy=Y(st.cy),L=S*0.78,T=S*0.18;
+  const horiz=(st.dir==='N'||st.dir==='S');
+  g.appendChild(svgEl('rect',{
+    x:horiz?cx-L/2:cx-T/2,
+    y:horiz?cy-T/2:cy-L/2,
+    width:horiz?L:T, height:horiz?T:L,
+    fill:c.accent, stroke:c.ink, 'stroke-width':1.8
+  }));
+  // petit chevron pointant vers l'interieur pour indiquer le sens d'entree
+  const v=DIRS[st.dir];
+  const tipX=cx-v.dx*S*0.55, tipY=cy-v.dy*S*0.55;
+  const baseX=cx-v.dx*S*0.18, baseY=cy-v.dy*S*0.18;
+  const pX=-v.dy*5, pY=v.dx*5; // perpendiculaire
+  const pts=`${tipX},${tipY} ${baseX+pX},${baseY+pY} ${baseX-pX},${baseY-pY}`;
+  g.appendChild(svgEl('polygon',{points:pts,fill:c.accent,stroke:c.ink,'stroke-width':1.2,'stroke-linejoin':'round'}));
+}
+function drawStairsDown(g,s,X,Y,c){
+  // Escalier en perspective vu de 3/4 + fleche descendante en accent avec halo clair.
+  // Place dans le coin haut-droit de la salle (~1 case).
+  const cx=X(s.x+s.w-0.5),cy=Y(s.y+0.5);
+  const w=S*0.85, h=S*0.78;
+  const x0=cx-w/2, y0=cy-h/2;
+  const N=5;
+  // 5 marches qui retrecissent vers le haut (perspective : on plonge vers le bas)
+  for(let i=0;i<N;i++){
+    const t=i/N;
+    const lw=w*(1-t*0.32);
+    const lx=x0+(w-lw)/2;
+    const ly=y0+i*(h/N);
+    g.appendChild(svgEl('rect',{x:lx,y:ly,width:lw,height:h/N-1,fill:c.paper,stroke:c.ink,'stroke-width':1.2}));
+  }
+  // fleche descendante en accent, centree (legerement au-dessus du milieu pour respirer)
+  const fx=cx;
+  const arrowH=h*0.5;
+  const fy0=y0+(h-arrowH)/3;
+  const fy1=fy0+arrowH;
+  // halo clair dessine en premier pour faire ressortir la fleche accent sur les contours des marches
+  g.appendChild(svgEl('line',{x1:fx,y1:fy0,x2:fx,y2:fy1-2,stroke:c.paper,'stroke-width':4.5,'stroke-linecap':'round'}));
+  g.appendChild(svgEl('polygon',{points:`${fx-6},${fy1-5} ${fx+6},${fy1-5} ${fx},${fy1+3}`,fill:c.paper,stroke:c.paper,'stroke-width':2.5,'stroke-linejoin':'round'}));
+  g.appendChild(svgEl('line',{x1:fx,y1:fy0,x2:fx,y2:fy1-2,stroke:c.accent,'stroke-width':1.8,'stroke-linecap':'round'}));
+  g.appendChild(svgEl('polygon',{points:`${fx-4},${fy1-4} ${fx+4},${fy1-4} ${fx},${fy1+2}`,fill:c.accent}));
+}
+
+/* ============ UI ============ */
+const $=id=>document.getElementById(id);
+let current=null;
+function randSeed(){return Math.random().toString(36).slice(2,8);}
+
+/* ============ R4 : codec d'etat dans l'URL ============ */
+// Tous les controles d'UI <-> location.hash, pour partager un donjon a l'identique.
+const UI_CONTROLS = {
+  seed:'v', size:'v', biome:'v', view:'v', theme:'v',
+  'party-size':'v','party-level':'v',
+  't-sym':'c','t-corr':'c','t-water':'c','t-col':'c',
+  'd-density':'v','w-simple':'v','w-double':'v','w-barred':'v','w-secret':'v',
+  'pp-locks':'c','pp-traps':'c','pp-treasure':'c','pp-occ':'c','pp-rubble':'c','pp-light':'c','pp-props':'c',
+  'lock-rate':'v','light-rate':'v','props-rate':'v',
+};
+// cles courtes pour un hash compact
+const UI_KEY = {seed:'s',size:'sz',biome:'b',view:'vw',theme:'th','party-size':'pn','party-level':'pv',
+  't-sym':'sy','t-corr':'lc','t-water':'wt','t-col':'co',
+  'd-density':'dd','w-simple':'ws','w-double':'wd','w-barred':'wb','w-secret':'wx',
+  'pp-locks':'pl','pp-traps':'pt','pp-treasure':'pr','pp-occ':'po','pp-rubble':'pu','pp-light':'pg','pp-props':'ppr',
+  'lock-rate':'lr','light-rate':'gr','props-rate':'pdr'};
+let suppressHash=false;
+let pendingNotesMode=null;
+function encodeStateToHash(){
+  if(suppressHash)return;
+  const o={};
+  for(const id in UI_CONTROLS){
+    const el=$(id); if(!el)continue;
+    o[UI_KEY[id]] = UI_CONTROLS[id]==='c' ? (el.checked?1:0) : el.value;
+  }
+  o.nm = (typeof notesMode!=='undefined') ? notesMode : 'drawer';
+  const json=JSON.stringify(o);
+  const b64=btoa(unescape(encodeURIComponent(json))).replace(/=+$/,'');
+  history.replaceState(null,'','#d='+b64);
+}
+function applyStateFromHash(){
+  const m=/[#&]d=([^&]+)/.exec(location.hash||''); if(!m)return false;
+  let o; try{o=JSON.parse(decodeURIComponent(escape(atob(m[1]))));}catch(e){return false;}
+  const inv={}; for(const id in UI_KEY)inv[UI_KEY[id]]=id;
+  for(const k in o){
+    const id=inv[k]; if(!id)continue; const el=$(id); if(!el)continue;
+    if(UI_CONTROLS[id]==='c')el.checked=!!o[k]; else el.value=o[k];
+  }
+  if(o.nm)pendingNotesMode=o.nm;
+  return true;
+}
+
+function pctOut(id){return Math.round(parseFloat($(id).value));}
+function currentView(){return {gm: $('view').value==='mj', light:true};}
+function syncOutputs(){
+  $('o-density').textContent=pctOut('d-density')+'%';
+  $('o-lock').textContent=pctOut('lock-rate')+'%';
+  $('o-light').textContent=pctOut('light-rate')+'%';
+  $('o-props').textContent=pctOut('props-rate')+'%';
+  const ws=['simple','double','barred','secret'].map(k=>parseFloat($('w-'+k).value));
+  const sum=Math.max(1,ws.reduce((a,b)=>a+b,0));
+  ['simple','double','barred','secret'].forEach((k,i)=>{$('o-'+k).textContent=Math.round(ws[i]/sum*100)+'%';});
+}
+
+/* ---- Difficulte / budget de PX du groupe (regles D&D 2024) ----
+   TXP24[niveau] = budget de PX par personnage, colonnes [Faible, Modere, Eleve].
+   Source : calculateur officiel aidedd.org (DMG 2024). En 2024 il n'y a PLUS de
+   multiplicateur de rencontre : on additionne les PX des monstres et on compare. */
+const TXP24=[
+  [0,0,0],
+  [50,75,100],[100,150,200],[150,225,400],[250,375,500],[500,750,1100],
+  [600,1000,1400],[750,1300,1700],[1000,1700,2100],[1300,2000,2600],[1600,2300,3100],
+  [1900,2900,4100],[2200,3700,4700],[2600,4200,5400],[2900,4900,6200],[3300,5400,7800],
+  [3800,6100,9800],[4500,7200,11700],[5000,8700,14200],[5500,10700,17200],[6400,13200,22000],
+];
+// budget de PX du groupe (somme par personnage) pour N joueurs de meme niveau
+function partyBudget(nbPJ, level){
+  const t=TXP24[level]||TXP24[1];
+  return {perPJ:t, low:t[0]*nbPJ, moderate:t[1]*nbPJ, high:t[2]*nbPJ};
+}
+function paintDifficulty(){
+  const n=parseInt($('party-size').value,10)||4;
+  const lv=parseInt($('party-level').value,10)||1;
+  const b=partyBudget(n,lv);
+  const f=x=>x.toLocaleString('fr-FR');
+  const rows=[
+    ['#3f9b46','Faible','≤ '+f(b.low)],
+    ['#d98a1f','Modérée','≤ '+f(b.moderate)],
+    ['#c0392b','Élevée','≤ '+f(b.high)],
+    ['#7a1020','Mortelle','> '+f(b.high)],
+  ];
+  let h=`<div class="dhead">Budget de PX d'une rencontre — ${n} PJ · niveau ${lv}</div>`;
+  h+=rows.map(([c,name,val])=>`<div class="dl"><span class="dn"><span class="dot" style="background:${c}"></span>${name}</span><span class="dv">${val} PX</span></div>`).join('');
+  h+=`<div class="dfoot">Règles 2024 : additionnez les PX des monstres d'une rencontre (sans multiplicateur) et comparez à ces seuils. Budget Modéré ≈ ${f(b.perPJ[1])} PX/PJ.</div>`;
+  $('diffPanel').innerHTML=h;
+}
+function build(){
+  syncOutputs();
+  const opts={
+    seed:($('seed').value.trim()||randSeed()),
+    target:parseInt($('size').value,10),
+    symmetry:$('t-sym').checked?0.62:0.18,
+    longCorridors:$('t-corr').checked,
+    water:$('t-water').checked,
+    columns:$('t-col').checked,
+    doorDensity:parseFloat($('d-density').value)/100,
+    doorWeights:{simple:+$('w-simple').value,double:+$('w-double').value,barred:+$('w-barred').value,secret:+$('w-secret').value},
+    lockRate:parseFloat($('lock-rate').value)/100,
+    litRate:parseFloat($('light-rate').value)/100,
+    biome:$('biome').value,
+    props:$('pp-props').checked,
+    propsRate:parseFloat($('props-rate').value)/100,
+    pp:{locks:$('pp-locks').checked,traps:$('pp-traps').checked,treasure:$('pp-treasure').checked,occupants:$('pp-occ').checked,rubble:$('pp-rubble').checked,lighting:$('pp-light').checked},
+  };
+  $('seed').value=opts.seed;
+  document.body.setAttribute('data-theme', $('theme').value);
+  current=generateDungeon(opts);
+  const map=$('map'); map.innerHTML=''; map.appendChild(renderSVG(current, currentView()));
+  paintNotes();
+  paintDifficulty();
+  encodeStateToHash();
+}
+
+/* ---- notes : tri-etat masqué / tiroir / sous la carte ---- */
+let notesMode='drawer';
+function legendRowsHTML(d){
+  const rows=[['simple','Porte'],['double','Porte double'],['barred','Herse / porte barrée'],['secret','Passage secret'],['entree','Entrée du donjon'],['stairsDown','Escalier vers le niveau inférieur']];
+  const pp=d.opts.pp||{};
+  if(pp.locks)rows.push(['locked','Porte verrouillée (DC indiqué)'],['key','Emplacement de la clé (MJ)']);
+  if(pp.traps)rows.push(['trap','Piège (MJ)']);
+  if(pp.treasure)rows.push(['treasure','Trésor (MJ)']);
+  if(pp.lighting)rows.push(['dark','Zone sombre']);
+  if(d.opts.props)rows.push(['prop','Mobilier']);
+  return rows.map(([t,l])=>`<div class="row">${legendIcon(t).outerHTML}<span>${escapeHtml(l)}</span></div>`).join('');
+}
+function notesBodyHTML(d, withTitle){
+  let meta=`Graine ${escapeHtml(d.seed)} . ${d.rooms.length} salles`;
+  if(d.biome)meta+=` . biome : ${escapeHtml(BIOMES[d.biome].label)}`;
+  if(d.faction)meta+=` . occupants : ${escapeHtml(d.faction)}`;
+  let h = withTitle ? `<h2 class="inline-title">${escapeHtml(d.name)}</h2>` : '';
+  h+=`<p class="sub">${meta}</p><ol class="notes">`;
+  for(const r of d.rooms){
+    h+=`<li class="${r.gm&&r.gm.length?'has-gm':''}"><span class="num">${r.number}</span><span>${escapeHtml(r.note)}`;
+    if(r.gm)for(const g of r.gm)h+=`<span class="gm-line"><b>MJ : </b>${escapeHtml(g)}</span>`;
+    h+=`</span></li>`;
+  }
+  h+=`</ol><div class="legend"><h3>Légende</h3>${legendRowsHTML(d)}</div>`;
+  return h;
+}
+function paintNotes(){
+  if(!current)return;
+  $('dname').textContent=current.name;
+  const drawer=$('notesHostDrawer'), inline=$('notesInline');
+  if(notesMode==='hidden'){drawer.innerHTML='';inline.innerHTML='';return;}
+  if(notesMode==='inline'){inline.innerHTML=notesBodyHTML(current,true);drawer.innerHTML='';}
+  else{drawer.innerHTML=notesBodyHTML(current,false);inline.innerHTML='';}
+}
+function applyNotesMode(mode){
+  notesMode=mode;
+  document.body.classList.toggle('notes-inline-on', mode==='inline');
+  document.querySelectorAll('#notesSeg [data-nmode]').forEach(b=>b.classList.toggle('on',b.dataset.nmode===mode));
+  $('btn-notes').style.display = mode==='hidden' ? 'none' : '';
+  if(mode!=='drawer')closeSheet('notesPanel');
+  paintNotes();
+  if(typeof encodeStateToHash==='function')encodeStateToHash();
+}
+function legendIcon(type){
+  const ns='http://www.w3.org/2000/svg';const s=document.createElementNS(ns,'svg');
+  s.setAttribute('width',34);s.setAttribute('height',20);s.setAttribute('viewBox','0 0 34 20');
+  const cs=getComputedStyle(document.body);const ink=cs.getPropertyValue('--line').trim(),paper=cs.getPropertyValue('--paper').trim(),accent=cs.getPropertyValue('--accent').trim();
+  const ln=(x1,y1,x2,y2,w,col,dash)=>{const l=document.createElementNS(ns,'line');l.setAttribute('x1',x1);l.setAttribute('y1',y1);l.setAttribute('x2',x2);l.setAttribute('y2',y2);l.setAttribute('stroke',col||ink);l.setAttribute('stroke-width',w||2);if(dash)l.setAttribute('stroke-dasharray',dash);s.appendChild(l);};
+  const rc=(x,y,w,h,dash,fill)=>{const r=document.createElementNS(ns,'rect');r.setAttribute('x',x);r.setAttribute('y',y);r.setAttribute('width',w);r.setAttribute('height',h);r.setAttribute('fill',fill||paper);r.setAttribute('stroke',ink);r.setAttribute('stroke-width',1.6);if(dash)r.setAttribute('stroke-dasharray',dash);s.appendChild(r);};
+  const circ=(x,y,r,col,fill)=>{const e=document.createElementNS(ns,'circle');e.setAttribute('cx',x);e.setAttribute('cy',y);e.setAttribute('r',r);e.setAttribute('stroke',col||ink);e.setAttribute('fill',fill||'none');e.setAttribute('stroke-width',1.6);s.appendChild(e);};
+  const txt=(x,y,t,col,fs)=>{const e=document.createElementNS(ns,'text');e.setAttribute('x',x);e.setAttribute('y',y);e.setAttribute('text-anchor','middle');e.setAttribute('font-size',fs||8);e.setAttribute('fill',col||ink);if(fs>8)e.setAttribute('font-weight',700);e.textContent=t;s.appendChild(e);};
+  const wallTypes=['simple','locked','double','barred','secret','entree'];
+  if(wallTypes.includes(type))ln(0,10,34,10,3);
+  if(type==='simple'){rc(11,6,12,8);}
+  else if(type==='locked'){rc(11,6,12,8,null,accent);circ(17,10,1.6,paper,paper);}
+  else if(type==='double'){rc(7,6,9,8);rc(18,6,9,8);}
+  else if(type==='barred'){rc(9,6,16,8);ln(13,3,13,17,1.3);ln(17,3,17,17,1.3);ln(21,3,21,17,1.3);}
+  else if(type==='secret'){rc(11,6,12,8,'2 2');txt(17,13,'S',ink,8);}
+  else if(type==='entree'){rc(11,6,12,8,null,accent);const p=document.createElementNS(ns,'polygon');p.setAttribute('points','17,4 13,8 21,8');p.setAttribute('fill',accent);s.appendChild(p);}
+  else if(type==='stairsDown'){
+    // mini marches en perspective + fleche accent avec halo, version compacte (zone 34x20).
+    const cx=17, cy=10, w=14, h=14, x0=cx-w/2, y0=cy-h/2, N=4;
+    for(let i=0;i<N;i++){
+      const t=i/N, lw=w*(1-t*0.32), lx=x0+(w-lw)/2, ly=y0+i*(h/N);
+      rc(lx,ly,lw,h/N-0.6);
+    }
+    const fx=cx, arrowH=h*0.5, fy0=y0+(h-arrowH)/3, fy1=fy0+arrowH;
+    ln(fx,fy0,fx,fy1-1,3.5,paper);
+    const ph=document.createElementNS(ns,'polygon');ph.setAttribute('points',`${fx-4},${fy1-3} ${fx+4},${fy1-3} ${fx},${fy1+2}`);ph.setAttribute('fill',paper);ph.setAttribute('stroke',paper);ph.setAttribute('stroke-width',2);ph.setAttribute('stroke-linejoin','round');s.appendChild(ph);
+    ln(fx,fy0,fx,fy1-1,1.4,accent);
+    const pa=document.createElementNS(ns,'polygon');pa.setAttribute('points',`${fx-3},${fy1-3} ${fx+3},${fy1-3} ${fx},${fy1+1.5}`);pa.setAttribute('fill',accent);s.appendChild(pa);
+  }
+  else if(type==='key'){circ(11,10,3.2,accent);ln(13.6,10,21,10,1.8,accent);ln(18,10,18,13,1.8,accent);ln(21,10,21,13.5,1.8,accent);}
+  else if(type==='trap'){const p=document.createElementNS(ns,'polygon');p.setAttribute('points','17,4 10,16 24,16');p.setAttribute('fill','none');p.setAttribute('stroke',accent);p.setAttribute('stroke-width',1.6);s.appendChild(p);txt(17,15,'!',accent,8);}
+  else if(type==='treasure'){rc(11,7,12,8);ln(11,10,23,10,1.2);const r=document.createElementNS(ns,'rect');r.setAttribute('x',16);r.setAttribute('y',9);r.setAttribute('width',2);r.setAttribute('height',3);r.setAttribute('fill',accent);s.appendChild(r);}
+  else if(type==='brazier'){const b=document.createElementNS(ns,'path');b.setAttribute('d','M11 12 L23 12 L21 16 L13 16 Z');b.setAttribute('fill',ink);s.appendChild(b);for(let i=-1;i<=1;i++){const f=document.createElementNS(ns,'path');f.setAttribute('d',`M ${17+i*3} 11 q 1.4 -3 0 -6 q -1.4 3 0 6 Z`);f.setAttribute('fill',accent);s.appendChild(f);}}
+  else if(type==='dark'){const r=document.createElementNS(ns,'rect');r.setAttribute('x',6);r.setAttribute('y',3);r.setAttribute('width',22);r.setAttribute('height',14);r.setAttribute('fill','#0a0a0f');r.setAttribute('opacity','0.42');s.appendChild(r);}
+  else if(type==='prop'){rc(10,8,14,3);ln(11,11,11,16,1.2);ln(23,11,23,16,1.2);}
+  return s;
+}
+function buildLegend(){ paintNotes(); }
+
+/* exports */
+function svgString(){const svg=$('map').querySelector('svg');return '<?xml version="1.0" encoding="UTF-8"?>\n'+new XMLSerializer().serializeToString(svg);}
+function download(name,blob){const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),2000);}
+function exportSVG(){download(`donjon-${current.seed}.svg`,new Blob([svgString()],{type:'image/svg+xml'}));}
+function exportPNG(){
+  const svg=$('map').querySelector('svg');const w=+svg.getAttribute('width'),h=+svg.getAttribute('height');const scale=2;
+  const img=new Image();const blob=new Blob([svgString()],{type:'image/svg+xml'});const url=URL.createObjectURL(blob);
+  img.onload=()=>{const cv=document.createElement('canvas');cv.width=w*scale;cv.height=h*scale;const ctx=cv.getContext('2d');ctx.scale(scale,scale);ctx.drawImage(img,0,0);URL.revokeObjectURL(url);cv.toBlob(bl=>download(`donjon-${current.seed}.png`,bl),'image/png');};
+  img.src=url;
+}
+function exportJSON(){
+  const data={name:current.name,seed:current.seed,biome:current.biome,faction:current.faction,bounds:current.bounds,
+    rooms:current.rooms.map(r=>({id:r.id,number:r.number,x:r.x,y:r.y,w:r.w,h:r.h,water:r.water,columns:r.columns,stairsDown:r.stairsDown,isEntrance:!!r.isEntrance,
+      hasKey:!!r.hasKey,trap:r.trap||null,treasure:r.treasure||null,occupant:r.occupant||null,light:r.light||null,props:r.props,note:r.note,gm:r.gm})),
+    corridors:current.spaces.filter(s=>s.type==='corr').map(s=>({x:s.x,y:s.y,w:s.w,h:s.h,rubble:!!s.rubble,light:s.light||null})),
+    doors:current.doors.map(dr=>({cx:dr.cx,cy:dr.cy,type:dr.type,dc:dr.dc||null,difficulty:dr.diff||null,keyRoom:dr.keyRoom||null})),
+    stairs:current.stairs, waterSteps:current.waterSteps};
+  download(`donjon-${current.seed}.json`,new Blob([JSON.stringify(data,null,2)],{type:'application/json'}));
+}
+
+/* impression : 3 pages (carte MJ, documentation, carte joueur) */
+function escapeHtml(s){return String(s==null?'':s).replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));}
+function buildPrintDoc(d){
+  let h=`<h1 class="ptitle">${escapeHtml(d.name)}</h1>`;
+  if(d.hook)h+=`<p class="phook">${escapeHtml(d.hook)}</p>`;
+  let meta=`Graine ${escapeHtml(d.seed)} . ${d.rooms.length} salles`;
+  if(d.faction)meta+=` . occupants : ${escapeHtml(d.faction)}`;
+  h+=`<p class="pmeta">${meta}</p><ol class="pnotes">`;
+  for(const r of d.rooms){
+    h+=`<li><span class="pnum">${r.number}</span><span>${escapeHtml(r.note)}`;
+    for(const g of (r.gm||[]))h+=`<span class="pgm">MJ : ${escapeHtml(g)}</span>`;
+    h+=`</span></li>`;
+  }
+  h+=`</ol><div class="plegend"><h2>Légende</h2>`;
+  const rows=[['simple','Porte'],['double','Porte double'],['barred','Herse / porte barrée'],['secret','Passage secret'],['entree','Entrée'],['stairsDown','Escalier descendant']];
+  const pp=d.opts.pp||{};
+  if(pp.locks)rows.push(['locked','Porte verrouillée'],['key','Clé (MJ)']);
+  if(pp.traps)rows.push(['trap','Piège (MJ)']);
+  if(pp.treasure)rows.push(['treasure','Trésor (MJ)']);
+  if(pp.lighting)rows.push(['dark','Zone sombre']);
+  if(d.opts.props)rows.push(['prop','Mobilier']);
+  for(const [t,l] of rows)h+=`<div class="prow">${legendIcon(t).outerHTML}<span>${escapeHtml(l)}</span></div>`;
+  h+=`</div>`;
+  return h;
+}
+function printDungeon(){
+  if(!current)return;
+  const gm=renderSVG(current,{gm:true,light:true});
+  const player=renderSVG(current,{gm:false,light:true});
+  [gm,player].forEach(s=>{s.removeAttribute('width');s.removeAttribute('height');s.setAttribute('style','width:auto;max-width:100%;height:auto');});
+  const area=$('printArea'); area.innerHTML='';
+  const page=(cls,inner)=>{const e=document.createElement('section');e.className='page '+cls;e.innerHTML=inner;return e;};
+  const pMJ=page('map',`<div class="ptitle">${escapeHtml(current.name)}</div><div class="tag">Carte du MJ</div>`); pMJ.appendChild(gm);
+  const pDoc=page('doc',buildPrintDoc(current));
+  const pPl=page('map',`<div class="ptitle">${escapeHtml(current.name)}</div><div class="tag">Carte des joueurs</div>`); pPl.appendChild(player);
+  area.appendChild(pMJ); area.appendChild(pDoc); area.appendChild(pPl);
+  window.print();
+}
+
+/* listeners */
+$('gen').addEventListener('click',()=>{ $('seed').value=randSeed(); build(); });
+$('rand').addEventListener('click',()=>{ $('seed').value=randSeed(); build(); });
+$('seed').addEventListener('keydown',e=>{if(e.key==='Enter')build();});
+$('size').addEventListener('change',build);
+$('t-sym').addEventListener('change',build);
+$('t-corr').addEventListener('change',build);
+$('t-water').addEventListener('change',build);
+$('t-col').addEventListener('change',build);
+['d-density','w-simple','w-double','w-barred','w-secret','lock-rate','light-rate','props-rate'].forEach(id=>$(id).addEventListener('input',build));
+['pp-locks','pp-traps','pp-treasure','pp-occ','pp-rubble','pp-light','pp-props'].forEach(id=>$(id).addEventListener('change',build));
+$('biome').addEventListener('change',build);
+$('theme').addEventListener('change',build);
+// Groupe d'aventuriers : n'affecte pas la generation, seulement le calcul de difficulte
+['party-size','party-level'].forEach(id=>$(id).addEventListener('change',()=>{paintDifficulty();encodeStateToHash();}));
+$('view').addEventListener('change',()=>{if(current){const map=$('map');map.innerHTML='';map.appendChild(renderSVG(current,currentView()));}encodeStateToHash();});
+$('png').addEventListener('click',exportPNG);
+$('svg').addEventListener('click',exportSVG);
+$('json').addEventListener('click',exportJSON);
+$('print').addEventListener('click',printDungeon);
+$('share').addEventListener('click',()=>{
+  encodeStateToHash();
+  const url=location.href;
+  const done=()=>{const b=$('share');const old=b.textContent;b.textContent='Lien copié';setTimeout(()=>b.textContent=old,1400);};
+  if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(url).then(done,done);
+  else{const t=document.createElement('textarea');t.value=url;document.body.appendChild(t);t.select();try{document.execCommand('copy');}catch(e){}t.remove();done();}
+});
+
+/* tiroirs (sheets) - Options (gauche) et Notes (droite) sont independants, ils peuvent
+   etre ouverts simultanement. Le scrim reste si au moins un est ouvert (utile sur mobile). */
+function syncScrim(){
+  const anyOpen=document.querySelectorAll('.sheet.open').length>0;
+  $('scrim').classList.toggle('show', anyOpen);
+}
+function closeSheets(){document.querySelectorAll('.sheet.open').forEach(s=>s.classList.remove('open'));syncScrim();}
+function closeSheet(id){const el=$(id);if(el)el.classList.remove('open');syncScrim();}
+function toggleSheet(id){const el=$(id);el.classList.toggle('open');syncScrim();}
+// Sur desktop (>=721px), Options et Notes s'ouvrent par defaut : les tiroirs flottent sur les
+// cotes (sans scrim). Sur mobile on garde tout ferme. Notes ne s'ouvre qu'en mode "drawer"
+// (respecte un etat inline/masque restaure depuis une URL partagee).
+function openDefaultSheets(){
+  if(!window.matchMedia('(min-width:721px)').matches)return;
+  $('optionsPanel').classList.add('open');
+  if(notesMode==='drawer')$('notesPanel').classList.add('open');
+  syncScrim();
+}
+$('btn-options').addEventListener('click',()=>toggleSheet('optionsPanel'));
+$('btn-notes').addEventListener('click',()=>{
+  if(notesMode==='drawer')toggleSheet('notesPanel');
+  else if(notesMode==='inline'){closeSheets();const n=$('notesInline');if(n)n.scrollIntoView({behavior:'smooth',block:'start'});}
+});
+document.querySelectorAll('#notesSeg [data-nmode]').forEach(btn=>btn.addEventListener('click',()=>applyNotesMode(btn.dataset.nmode)));
+$('scrim').addEventListener('click',closeSheets);
+// Le bouton x ferme uniquement le sheet parent (pas les autres)
+document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',e=>{
+  const sheet=e.currentTarget.closest('.sheet'); if(sheet){sheet.classList.remove('open');syncScrim();}
+}));
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeSheets();});
+document.addEventListener('keydown',e=>{if(e.code==='Space'&&e.target.tagName!=='INPUT'){e.preventDefault();$('seed').value=randSeed();build();}});
+
+// Initialisation : etat partage via URL, sinon graine aleatoire
+if(!applyStateFromHash())$('seed').value=randSeed();
+build();
+if(pendingNotesMode)applyNotesMode(pendingNotesMode);
+openDefaultSheets(); </script> </body> </html>
