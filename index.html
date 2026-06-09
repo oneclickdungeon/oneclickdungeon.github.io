@@ -1,4 +1,4 @@
-<!DOCTYPE html> <html lang="fr"> <head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width,initial-scale=1"> <title>One Click Dungeon</title> <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=IM+Fell+English:ital@0;1&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" media="print" onload="this.media='all'" onerror="this.remove()"> <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=IM+Fell+English:ital@0;1&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap"></noscript> <style>:root{--paper:#efe6d0;--paper2:#e7dcc0;--ink:#23201a;--ink-soft:#5b5345;--line:#2a2620;--grid:rgba(60,52,38,.16);--accent:#7a3b2e;--water:#9fb7b0;--panel:#f6efdc;--edge:#cdbd97}[data-theme=plan]{--paper:#16314a;--paper2:#12283c;--ink:#dce9f4;--ink-soft:#9db8cf;--line:#cfe2f2;--grid:rgba(200,224,245,.16);--accent:#e8b04b;--water:#2c5a6e;--panel:#102a3f;--edge:#27506f}[data-theme=encre]{--paper:#1c1a17;--paper2:#161412;--ink:#e9e2d2;--ink-soft:#a99f8a;--line:#e9e2d2;--grid:rgba(233,226,210,.13);--accent:#c8693f;--water:#324b4b;--panel:#211e19;--edge:#3a342b}:root{--field:color-mix(in srgb, var(--ink) 8%, var(--panel));--chip:color-mix(in srgb, var(--ink) 6%, var(--panel));--chip-on:color-mix(in srgb, var(--accent) 16%, var(--panel));--hair:color-mix(in srgb, var(--ink) 12%, transparent);--shadow:0 18px 50px -12px rgba(0,0,0,.35)}*{box-sizing:border-box}body,html{margin:0;height:100%}body{background:radial-gradient(120% 120% at 50% 0,var(--paper) 0,var(--paper2) 100%);color:var(--ink);font-family:"EB Garamond",Georgia,serif;-webkit-font-smoothing:antialiased;height:100vh;overflow:hidden;display:flex;flex-direction:column}.app{flex:1 1 auto;display:flex;flex-direction:column;min-height:0}.topbar{flex:0 0 auto;height:56px;display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--panel);box-shadow:0 1px 0 var(--hair),0 8px 22px -16px rgba(0,0,0,.4);z-index:50}.brand{font-family:"IM Fell English SC","EB Garamond",Georgia,"Times New Roman",serif;font-size:18px;letter-spacing:.5px;white-space:nowrap}.brand span{color:var(--ink-soft)}.grow{flex:1}.btn{cursor:pointer;border:0;border-radius:999px;padding:9px 16px;font-family:"EB Garamond",serif;font-size:14px;background:var(--field);color:var(--ink);transition:transform .06s ease,background .15s ease;white-space:nowrap}.btn:hover{background:var(--chip-on)}.btn:active{transform:translateY(1px)}.btn.primary{background:var(--accent);color:#fff;font-weight:600}.btn.ghost{background:0 0}.btn.ghost:hover{background:var(--field)}.btn.small{padding:7px 12px;font-size:13px}.stage{flex:1 1 auto;min-height:0;position:relative;overflow:auto;display:flex;align-items:flex-start;justify-content:center;padding:18px}.stage-col{display:flex;flex-direction:column;align-items:center;gap:18px;width:100%;max-width:1100px;margin:0 auto}.stage svg{max-width:100%;height:auto;filter:drop-shadow(0 14px 34px rgba(0,0,0,.22))}#notesInline{display:none;width:100%;max-width:780px;background:var(--panel);border-radius:16px;padding:18px 22px 24px;box-shadow:0 16px 40px -22px rgba(0,0,0,.45)}body.notes-inline-on #notesInline{display:block}.inline-title{font-family:"IM Fell English","EB Garamond",Georgia,"Times New Roman",serif;font-style:italic;font-size:22px;margin:0 0 4px;line-height:1.15}.seg{display:flex;width:100%;background:var(--chip);border-radius:12px;padding:3px}.seg button{flex:1;border:0;background:0 0;color:var(--ink-soft);padding:8px 6px;border-radius:10px;font-family:"EB Garamond",serif;font-size:13px;cursor:pointer;white-space:nowrap;transition:background .15s ease,color .15s ease}.seg button.on{background:var(--accent);color:#fff;font-weight:600}input[type=text],select{background:var(--field);color:var(--ink);border:0;border-radius:10px;padding:9px 11px;font-family:"EB Garamond",serif;font-size:14px;width:100%}select{appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--ink-soft) 50%),linear-gradient(135deg,var(--ink-soft) 50%,transparent 50%);background-position:calc(100% - 16px) 17px,calc(100% - 11px) 17px;background-size:5px 5px,5px 5px;background-repeat:no-repeat;padding-right:30px}.row{display:flex;gap:8px;align-items:center}.row .btn{flex:0 0 auto}.chips{display:flex;flex-wrap:wrap;gap:8px}.chip{display:inline-flex;align-items:center;gap:7px;padding:8px 13px;border-radius:999px;background:var(--chip);cursor:pointer;font-size:13px;color:var(--ink-soft);user-select:none;transition:background .15s ease,color .15s ease}.chip input{position:absolute;opacity:0;pointer-events:none}.chip:has(input:checked){background:var(--chip-on);color:var(--accent);font-weight:600}.rng{display:grid;grid-template-columns:1fr auto;align-items:center;gap:2px 8px;font-size:13px;color:var(--ink-soft);margin:10px 0}.rng input[type=range]{grid-column:1/-1;width:100%;accent-color:var(--accent)}.rng output{font-variant-numeric:tabular-nums}.rng.sub{margin:6px 0 12px;padding-left:13px;opacity:.92}.sec{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-soft);margin:20px 0 9px}.sec:first-child{margin-top:4px}.stack{display:grid;gap:9px}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:9px 14px}.note-mini{font-size:11px;color:var(--ink-soft);opacity:.75;margin:8px 0 0}.fld{display:grid;gap:5px;font-size:11px;letter-spacing:.6px;text-transform:uppercase;color:var(--ink-soft)}.diff{margin:12px 0 2px;background:var(--chip);border-radius:12px;padding:12px 13px}.diff .dhead{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--ink-soft);margin-bottom:9px}.diff .dl{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:14px;margin:6px 0}.diff .dn{display:flex;align-items:center;gap:9px;color:var(--ink-soft)}.diff .dot{width:9px;height:9px;border-radius:50%;flex:0 0 auto}.diff .dv{font-variant-numeric:tabular-nums;font-weight:600;color:var(--ink)}.diff .dfoot{font-size:11px;color:var(--ink-soft);opacity:.82;margin-top:10px;line-height:1.45}.sheet{position:fixed;z-index:40;background:var(--panel);color:var(--ink);box-shadow:var(--shadow);display:flex;flex-direction:column;transition:transform .28s cubic-bezier(.4,0,.2,1);overscroll-behavior:contain;z-index:60;top:56px;height:calc(100vh - 56px);width:min(390px,94vw)}#optionsPanel{left:0;transform:translateX(-103%)}#optionsPanel.open{transform:translateX(0)}#notesPanel{right:0;transform:translateX(103%)}#notesPanel.open{transform:translateX(0)}.sheet.open{transform:none}.sheet-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:16px 18px 6px;position:relative}.sheet-head h2{margin:0;font-family:"IM Fell English","EB Garamond",Georgia,"Times New Roman",serif;font-style:italic;font-size:20px;line-height:1.15}.sheet .x{border:0;background:0 0;font-size:16px;cursor:pointer;color:var(--ink-soft);padding:8px;border-radius:10px;line-height:1}.sheet .x:hover{background:var(--field)}.sheet-body{padding:6px 18px 30px;overflow:auto}#scrim{position:fixed;inset:0;background:rgba(0,0,0,.4);opacity:0;visibility:hidden;transition:opacity .25s ease;z-index:40}#scrim.show{opacity:1;visibility:visible}@media (min-width:721px){#scrim.show{opacity:0;visibility:hidden}}.sub{font-size:12px;color:var(--ink-soft);margin:0 0 14px}.notes{list-style:none;margin:0;padding:0}.notes li{display:flex;gap:10px;padding:11px 0;font-size:14px;line-height:1.4}.notes li+li{box-shadow:0 -1px 0 var(--hair)}.num{flex:0 0 auto;width:22px;height:22px;border-radius:50%;background:var(--field);color:var(--ink);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600}.notes li.has-gm .num{background:var(--chip-on);color:var(--accent)}.gm-line{display:block;font-size:12.5px;color:var(--accent);margin-top:3px}.gm-line b{font-weight:600}.enc-line{line-height:1.6}button.mob{display:inline;border:0;padding:1px 6px;margin:1px 0;border-radius:999px;cursor:pointer;font-family:"EB Garamond",serif;font-size:12.5px;font-weight:600;line-height:1.3;background:var(--chip-on);color:var(--accent);transition:background .12s ease}button.mob:hover{background:color-mix(in srgb,var(--accent) 28%,var(--panel))}.ogl-note{font-size:10.5px;color:var(--ink-soft);opacity:.7;margin-top:16px;line-height:1.45}.mob-pop{position:fixed;z-index:80;background:var(--panel);color:var(--ink);border:1px solid var(--edge);border-radius:14px;box-shadow:var(--shadow);padding:14px 16px 16px;max-width:94vw;max-height:calc(100vh - 24px);overflow:auto;overscroll-behavior:contain;font-family:"EB Garamond",Georgia,serif}.mob-pop[hidden]{display:none}.mob-pop .mp-x{position:absolute;top:8px;right:8px;border:0;background:0 0;cursor:pointer;color:var(--ink-soft);font-size:15px;line-height:1;padding:6px;border-radius:8px}.mob-pop .mp-x:hover{background:var(--field)}.mob-pop .mp-name{margin:0 22px 2px 0;font-family:"IM Fell English","EB Garamond",Georgia,serif;font-style:italic;font-size:19px;line-height:1.15;color:var(--ink)}.mob-pop .mp-orig{font-size:12px;color:var(--ink-soft);margin-bottom:2px}.mob-pop .mp-type{font-size:12px;color:var(--ink-soft);font-style:italic;margin-bottom:10px}.mob-pop .mp-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:6px 8px;margin-bottom:10px}.mob-pop .mp-stats>div{background:var(--chip);border-radius:8px;padding:5px 7px;display:flex;flex-direction:column}.mob-pop .mp-stats .mp-wide{grid-column:1/-1;flex-direction:row;align-items:baseline;gap:8px}.mob-pop .mp-stats span{font-size:10px;letter-spacing:.6px;text-transform:uppercase;color:var(--ink-soft)}.mob-pop .mp-stats b{font-size:15px;font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums}.mob-pop .mp-abil{display:grid;grid-template-columns:repeat(6,1fr);gap:5px;margin-bottom:12px}.mob-pop .mp-abil>div{text-align:center;background:var(--chip);border-radius:8px;padding:5px 2px}.mob-pop .mp-abil span{display:block;font-size:9.5px;letter-spacing:.5px;color:var(--ink-soft)}.mob-pop .mp-abil b{display:block;font-size:14px;font-weight:600;color:var(--ink)}.mob-pop .mp-abil i{display:block;font-size:10px;color:var(--accent);font-style:normal}.mob-pop .mp-link{display:inline-block;font-size:12.5px;color:var(--accent);text-decoration:none;font-weight:600}.mob-pop .mp-link:hover{text-decoration:underline}.mob-pop .mp-toggle{display:block;width:100%;margin:0 0 10px;padding:7px 10px;cursor:pointer;border:0;border-radius:9px;background:var(--chip);color:var(--accent);font-weight:600;font-family:"EB Garamond",serif;font-size:12.5px;text-align:left;transition:background .12s ease}.mob-pop .mp-toggle:hover{background:var(--chip-on)}.mob-pop .mp-sections{margin-bottom:12px;border-top:1px solid var(--hair);padding-top:4px}.mob-pop .mp-sec{margin-top:10px}.mob-pop .mp-sec h4{margin:0 0 4px;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--accent)}.mob-pop .mp-intro{margin:0 0 6px;font-size:12px;color:var(--ink-soft);font-style:italic;line-height:1.4}.mob-pop .mp-entry{margin:0 0 6px;font-size:12.5px;line-height:1.42;color:var(--ink)}.mob-pop .mp-entry b{color:var(--ink)}@media (max-width:720px){.mob-pop.open{left:0!important;right:0;bottom:0;top:auto!important;width:auto!important;max-width:none;max-height:82vh;border-radius:16px 16px 0 0;border-bottom:0;padding-bottom:24px}}.legend{margin-top:20px}.legend h3{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-soft);margin:0 0 8px}.legend .row{display:flex;align-items:center;gap:10px;font-size:13px;margin:6px 0;color:var(--ink-soft)}.legend svg{flex:0 0 auto}.hint{font-size:11px;color:var(--ink-soft);opacity:.8;margin-top:18px}@media (max-width:720px){.brand span{display:none}.stage{padding:10px}#notesPanel,#optionsPanel,.sheet{top:auto;left:0;right:0;bottom:0;width:auto;height:auto;max-height:86vh;transform:translateY(103%);border-radius:18px 18px 0 0}#notesPanel.open,#optionsPanel.open,.sheet.open{transform:translateY(0)}.sheet-head{padding-top:22px}.sheet-head::before{content:"";position:absolute;top:8px;left:50%;transform:translateX(-50%);width:42px;height:4px;border-radius:2px;background:var(--hair)}.grid2{grid-template-columns:1fr 1fr}}#printArea{display:none}#printArea .ptitle{font-family:"IM Fell English SC","EB Garamond",Georgia,"Times New Roman",serif;font-weight:400;font-size:26px;text-align:center;margin:0 0 4px}#printArea .tag{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#7a3b2e;text-align:center;margin-bottom:12px}#printArea .phook{font-style:italic;text-align:center;max-width:60ch;margin:0 auto 10px;font-size:15px}#printArea .pmeta{text-align:center;color:#5b5345;font-size:12px;margin:0 0 18px}#printArea .pnotes{list-style:none;padding:0;margin:0;columns:2;column-gap:28px}#printArea .pnotes li{break-inside:avoid;display:flex;gap:8px;margin:0 0 10px;font-size:13px;line-height:1.35}#printArea .pnum{flex:0 0 auto;width:20px;height:20px;border:1.4px solid #23201a;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600}#printArea .pgm{display:block;color:#7a3b2e;font-size:12px;margin-top:2px}#printArea .plegend{margin-top:16px;border-top:1px solid #cdbd97;padding-top:10px;break-inside:avoid}#printArea .plegend h2{font-family:"IM Fell English SC","EB Garamond",Georgia,"Times New Roman",serif;font-weight:400;font-size:14px;letter-spacing:1px;margin:0 0 8px}#printArea .prow{display:inline-flex;align-items:center;gap:8px;margin:4px 16px 4px 0;font-size:12px;color:#5b5345}@media print{@page{margin:1cm}body{overflow:visible;background:#fff;display:block}body>:not(#printArea){display:none!important}#printArea{display:block!important}#printArea .page{page-break-after:always;padding:0 0 .5cm;display:flex;flex-direction:column;align-items:center}#printArea .page:last-child{page-break-after:auto}#printArea .page.map svg{width:auto;max-width:100%;max-height:23cm;display:block}#printArea .page.doc{align-items:stretch}}</style> </head> <body data-theme="parchemin"> <div class="app"> <header class="topbar"> <div class="brand">One Click<span> Dungeon</span></div> <div class="grow"></div> <button id="btn-options" class="btn ghost small">Options</button> <button id="gen" class="btn primary">Générer</button> <button id="btn-notes" class="btn ghost small">Notes</button> <div class="grow"></div> </header> <main class="stage"><div class="stage-col"><div id="map"></div><section id="notesInline"></section></div></main> </div> <section id="optionsPanel" class="sheet" aria-label="Options"> <div class="sheet-head"><h2>Options</h2><button class="x" data-close aria-label="Fermer">✕</button></div> <div class="sheet-body"> <div class="sec">Donjon</div> <div class="stack"> <div class="row"> <input id="seed" type="text" spellcheck="false" placeholder="graine"> <button id="rand" class="btn small" title="Graine aléatoire">Aléatoire</button> </div> <div class="grid2"> <select id="size" aria-label="Taille"> <option value="9">Petit</option> <option value="16" selected="selected">Moyen</option> <option value="26">Grand</option> <option value="38">Vaste</option> </select> <select id="view" aria-label="Vue"> <option value="mj" selected="selected">Vue MJ</option> <option value="player">Vue joueur</option> </select> <select id="biome" aria-label="Biome"> <option value="" selected="selected">Générique</option> <option value="auto">Auto</option> <option value="crypte">Crypte</option> <option value="donjon">Donjon / Prison</option> <option value="grotte">Grotte</option> <option value="temple">Temple</option> <option value="egout">Égout</option> <option value="mine">Mine</option> <option value="catacombes">Catacombes</option> <option value="manoir">Manoir hanté</option> <option value="sanctuaire">Sanctuaire</option> <option value="ruines">Ruines</option> <option value="postapo">Post-apocalyptique</option> <option value="cyberpunk">Cyberpunk</option> <option value="moderne">Moderne</option> <option value="dcc">Dungeon Crawler Carl</option> </select> <select id="theme" aria-label="Thème"> <option value="parchemin" selected="selected">Parchemin</option> <option value="plan">Plan bleu</option> <option value="encre">Encre sombre</option> </select> </div> </div> <div class="sec">Groupe d'aventuriers</div> <div class="grid2"> <label class="fld">Joueurs <select id="party-size" aria-label="Nombre de joueurs"> <option>1</option><option>2</option><option>3</option> <option value="4" selected="selected">4</option><option>5</option><option>6</option> <option>7</option><option>8</option><option>9</option><option>10</option> </select> </label> <label class="fld">Niveau du groupe <select id="party-level" aria-label="Niveau du groupe"> <option>1</option><option>2</option><option value="3" selected="selected">3</option> <option>4</option><option>5</option><option>6</option><option>7</option> <option>8</option><option>9</option><option>10</option><option>11</option> <option>12</option><option>13</option><option>14</option><option>15</option> <option>16</option><option>17</option><option>18</option><option>19</option><option>20</option> </select> </label> </div> <div id="diffPanel" class="diff" aria-live="polite"></div> <div class="sec">Affichage des notes</div> <div class="seg" id="notesSeg"> <button type="button" data-nmode="hidden">Masqué</button> <button type="button" data-nmode="drawer" class="on">Tiroir</button> <button type="button" data-nmode="inline">Sous la carte</button> </div> <div class="sec">Structure</div> <div class="chips"> <label class="chip"><input type="checkbox" id="t-sym" checked="checked"><span>Symétrie locale</span></label> <label class="chip"><input type="checkbox" id="t-corr"><span>Longs couloirs</span></label> <label class="chip"><input type="checkbox" id="t-water" checked="checked"><span>Eau</span></label> <label class="chip"><input type="checkbox" id="t-col" checked="checked"><span>Colonnades</span></label> </div> <div class="sec">Portes</div> <div class="rng">Proportion de portes <output id="o-density">70%</output> <input type="range" id="d-density" min="0" max="100" value="70"></div> <div class="grid2"> <div class="rng">Simple <output id="o-simple"></output><input type="range" id="w-simple" min="0" max="100" value="55"></div> <div class="rng">Double <output id="o-double"></output><input type="range" id="w-double" min="0" max="100" value="15"></div> <div class="rng">Herse <output id="o-barred"></output><input type="range" id="w-barred" min="0" max="100" value="15"></div> <div class="rng">Secrète <output id="o-secret"></output><input type="range" id="w-secret" min="0" max="100" value="15"></div> </div> <p class="note-mini">Le reste des ouvertures devient des passages ouverts (arches).</p> <div class="sec">Contenu (repères MJ)</div> <div class="chips"> <label class="chip"><input type="checkbox" id="pp-locks"><span>Verrous et clés</span></label> <label class="chip"><input type="checkbox" id="pp-traps"><span>Pièges</span></label> <label class="chip"><input type="checkbox" id="pp-treasure"><span>Trésors</span></label> <label class="chip"><input type="checkbox" id="pp-occ"><span>Occupants</span></label> <label class="chip"><input type="checkbox" id="pp-rubble"><span>Éboulis</span></label> <label class="chip"><input type="checkbox" id="pp-light"><span>Éclairage</span></label> <label class="chip"><input type="checkbox" id="pp-props"><span>Props</span></label> </div> <div class="rng sub">Taux de verrous <output id="o-lock">25%</output><input type="range" id="lock-rate" min="0" max="100" value="25"></div> <div class="rng sub">Salles éclairées <output id="o-light">40%</output><input type="range" id="light-rate" min="0" max="100" value="40"></div> <div class="rng sub">Densité de props <output id="o-props">35%</output><input type="range" id="props-rate" min="0" max="100" value="35"></div> <div class="sec">Exporter</div> <div class="chips"> <button id="png" class="btn small">PNG</button> <button id="svg" class="btn small">SVG</button> <button id="json" class="btn small">JSON</button> <button id="print" class="btn small">Imprimer</button> <button id="share" class="btn small">Partager</button> </div> <p class="hint">Astuce : barre d'espace pour régénérer. La même graine redonne toujours le même donjon.</p> </div> </section> <section id="notesPanel" class="sheet" aria-label="Notes"> <div class="sheet-head"><h2 id="dname">Donjon</h2><button class="x" data-close aria-label="Fermer">✕</button></div> <div class="sheet-body"> <div id="notesHostDrawer"></div> <p class="hint">Les repères en couleur (clé, piège, trésor, DC des verrous) sont destinés au MJ.</p> </div> </section> <div id="scrim"></div> <div id="mobPopover" class="mob-pop" role="dialog" aria-modal="false" hidden></div> <div id="printArea"></div> <script> "use strict";
+<!DOCTYPE html> <html lang="fr"> <head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width,initial-scale=1"> <title>One Click Dungeon</title> <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=IM+Fell+English:ital@0;1&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" media="print" onload="this.media='all'" onerror="this.remove()"> <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=IM+Fell+English:ital@0;1&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap"></noscript> <style>:root{--paper:#efe6d0;--paper2:#e7dcc0;--ink:#23201a;--ink-soft:#5b5345;--line:#2a2620;--grid:rgba(60,52,38,.16);--accent:#7a3b2e;--water:#9fb7b0;--panel:#f6efdc;--edge:#cdbd97}[data-theme=plan]{--paper:#16314a;--paper2:#12283c;--ink:#dce9f4;--ink-soft:#9db8cf;--line:#cfe2f2;--grid:rgba(200,224,245,.16);--accent:#e8b04b;--water:#2c5a6e;--panel:#102a3f;--edge:#27506f}[data-theme=encre]{--paper:#1c1a17;--paper2:#161412;--ink:#e9e2d2;--ink-soft:#a99f8a;--line:#e9e2d2;--grid:rgba(233,226,210,.13);--accent:#c8693f;--water:#324b4b;--panel:#211e19;--edge:#3a342b}:root{--field:color-mix(in srgb, var(--ink) 8%, var(--panel));--chip:color-mix(in srgb, var(--ink) 6%, var(--panel));--chip-on:color-mix(in srgb, var(--accent) 16%, var(--panel));--hair:color-mix(in srgb, var(--ink) 12%, transparent);--shadow:0 18px 50px -12px rgba(0,0,0,.35)}*{box-sizing:border-box}body,html{margin:0;height:100%}body{background:radial-gradient(120% 120% at 50% 0,var(--paper) 0,var(--paper2) 100%);color:var(--ink);font-family:"EB Garamond",Georgia,serif;-webkit-font-smoothing:antialiased;height:100vh;overflow:hidden;display:flex;flex-direction:column}.app{flex:1 1 auto;display:flex;flex-direction:column;min-height:0}.topbar{flex:0 0 auto;height:56px;display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--panel);box-shadow:0 1px 0 var(--hair),0 8px 22px -16px rgba(0,0,0,.4);z-index:50}.brand{font-family:"IM Fell English SC","EB Garamond",Georgia,"Times New Roman",serif;font-size:18px;letter-spacing:.5px;white-space:nowrap;display:inline-flex;align-items:baseline;gap:6px}.brand span{color:var(--ink-soft)}.brand .ver{font-family:"EB Garamond",Georgia,serif;font-size:11px;letter-spacing:.3px;color:var(--ink-soft);opacity:.7;background:var(--chip);border-radius:999px;padding:2px 7px;align-self:center}.grow{flex:1}.btn{cursor:pointer;border:0;border-radius:999px;padding:9px 16px;font-family:"EB Garamond",serif;font-size:14px;background:var(--field);color:var(--ink);transition:transform .06s ease,background .15s ease;white-space:nowrap}.btn:hover{background:var(--chip-on)}.btn:active{transform:translateY(1px)}.btn.primary{background:var(--accent);color:#fff;font-weight:600}.btn.ghost{background:0 0}.btn.ghost:hover{background:var(--field)}.btn.small{padding:7px 12px;font-size:13px}.export-wrap{position:relative}.export-menu{position:absolute;top:calc(100% + 8px);right:0;z-index:70;min-width:180px;background:var(--panel);border:1px solid var(--edge);border-radius:12px;box-shadow:var(--shadow);padding:6px;display:flex;flex-direction:column;gap:2px}.export-menu[hidden]{display:none}.export-menu .ex-item{border:0;background:0 0;color:var(--ink);text-align:left;cursor:pointer;font-family:"EB Garamond",serif;font-size:14px;padding:9px 12px;border-radius:8px;white-space:nowrap}.export-menu .ex-item:hover{background:var(--chip-on);color:var(--accent)}.stage{flex:1 1 auto;min-height:0;position:relative;overflow:auto;display:flex;align-items:flex-start;justify-content:center;padding:18px}.stage-col{display:flex;flex-direction:column;align-items:center;gap:18px;width:100%;max-width:1100px;margin:0 auto}.stage svg{max-width:100%;height:auto;filter:drop-shadow(0 14px 34px rgba(0,0,0,.22))}#notesInline{display:none;width:100%;max-width:780px;background:var(--panel);border-radius:16px;padding:18px 22px 24px;box-shadow:0 16px 40px -22px rgba(0,0,0,.45)}body.notes-inline-on #notesInline{display:block}.inline-title{font-family:"IM Fell English","EB Garamond",Georgia,"Times New Roman",serif;font-style:italic;font-size:22px;margin:0 0 4px;line-height:1.15}.seg{display:flex;width:100%;background:var(--chip);border-radius:12px;padding:3px}.seg button{flex:1;border:0;background:0 0;color:var(--ink-soft);padding:8px 6px;border-radius:10px;font-family:"EB Garamond",serif;font-size:13px;cursor:pointer;white-space:nowrap;transition:background .15s ease,color .15s ease}.seg button.on{background:var(--accent);color:#fff;font-weight:600}input[type=text],select{background:var(--field);color:var(--ink);border:0;border-radius:10px;padding:9px 11px;font-family:"EB Garamond",serif;font-size:14px;width:100%}select{appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--ink-soft) 50%),linear-gradient(135deg,var(--ink-soft) 50%,transparent 50%);background-position:calc(100% - 16px) 17px,calc(100% - 11px) 17px;background-size:5px 5px,5px 5px;background-repeat:no-repeat;padding-right:30px}.row{display:flex;gap:8px;align-items:center}.row .btn{flex:0 0 auto}.chips{display:flex;flex-wrap:wrap;gap:8px}.chip{display:inline-flex;align-items:center;gap:7px;padding:8px 13px;border-radius:999px;background:var(--chip);cursor:pointer;font-size:13px;color:var(--ink-soft);user-select:none;transition:background .15s ease,color .15s ease}.chip input{position:absolute;opacity:0;pointer-events:none}.chip:has(input:checked){background:var(--chip-on);color:var(--accent);font-weight:600}.rng{display:grid;grid-template-columns:1fr auto;align-items:center;gap:2px 8px;font-size:13px;color:var(--ink-soft);margin:10px 0}.rng input[type=range]{grid-column:1/-1;width:100%;accent-color:var(--accent)}.rng output{font-variant-numeric:tabular-nums}.rng.sub{margin:6px 0 12px;padding-left:13px;opacity:.92}.rng.off{opacity:.42}.rng.off input[type=range]{cursor:not-allowed}.sec{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-soft);margin:20px 0 9px}.sec:first-child{margin-top:4px}.opt-sec{border-top:1px solid var(--hair);margin-top:6px}.opt-sec>summary{list-style:none;cursor:pointer;user-select:none;display:flex;align-items:center;gap:8px;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-soft);padding:13px 2px 11px}.opt-sec>summary::-webkit-details-marker{display:none}.opt-sec>summary::before{content:"›";font-size:15px;line-height:1;letter-spacing:0;transition:transform .18s ease;transform:rotate(0);opacity:.8}.opt-sec[open]>summary::before{transform:rotate(90deg)}.opt-sec>summary:hover{color:var(--ink)}.opt-sec[open]>summary{color:var(--ink)}.opt-sec>:not(summary){margin-bottom:14px}.stack{display:grid;gap:9px}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:9px 14px}.note-mini{font-size:11px;color:var(--ink-soft);opacity:.75;margin:8px 0 0}.fld{display:grid;gap:5px;font-size:11px;letter-spacing:.6px;text-transform:uppercase;color:var(--ink-soft)}.diff{margin:12px 0 2px;background:var(--chip);border-radius:12px;padding:12px 13px}.diff .dhead{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--ink-soft);margin-bottom:9px}.diff .dl{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:14px;margin:6px 0}.diff .dn{display:flex;align-items:center;gap:9px;color:var(--ink-soft)}.diff .dot{width:9px;height:9px;border-radius:50%;flex:0 0 auto}.diff .dv{font-variant-numeric:tabular-nums;font-weight:600;color:var(--ink)}.diff .dfoot{font-size:11px;color:var(--ink-soft);opacity:.82;margin-top:10px;line-height:1.45}.sheet{position:fixed;z-index:40;background:var(--panel);color:var(--ink);box-shadow:var(--shadow);display:flex;flex-direction:column;transition:transform .28s cubic-bezier(.4,0,.2,1);overscroll-behavior:contain;z-index:60;top:56px;height:calc(100vh - 56px);width:min(390px,94vw)}#optionsPanel{left:0;transform:translateX(-103%)}#optionsPanel.open{transform:translateX(0)}#notesPanel{right:0;transform:translateX(103%)}#notesPanel.open{transform:translateX(0)}.sheet.open{transform:none}.sheet-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:16px 18px 6px;position:relative}.sheet-head h2{margin:0;font-family:"IM Fell English","EB Garamond",Georgia,"Times New Roman",serif;font-style:italic;font-size:20px;line-height:1.15}.sheet .x{border:0;background:0 0;font-size:16px;cursor:pointer;color:var(--ink-soft);padding:8px;border-radius:10px;line-height:1}.sheet .x:hover{background:var(--field)}.sheet-body{padding:6px 18px 30px;overflow:auto}#scrim{position:fixed;inset:0;background:rgba(0,0,0,.4);opacity:0;visibility:hidden;transition:opacity .25s ease;z-index:40}#scrim.show{opacity:1;visibility:visible}@media (min-width:721px){#scrim.show{opacity:0;visibility:hidden}}.sub{font-size:12px;color:var(--ink-soft);margin:0 0 14px}.notes{list-style:none;margin:0;padding:0}.notes li{display:flex;gap:10px;padding:11px 0;font-size:14px;line-height:1.4}.notes li+li{box-shadow:0 -1px 0 var(--hair)}.num{flex:0 0 auto;width:22px;height:22px;border-radius:50%;background:var(--field);color:var(--ink);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600}.notes li.has-gm .num{background:var(--chip-on);color:var(--accent)}.gm-line{display:block;font-size:12.5px;color:var(--accent);margin-top:3px}.gm-line b{font-weight:600}.enc-line{line-height:1.6}button.mob{display:inline;border:0;padding:1px 6px;margin:1px 0;border-radius:999px;cursor:pointer;font-family:"EB Garamond",serif;font-size:12.5px;font-weight:600;line-height:1.3;background:var(--chip-on);color:var(--accent);transition:background .12s ease}button.mob:hover{background:color-mix(in srgb,var(--accent) 28%,var(--panel))}.ogl-note{font-size:10.5px;color:var(--ink-soft);opacity:.7;margin-top:16px;line-height:1.45}.mob-pop{position:fixed;z-index:80;background:var(--panel);color:var(--ink);border:1px solid var(--edge);border-radius:14px;box-shadow:var(--shadow);padding:14px 16px 16px;max-width:94vw;max-height:calc(100vh - 24px);overflow:auto;overscroll-behavior:contain;font-family:"EB Garamond",Georgia,serif}.mob-pop[hidden]{display:none}.mob-pop .mp-x{position:absolute;top:8px;right:8px;border:0;background:0 0;cursor:pointer;color:var(--ink-soft);font-size:15px;line-height:1;padding:6px;border-radius:8px}.mob-pop .mp-x:hover{background:var(--field)}.mob-pop .mp-name{margin:0 22px 2px 0;font-family:"IM Fell English","EB Garamond",Georgia,serif;font-style:italic;font-size:19px;line-height:1.15;color:var(--ink)}.mob-pop .mp-orig{font-size:12px;color:var(--ink-soft);margin-bottom:2px}.mob-pop .mp-type{font-size:12px;color:var(--ink-soft);font-style:italic;margin-bottom:10px}.mob-pop .mp-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:6px 8px;margin-bottom:10px}.mob-pop .mp-stats>div{background:var(--chip);border-radius:8px;padding:5px 7px;display:flex;flex-direction:column}.mob-pop .mp-stats .mp-wide{grid-column:1/-1;flex-direction:row;align-items:baseline;gap:8px}.mob-pop .mp-stats span{font-size:10px;letter-spacing:.6px;text-transform:uppercase;color:var(--ink-soft)}.mob-pop .mp-stats b{font-size:15px;font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums}.mob-pop .mp-abil{display:grid;grid-template-columns:repeat(6,1fr);gap:5px;margin-bottom:12px}.mob-pop .mp-abil>div{text-align:center;background:var(--chip);border-radius:8px;padding:5px 2px}.mob-pop .mp-abil span{display:block;font-size:9.5px;letter-spacing:.5px;color:var(--ink-soft)}.mob-pop .mp-abil b{display:block;font-size:14px;font-weight:600;color:var(--ink)}.mob-pop .mp-abil i{display:block;font-size:10px;color:var(--accent);font-style:normal}.mob-pop .mp-link{display:inline-block;font-size:12.5px;color:var(--accent);text-decoration:none;font-weight:600}.mob-pop .mp-link:hover{text-decoration:underline}.mob-pop .mp-toggle{display:block;width:100%;margin:0 0 10px;padding:7px 10px;cursor:pointer;border:0;border-radius:9px;background:var(--chip);color:var(--accent);font-weight:600;font-family:"EB Garamond",serif;font-size:12.5px;text-align:left;transition:background .12s ease}.mob-pop .mp-toggle:hover{background:var(--chip-on)}.mob-pop .mp-sections{margin-bottom:12px;border-top:1px solid var(--hair);padding-top:4px}.mob-pop .mp-sec{margin-top:10px}.mob-pop .mp-sec h4{margin:0 0 4px;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--accent)}.mob-pop .mp-intro{margin:0 0 6px;font-size:12px;color:var(--ink-soft);font-style:italic;line-height:1.4}.mob-pop .mp-entry{margin:0 0 6px;font-size:12.5px;line-height:1.42;color:var(--ink)}.mob-pop .mp-entry b{color:var(--ink)}@media (max-width:720px){.mob-pop.open{left:0!important;right:0;bottom:0;top:auto!important;width:auto!important;max-width:none;max-height:82vh;border-radius:16px 16px 0 0;border-bottom:0;padding-bottom:24px}}.legend{margin-top:20px}.legend h3{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-soft);margin:0 0 8px}.legend .row{display:flex;align-items:center;gap:10px;font-size:13px;margin:6px 0;color:var(--ink-soft)}.legend svg{flex:0 0 auto}.hint{font-size:11px;color:var(--ink-soft);opacity:.8;margin-top:18px}@media (max-width:720px){.brand span{display:none}.stage{padding:10px}#notesPanel,#optionsPanel,.sheet{top:auto;left:0;right:0;bottom:0;width:auto;height:auto;max-height:86vh;transform:translateY(103%);border-radius:18px 18px 0 0}#notesPanel.open,#optionsPanel.open,.sheet.open{transform:translateY(0)}.sheet-head{padding-top:22px}.sheet-head::before{content:"";position:absolute;top:8px;left:50%;transform:translateX(-50%);width:42px;height:4px;border-radius:2px;background:var(--hair)}.grid2{grid-template-columns:1fr 1fr}}#printArea{display:none}#printArea .ptitle{font-family:"IM Fell English SC","EB Garamond",Georgia,"Times New Roman",serif;font-weight:400;font-size:26px;text-align:center;margin:0 0 4px}#printArea .tag{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#7a3b2e;text-align:center;margin-bottom:12px}#printArea .phook{font-style:italic;text-align:center;max-width:60ch;margin:0 auto 10px;font-size:15px}#printArea .pmeta{text-align:center;color:#5b5345;font-size:12px;margin:0 0 18px}#printArea .pnotes{list-style:none;padding:0;margin:0;columns:2;column-gap:28px}#printArea .pnotes li{break-inside:avoid;display:flex;gap:8px;margin:0 0 10px;font-size:13px;line-height:1.35}#printArea .pnum{flex:0 0 auto;width:20px;height:20px;border:1.4px solid #23201a;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600}#printArea .pgm{display:block;color:#7a3b2e;font-size:12px;margin-top:2px}#printArea .plegend{margin-top:16px;border-top:1px solid #cdbd97;padding-top:10px;break-inside:avoid}#printArea .plegend h2{font-family:"IM Fell English SC","EB Garamond",Georgia,"Times New Roman",serif;font-weight:400;font-size:14px;letter-spacing:1px;margin:0 0 8px}#printArea .prow{display:inline-flex;align-items:center;gap:8px;margin:4px 16px 4px 0;font-size:12px;color:#5b5345}@media print{@page{margin:1cm}body{overflow:visible;background:#fff;display:block}body>:not(#printArea){display:none!important}#printArea{display:block!important}#printArea .page{page-break-after:always;padding:0 0 .5cm;display:flex;flex-direction:column;align-items:center}#printArea .page:last-child{page-break-after:auto}#printArea .page.map svg{width:auto;max-width:100%;max-height:23cm;display:block}#printArea .page.doc{align-items:stretch}}</style> </head> <body data-theme="parchemin"> <div class="app"> <header class="topbar"> <div class="brand">One Click<span> Dungeon</span><span class="ver">v0.2.0</span></div> <div class="grow"></div> <button id="btn-options" class="btn ghost small">Options</button> <button id="gen" class="btn primary">Générer</button> <button id="btn-notes" class="btn ghost small">Notes</button> <div class="export-wrap"> <button id="btn-export" class="btn ghost small" aria-haspopup="true" aria-expanded="false">Export ▾</button> <div id="exportMenu" class="export-menu" hidden> <button id="png" class="ex-item">Image PNG</button> <button id="svg" class="ex-item">Vectoriel SVG</button> <button id="json" class="ex-item">Données JSON</button> <button id="print" class="ex-item">Imprimer</button> <button id="share" class="ex-item">Partager le lien</button> </div> </div> <div class="grow"></div> </header> <main class="stage"><div class="stage-col"><div id="map"></div><section id="notesInline"></section></div></main> </div> <section id="optionsPanel" class="sheet" aria-label="Options"> <div class="sheet-head"><h2>Options</h2><button class="x" data-close aria-label="Fermer">✕</button></div> <div class="sheet-body"> <div class="sec">Donjon</div> <div class="stack"> <div class="row"> <input id="seed" type="text" spellcheck="false" placeholder="graine"> <button id="rand" class="btn small" title="Graine aléatoire">Aléatoire</button> </div> <div class="grid2"> <select id="size" aria-label="Taille"> <option value="9">Petit</option> <option value="16" selected="selected">Moyen</option> <option value="26">Grand</option> <option value="38">Vaste</option> </select> <select id="view" aria-label="Vue"> <option value="mj" selected="selected">Vue MJ</option> <option value="player">Vue joueur</option> </select> <select id="biome" aria-label="Biome"> <option value="" selected="selected">Générique</option> <option value="auto">Auto</option> <option value="crypte">Crypte</option> <option value="donjon">Donjon / Prison</option> <option value="grotte">Grotte</option> <option value="temple">Temple</option> <option value="egout">Égout</option> <option value="mine">Mine</option> <option value="catacombes">Catacombes</option> <option value="manoir">Manoir hanté</option> <option value="sanctuaire">Sanctuaire</option> <option value="ruines">Ruines</option> <option value="postapo">Post-apocalyptique</option> <option value="cyberpunk">Cyberpunk</option> <option value="moderne">Moderne</option> <option value="dcc">Dungeon Crawler Carl</option> </select> <select id="theme" aria-label="Thème"> <option value="parchemin" selected="selected">Parchemin</option> <option value="plan">Plan bleu</option> <option value="encre">Encre sombre</option> </select> </div> </div> <details class="opt-sec" open data-sec="party"> <summary>Groupe d'aventuriers</summary> <div class="grid2"> <label class="fld">Joueurs <select id="party-size" aria-label="Nombre de joueurs"> <option>1</option><option>2</option><option>3</option> <option value="4" selected="selected">4</option><option>5</option><option>6</option> <option>7</option><option>8</option><option>9</option><option>10</option> </select> </label> <label class="fld">Niveau du groupe <select id="party-level" aria-label="Niveau du groupe"> <option>1</option><option>2</option><option value="3" selected="selected">3</option> <option>4</option><option>5</option><option>6</option><option>7</option> <option>8</option><option>9</option><option>10</option><option>11</option> <option>12</option><option>13</option><option>14</option><option>15</option> <option>16</option><option>17</option><option>18</option><option>19</option><option>20</option> </select> </label> </div> <div id="diffPanel" class="diff" aria-live="polite"></div> </details> <details class="opt-sec" data-sec="notes"> <summary>Affichage des notes</summary> <div class="seg" id="notesSeg"> <button type="button" data-nmode="hidden">Masqué</button> <button type="button" data-nmode="drawer" class="on">Tiroir</button> <button type="button" data-nmode="inline">Sous la carte</button> </div> </details> <details class="opt-sec" data-sec="struct"> <summary>Structure</summary> <div class="chips"> <label class="chip"><input type="checkbox" id="t-sym" checked="checked"><span>Symétrie locale</span></label> <label class="chip"><input type="checkbox" id="t-corr"><span>Longs couloirs</span></label> <label class="chip"><input type="checkbox" id="t-water" checked="checked"><span>Eau</span></label> <label class="chip"><input type="checkbox" id="t-col" checked="checked"><span>Colonnades</span></label> </div> </details> <details class="opt-sec" data-sec="doors"> <summary>Portes</summary> <div class="rng">Proportion de portes <output id="o-density">70%</output> <input type="range" id="d-density" min="0" max="100" value="70"></div> <div class="grid2"> <div class="rng">Simple <output id="o-simple"></output><input type="range" id="w-simple" min="0" max="100" value="55"></div> <div class="rng">Double <output id="o-double"></output><input type="range" id="w-double" min="0" max="100" value="15"></div> <div class="rng">Herse <output id="o-barred"></output><input type="range" id="w-barred" min="0" max="100" value="15"></div> <div class="rng">Secrète <output id="o-secret"></output><input type="range" id="w-secret" min="0" max="100" value="15"></div> </div> <p class="note-mini">Le reste des ouvertures devient des passages ouverts (arches).</p> </details> <details class="opt-sec" data-sec="content"> <summary>Contenu (repères MJ)</summary> <div class="chips"> <label class="chip"><input type="checkbox" id="pp-locks" checked="checked"><span>Verrous et clés</span></label> <label class="chip"><input type="checkbox" id="pp-traps"><span>Pièges</span></label> <label class="chip"><input type="checkbox" id="pp-treasure"><span>Trésors</span></label> <label class="chip"><input type="checkbox" id="pp-occ" checked="checked"><span>Occupants</span></label> <label class="chip"><input type="checkbox" id="pp-rubble"><span>Éboulis</span></label> <label class="chip"><input type="checkbox" id="pp-light" checked="checked"><span>Éclairage</span></label> <label class="chip"><input type="checkbox" id="pp-props"><span>Props</span></label> </div> <div class="rng sub">Taux de verrous <output id="o-lock">25%</output><input type="range" id="lock-rate" min="0" max="100" value="25"></div> <div class="rng sub">Densité de mobs <output id="o-mobrate">45%</output><input type="range" id="mob-rate" min="0" max="100" value="45"></div> <div class="rng sub">Densité de pièges <output id="o-trap">22%</output><input type="range" id="trap-rate" min="0" max="100" value="22"></div> <div class="rng sub">Densité de trésors <output id="o-treasure">25%</output><input type="range" id="treasure-rate" min="0" max="100" value="25"></div> <div class="rng sub">Salles éclairées <output id="o-light">40%</output><input type="range" id="light-rate" min="0" max="100" value="40"></div> <div class="rng sub">Densité de props <output id="o-props">35%</output><input type="range" id="props-rate" min="0" max="100" value="35"></div> </details> <p class="hint">Astuce : barre d'espace pour régénérer. La même graine redonne toujours le même donjon. Exports (PNG, SVG, JSON, impression, lien) via le bouton <b>Export</b> en haut.</p> </div> </section> <section id="notesPanel" class="sheet" aria-label="Notes"> <div class="sheet-head"><h2 id="dname">Donjon</h2><button class="x" data-close aria-label="Fermer">✕</button></div> <div class="sheet-body"> <div id="notesHostDrawer"></div> <p class="hint">Les repères en couleur (clé, piège, trésor, DC des verrous) sont destinés au MJ.</p> </div> </section> <div id="scrim"></div> <div id="mobPopover" class="mob-pop" role="dialog" aria-modal="false" hidden></div> <div id="printArea"></div> <script> "use strict";
 
 /* ====== 05-data.generated : donnees D&D 5.5 embarquees au build (cf. tools/build-data.mjs) ====== */
 /* GENERE - ne pas editer a la main. Source : data/*.json. SRD/OGL 1.0a + CC-BY-4.0, fiches via aidedd.org. */
@@ -243,7 +243,7 @@ function generateDungeon(opts){
   const o=Object.assign({seed:'donjon',target:16,symmetry:0.6,longCorridors:false,water:true,columns:true,
     doorDensity:0.7, doorWeights:{simple:55,double:15,barred:15,secret:15},
     pp:{locks:false,traps:false,treasure:false,occupants:false,rubble:false,lighting:false},
-    lockRate:0.25, litRate:0.4, biome:'', props:false, propsRate:0.35},opts);
+    lockRate:0.25, litRate:0.4, trapRate:0.22, treasureRate:0.25, biome:'', props:false, propsRate:0.35},opts);
   const rng=makeRng(o.seed);
   const ri=(a,b)=>a+Math.floor(rng()*(b-a+1));
   const pick=a=>a[Math.floor(rng()*a.length)];
@@ -611,18 +611,18 @@ function generateDungeon(opts){
     const count=Math.round(o.lockRate*cand.length);
     for(let i=0;i<count;i++)lockRoom(cand[i]);
   }
-  // Pieges
+  // Pieges (taux o.trapRate, defaut 0.22 -> count inchange vs version d'origine)
   if(pp.traps){
     const cand=shuffle(rooms.filter(r=>!r.isEntrance));
-    const count=Math.max(1,Math.round(cand.length*0.22));
-    for(let i=0;i<count;i++){const r=cand[i];const diff=pick(DIFF);r.trap={desc:pick(TRAPS),dc:diff.dc,diff:diff.n};
+    const count=Math.max(1,Math.round(cand.length*o.trapRate));
+    for(let i=0;i<count&&i<cand.length;i++){const r=cand[i];const diff=pick(DIFF);r.trap={desc:pick(TRAPS),dc:diff.dc,diff:diff.n};
       r.gm.push(`Piège: ${r.trap.desc} (détection et désamorçage difficulté ${diff.n}, DC ${diff.dc}).`);}
   }
-  // Tresors
+  // Tresors (taux o.treasureRate, defaut 0.25 -> count inchange vs version d'origine)
   if(pp.treasure){
     const cand=shuffle(rooms.slice());
-    const count=Math.max(1,Math.round(cand.length*0.25));
-    for(let i=0;i<count;i++){const r=cand[i];r.treasure=pick(TREASURE);r.gm.push(`Trésor caché: ${r.treasure}.`);}
+    const count=Math.max(1,Math.round(cand.length*o.treasureRate));
+    for(let i=0;i<count&&i<cand.length;i++){const r=cand[i];r.treasure=pick(TREASURE);r.gm.push(`Trésor caché: ${r.treasure}.`);}
   }
   // Occupants
   if(pp.occupants){
@@ -814,6 +814,10 @@ function assignEncounters(d, party) {
 
   const nbPJ = (party && party.size) || 4;
   const level = (party && party.level) || 1;
+  // densite de mobs : proportion de salles NON forcees occupees (defaut 0.45). Le seuil ne change
+  // PAS le tirage par salle (un rng() est consomme pour chaque salle quelle que soit la densite),
+  // donc faire varier le slider ajoute/retire des salles sans changer QUELS mobs y apparaissent.
+  const density = (party && typeof party.mobDensity === 'number') ? party.mobDensity : 0.45;
   const B = encounterBudget(nbPJ, level);
 
   // roster du biome (biome '' / null -> 'generic'), joint aux fiches compactes ; xp requis
@@ -827,7 +831,8 @@ function assignEncounters(d, party) {
   }
   if (!roster.length) return d;
 
-  const rng = makeRng(d.seed + ':enc');                    // INVARIANT 1 : rng dedie
+  // INVARIANT 1 : tout l'alea de cette passe vient de rng DEDIES derives de d.seed (':occ:'/':enc:'
+  // par salle), jamais du rng de generateDungeon -> la geometrie reste intacte.
   const { dist, entrance } = roomDistancesFromEntrance(d);
   let maxDist = 0; for (const r of d.rooms) { const dd = dist.get(r.id); if (dd != null && dd > maxDist) maxDist = dd; }
   maxDist = Math.max(1, maxDist);
@@ -860,14 +865,17 @@ function assignEncounters(d, party) {
     // l'entree (sas sur) ne porte jamais de rencontre
     if (r.isEntrance || r === entrance) continue;
     const forced = r.stairsDown || r.hasKey;               // sortie + cle TOUJOURS occupees
-    // densite ~40-55% des salles (tirage dedie, ne touche pas la geometrie). Seuil ajuste pour
-    // que le total (forcees incluses) reste dans la fourchette visee.
-    if (!forced && rng() > 0.45) continue;
+    // Decision d'occupation : rng PROPRE A LA SALLE (':occ:'+numero) -> chaque salle a une "valeur
+    // d'occupation" fixe, independante des autres. Faire varier la densite ajoute/retire des salles
+    // SANS changer la valeur des autres ni le contenu (tire par un rng par salle ci-dessous).
+    if (!forced && makeRng(d.seed + ':occ:' + r.number)() > density) continue;
 
     const tier = zoneTier(r);
     const target = tierTarget(tier);
     const crCapHere = tier === 'Mortelle' ? Math.max(crCap, level + 3) : crCap;
-    const mobs = pickEncounterMobs(roster, target, crCapHere, rng);
+    // contenu : rng PROPRE A LA SALLE (':enc:'+numero) -> le mob d'une salle ne depend que d'elle,
+    // du budget et du roster. Ajouter/retirer des salles voisines (densite) ne change rien ici.
+    const mobs = pickEncounterMobs(roster, target, crCapHere, makeRng(d.seed + ':enc:' + r.number));
     if (!mobs.length) continue;
 
     const xpTotal = mobs.reduce((acc, m) => acc + m.xp * m.count, 0);
@@ -1405,28 +1413,64 @@ const UI_CONTROLS = {
   't-sym':'c','t-corr':'c','t-water':'c','t-col':'c',
   'd-density':'v','w-simple':'v','w-double':'v','w-barred':'v','w-secret':'v',
   'pp-locks':'c','pp-traps':'c','pp-treasure':'c','pp-occ':'c','pp-rubble':'c','pp-light':'c','pp-props':'c',
-  'lock-rate':'v','light-rate':'v','props-rate':'v',
+  'lock-rate':'v','mob-rate':'v','trap-rate':'v','treasure-rate':'v','light-rate':'v','props-rate':'v',
 };
 // cles courtes pour un hash compact
 const UI_KEY = {seed:'s',size:'sz',biome:'b',view:'vw',theme:'th','party-size':'pn','party-level':'pv',
   't-sym':'sy','t-corr':'lc','t-water':'wt','t-col':'co',
   'd-density':'dd','w-simple':'ws','w-double':'wd','w-barred':'wb','w-secret':'wx',
   'pp-locks':'pl','pp-traps':'pt','pp-treasure':'pr','pp-occ':'po','pp-rubble':'pu','pp-light':'pg','pp-props':'ppr',
-  'lock-rate':'lr','light-rate':'gr','props-rate':'pdr'};
-let suppressHash=false;
+  'lock-rate':'lr','mob-rate':'mr','trap-rate':'tr','treasure-rate':'tx','light-rate':'gr','props-rate':'pdr'};
 let pendingNotesMode=null;
+// DEUX systemes 100% INDEPENDANTS :
+//   - #d= (URL) = CONFIG DU DONJON (graine + tous les UI_CONTROLS). Ecrite "live" a chaque
+//     changement de param, c'est la source de reproduction/partage. Toujours presente.
+//   - localStorage = LAYOUT/UI uniquement (mode notes, pli des sections, panneaux ouverts).
+//     Ecrit "live" a chaque changement de layout. Ne contient JAMAIS la config du donjon.
+// encodeStateToHash() est appele a chaque interaction sur un controle de donjon -> il rafraichit
+// l'URL #d=. Le layout, lui, passe par saveConfig() depuis les listeners de layout.
 function encodeStateToHash(){
-  if(suppressHash)return;
   const o={};
   for(const id in UI_CONTROLS){
     const el=$(id); if(!el)continue;
     o[UI_KEY[id]] = UI_CONTROLS[id]==='c' ? (el.checked?1:0) : el.value;
   }
-  o.nm = (typeof notesMode!=='undefined') ? notesMode : 'drawer';
-  const json=JSON.stringify(o);
-  const b64=btoa(unescape(encodeURIComponent(json))).replace(/=+$/,'');
-  history.replaceState(null,'','#d='+b64);
+  const enc=btoa(unescape(encodeURIComponent(JSON.stringify(o)))).replace(/=+$/,'');
+  history.replaceState(null,'','#d='+enc);
 }
+
+/* ---- sauvegarde locale du LAYOUT uniquement : mode notes, pli des sections, panneaux ouverts.
+   AUCUNE config de donjon ici (ni graine, ni params) : ca, c'est l'URL #d= qui s'en charge. ---- */
+const LS_KEY='ocd:layout:v1';
+try{ localStorage.removeItem('ocd:config:v1'); }catch(e){} // purge l'ancienne cle (config mixee, abandonnee)
+function saveConfig(){
+  try{
+    const o={};
+    o.nm = (typeof notesMode!=='undefined') ? notesMode : 'drawer';
+    // etat de pli des sections accordeon (par data-sec) -> liste des sections OUVERTES
+    o.op = [...document.querySelectorAll('#optionsPanel details.opt-sec[open]')].map(d=>d.dataset.sec).filter(Boolean);
+    // etat ouvert/ferme des deux tiroirs (panneaux)
+    o.po = $('optionsPanel') ? $('optionsPanel').classList.contains('open') : null;
+    o.pnp = $('notesPanel') ? $('notesPanel').classList.contains('open') : null;
+    localStorage.setItem(LS_KEY, JSON.stringify(o));
+  }catch(e){/* localStorage indispo (mode prive, quota) : on ignore silencieusement */}
+}
+let pendingPanels=null; // {options:bool, notes:bool} restaure apres build()/openDefaultSheets
+// Restaure le LAYOUT depuis localStorage (mode notes, pli des sections, panneaux). Ne touche
+// JAMAIS aux controles de donjon : ceux-la viennent de l'URL #d= (cf. applyStateFromHash).
+function loadConfig(){
+  let o; try{ const raw=localStorage.getItem(LS_KEY); if(!raw)return false; o=JSON.parse(raw); }catch(e){ return false; }
+  if(o.nm)pendingNotesMode=o.nm;
+  // restaure le pli des sections accordeon (si la cle existe ; sinon on garde les open du HTML)
+  if(Array.isArray(o.op)){
+    const open=new Set(o.op);
+    document.querySelectorAll('#optionsPanel details.opt-sec').forEach(d=>{ if(d.dataset.sec)d.open=open.has(d.dataset.sec); });
+  }
+  // memorise l'etat des tiroirs pour l'appliquer apres l'init (cf. openDefaultSheets)
+  if(typeof o.po==='boolean' || typeof o.pnp==='boolean') pendingPanels={options:!!o.po, notes:!!o.pnp};
+  return true;
+}
+// Lit la CONFIG DU DONJON depuis l'URL #d= (graine + UI_CONTROLS). Ne touche pas au layout.
 function applyStateFromHash(){
   const m=/[#&]d=([^&]+)/.exec(location.hash||''); if(!m)return false;
   let o; try{o=JSON.parse(decodeURIComponent(escape(atob(m[1]))));}catch(e){return false;}
@@ -1435,7 +1479,6 @@ function applyStateFromHash(){
     const id=inv[k]; if(!id)continue; const el=$(id); if(!el)continue;
     if(UI_CONTROLS[id]==='c')el.checked=!!o[k]; else el.value=o[k];
   }
-  if(o.nm)pendingNotesMode=o.nm;
   return true;
 }
 
@@ -1444,11 +1487,26 @@ function currentView(){return {gm: $('view').value==='mj', light:true};}
 function syncOutputs(){
   $('o-density').textContent=pctOut('d-density')+'%';
   $('o-lock').textContent=pctOut('lock-rate')+'%';
+  $('o-mobrate').textContent=pctOut('mob-rate')+'%';
+  $('o-trap').textContent=pctOut('trap-rate')+'%';
+  $('o-treasure').textContent=pctOut('treasure-rate')+'%';
   $('o-light').textContent=pctOut('light-rate')+'%';
   $('o-props').textContent=pctOut('props-rate')+'%';
+  syncSubSliders();
   const ws=['simple','double','barred','secret'].map(k=>parseFloat($('w-'+k).value));
   const sum=Math.max(1,ws.reduce((a,b)=>a+b,0));
   ['simple','double','barred','secret'].forEach((k,i)=>{$('o-'+k).textContent=Math.round(ws[i]/sum*100)+'%';});
+}
+// Grise les curseurs "sous-option" tant que leur case parente n'est pas cochee :
+// le curseur n'a d'effet que si l'option correspondante est active.
+function syncSubSliders(){
+  const map=[['lock-rate','pp-locks'],['mob-rate','pp-occ'],['trap-rate','pp-traps'],['treasure-rate','pp-treasure'],['light-rate','pp-light'],['props-rate','pp-props']];
+  for(const [slider,toggle] of map){
+    const s=$(slider), t=$(toggle); if(!s||!t)continue;
+    const on=t.checked;
+    s.disabled=!on;
+    const row=s.closest('.rng'); if(row)row.classList.toggle('off',!on);
+  }
 }
 
 /* ---- Difficulte / budget de PX du groupe (regles D&D 2024) ----
@@ -1496,6 +1554,8 @@ function build(){
     doorWeights:{simple:+$('w-simple').value,double:+$('w-double').value,barred:+$('w-barred').value,secret:+$('w-secret').value},
     lockRate:parseFloat($('lock-rate').value)/100,
     litRate:parseFloat($('light-rate').value)/100,
+    trapRate:parseFloat($('trap-rate').value)/100,
+    treasureRate:parseFloat($('treasure-rate').value)/100,
     biome:$('biome').value,
     props:$('pp-props').checked,
     propsRate:parseFloat($('props-rate').value)/100,
@@ -1512,8 +1572,8 @@ function build(){
   paintDifficulty();
   encodeStateToHash();
 }
-// groupe d'aventuriers courant (nb PJ + niveau) pour le calibrage des rencontres
-function currentParty(){return {size:parseInt($('party-size').value,10)||4, level:parseInt($('party-level').value,10)||1};}
+// groupe d'aventuriers courant (nb PJ + niveau) + densite de mobs, pour le calibrage des rencontres
+function currentParty(){return {size:parseInt($('party-size').value,10)||4, level:parseInt($('party-level').value,10)||1, mobDensity:(parseFloat($('mob-rate').value)||45)/100};}
 
 /* ---- notes : tri-etat masqué / tiroir / sous la carte ---- */
 let notesMode='drawer';
@@ -1572,7 +1632,7 @@ function applyNotesMode(mode){
   $('btn-notes').style.display = mode==='hidden' ? 'none' : '';
   if(mode!=='drawer')closeSheet('notesPanel');
   paintNotes();
-  if(typeof encodeStateToHash==='function')encodeStateToHash();
+  if(typeof saveConfig==='function')saveConfig(); // mode notes = layout -> localStorage, pas l'URL
 }
 function legendIcon(type){
   const ns='http://www.w3.org/2000/svg';const s=document.createElementNS(ns,'svg');
@@ -1692,33 +1752,57 @@ $('t-sym').addEventListener('change',build);
 $('t-corr').addEventListener('change',build);
 $('t-water').addEventListener('change',build);
 $('t-col').addEventListener('change',build);
-['d-density','w-simple','w-double','w-barred','w-secret','lock-rate','light-rate','props-rate'].forEach(id=>$(id).addEventListener('input',build));
+['d-density','w-simple','w-double','w-barred','w-secret','lock-rate','trap-rate','treasure-rate','light-rate','props-rate'].forEach(id=>$(id).addEventListener('input',build));
 ['pp-locks','pp-traps','pp-treasure','pp-occ','pp-rubble','pp-light','pp-props'].forEach(id=>$(id).addEventListener('change',build));
 $('biome').addEventListener('change',build);
 $('theme').addEventListener('change',build);
-// Groupe d'aventuriers : n'affecte JAMAIS la geometrie. On re-assigne seulement les rencontres
-// (rng dedie :enc) et on redessine carte + notes. Le donjon (layout/eclairage/props/nom) est intact.
+// Re-assigne SEULEMENT les rencontres (rng dedies par salle) et redessine carte + notes.
+// N'affecte JAMAIS la geometrie : le donjon (layout/eclairage/props/nom) reste intact.
+function reassignEncounters(){
+  if(!current)return;
+  assignEncounters(current, currentParty());
+  const map=$('map'); map.innerHTML=''; map.appendChild(renderSVG(current, currentView()));
+  paintNotes();
+}
+// Groupe d'aventuriers : recalibre les seuils + re-assigne les rencontres (pas de regeneration).
 ['party-size','party-level'].forEach(id=>$(id).addEventListener('change',()=>{
-  if(current){
-    assignEncounters(current, currentParty());
-    const map=$('map'); map.innerHTML=''; map.appendChild(renderSVG(current, currentView()));
-    paintNotes();
-  }
+  reassignEncounters();
   paintDifficulty();
   encodeStateToHash();
 }));
+// Densite de mobs : ajoute/retire des salles occupees sans regenerer ni changer le contenu des autres.
+$('mob-rate').addEventListener('input',()=>{ syncOutputs(); reassignEncounters(); encodeStateToHash(); });
 $('view').addEventListener('change',()=>{if(current){const map=$('map');map.innerHTML='';map.appendChild(renderSVG(current,currentView()));}encodeStateToHash();});
 $('png').addEventListener('click',exportPNG);
 $('svg').addEventListener('click',exportSVG);
 $('json').addEventListener('click',exportJSON);
 $('print').addEventListener('click',printDungeon);
 $('share').addEventListener('click',()=>{
+  // l'URL #d= (graine + reglages) est deja a jour en permanence -> on copie simplement location.href
   encodeStateToHash();
   const url=location.href;
   const done=()=>{const b=$('share');const old=b.textContent;b.textContent='Lien copié';setTimeout(()=>b.textContent=old,1400);};
   if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(url).then(done,done);
   else{const t=document.createElement('textarea');t.value=url;document.body.appendChild(t);t.select();try{document.execCommand('copy');}catch(e){}t.remove();done();}
 });
+
+/* menu deroulant Export (topbar) : ouvre/ferme ; se referme apres une action, au clic-dehors, a Echap.
+   Les listeners des actions (png/svg/json/print/share) restent attaches aux memes id, deplaces ici. */
+function openExportMenu(open){
+  const m=$('exportMenu'), b=$('btn-export'); if(!m||!b)return;
+  m.hidden = open===undefined ? !m.hidden : !open;
+  b.setAttribute('aria-expanded', String(!m.hidden));
+}
+$('btn-export').addEventListener('click',e=>{ e.stopPropagation(); openExportMenu(); });
+// fermer apres une action du menu (sauf Partager, qui affiche un feedback "Lien copié" sur place)
+$('exportMenu').addEventListener('click',e=>{
+  const item=e.target.closest('.ex-item'); if(!item)return;
+  if(item.id!=='share') openExportMenu(false);
+});
+document.addEventListener('click',e=>{ // clic-dehors
+  const m=$('exportMenu'); if(m && !m.hidden && !(e.target.closest && e.target.closest('.export-wrap'))) openExportMenu(false);
+});
+document.addEventListener('keydown',e=>{ if(e.key==='Escape')openExportMenu(false); });
 
 /* ============ 8d : popover fiche de mob (mini stat-block + vue detaillee + lien aidedd) ============ */
 // Au clic sur un bouton .mob[data-slug] (dans les notes, document MJ), affiche une fiche
@@ -1836,13 +1920,19 @@ function syncScrim(){
   const anyOpen=document.querySelectorAll('.sheet.open').length>0;
   $('scrim').classList.toggle('show', anyOpen);
 }
-function closeSheets(){document.querySelectorAll('.sheet.open').forEach(s=>s.classList.remove('open'));syncScrim();}
-function closeSheet(id){const el=$(id);if(el)el.classList.remove('open');syncScrim();}
-function toggleSheet(id){const el=$(id);el.classList.toggle('open');syncScrim();}
-// Sur desktop (>=721px), Options et Notes s'ouvrent par defaut : les tiroirs flottent sur les
-// cotes (sans scrim). Sur mobile on garde tout ferme. Notes ne s'ouvre qu'en mode "drawer"
-// (respecte un etat inline/masque restaure depuis une URL partagee).
+function closeSheets(){document.querySelectorAll('.sheet.open').forEach(s=>s.classList.remove('open'));syncScrim();saveConfig();}
+function closeSheet(id){const el=$(id);if(el)el.classList.remove('open');syncScrim();saveConfig();}
+function toggleSheet(id){const el=$(id);el.classList.toggle('open');syncScrim();saveConfig();}
+// Init des tiroirs : si une config locale memorise leur etat (pendingPanels), on la restaure ;
+// sinon comportement par defaut -> sur desktop (>=721px) Options et Notes ouverts (ils flottent
+// sans scrim), sur mobile tout ferme. Notes ne s'ouvre qu'en mode "drawer".
 function openDefaultSheets(){
+  if(pendingPanels){ // etat explicitement sauve -> on le respecte sur toutes tailles d'ecran
+    $('optionsPanel').classList.toggle('open', pendingPanels.options);
+    $('notesPanel').classList.toggle('open', pendingPanels.notes && notesMode==='drawer');
+    syncScrim();
+    return;
+  }
   if(!window.matchMedia('(min-width:721px)').matches)return;
   $('optionsPanel').classList.add('open');
   if(notesMode==='drawer')$('notesPanel').classList.add('open');
@@ -1857,13 +1947,20 @@ document.querySelectorAll('#notesSeg [data-nmode]').forEach(btn=>btn.addEventLis
 $('scrim').addEventListener('click',closeSheets);
 // Le bouton x ferme uniquement le sheet parent (pas les autres)
 document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',e=>{
-  const sheet=e.currentTarget.closest('.sheet'); if(sheet){sheet.classList.remove('open');syncScrim();}
+  const sheet=e.currentTarget.closest('.sheet'); if(sheet){sheet.classList.remove('open');syncScrim();saveConfig();}
 }));
+// Persiste le pli des sections accordeon a chaque ouverture/fermeture.
+document.querySelectorAll('#optionsPanel details.opt-sec').forEach(d=>d.addEventListener('toggle',saveConfig));
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeSheets();});
 document.addEventListener('keydown',e=>{if(e.code==='Space'&&e.target.tagName!=='INPUT'){e.preventDefault();$('seed').value=randSeed();build();}});
 
-// Initialisation : etat partage via URL, sinon graine aleatoire
-if(!applyStateFromHash())$('seed').value=randSeed();
-build();
+// Initialisation. DEUX sources independantes :
+// 1) localStorage -> LAYOUT (mode notes, pli des sections, panneaux). Toujours charge.
+// 2) URL #d= -> CONFIG DU DONJON (graine + params). Si present, il fixe le donjon a l'identique
+//    (et l'URL reste telle quelle : c'est la source au prochain reload). Sinon, graine neuve.
+loadConfig();
+const fromHash = applyStateFromHash();
+if(!fromHash) $('seed').value=randSeed();   // pas d'#d= : nouvelle graine a chaque ouverture
+build();   // build() -> encodeStateToHash() : l'URL #d= reflete des lors le donjon courant
 if(pendingNotesMode)applyNotesMode(pendingNotesMode);
 openDefaultSheets(); </script> </body> </html>
