@@ -1,4 +1,4 @@
-<!DOCTYPE html> <html lang="fr"> <head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width,initial-scale=1"> <title>One Click Dungeon</title> <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=IM+Fell+English:ital@0;1&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" media="print" onload="this.media='all'" onerror="this.remove()"> <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=IM+Fell+English:ital@0;1&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap"></noscript> <style>:root{--paper:#efe6d0;--paper2:#e7dcc0;--ink:#23201a;--ink-soft:#5b5345;--line:#2a2620;--grid:rgba(60,52,38,.16);--accent:#7a3b2e;--water:#9fb7b0;--panel:#f6efdc;--edge:#cdbd97;--paper-out:#e0d8c3}[data-theme=plan]{--paper:#16314a;--paper2:#12283c;--ink:#dce9f4;--ink-soft:#9db8cf;--line:#cfe2f2;--grid:rgba(200,224,245,.16);--accent:#e8b04b;--water:#2c5a6e;--panel:#102a3f;--edge:#27506f;--paper-out:#0d1f30}[data-theme=encre]{--paper:#1c1a17;--paper2:#161412;--ink:#e9e2d2;--ink-soft:#a99f8a;--line:#e9e2d2;--grid:rgba(233,226,210,.13);--accent:#c8693f;--water:#324b4b;--panel:#211e19;--edge:#3a342b;--paper-out:#100e0c}body{--field:color-mix(in srgb, var(--ink) 8%, var(--panel));--chip:color-mix(in srgb, var(--ink) 6%, var(--panel));--chip-on:color-mix(in srgb, var(--accent) 16%, var(--panel));--hair:color-mix(in srgb, var(--ink) 12%, transparent);--shadow:0 18px 50px -12px rgba(0,0,0,.35)}*{box-sizing:border-box}body,html{margin:0;height:100%}body{background:radial-gradient(120% 120% at 50% 0,var(--paper) 0,var(--paper2) 100%);color:var(--ink);font-family:"EB Garamond",Georgia,serif;-webkit-font-smoothing:antialiased;height:100vh;overflow:hidden;display:flex;flex-direction:column}.app{flex:1 1 auto;display:flex;flex-direction:column;min-height:0}.topbar{flex:0 0 auto;height:56px;display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--panel);box-shadow:0 1px 0 var(--hair),0 8px 22px -16px rgba(0,0,0,.4);z-index:50}.brand{font-family:"IM Fell English SC","EB Garamond",Georgia,"Times New Roman",serif;font-size:18px;letter-spacing:.5px;white-space:nowrap;display:inline-flex;align-items:baseline;gap:6px}.brand span{color:var(--ink-soft)}.brand .ver{font-family:"EB Garamond",Georgia,serif;font-size:11px;letter-spacing:.3px;color:var(--ink-soft);opacity:.7;background:var(--chip);border-radius:999px;padding:2px 7px;align-self:center}.grow{flex:1}.btn{cursor:pointer;border:0;border-radius:999px;padding:9px 16px;font-family:"EB Garamond",serif;font-size:14px;background:var(--field);color:var(--ink);transition:transform .06s ease,background .15s ease;white-space:nowrap}.btn:hover{background:var(--chip-on)}.btn:active{transform:translateY(1px)}.btn.primary{background:var(--accent);color:#fff;font-weight:600}.btn.ghost{background:0 0}.btn.ghost:hover{background:var(--field)}.btn.small{padding:7px 12px;font-size:13px}.export-wrap{position:relative}.export-menu{position:absolute;top:calc(100% + 8px);right:0;z-index:70;min-width:180px;background:var(--panel);border:1px solid var(--edge);border-radius:12px;box-shadow:var(--shadow);padding:6px;display:flex;flex-direction:column;gap:2px}.export-menu[hidden]{display:none}.export-menu .ex-item{border:0;background:0 0;color:var(--ink);text-align:left;cursor:pointer;font-family:"EB Garamond",serif;font-size:14px;padding:9px 12px;border-radius:8px;white-space:nowrap}.export-menu .ex-item:hover{background:var(--chip-on);color:var(--accent)}.stage{flex:1 1 auto;min-height:0;position:relative;overflow:auto;display:flex;align-items:flex-start;justify-content:center;padding:18px}.stage-col{display:flex;flex-direction:column;align-items:center;gap:18px;width:100%;max-width:1100px;margin:0 auto}.stage svg{max-width:100%;height:auto;filter:drop-shadow(0 14px 34px rgba(0,0,0,.22))}#notesInline{display:none;width:100%;max-width:780px;background:var(--panel);border-radius:16px;padding:18px 22px 24px;box-shadow:0 16px 40px -22px rgba(0,0,0,.45)}body.notes-inline-on #notesInline{display:block}.inline-title{font-family:"IM Fell English","EB Garamond",Georgia,"Times New Roman",serif;font-style:italic;font-size:22px;margin:0 0 4px;line-height:1.15}.seg{display:flex;width:100%;background:var(--chip);border-radius:12px;padding:3px}.seg button{flex:1;border:0;background:0 0;color:var(--ink-soft);padding:8px 6px;border-radius:10px;font-family:"EB Garamond",serif;font-size:13px;cursor:pointer;white-space:nowrap;transition:background .15s ease,color .15s ease}.seg button.on{background:var(--accent);color:#fff;font-weight:600}input[type=text],select{background:var(--field);color:var(--ink);border:0;border-radius:10px;padding:9px 11px;font-family:"EB Garamond",serif;font-size:14px;width:100%}select{appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--ink-soft) 50%),linear-gradient(135deg,var(--ink-soft) 50%,transparent 50%);background-position:calc(100% - 16px) 17px,calc(100% - 11px) 17px;background-size:5px 5px,5px 5px;background-repeat:no-repeat;padding-right:30px}.row{display:flex;gap:8px;align-items:center}.row .btn{flex:0 0 auto}.chips{display:flex;flex-wrap:wrap;gap:8px}.chip{display:inline-flex;align-items:center;gap:7px;padding:8px 13px;border-radius:999px;background:var(--chip);cursor:pointer;font-size:13px;color:var(--ink-soft);user-select:none;transition:background .15s ease,color .15s ease}.chip input{position:absolute;opacity:0;pointer-events:none}.chip:has(input:checked){background:var(--chip-on);color:var(--accent);font-weight:600}.rng{display:grid;grid-template-columns:1fr auto;align-items:center;gap:2px 8px;font-size:13px;color:var(--ink-soft);margin:10px 0}.rng input[type=range]{grid-column:1/-1;width:100%;accent-color:var(--accent)}.rng output{font-variant-numeric:tabular-nums}.rng.sub{margin:6px 0 12px;padding-left:13px;opacity:.92}.rng.off{opacity:.42}.rng.off input[type=range]{cursor:not-allowed}.sec{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-soft);margin:20px 0 9px}.sec:first-child{margin-top:4px}.opt-sec{border-top:1px solid var(--hair);margin-top:6px}.opt-sec>summary{list-style:none;cursor:pointer;user-select:none;display:flex;align-items:center;gap:8px;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-soft);padding:13px 2px 11px}.opt-sec>summary::-webkit-details-marker{display:none}.opt-sec>summary::before{content:"›";font-size:15px;line-height:1;letter-spacing:0;transition:transform .18s ease;transform:rotate(0);opacity:.8}.opt-sec[open]>summary::before{transform:rotate(90deg)}.opt-sec>summary:hover{color:var(--ink)}.opt-sec[open]>summary{color:var(--ink)}.opt-sec>:not(summary){margin-bottom:14px}.stack{display:grid;gap:9px}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:9px 14px}.note-mini{font-size:11px;color:var(--ink-soft);opacity:.75;margin:8px 0 0}.fld{display:grid;gap:5px;font-size:11px;letter-spacing:.6px;text-transform:uppercase;color:var(--ink-soft)}.diff{margin:12px 0 2px;background:var(--chip);border-radius:12px;padding:12px 13px}.diff .dhead{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--ink-soft);margin-bottom:9px}.diff .dl{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:14px;margin:6px 0}.diff .dn{display:flex;align-items:center;gap:9px;color:var(--ink-soft)}.diff .dot{width:9px;height:9px;border-radius:50%;flex:0 0 auto}.diff .dv{font-variant-numeric:tabular-nums;font-weight:600;color:var(--ink)}.diff .dfoot{font-size:11px;color:var(--ink-soft);opacity:.82;margin-top:10px;line-height:1.45}.sheet{position:fixed;z-index:40;background:var(--panel);color:var(--ink);box-shadow:var(--shadow);display:flex;flex-direction:column;transition:transform .28s cubic-bezier(.4,0,.2,1);overscroll-behavior:contain;z-index:60;top:56px;height:calc(100vh - 56px);width:min(390px,94vw)}#optionsPanel{left:0;transform:translateX(-103%)}#optionsPanel.open{transform:translateX(0)}#notesPanel{right:0;transform:translateX(103%)}#notesPanel.open{transform:translateX(0)}.sheet.open{transform:none}.sheet-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:16px 18px 6px;position:relative}.sheet-head h2{margin:0;font-family:"IM Fell English","EB Garamond",Georgia,"Times New Roman",serif;font-style:italic;font-size:20px;line-height:1.15}.sheet .x{border:0;background:0 0;font-size:16px;cursor:pointer;color:var(--ink-soft);padding:8px;border-radius:10px;line-height:1}.sheet .x:hover{background:var(--field)}.sheet-body{padding:6px 18px 30px;overflow:auto}#scrim{position:fixed;inset:0;background:rgba(0,0,0,.4);opacity:0;visibility:hidden;transition:opacity .25s ease;z-index:40}#scrim.show{opacity:1;visibility:visible}@media (min-width:721px){#scrim.show{opacity:0;visibility:hidden}}.sub{font-size:12px;color:var(--ink-soft);margin:0 0 14px}.notes{list-style:none;margin:0;padding:0}.notes li{display:flex;gap:10px;padding:11px 0;font-size:14px;line-height:1.4}.notes li+li{box-shadow:0 -1px 0 var(--hair)}.num{flex:0 0 auto;width:22px;height:22px;border-radius:50%;background:var(--field);color:var(--ink);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600}.notes li.has-gm .num{background:var(--chip-on);color:var(--accent)}.gm-line{display:block;font-size:12.5px;color:var(--accent);margin-top:3px}.gm-line b{font-weight:600}.enc-line{line-height:1.6}button.mob{display:inline;border:0;padding:1px 6px;margin:1px 0;border-radius:999px;cursor:pointer;font-family:"EB Garamond",serif;font-size:12.5px;font-weight:600;line-height:1.3;background:var(--chip-on);color:var(--accent);transition:background .12s ease}button.mob:hover{background:color-mix(in srgb,var(--accent) 28%,var(--panel))}.ogl-note{font-size:10.5px;color:var(--ink-soft);opacity:.7;margin-top:16px;line-height:1.45}.mob-pop{position:fixed;z-index:80;background:var(--panel);color:var(--ink);border:1px solid var(--edge);border-radius:14px;box-shadow:var(--shadow);padding:14px 16px 16px;max-width:94vw;max-height:calc(100vh - 24px);overflow:auto;overscroll-behavior:contain;font-family:"EB Garamond",Georgia,serif}.mob-pop[hidden]{display:none}.mob-pop .mp-x{position:absolute;top:8px;right:8px;border:0;background:0 0;cursor:pointer;color:var(--ink-soft);font-size:15px;line-height:1;padding:6px;border-radius:8px}.mob-pop .mp-x:hover{background:var(--field)}.mob-pop .mp-name{margin:0 22px 2px 0;font-family:"IM Fell English","EB Garamond",Georgia,serif;font-style:italic;font-size:19px;line-height:1.15;color:var(--ink)}.mob-pop .mp-orig{font-size:12px;color:var(--ink-soft);margin-bottom:2px}.mob-pop .mp-type{font-size:12px;color:var(--ink-soft);font-style:italic;margin-bottom:10px}.mob-pop .mp-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:6px 8px;margin-bottom:10px}.mob-pop .mp-stats>div{background:var(--chip);border-radius:8px;padding:5px 7px;display:flex;flex-direction:column}.mob-pop .mp-stats .mp-wide{grid-column:1/-1;flex-direction:row;align-items:baseline;gap:8px}.mob-pop .mp-stats span{font-size:10px;letter-spacing:.6px;text-transform:uppercase;color:var(--ink-soft)}.mob-pop .mp-stats b{font-size:15px;font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums}.mob-pop .mp-abil{display:grid;grid-template-columns:repeat(6,1fr);gap:5px;margin-bottom:12px}.mob-pop .mp-abil>div{text-align:center;background:var(--chip);border-radius:8px;padding:5px 2px}.mob-pop .mp-abil span{display:block;font-size:9.5px;letter-spacing:.5px;color:var(--ink-soft)}.mob-pop .mp-abil b{display:block;font-size:14px;font-weight:600;color:var(--ink)}.mob-pop .mp-abil i{display:block;font-size:10px;color:var(--accent);font-style:normal}.mob-pop .mp-link{display:inline-block;font-size:12.5px;color:var(--accent);text-decoration:none;font-weight:600}.mob-pop .mp-link:hover{text-decoration:underline}.mob-pop .mp-toggle{display:block;width:100%;margin:0 0 10px;padding:7px 10px;cursor:pointer;border:0;border-radius:9px;background:var(--chip);color:var(--accent);font-weight:600;font-family:"EB Garamond",serif;font-size:12.5px;text-align:left;transition:background .12s ease}.mob-pop .mp-toggle:hover{background:var(--chip-on)}.mob-pop .mp-sections{margin-bottom:12px;border-top:1px solid var(--hair);padding-top:4px}.mob-pop .mp-sec{margin-top:10px}.mob-pop .mp-sec h4{margin:0 0 4px;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--accent)}.mob-pop .mp-intro{margin:0 0 6px;font-size:12px;color:var(--ink-soft);font-style:italic;line-height:1.4}.mob-pop .mp-entry{margin:0 0 6px;font-size:12.5px;line-height:1.42;color:var(--ink)}.mob-pop .mp-entry b{color:var(--ink)}.mob-pop .mp-loot-toggle{display:block;width:100%;margin:0 0 10px;padding:7px 10px;cursor:pointer;border:0;border-radius:9px;background:var(--chip);color:var(--accent);font-weight:600;font-family:"EB Garamond",serif;font-size:12.5px;text-align:left;transition:background .12s ease}.mob-pop .mp-loot-toggle:hover{background:var(--chip-on)}.mob-pop .mp-loot{margin:0 0 12px;border-top:1px solid var(--hair);padding-top:8px}.mob-pop .mp-loot h4{margin:0 0 4px;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--accent)}.mob-pop .mp-loot-po{margin:0 0 6px;font-size:13px;font-weight:600;color:var(--ink)}.mob-pop .mp-loot-items{margin:0;padding-left:18px}.mob-pop .mp-loot-items li{font-size:12.5px;line-height:1.45;color:var(--ink);margin-bottom:3px}.mob-pop .loot-item,.notes .loot-item{background:0 0;border:0;padding:0;cursor:pointer;font:inherit;color:var(--accent);font-weight:600;text-align:left}.mob-pop .loot-item:hover,.notes .loot-item:hover{text-decoration:underline}.notes .chest-rar{color:var(--ink-soft);font-style:italic;font-size:.92em}.mob-pop .mp-loot-items .mp-rar{color:var(--ink-soft);font-style:italic}.mob-pop .mp-loot-items .mp-att{color:var(--ink-soft);font-size:11.5px}.mob-pop .mp-loot-none{margin:0;font-size:12px;color:var(--ink-soft);font-style:italic}.mob-pop .mp-loot-bab{margin:4px 0 0;padding-left:18px;list-style:'· '}.mob-pop .mp-loot-bab li{font-size:12px;line-height:1.4;color:var(--ink-soft);font-style:italic;margin-bottom:2px}@media (max-width:720px){.mob-pop.open{left:0!important;right:0;bottom:0;top:auto!important;width:auto!important;max-width:none;max-height:82vh;border-radius:16px 16px 0 0;border-bottom:0;padding-bottom:24px}}.item-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:60}.item-modal{position:fixed;z-index:61;left:50%;top:50%;transform:translate(-50%,-50%);width:min(440px,calc(100vw - 32px));max-height:80vh;overflow:auto;background:var(--paper,#f4ecd8);color:var(--ink);border:1px solid var(--hair);border-radius:14px;padding:20px 22px;box-shadow:0 16px 50px rgba(0,0,0,.35)}.item-modal .im-x{position:absolute;top:10px;right:12px;background:0 0;border:0;cursor:pointer;font-size:18px;line-height:1;color:var(--ink-soft)}.item-modal .im-x:hover{color:var(--ink)}.item-modal .im-name{margin:0 24px 2px 0;font-size:19px;color:var(--ink);font-family:"EB Garamond",serif}.item-modal .im-meta{font-size:12px;letter-spacing:.5px;text-transform:uppercase;color:var(--accent);margin-bottom:6px}.item-modal .im-att{font-size:12.5px;color:var(--ink-soft);font-style:italic;margin-bottom:10px}.item-modal .im-desc{font-size:13.5px;line-height:1.5;color:var(--ink);margin:0 0 14px;white-space:pre-wrap}.item-modal .im-notogl{color:var(--ink-soft);font-style:italic}.item-modal .im-link{display:inline-block;font-size:12.5px;color:var(--accent);text-decoration:none;font-weight:600}.item-modal .im-link:hover{text-decoration:underline}@media (max-width:720px){.item-modal{left:0;top:auto;bottom:0;transform:none;width:auto;right:0;max-height:82vh;border-radius:16px 16px 0 0;border-bottom:0}}.legend{margin-top:20px}.legend h3{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-soft);margin:0 0 8px}.legend .row{display:flex;align-items:center;gap:10px;font-size:13px;margin:6px 0;color:var(--ink-soft)}.legend svg{flex:0 0 auto}.hint{font-size:11px;color:var(--ink-soft);opacity:.8;margin-top:18px}@media (max-width:720px){.brand span{display:none}.stage{padding:10px}#notesPanel,#optionsPanel,.sheet{top:auto;left:0;right:0;bottom:0;width:auto;height:auto;max-height:86vh;transform:translateY(103%);border-radius:18px 18px 0 0}#notesPanel.open,#optionsPanel.open,.sheet.open{transform:translateY(0)}.sheet-head{padding-top:22px}.sheet-head::before{content:"";position:absolute;top:8px;left:50%;transform:translateX(-50%);width:42px;height:4px;border-radius:2px;background:var(--hair)}.grid2{grid-template-columns:1fr 1fr}}#printArea{display:none}#printArea .ptitle{font-family:"IM Fell English SC","EB Garamond",Georgia,"Times New Roman",serif;font-weight:400;font-size:26px;text-align:center;margin:0 0 4px}#printArea .tag{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#7a3b2e;text-align:center;margin-bottom:12px}#printArea .phook{font-style:italic;text-align:center;max-width:60ch;margin:0 auto 10px;font-size:15px}#printArea .pmeta{text-align:center;color:#5b5345;font-size:12px;margin:0 0 18px}#printArea .pnotes{list-style:none;padding:0;margin:0;columns:2;column-gap:28px}#printArea .pnotes li{break-inside:avoid;display:flex;gap:8px;margin:0 0 10px;font-size:13px;line-height:1.35}#printArea .pnum{flex:0 0 auto;width:20px;height:20px;border:1.4px solid #23201a;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600}#printArea .pgm{display:block;color:#7a3b2e;font-size:12px;margin-top:2px}#printArea .plegend{margin-top:16px;border-top:1px solid #cdbd97;padding-top:10px;break-inside:avoid}#printArea .plegend h2{font-family:"IM Fell English SC","EB Garamond",Georgia,"Times New Roman",serif;font-weight:400;font-size:14px;letter-spacing:1px;margin:0 0 8px}#printArea .prow{display:inline-flex;align-items:center;gap:8px;margin:4px 16px 4px 0;font-size:12px;color:#5b5345}#printArea .ogl-note{margin-top:14px;font-size:10px;color:#8a8270;text-align:center}#printArea .psheets{columns:2;column-gap:24px;margin-top:6px}#printArea .psheet{break-inside:avoid;border:1px solid #cdbd97;border-radius:6px;padding:8px 10px;margin:0 0 12px;font-size:11.5px;line-height:1.35}#printArea .ps-name{font-family:"IM Fell English SC","EB Garamond",Georgia,"Times New Roman",serif;font-weight:400;font-size:16px;margin:0}#printArea .ps-count{color:#7a3b2e;font-size:13px}#printArea .ps-orig{font-size:11px;color:#7a3b2e;margin:-1px 0 0}#printArea .ps-type{font-style:italic;color:#5b5345;font-size:11px;margin:1px 0 6px}#printArea .ps-abil,#printArea .ps-stats{display:flex;flex-wrap:wrap;gap:4px 10px;margin:0 0 6px}#printArea .ps-abil>div,#printArea .ps-stats>div{display:flex;align-items:baseline;gap:3px}#printArea .ps-abil span,#printArea .ps-stats span{font-size:9px;letter-spacing:1px;text-transform:uppercase;color:#8a8270}#printArea .ps-abil b,#printArea .ps-stats b{font-size:12px}#printArea .ps-abil i{font-style:normal;color:#5b5345;font-size:10px}#printArea .ps-stats .ps-wide{flex:1 1 100%}#printArea .ps-sec{margin-top:5px}#printArea .ps-sec h4{margin:0 0 2px;font-size:11px;letter-spacing:.5px;text-transform:uppercase;color:#7a3b2e;border-bottom:1px solid #e3d7ba}#printArea .ps-intro{font-style:italic;margin:0 0 3px}#printArea .ps-entry{margin:0 0 3px}@media print{@page{margin:1cm}body{overflow:visible;background:#fff;display:block}body>:not(#printArea){display:none!important}#printArea{display:block!important}#printArea .page{page-break-after:always;padding:0 0 .5cm;display:flex;flex-direction:column;align-items:center}#printArea .page:last-child{page-break-after:auto}#printArea .page.map svg{width:auto;max-width:100%;max-height:23cm;display:block}#printArea .page.doc{align-items:stretch}}</style> </head> <body data-theme="parchemin"> <div class="app"> <header class="topbar"> <div class="brand">One Click<span> Dungeon</span><span class="ver">v0.2.3</span></div> <div class="grow"></div> <button id="btn-options" class="btn ghost small">Options</button> <button id="gen" class="btn primary">Générer</button> <button id="btn-notes" class="btn ghost small">Notes</button> <div class="export-wrap"> <button id="btn-export" class="btn ghost small" aria-haspopup="true" aria-expanded="false">Export ▾</button> <div id="exportMenu" class="export-menu" hidden> <button id="png" class="ex-item">Image PNG</button> <button id="svg" class="ex-item">Vectoriel SVG</button> <button id="json" class="ex-item">Données JSON</button> <button id="print" class="ex-item">Imprimer</button> <button id="share" class="ex-item">Partager le lien</button> </div> </div> <div class="grow"></div> </header> <main class="stage"><div class="stage-col"><div id="map"></div><section id="notesInline"></section></div></main> </div> <section id="optionsPanel" class="sheet" aria-label="Options"> <div class="sheet-head"><h2>Options</h2><button class="x" data-close aria-label="Fermer">✕</button></div> <div class="sheet-body"> <div class="sec">Donjon</div> <div class="stack"> <div class="row"> <input id="seed" type="text" spellcheck="false" placeholder="graine"> <button id="rand" class="btn small" title="Graine aléatoire">Aléatoire</button> </div> <div class="grid2"> <select id="size" aria-label="Taille"> <option value="9">Petit</option> <option value="16" selected="selected">Moyen</option> <option value="26">Grand</option> <option value="38">Vaste</option> </select> <select id="view" aria-label="Vue"> <option value="mj" selected="selected">Vue MJ</option> <option value="player">Vue joueur</option> </select> <select id="biome" aria-label="Biome"> <option value="" selected="selected">Générique</option> <option value="auto">Auto</option> <option value="crypte">Crypte</option> <option value="donjon">Donjon / Prison</option> <option value="grotte">Grotte</option> <option value="temple">Temple</option> <option value="egout">Égout</option> <option value="mine">Mine</option> <option value="catacombes">Catacombes</option> <option value="manoir">Manoir hanté</option> <option value="sanctuaire">Sanctuaire</option> <option value="ruines">Ruines</option> <option value="postapo">Post-apocalyptique</option> <option value="cyberpunk">Cyberpunk</option> <option value="moderne">Moderne</option> <option value="dcc">Dungeon Crawler Carl</option> </select> <select id="theme" aria-label="Thème"> <option value="parchemin" selected="selected">Parchemin</option> <option value="plan">Plan bleu</option> <option value="encre">Encre sombre</option> </select> </div> </div> <details class="opt-sec" open data-sec="party"> <summary>Groupe d'aventuriers</summary> <div class="grid2"> <label class="fld">Joueurs <select id="party-size" aria-label="Nombre de joueurs"> <option>1</option><option>2</option><option>3</option> <option value="4" selected="selected">4</option><option>5</option><option>6</option> <option>7</option><option>8</option><option>9</option><option>10</option> </select> </label> <label class="fld">Niveau du groupe <select id="party-level" aria-label="Niveau du groupe"> <option>1</option><option>2</option><option value="3" selected="selected">3</option> <option>4</option><option>5</option><option>6</option><option>7</option> <option>8</option><option>9</option><option>10</option><option>11</option> <option>12</option><option>13</option><option>14</option><option>15</option> <option>16</option><option>17</option><option>18</option><option>19</option><option>20</option> </select> </label> </div> <div id="diffPanel" class="diff" aria-live="polite"></div> </details> <details class="opt-sec" data-sec="notes"> <summary>Affichage des notes</summary> <div class="seg" id="notesSeg"> <button type="button" data-nmode="hidden">Masqué</button> <button type="button" data-nmode="drawer" class="on">Tiroir</button> <button type="button" data-nmode="inline">Sous la carte</button> </div> </details> <details class="opt-sec" data-sec="struct"> <summary>Structure</summary> <div class="chips"> <label class="chip"><input type="checkbox" id="t-sym" checked="checked"><span>Symétrie locale</span></label> <label class="chip"><input type="checkbox" id="t-corr"><span>Longs couloirs</span></label> <label class="chip"><input type="checkbox" id="t-water" checked="checked"><span>Eau</span></label> <label class="chip"><input type="checkbox" id="t-col" checked="checked"><span>Colonnades</span></label> </div> </details> <details class="opt-sec" data-sec="doors"> <summary>Portes</summary> <div class="rng">Proportion de portes <output id="o-density">70%</output> <input type="range" id="d-density" min="0" max="100" value="70"></div> <div class="grid2"> <div class="rng">Simple <output id="o-simple"></output><input type="range" id="w-simple" min="0" max="100" value="55"></div> <div class="rng">Double <output id="o-double"></output><input type="range" id="w-double" min="0" max="100" value="15"></div> <div class="rng">Herse <output id="o-barred"></output><input type="range" id="w-barred" min="0" max="100" value="15"></div> <div class="rng">Secrète <output id="o-secret"></output><input type="range" id="w-secret" min="0" max="100" value="15"></div> </div> <p class="note-mini">Le reste des ouvertures devient des passages ouverts (arches).</p> </details> <details class="opt-sec" data-sec="content"> <summary>Contenu (repères MJ)</summary> <div class="chips"> <label class="chip"><input type="checkbox" id="pp-locks" checked="checked"><span>Verrous et clés</span></label> <label class="chip"><input type="checkbox" id="pp-traps" checked="checked"><span>Pièges</span></label> <label class="chip"><input type="checkbox" id="pp-treasure"><span>Trésors</span></label> <label class="chip"><input type="checkbox" id="pp-occ" checked="checked"><span>Occupants</span></label> <label class="chip"><input type="checkbox" id="pp-rubble"><span>Éboulis</span></label> <label class="chip"><input type="checkbox" id="pp-light" checked="checked"><span>Éclairage</span></label> <label class="chip"><input type="checkbox" id="pp-props"><span>Props</span></label> </div> <div class="rng sub">Taux de verrous <output id="o-lock">25%</output><input type="range" id="lock-rate" min="0" max="100" value="25"></div> <div class="rng sub">Densité de mobs <output id="o-mobrate">45%</output><input type="range" id="mob-rate" min="0" max="100" value="45"></div> <div class="rng sub">Valeur du loot <output id="o-lootval">Standard</output><input type="range" id="loot-value" min="1" max="5" value="3"></div> <div class="rng sub">Densité de pièges <output id="o-trap">22%</output><input type="range" id="trap-rate" min="0" max="100" value="22"></div> <div class="rng sub">Densité de trésors <output id="o-treasure">25%</output><input type="range" id="treasure-rate" min="0" max="100" value="25"></div> <div class="rng sub">Qualité des trésors <output id="o-treasqual">Standard</output><input type="range" id="treasure-quality" min="1" max="5" value="3"></div> <div class="rng sub">Salles éclairées <output id="o-light">40%</output><input type="range" id="light-rate" min="0" max="100" value="40"></div> <div class="rng sub">Densité de props <output id="o-props">35%</output><input type="range" id="props-rate" min="0" max="100" value="35"></div> </details> <p class="hint">Astuce : barre d'espace pour régénérer. La même graine redonne toujours le même donjon. Exports (PNG, SVG, JSON, impression, lien) via le bouton <b>Export</b> en haut.</p> </div> </section> <section id="notesPanel" class="sheet" aria-label="Notes"> <div class="sheet-head"><h2 id="dname">Donjon</h2><button class="x" data-close aria-label="Fermer">✕</button></div> <div class="sheet-body"> <div id="notesHostDrawer"></div> <p class="hint">Les repères en couleur (clé, piège, trésor, DC des verrous) sont destinés au MJ.</p> </div> </section> <div id="scrim"></div> <div id="mobPopover" class="mob-pop" role="dialog" aria-modal="false" hidden></div> <div id="itemModalBackdrop" class="item-modal-backdrop" hidden></div> <div id="itemModal" class="item-modal" role="dialog" aria-modal="true" hidden></div> <div id="printArea"></div> <script> "use strict";
+<!DOCTYPE html> <html lang="fr"> <head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width,initial-scale=1"> <title>One Click Dungeon</title> <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=IM+Fell+English:ital@0;1&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" media="print" onload="this.media='all'" onerror="this.remove()"> <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=IM+Fell+English:ital@0;1&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap"></noscript> <style>:root{--paper:#efe6d0;--paper2:#e7dcc0;--ink:#23201a;--ink-soft:#5b5345;--line:#2a2620;--grid:rgba(60,52,38,.16);--accent:#7a3b2e;--water:#9fb7b0;--panel:#f6efdc;--edge:#cdbd97;--paper-out:#e0d8c3}[data-theme=plan]{--paper:#16314a;--paper2:#12283c;--ink:#dce9f4;--ink-soft:#9db8cf;--line:#cfe2f2;--grid:rgba(200,224,245,.16);--accent:#e8b04b;--water:#2c5a6e;--panel:#102a3f;--edge:#27506f;--paper-out:#0d1f30}[data-theme=encre]{--paper:#1c1a17;--paper2:#161412;--ink:#e9e2d2;--ink-soft:#a99f8a;--line:#e9e2d2;--grid:rgba(233,226,210,.13);--accent:#c8693f;--water:#324b4b;--panel:#211e19;--edge:#3a342b;--paper-out:#100e0c}body{--field:color-mix(in srgb, var(--ink) 8%, var(--panel));--chip:color-mix(in srgb, var(--ink) 6%, var(--panel));--chip-on:color-mix(in srgb, var(--accent) 16%, var(--panel));--hair:color-mix(in srgb, var(--ink) 12%, transparent);--shadow:0 18px 50px -12px rgba(0,0,0,.35)}*{box-sizing:border-box}body,html{margin:0;height:100%}body{background:radial-gradient(120% 120% at 50% 0,var(--paper) 0,var(--paper2) 100%);color:var(--ink);font-family:"EB Garamond",Georgia,serif;-webkit-font-smoothing:antialiased;height:100vh;overflow:hidden;display:flex;flex-direction:column}.app{flex:1 1 auto;display:flex;flex-direction:column;min-height:0}.topbar{flex:0 0 auto;height:56px;display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--panel);box-shadow:0 1px 0 var(--hair),0 8px 22px -16px rgba(0,0,0,.4);z-index:50}.brand{font-family:"IM Fell English SC","EB Garamond",Georgia,"Times New Roman",serif;font-size:18px;letter-spacing:.5px;white-space:nowrap;display:inline-flex;align-items:baseline;gap:6px}.brand span{color:var(--ink-soft)}.brand .ver{font-family:"EB Garamond",Georgia,serif;font-size:11px;letter-spacing:.3px;color:var(--ink-soft);opacity:.7;background:var(--chip);border-radius:999px;padding:2px 7px;align-self:center}.grow{flex:1}.btn{cursor:pointer;border:0;border-radius:999px;padding:9px 16px;font-family:"EB Garamond",serif;font-size:14px;background:var(--field);color:var(--ink);transition:transform .06s ease,background .15s ease;white-space:nowrap}.btn:hover{background:var(--chip-on)}.btn:active{transform:translateY(1px)}.btn.primary{background:var(--accent);color:#fff;font-weight:600}.btn.ghost{background:0 0}.btn.ghost:hover{background:var(--field)}.btn.small{padding:7px 12px;font-size:13px}.export-wrap{position:relative}.export-menu{position:absolute;top:calc(100% + 8px);right:0;z-index:70;min-width:180px;background:var(--panel);border:1px solid var(--edge);border-radius:12px;box-shadow:var(--shadow);padding:6px;display:flex;flex-direction:column;gap:2px}.export-menu[hidden]{display:none}.export-menu .ex-item{border:0;background:0 0;color:var(--ink);text-align:left;cursor:pointer;font-family:"EB Garamond",serif;font-size:14px;padding:9px 12px;border-radius:8px;white-space:nowrap}.export-menu .ex-item:hover{background:var(--chip-on);color:var(--accent)}.stage{flex:1 1 auto;min-height:0;position:relative;overflow:auto;display:flex;align-items:flex-start;justify-content:center;padding:18px}.stage-col{display:flex;flex-direction:column;align-items:center;gap:18px;width:100%;max-width:1100px;margin:0 auto}.stage svg{max-width:100%;height:auto;filter:drop-shadow(0 14px 34px rgba(0,0,0,.22))}#notesInline{display:none;width:100%;max-width:780px;background:var(--panel);border-radius:16px;padding:18px 22px 24px;box-shadow:0 16px 40px -22px rgba(0,0,0,.45)}body.notes-inline-on #notesInline{display:block}.inline-title{font-family:"IM Fell English","EB Garamond",Georgia,"Times New Roman",serif;font-style:italic;font-size:22px;margin:0 0 4px;line-height:1.15}.seg{display:flex;width:100%;background:var(--chip);border-radius:12px;padding:3px}.seg button{flex:1;border:0;background:0 0;color:var(--ink-soft);padding:8px 6px;border-radius:10px;font-family:"EB Garamond",serif;font-size:13px;cursor:pointer;white-space:nowrap;transition:background .15s ease,color .15s ease}.seg button.on{background:var(--accent);color:#fff;font-weight:600}input[type=text],select{background:var(--field);color:var(--ink);border:0;border-radius:10px;padding:9px 11px;font-family:"EB Garamond",serif;font-size:14px;width:100%}select{appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--ink-soft) 50%),linear-gradient(135deg,var(--ink-soft) 50%,transparent 50%);background-position:calc(100% - 16px) 17px,calc(100% - 11px) 17px;background-size:5px 5px,5px 5px;background-repeat:no-repeat;padding-right:30px}.row{display:flex;gap:8px;align-items:center}.row .btn{flex:0 0 auto}.chips{display:flex;flex-wrap:wrap;gap:8px}.chip{display:inline-flex;align-items:center;gap:7px;padding:8px 13px;border-radius:999px;background:var(--chip);cursor:pointer;font-size:13px;color:var(--ink-soft);user-select:none;transition:background .15s ease,color .15s ease}.chip input{position:absolute;opacity:0;pointer-events:none}.chip:has(input:checked){background:var(--chip-on);color:var(--accent);font-weight:600}.rng{display:grid;grid-template-columns:1fr auto;align-items:center;gap:2px 8px;font-size:13px;color:var(--ink-soft);margin:10px 0}.rng input[type=range]{grid-column:1/-1;width:100%;accent-color:var(--accent)}.rng output{font-variant-numeric:tabular-nums}.rng.sub{margin:6px 0 12px;padding-left:13px;opacity:.92}.rng.off{opacity:.42}.rng.off input[type=range]{cursor:not-allowed}.sec{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-soft);margin:20px 0 9px}.sec:first-child{margin-top:4px}.opt-sec{border-top:1px solid var(--hair);margin-top:6px}.opt-sec>summary{list-style:none;cursor:pointer;user-select:none;display:flex;align-items:center;gap:8px;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-soft);padding:13px 2px 11px}.opt-sec>summary::-webkit-details-marker{display:none}.opt-sec>summary::before{content:"›";font-size:15px;line-height:1;letter-spacing:0;transition:transform .18s ease;transform:rotate(0);opacity:.8}.opt-sec[open]>summary::before{transform:rotate(90deg)}.opt-sec>summary:hover{color:var(--ink)}.opt-sec[open]>summary{color:var(--ink)}.opt-sec>:not(summary){margin-bottom:14px}.stack{display:grid;gap:9px}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:9px 14px}.note-mini{font-size:11px;color:var(--ink-soft);opacity:.75;margin:8px 0 0}.fld{display:grid;gap:5px;font-size:11px;letter-spacing:.6px;text-transform:uppercase;color:var(--ink-soft)}.diff{margin:12px 0 2px;background:var(--chip);border-radius:12px;padding:12px 13px}.diff .dhead{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--ink-soft);margin-bottom:9px}.diff .dl{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:14px;margin:6px 0}.diff .dn{display:flex;align-items:center;gap:9px;color:var(--ink-soft)}.diff .dot{width:9px;height:9px;border-radius:50%;flex:0 0 auto}.diff .dv{font-variant-numeric:tabular-nums;font-weight:600;color:var(--ink)}.diff .dfoot{font-size:11px;color:var(--ink-soft);opacity:.82;margin-top:10px;line-height:1.45}.sheet{position:fixed;z-index:40;background:var(--panel);color:var(--ink);box-shadow:var(--shadow);display:flex;flex-direction:column;transition:transform .28s cubic-bezier(.4,0,.2,1);overscroll-behavior:contain;z-index:60;top:56px;height:calc(100vh - 56px);width:min(390px,94vw)}#optionsPanel{left:0;transform:translateX(-103%)}#optionsPanel.open{transform:translateX(0)}#notesPanel{right:0;transform:translateX(103%)}#notesPanel.open{transform:translateX(0)}.sheet.open{transform:none}.sheet-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:16px 18px 6px;position:relative}.sheet-head h2{margin:0;font-family:"IM Fell English","EB Garamond",Georgia,"Times New Roman",serif;font-style:italic;font-size:20px;line-height:1.15}.sheet .x{border:0;background:0 0;font-size:16px;cursor:pointer;color:var(--ink-soft);padding:8px;border-radius:10px;line-height:1}.sheet .x:hover{background:var(--field)}.sheet-body{padding:6px 18px 30px;overflow:auto}#scrim{position:fixed;inset:0;background:rgba(0,0,0,.4);opacity:0;visibility:hidden;transition:opacity .25s ease;z-index:40}#scrim.show{opacity:1;visibility:visible}@media (min-width:721px){#scrim.show{opacity:0;visibility:hidden}}.sub{font-size:12px;color:var(--ink-soft);margin:0 0 14px}.notes{list-style:none;margin:0;padding:0}.notes li{display:flex;gap:10px;padding:11px 0;font-size:14px;line-height:1.4}.notes li+li{box-shadow:0 -1px 0 var(--hair)}.num{flex:0 0 auto;width:22px;height:22px;border-radius:50%;background:var(--field);color:var(--ink);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600}.notes li.has-gm .num{background:var(--chip-on);color:var(--accent)}.gm-line{display:block;font-size:12.5px;color:var(--accent);margin-top:3px}.gm-line b{font-weight:600}.enc-line{line-height:1.6}button.mob{display:inline;border:0;padding:1px 6px;margin:1px 0;border-radius:999px;cursor:pointer;font-family:"EB Garamond",serif;font-size:12.5px;font-weight:600;line-height:1.3;background:var(--chip-on);color:var(--accent);transition:background .12s ease}button.mob:hover{background:color-mix(in srgb,var(--accent) 28%,var(--panel))}.ogl-note{font-size:10.5px;color:var(--ink-soft);opacity:.7;margin-top:16px;line-height:1.45}.mob-pop{position:fixed;z-index:80;background:var(--panel);color:var(--ink);border:1px solid var(--edge);border-radius:14px;box-shadow:var(--shadow);padding:14px 16px 16px;max-width:94vw;max-height:calc(100vh - 24px);overflow:auto;overscroll-behavior:contain;font-family:"EB Garamond",Georgia,serif}.mob-pop[hidden]{display:none}.mob-pop .mp-x{position:absolute;top:8px;right:8px;border:0;background:0 0;cursor:pointer;color:var(--ink-soft);font-size:15px;line-height:1;padding:6px;border-radius:8px}.mob-pop .mp-x:hover{background:var(--field)}.mob-pop .mp-name{margin:0 22px 2px 0;font-family:"IM Fell English","EB Garamond",Georgia,serif;font-style:italic;font-size:19px;line-height:1.15;color:var(--ink)}.mob-pop .mp-orig{font-size:12px;color:var(--ink-soft);margin-bottom:2px}.mob-pop .mp-type{font-size:12px;color:var(--ink-soft);font-style:italic;margin-bottom:10px}.mob-pop .mp-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:6px 8px;margin-bottom:10px}.mob-pop .mp-stats>div{background:var(--chip);border-radius:8px;padding:5px 7px;display:flex;flex-direction:column}.mob-pop .mp-stats .mp-wide{grid-column:1/-1;flex-direction:row;align-items:baseline;gap:8px}.mob-pop .mp-stats span{font-size:10px;letter-spacing:.6px;text-transform:uppercase;color:var(--ink-soft)}.mob-pop .mp-stats b{font-size:15px;font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums}.mob-pop .mp-abil{display:grid;grid-template-columns:repeat(6,1fr);gap:5px;margin-bottom:12px}.mob-pop .mp-abil>div{text-align:center;background:var(--chip);border-radius:8px;padding:5px 2px}.mob-pop .mp-abil span{display:block;font-size:9.5px;letter-spacing:.5px;color:var(--ink-soft)}.mob-pop .mp-abil b{display:block;font-size:14px;font-weight:600;color:var(--ink)}.mob-pop .mp-abil i{display:block;font-size:10px;color:var(--accent);font-style:normal}.mob-pop .mp-link{display:inline-block;font-size:12.5px;color:var(--accent);text-decoration:none;font-weight:600}.mob-pop .mp-link:hover{text-decoration:underline}.mob-pop .mp-toggle{display:block;width:100%;margin:0 0 10px;padding:7px 10px;cursor:pointer;border:0;border-radius:9px;background:var(--chip);color:var(--accent);font-weight:600;font-family:"EB Garamond",serif;font-size:12.5px;text-align:left;transition:background .12s ease}.mob-pop .mp-toggle:hover{background:var(--chip-on)}.mob-pop .mp-sections{margin-bottom:12px;border-top:1px solid var(--hair);padding-top:4px}.mob-pop .mp-sec{margin-top:10px}.mob-pop .mp-sec h4{margin:0 0 4px;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--accent)}.mob-pop .mp-intro{margin:0 0 6px;font-size:12px;color:var(--ink-soft);font-style:italic;line-height:1.4}.mob-pop .mp-entry{margin:0 0 6px;font-size:12.5px;line-height:1.42;color:var(--ink)}.mob-pop .mp-entry b{color:var(--ink)}.mob-pop .mp-loot-toggle{display:block;width:100%;margin:0 0 10px;padding:7px 10px;cursor:pointer;border:0;border-radius:9px;background:var(--chip);color:var(--accent);font-weight:600;font-family:"EB Garamond",serif;font-size:12.5px;text-align:left;transition:background .12s ease}.mob-pop .mp-loot-toggle:hover{background:var(--chip-on)}.mob-pop .mp-loot{margin:0 0 12px;border-top:1px solid var(--hair);padding-top:8px}.mob-pop .mp-loot h4{margin:0 0 4px;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--accent)}.mob-pop .mp-loot-po{margin:0 0 6px;font-size:13px;font-weight:600;color:var(--ink)}.mob-pop .mp-loot-items{margin:0;padding-left:18px}.mob-pop .mp-loot-items li{font-size:12.5px;line-height:1.45;color:var(--ink);margin-bottom:3px}.mob-pop .loot-item,.notes .loot-item{background:0 0;border:0;padding:0;cursor:pointer;font:inherit;color:var(--accent);font-weight:600;text-align:left}.mob-pop .loot-item:hover,.notes .loot-item:hover{text-decoration:underline}.notes .chest-rar{color:var(--ink-soft);font-style:italic;font-size:.92em}.mob-pop .mp-loot-items .mp-rar{color:var(--ink-soft);font-style:italic}.mob-pop .mp-loot-items .mp-att{color:var(--ink-soft);font-size:11.5px}.mob-pop .mp-loot-none{margin:0;font-size:12px;color:var(--ink-soft);font-style:italic}.mob-pop .mp-loot-bab{margin:4px 0 0;padding-left:18px;list-style:'· '}.mob-pop .mp-loot-bab li{font-size:12px;line-height:1.4;color:var(--ink-soft);font-style:italic;margin-bottom:2px}@media (max-width:720px){.mob-pop.open{left:0!important;right:0;bottom:0;top:auto!important;width:auto!important;max-width:none;max-height:82vh;border-radius:16px 16px 0 0;border-bottom:0;padding-bottom:24px}}.item-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:60}.item-modal{position:fixed;z-index:61;left:50%;top:50%;transform:translate(-50%,-50%);width:min(440px,calc(100vw - 32px));max-height:80vh;overflow:auto;background:var(--paper,#f4ecd8);color:var(--ink);border:1px solid var(--hair);border-radius:14px;padding:20px 22px;box-shadow:0 16px 50px rgba(0,0,0,.35)}.item-modal .im-x{position:absolute;top:10px;right:12px;background:0 0;border:0;cursor:pointer;font-size:18px;line-height:1;color:var(--ink-soft)}.item-modal .im-x:hover{color:var(--ink)}.item-modal .im-name{margin:0 24px 2px 0;font-size:19px;color:var(--ink);font-family:"EB Garamond",serif}.item-modal .im-meta{font-size:12px;letter-spacing:.5px;text-transform:uppercase;color:var(--accent);margin-bottom:6px}.item-modal .im-att{font-size:12.5px;color:var(--ink-soft);font-style:italic;margin-bottom:10px}.item-modal .im-desc{font-size:13.5px;line-height:1.5;color:var(--ink);margin:0 0 14px;white-space:pre-wrap}.item-modal .im-notogl{color:var(--ink-soft);font-style:italic}.item-modal .im-link{display:inline-block;font-size:12.5px;color:var(--accent);text-decoration:none;font-weight:600}.item-modal .im-link:hover{text-decoration:underline}@media (max-width:720px){.item-modal{left:0;top:auto;bottom:0;transform:none;width:auto;right:0;max-height:82vh;border-radius:16px 16px 0 0;border-bottom:0}}.legend{margin-top:20px}.legend h3{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-soft);margin:0 0 8px}.legend .row{display:flex;align-items:center;gap:10px;font-size:13px;margin:6px 0;color:var(--ink-soft)}.legend svg{flex:0 0 auto}.hint{font-size:11px;color:var(--ink-soft);opacity:.8;margin-top:18px}@media (max-width:720px){.brand span{display:none}.stage{padding:10px}#notesPanel,#optionsPanel,.sheet{top:auto;left:0;right:0;bottom:0;width:auto;height:auto;max-height:86vh;transform:translateY(103%);border-radius:18px 18px 0 0}#notesPanel.open,#optionsPanel.open,.sheet.open{transform:translateY(0)}.sheet-head{padding-top:22px}.sheet-head::before{content:"";position:absolute;top:8px;left:50%;transform:translateX(-50%);width:42px;height:4px;border-radius:2px;background:var(--hair)}.grid2{grid-template-columns:1fr 1fr}}#printArea{display:none}#printArea .ptitle{font-family:"IM Fell English SC","EB Garamond",Georgia,"Times New Roman",serif;font-weight:400;font-size:26px;text-align:center;margin:0 0 4px}#printArea .tag{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#7a3b2e;text-align:center;margin-bottom:12px}#printArea .phook{font-style:italic;text-align:center;max-width:60ch;margin:0 auto 10px;font-size:15px}#printArea .pmeta{text-align:center;color:#5b5345;font-size:12px;margin:0 0 18px}#printArea .pnotes{list-style:none;padding:0;margin:0;columns:2;column-gap:28px}#printArea .pnotes li{break-inside:avoid;display:flex;gap:8px;margin:0 0 10px;font-size:13px;line-height:1.35}#printArea .pnum{flex:0 0 auto;width:20px;height:20px;border:1.4px solid #23201a;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600}#printArea .pgm{display:block;color:#7a3b2e;font-size:12px;margin-top:2px}#printArea .plegend{margin-top:16px;border-top:1px solid #cdbd97;padding-top:10px;break-inside:avoid}#printArea .plegend h2{font-family:"IM Fell English SC","EB Garamond",Georgia,"Times New Roman",serif;font-weight:400;font-size:14px;letter-spacing:1px;margin:0 0 8px}#printArea .prow{display:inline-flex;align-items:center;gap:8px;margin:4px 16px 4px 0;font-size:12px;color:#5b5345}#printArea .ogl-note{margin-top:14px;font-size:10px;color:#8a8270;text-align:center}#printArea .psheets{columns:2;column-gap:24px;margin-top:6px}#printArea .psheet{break-inside:avoid;border:1px solid #cdbd97;border-radius:6px;padding:8px 10px;margin:0 0 12px;font-size:11.5px;line-height:1.35}#printArea .ps-name{font-family:"IM Fell English SC","EB Garamond",Georgia,"Times New Roman",serif;font-weight:400;font-size:16px;margin:0}#printArea .ps-count{color:#7a3b2e;font-size:13px}#printArea .ps-orig{font-size:11px;color:#7a3b2e;margin:-1px 0 0}#printArea .ps-type{font-style:italic;color:#5b5345;font-size:11px;margin:1px 0 6px}#printArea .ps-abil,#printArea .ps-stats{display:flex;flex-wrap:wrap;gap:4px 10px;margin:0 0 6px}#printArea .ps-abil>div,#printArea .ps-stats>div{display:flex;align-items:baseline;gap:3px}#printArea .ps-abil span,#printArea .ps-stats span{font-size:9px;letter-spacing:1px;text-transform:uppercase;color:#8a8270}#printArea .ps-abil b,#printArea .ps-stats b{font-size:12px}#printArea .ps-abil i{font-style:normal;color:#5b5345;font-size:10px}#printArea .ps-stats .ps-wide{flex:1 1 100%}#printArea .ps-sec{margin-top:5px}#printArea .ps-sec h4{margin:0 0 2px;font-size:11px;letter-spacing:.5px;text-transform:uppercase;color:#7a3b2e;border-bottom:1px solid #e3d7ba}#printArea .ps-intro{font-style:italic;margin:0 0 3px}#printArea .ps-entry{margin:0 0 3px}@media print{@page{margin:1cm}body{overflow:visible;background:#fff;display:block}body>:not(#printArea){display:none!important}#printArea{display:block!important}#printArea .page{page-break-after:always;padding:0 0 .5cm;display:flex;flex-direction:column;align-items:center}#printArea .page:last-child{page-break-after:auto}#printArea .page.map svg{width:auto;max-width:100%;max-height:23cm;display:block}#printArea .page.doc{align-items:stretch}}</style> </head> <body data-theme="parchemin"> <div class="app"> <header class="topbar"> <div class="brand">One Click<span> Dungeon</span><span class="ver">v0.3.7</span></div> <div class="grow"></div> <button id="btn-options" class="btn ghost small">Options</button> <button id="gen" class="btn primary">Générer</button> <button id="btn-notes" class="btn ghost small">Notes</button> <div class="export-wrap"> <button id="btn-export" class="btn ghost small" aria-haspopup="true" aria-expanded="false">Export ▾</button> <div id="exportMenu" class="export-menu" hidden> <button id="png" class="ex-item">Image PNG</button> <button id="svg" class="ex-item">Vectoriel SVG</button> <button id="json" class="ex-item">Données JSON</button> <button id="print" class="ex-item">Imprimer</button> <button id="share" class="ex-item">Partager le lien</button> </div> </div> <div class="grow"></div> </header> <main class="stage"><div class="stage-col"><div id="map"></div><section id="notesInline"></section></div></main> </div> <section id="optionsPanel" class="sheet" aria-label="Options"> <div class="sheet-head"><h2>Options</h2><button class="x" data-close aria-label="Fermer">✕</button></div> <div class="sheet-body"> <div class="sec">Donjon</div> <div class="stack"> <div class="row"> <input id="seed" type="text" spellcheck="false" placeholder="graine"> <button id="rand" class="btn small" title="Graine aléatoire">Aléatoire</button> </div> <div class="grid2"> <select id="size" aria-label="Taille"> <option value="9">Petit</option> <option value="16" selected="selected">Moyen</option> <option value="26">Grand</option> <option value="38">Vaste</option> </select> <select id="view" aria-label="Vue"> <option value="mj" selected="selected">Vue MJ</option> <option value="player">Vue joueur</option> </select> <select id="biome" aria-label="Biome"> <option value="" selected="selected">Générique</option> <option value="auto">Auto</option> <option value="crypte">Crypte</option> <option value="donjon">Donjon / Prison</option> <option value="grotte">Grotte</option> <option value="temple">Temple</option> <option value="egout">Égout</option> <option value="mine">Mine</option> <option value="catacombes">Catacombes</option> <option value="manoir">Manoir hanté</option> <option value="sanctuaire">Sanctuaire</option> <option value="ruines">Ruines</option> <option value="postapo">Post-apocalyptique</option> <option value="cyberpunk">Cyberpunk</option> <option value="moderne">Moderne</option> <option value="dcc">Dungeon Crawler Carl</option> </select> <select id="theme" aria-label="Thème"> <option value="parchemin" selected="selected">Parchemin</option> <option value="plan">Plan bleu</option> <option value="encre">Encre sombre</option> </select> </div> </div> <details class="opt-sec" open data-sec="party"> <summary>Groupe d'aventuriers</summary> <div class="grid2"> <label class="fld">Joueurs <select id="party-size" aria-label="Nombre de joueurs"> <option>1</option><option>2</option><option>3</option> <option value="4" selected="selected">4</option><option>5</option><option>6</option> <option>7</option><option>8</option><option>9</option><option>10</option> </select> </label> <label class="fld">Niveau du groupe <select id="party-level" aria-label="Niveau du groupe"> <option>1</option><option>2</option><option value="3" selected="selected">3</option> <option>4</option><option>5</option><option>6</option><option>7</option> <option>8</option><option>9</option><option>10</option><option>11</option> <option>12</option><option>13</option><option>14</option><option>15</option> <option>16</option><option>17</option><option>18</option><option>19</option><option>20</option> </select> </label> </div> <div id="diffPanel" class="diff" aria-live="polite"></div> </details> <details class="opt-sec" data-sec="notes"> <summary>Affichage des notes</summary> <div class="seg" id="notesSeg"> <button type="button" data-nmode="hidden">Masqué</button> <button type="button" data-nmode="drawer" class="on">Tiroir</button> <button type="button" data-nmode="inline">Sous la carte</button> </div> </details> <details class="opt-sec" data-sec="struct"> <summary>Structure</summary> <div class="chips"> <label class="chip"><input type="checkbox" id="t-sym" checked="checked"><span>Symétrie locale</span></label> <label class="chip"><input type="checkbox" id="t-corr"><span>Longs couloirs</span></label> <label class="chip"><input type="checkbox" id="t-water" checked="checked"><span>Eau</span></label> <label class="chip"><input type="checkbox" id="t-col" checked="checked"><span>Colonnades</span></label> </div> </details> <details class="opt-sec" data-sec="shapes"> <summary>Formes de salles</summary> <div class="chips"> <label class="chip"><input type="checkbox" id="sh-round"><span>Arrondie</span></label> <label class="chip"><input type="checkbox" id="sh-oct" checked="checked"><span>Octogone</span></label> <label class="chip"><input type="checkbox" id="sh-l" checked="checked"><span>En L</span></label> <label class="chip"><input type="checkbox" id="sh-cave"><span>Caverne</span></label> </div> <div class="rng sub">Proportion de formes spéciales <output id="o-shaperate">25%</output><input type="range" id="shape-rate" min="0" max="50" value="25"></div> <p class="note-mini">Pourcentage du nombre total de salles (dans la limite des salles assez grandes). Sans case cochée, tout reste rectangulaire ; l'entrée, la sortie et les salles inondées gardent leur forme.</p> </details> <details class="opt-sec" data-sec="doors"> <summary>Portes</summary> <div class="rng">Proportion de portes <output id="o-density">70%</output> <input type="range" id="d-density" min="0" max="100" value="70"></div> <div class="grid2"> <div class="rng">Simple <output id="o-simple"></output><input type="range" id="w-simple" min="0" max="100" value="55"></div> <div class="rng">Double <output id="o-double"></output><input type="range" id="w-double" min="0" max="100" value="15"></div> <div class="rng">Herse <output id="o-barred"></output><input type="range" id="w-barred" min="0" max="100" value="15"></div> <div class="rng">Secrète <output id="o-secret"></output><input type="range" id="w-secret" min="0" max="100" value="15"></div> </div> <p class="note-mini">Le reste des ouvertures devient des passages ouverts (arches).</p> </details> <details class="opt-sec" data-sec="content"> <summary>Contenu (repères MJ)</summary> <div class="chips"> <label class="chip"><input type="checkbox" id="pp-locks" checked="checked"><span>Verrous et clés</span></label> <label class="chip"><input type="checkbox" id="pp-traps" checked="checked"><span>Pièges</span></label> <label class="chip"><input type="checkbox" id="pp-treasure"><span>Trésors</span></label> <label class="chip"><input type="checkbox" id="pp-occ" checked="checked"><span>Occupants</span></label> <label class="chip"><input type="checkbox" id="pp-rubble"><span>Éboulis</span></label> <label class="chip"><input type="checkbox" id="pp-light" checked="checked"><span>Éclairage</span></label> <label class="chip"><input type="checkbox" id="pp-props"><span>Props</span></label> </div> <div class="rng sub">Taux de verrous <output id="o-lock">25%</output><input type="range" id="lock-rate" min="0" max="100" value="25"></div> <div class="rng sub">Densité de mobs <output id="o-mobrate">45%</output><input type="range" id="mob-rate" min="0" max="100" value="45"></div> <div class="rng sub">Valeur du loot <output id="o-lootval">Standard</output><input type="range" id="loot-value" min="1" max="5" value="3"></div> <div class="rng sub">Densité de pièges <output id="o-trap">22%</output><input type="range" id="trap-rate" min="0" max="100" value="22"></div> <div class="rng sub">Densité de trésors <output id="o-treasure">25%</output><input type="range" id="treasure-rate" min="0" max="100" value="25"></div> <div class="rng sub">Qualité des trésors <output id="o-treasqual">Standard</output><input type="range" id="treasure-quality" min="1" max="5" value="3"></div> <div class="rng sub">Salles éclairées <output id="o-light">40%</output><input type="range" id="light-rate" min="0" max="100" value="40"></div> <div class="rng sub">Densité de props <output id="o-props">35%</output><input type="range" id="props-rate" min="0" max="100" value="35"></div> </details> <p class="hint">Astuce : barre d'espace pour régénérer. La même graine redonne toujours le même donjon. Exports (PNG, SVG, JSON, impression, lien) via le bouton <b>Export</b> en haut.</p> </div> </section> <section id="notesPanel" class="sheet" aria-label="Notes"> <div class="sheet-head"><h2 id="dname">Donjon</h2><button class="x" data-close aria-label="Fermer">✕</button></div> <div class="sheet-body"> <div id="notesHostDrawer"></div> <p class="hint">Les repères en couleur (clé, piège, trésor, DC des verrous) sont destinés au MJ.</p> </div> </section> <div id="scrim"></div> <div id="mobPopover" class="mob-pop" role="dialog" aria-modal="false" hidden></div> <div id="itemModalBackdrop" class="item-modal-backdrop" hidden></div> <div id="itemModal" class="item-modal" role="dialog" aria-modal="true" hidden></div> <div id="printArea"></div> <script> "use strict";
 
 /* ====== 05-data.generated : donnees D&D 5.5 embarquees au build (cf. tools/build-data.mjs) ====== */
 /* GENERE - ne pas editer a la main. Source : data/*.json. SRD/OGL 1.0a + CC-BY-4.0, fiches via aidedd.org. */
@@ -1098,13 +1098,175 @@ function assignDC(d, party) {
   }
   return d;
 }
+/* ====== Formes de salles non rectangulaires (tache 4) ====== */
+// Passe SEPAREE de generateDungeon (pattern 8b/9c/DC) : un rng dedie ':shape:'+numero, jamais
+// celui de la geometrie -> generateDungeon reste byte-identique, les graines existantes sont
+// preservees. La forme ne change PAS la boite englobante (x,y,w,h) de la salle : elle pose un
+// SOUS-ENSEMBLE de cellules dans r._cells (masque), que le rendu (R2) et le graphe (R3) honorent.
+// Idempotente : reinitialise r._cells a chaque appel. No-op si aucune forme cochee (zero rng).
+//
+// Invariants respectes pour ne jamais casser un donjon :
+//  - les cellules d'OUVERTURE (portes/passages) sont toujours conservees (sinon porte dans le vide) ;
+//  - le masque reste d'un seul tenant (connexite 4-voisins) et garde >= 50% des cellules ;
+//  - salles d'eau / entree / sortie laissees rectangulaires (rendu eau + glyphes entree/escalier).
+//  - les reperes MJ (numero, cle, piege, tresor, rencontre, props) sont reancres sur une cellule
+//    de sol reelle cote rendu (cf. anchorCell dans 60-render) -> la forme ne depend que de la graine.
+
+// Cellules portant une ouverture sur un bord de la salle (coordonnees absolues).
+function shapeOpeningCells(r) {
+  const out = [];
+  const span = (iv) => { const a = []; for (const [s, e] of (iv || [])) for (let c = Math.floor(s); c < Math.ceil(e); c++) a.push(c); return a; };
+  for (const c of span(r.openN)) out.push(c + ',' + r.y);
+  for (const c of span(r.openS)) out.push(c + ',' + (r.y + r.h - 1));
+  for (const c of span(r.openW)) out.push(r.x + ',' + c);
+  for (const c of span(r.openE)) out.push((r.x + r.w - 1) + ',' + c);
+  return out;
+}
+
+function shapeRectCells(r) {
+  const s = new Set();
+  for (let cx = r.x; cx < r.x + r.w; cx++) for (let cy = r.y; cy < r.y + r.h; cy++) s.add(cx + ',' + cy);
+  return s;
+}
+
+// Ellipse inscrite (centre des cellules dans l'ellipse de demi-axes w/2, h/2).
+function shapeMaskRound(r) {
+  const s = new Set(), px = r.x + r.w / 2, py = r.y + r.h / 2, rx = r.w / 2, ry = r.h / 2;
+  for (let cx = r.x; cx < r.x + r.w; cx++) for (let cy = r.y; cy < r.y + r.h; cy++) {
+    const nx = (cx + 0.5 - px) / rx, ny = (cy + 0.5 - py) / ry;
+    if (nx * nx + ny * ny <= 1.06) s.add(cx + ',' + cy);
+  }
+  return s;
+}
+
+// Octogone : coins coupes en triangle de profondeur k.
+function shapeMaskOct(r) {
+  const s = new Set(), k = Math.max(1, Math.round(Math.min(r.w, r.h) / 4));
+  const x1 = r.x, y1 = r.y, x2 = r.x + r.w - 1, y2 = r.y + r.h - 1;
+  for (let cx = r.x; cx < r.x + r.w; cx++) for (let cy = r.y; cy < r.y + r.h; cy++) {
+    if ((cx - x1) + (cy - y1) < k) continue;
+    if ((x2 - cx) + (cy - y1) < k) continue;
+    if ((cx - x1) + (y2 - cy) < k) continue;
+    if ((x2 - cx) + (y2 - cy) < k) continue;
+    s.add(cx + ',' + cy);
+  }
+  return s;
+}
+
+// En L : retire un bloc d'angle ~ moitie x moitie, dans un coin sans ouverture.
+function shapeMaskL(r, rng, openSet) {
+  const bw = Math.max(1, Math.floor(r.w / 2)), bh = Math.max(1, Math.floor(r.h / 2));
+  const x1 = r.x, y1 = r.y, x2 = r.x + r.w - 1, y2 = r.y + r.h - 1;
+  const corners = [
+    { x0: x1, y0: y1 }, { x0: x2 - bw + 1, y0: y1 },
+    { x0: x1, y0: y2 - bh + 1 }, { x0: x2 - bw + 1, y0: y2 - bh + 1 },
+  ];
+  const inBlock = (c, cx, cy) => cx >= c.x0 && cx < c.x0 + bw && cy >= c.y0 && cy < c.y0 + bh;
+  const ok = corners.filter((c) => { for (const k of openSet) { const p = k.split(','); if (inBlock(c, +p[0], +p[1])) return false; } return true; });
+  if (!ok.length) return null;
+  const c = ok[Math.floor(rng() * ok.length)];
+  const s = new Set();
+  for (let cx = r.x; cx < r.x + r.w; cx++) for (let cy = r.y; cy < r.y + r.h; cy++) if (!inBlock(c, cx, cy)) s.add(cx + ',' + cy);
+  return s;
+}
+
+// Caverne : erosion de cellules de bord (jamais une ouverture), connexite preservee a chaque retrait.
+function shapeMaskCave(r, rng, openSet) {
+  const s = shapeRectCells(r);
+  const order = [...s].map((k) => { const p = k.split(','); return [+p[0], +p[1]]; });
+  for (let i = order.length - 1; i > 0; i--) { const j = Math.floor(rng() * (i + 1));[order[i], order[j]] = [order[j], order[i]]; }
+  const target = Math.floor(s.size * 0.35);
+  let removed = 0;
+  for (const [cx, cy] of order) {
+    if (removed >= target) break;
+    const k = cx + ',' + cy;
+    if (openSet.has(k)) continue;
+    const border = !s.has((cx + 1) + ',' + cy) || !s.has((cx - 1) + ',' + cy) || !s.has(cx + ',' + (cy + 1)) || !s.has(cx + ',' + (cy - 1));
+    if (!border) continue;
+    s.delete(k);
+    if (!shapeConnected(s, openSet)) { s.add(k); continue; }
+    removed++;
+  }
+  return s;
+}
+
+// Le masque est-il d'un seul tenant ET contient-il toutes les cellules a conserver ?
+function shapeConnected(set, mustContain) {
+  if (!set.size) return false;
+  const must = Array.isArray(mustContain) ? mustContain : [...mustContain];
+  for (const k of must) if (!set.has(k)) return false;
+  const start = must.length ? must[0] : set.values().next().value;
+  const seen = new Set([start]), q = [start];
+  while (q.length) {
+    const k = q.shift(), p = k.split(','), cx = +p[0], cy = +p[1];
+    for (const [nx, ny] of [[cx + 1, cy], [cx - 1, cy], [cx, cy + 1], [cx, cy - 1]]) {
+      const nk = nx + ',' + ny; if (set.has(nk) && !seen.has(nk)) { seen.add(nk); q.push(nk); }
+    }
+  }
+  return seen.size === set.size;
+}
+
+// Taille minimale par forme (w, h). round/oct : 3x3 suffit depuis le rendu vectoriel
+// (ellipse/pans coupes lisses a toute taille) -> assiette x4 vs l'ancien 4x4, sinon le
+// slider de proportion n'a presque aucune prise (tres peu de salles >=4x4 generees).
+const SHAPE_MIN = { round: [3, 3], oct: [3, 3], l: [3, 3], cave: [3, 3] };
+
+// Pose r._cells sur les salles eligibles selon cfg = {enabled:[...], rate:0..1}.
+// Semantique du slider (demande utilisateur) : les salles speciales representent ~rate du
+// NOMBRE TOTAL de salles (quota), pas une proba par salle. Quota sature par les eligibles
+// (>= 3x3, hors entree/sortie/eau). Selection deterministe ET monotone : chaque eligible
+// tire u (1er tirage de SON rng dedie, fixe par graine), on carve par u croissant jusqu'au
+// quota -> monter le slider AJOUTE des salles sans changer celles deja carvees.
+function assignShapes(d, cfg) {
+  for (const r of d.rooms) { delete r._cells; delete r.shape; }
+  delete d._spaceIndex;                       // l'index cellule->espace (cache au rendu) doit etre recalcule
+  const enabled = (cfg && cfg.enabled) || [];
+  if (!enabled.length) return d;              // aucune forme cochee -> rien, aucun tirage rng
+  const rate = (cfg && typeof cfg.rate === 'number') ? cfg.rate : 0.35;
+  const rooms = d.rooms.slice().sort((a, b) => (a.number || 0) - (b.number || 0));
+  const elig = [];
+  for (const r of rooms) {
+    if (r.water || r.isEntrance || r.stairsDown) continue;   // gardees rectangulaires
+    if (r.w < 3 || r.h < 3) continue;
+    const rng = makeRng(d.seed + ':shape:' + r.number);
+    elig.push({ r, rng, u: rng() });
+  }
+  const quota = Math.min(elig.length, Math.round(rate * d.rooms.length));
+  elig.sort((a, b) => a.u - b.u || a.r.number - b.r.number);
+  let made = 0;
+  for (const { r, rng } of elig) {
+    if (made >= quota) break;
+    const openSet = new Set(shapeOpeningCells(r));
+    const pool = enabled.filter((sh) => { const m = SHAPE_MIN[sh]; return r.w >= m[0] && r.h >= m[1]; });
+    if (!pool.length) continue;
+    const order = pool.slice();
+    for (let i = order.length - 1; i > 0; i--) { const j = Math.floor(rng() * (i + 1));[order[i], order[j]] = [order[j], order[i]]; }
+    const minCells = Math.max(4, Math.ceil(r.w * r.h * 0.5));
+    for (const sh of order) {
+      let set = null;
+      if (sh === 'round') set = shapeMaskRound(r);
+      else if (sh === 'oct') set = shapeMaskOct(r);
+      else if (sh === 'l') set = shapeMaskL(r, rng, openSet);
+      else if (sh === 'cave') set = shapeMaskCave(r, rng, openSet);
+      if (!set || set.size < minCells) continue;
+      if (!shapeConnected(set, openSet)) continue;
+      r._cells = [...set].map((k) => { const p = k.split(','); return [+p[0], +p[1]]; });
+      r.shape = sh;
+      break;
+    }
+    if (r._cells) made++;                     // echec de masque (rare) -> la suivante compense
+  }
+  return d;
+}
 /* ============ R3 : graphe de jeu (cellules + passabilite) ============ */
 // Construit la grille marchable et les fonctions de deplacement / vue, pour le futur mode Play.
 function buildGameGraph(d){
   const floor=new Set();
   const spaceAt=new Map();
-  for(const s of d.spaces)for(let cx=s.x;cx<s.x+s.w;cx++)for(let cy=s.y;cy<s.y+s.h;cy++){
-    const k=cx+','+cy; floor.add(k); spaceAt.set(k,s);
+  for(const s of d.spaces){
+    // R2/tache 4 : honore le masque de cellules d'une forme speciale (sinon rectangle plein)
+    const cells = s._cells || (()=>{const a=[];for(let cx=s.x;cx<s.x+s.w;cx++)for(let cy=s.y;cy<s.y+s.h;cy++)a.push([cx,cy]);return a;})();
+    for(const [cx,cy] of cells){ const k=cx+','+cy; floor.add(k); spaceAt.set(k,s); }
   }
   const walkable=(cx,cy)=>floor.has(cx+','+cy);
 
@@ -1291,19 +1453,26 @@ function renderSVG(d, view){
   const floorSet=new Set();
   for(const s of d.spaces)for(const [cx,cy] of cellsOf(s))floorSet.add(cx+','+cy);
   const isFloor=(cx,cy)=>floorSet.has(cx+','+cy);
-
-  // Ombre portee geometrique (zero filtre SVG -> survit a l'export PNG sur tous les navigateurs).
-  // Pour chaque cellule de sol, on pose des rects noirs translucides decales vers le bas-droite
-  // (lumiere venant du haut-gauche). gShadow etant SOUS gFloor (opaque), l'ombre n'est visible
-  // que la ou elle deborde sur le fond exterieur (--paper-out) -> halo de relief cote bas-droite.
-  // On saute les cellules dont les voisins E/S/SE sont tous du sol : leur ombre ne deborde jamais
-  // et serait de toute facon recouverte par gFloor. Aucun tirage rng (graines preservees).
-  const SHADOW=[{dx:3,dy:3,op:0.16,rx:0},{dx:6,dy:6,op:0.11,rx:0},{dx:9,dy:9,op:0.06,rx:2}];
-  for(const Lp of SHADOW)for(const k of floorSet){
-    const p=k.split(','),cx=+p[0],cy=+p[1];
-    if(isFloor(cx+1,cy)&&isFloor(cx,cy+1)&&isFloor(cx+1,cy+1))continue;
-    gShadow.appendChild(svgEl('rect',{x:(X(cx)+Lp.dx).toFixed(1),y:(Y(cy)+Lp.dy).toFixed(1),
-      width:S,height:S,rx:Lp.rx,fill:'#000','fill-opacity':Lp.op}));
+  // Reancre un marqueur (numero, cle, piege...) sur une cellule de sol REELLE de s : la cellule
+  // souhaitee (icx,icy) si elle appartient a s, sinon la cellule de sol de s la plus proche.
+  // Renvoie null si s n'a pas de forme speciale -> le marqueur garde sa position d'origine
+  // (rendu byte-identique pour les salles rectangulaires, tache 4 desactivee).
+  function anchorCell(s,icx,icy){
+    if(!s._cells)return null;
+    if(spaceIdAt(d,icx,icy)===s.id)return [icx,icy];
+    let best=s._cells[0],bd=Infinity;
+    for(const [cx,cy] of s._cells){const dd=(cx-icx)*(cx-icx)+(cy-icy)*(cy-icy);if(dd<bd){bd=dd;best=[cx,cy];}}
+    return best;
+  }
+  // Formes lissees (tache 4) : rendues en vecteur (ellipse/polygone) au lieu du masque de cellules.
+  const smooth=s=>s.shape==='round'||s.shape==='oct';
+  // Element SVG de la forme lissee de s, decale de (dx,dy) px. Sert au sol ET a l'ombre (DRY).
+  function smoothShapeEl(s,dx,dy,attrs){
+    dx=dx||0;dy=dy||0;const x=s.x,y=s.y,w=s.w,h=s.h;
+    if(s.shape==='round')return svgEl('ellipse',Object.assign({cx:X(x+w/2)+dx,cy:Y(y+h/2)+dy,rx:w*S/2,ry:h*S/2},attrs||{}));
+    const k=Math.max(1,Math.round(Math.min(w,h)/4));
+    const V=[[x+k,y],[x+w-k,y],[x+w,y+k],[x+w,y+h-k],[x+w-k,y+h],[x+k,y+h],[x,y+h-k],[x,y+k]];
+    return svgEl('polygon',Object.assign({points:V.map(([cx,cy])=>(X(cx)+dx).toFixed(1)+','+(Y(cy)+dy).toFixed(1)).join(' ')},attrs||{}));
   }
 
   const edgeOpen=(intervals,c)=>{for(const [a,b] of intervals)if(a<=c&&b>=c+1)return true;return false;};
@@ -1315,8 +1484,96 @@ function renderSVG(d, view){
     return edgeOpen(s.openE,cy);
   }
 
+  // Contour ORGANIQUE des cavernes (tache 4, style "roche" watabou) : boucle d'aretes
+  // frontiere du masque _cells, fusion des aretes colineaires, puis ondulation (rrng) des
+  // seuls segments donnant sur le VIDE — les ouvertures (portes) et les cloisons avec un
+  // autre espace restent exactement droites (sinon le sol mordrait le voisin / la porte).
+  // Calcule UNE fois par salle (caveGeo), reutilise par l'ombre, le sol, les murs, le voile.
+  function caveOutline(s){
+    const cells=new Set(s._cells.map(([x,y])=>x+','+y));
+    const has=(x,y)=>cells.has(x+','+y);
+    // aretes frontiere orientees (boucle chainable), en unites de grille
+    const edges=[];
+    for(const [cx,cy] of s._cells){
+      if(!has(cx,cy-1))edges.push({x1:cx+1,y1:cy,x2:cx,y2:cy,nx:0,ny:-1,cell:[cx,cy],kind:openOnEdge(s,'N',cx,cy)?'open':(isFloor(cx,cy-1)?'shared':'out')});
+      if(!has(cx,cy+1))edges.push({x1:cx,y1:cy+1,x2:cx+1,y2:cy+1,nx:0,ny:1,cell:[cx,cy],kind:openOnEdge(s,'S',cx,cy)?'open':(isFloor(cx,cy+1)?'shared':'out')});
+      if(!has(cx-1,cy))edges.push({x1:cx,y1:cy,x2:cx,y2:cy+1,nx:-1,ny:0,cell:[cx,cy],kind:openOnEdge(s,'W',cx,cy)?'open':(isFloor(cx-1,cy)?'shared':'out')});
+      if(!has(cx+1,cy))edges.push({x1:cx+1,y1:cy+1,x2:cx+1,y2:cy,nx:1,ny:0,cell:[cx,cy],kind:openOnEdge(s,'E',cx,cy)?'open':(isFloor(cx+1,cy)?'shared':'out')});
+    }
+    // chainage en boucle (masque connexe sans trou -> une boucle ; pincement diagonal rare : premiere arete dispo)
+    const byStart=new Map();
+    for(const e of edges){const k=e.x1+','+e.y1;(byStart.get(k)||byStart.set(k,[]).get(k)).push(e);}
+    const loop=[]; let cur=edges[0];
+    for(let guard=0;cur&&guard<edges.length;guard++){
+      cur._used=true; loop.push(cur);
+      const cands=(byStart.get(cur.x2+','+cur.y2)||[]).filter(e=>!e._used);
+      cur=cands[0]||null;
+    }
+    // fusion des aretes 'out' colineaires consecutives -> longs segments a onduler.
+    // Les 'shared' restent PAR CELLULE : la cloison est dedupliquee avec le voisin via once()
+    // sur la paire de cellules, et deux voisins differents peuvent se succeder.
+    const segs=[];
+    for(const e of loop){
+      const p=segs[segs.length-1];
+      if(p&&p.kind==='out'&&e.kind==='out'&&p.nx===e.nx&&p.ny===e.ny&&p.x2===e.x1&&p.y2===e.y1){p.x2=e.x2;p.y2=e.y2;}
+      else segs.push({...e});
+    }
+    if(segs.length>1){ // raccord boucle : dernier+premier colineaires 'out'
+      const a=segs[segs.length-1],b=segs[0];
+      if(a.kind==='out'&&b.kind==='out'&&a.nx===b.nx&&a.ny===b.ny&&a.x2===b.x1&&a.y2===b.y1){b.x1=a.x1;b.y1=a.y1;segs.pop();}
+    }
+    // ondulation : points en px. Le sommet d'entree d'un segment est jitter si les deux
+    // segments qui s'y rejoignent sont 'out' (sinon fixe : porte/cloison exacte).
+    // segStart[i] = index dans pts du 1er point du segment i ; ses points vont jusqu'au
+    // 1er point du segment suivant (boucle fermee).
+    const pts=[], segStart=[];
+    for(let si=0;si<segs.length;si++){
+      const g=segs[si], prev=segs[(si+segs.length-1)%segs.length];
+      let sx=X(g.x1),sy=Y(g.y1);
+      if(g.kind==='out'&&prev.kind==='out'){const j=rr(-0.3,0.3)*S;sx+=(g.nx+prev.nx)/2*j;sy+=(g.ny+prev.ny)/2*j;}
+      segStart.push(pts.length); pts.push([sx,sy]);
+      if(g.kind==='out'){
+        const ex=X(g.x2),ey=Y(g.y2);
+        const len=Math.hypot(ex-sx,ey-sy), n=Math.max(1,Math.round(len/(S*0.55)));
+        for(let i=1;i<n;i++){
+          const t=i/n+rr(-0.12,0.12), bx=sx+(ex-sx)*t, by=sy+(ey-sy)*t, off=rr(-0.42,0.42)*S;
+          pts.push([bx+g.nx*off,by+g.ny*off]);
+        }
+      }
+    }
+    const pathD='M '+pts.map(p=>p[0].toFixed(1)+' '+p[1].toFixed(1)).join(' L ')+' Z';
+    return {pts,segs,segStart,pathD};
+  }
+  const caveGeo=new Map();
+  for(const s of d.spaces)if(s.shape==='cave'&&s._cells)caveGeo.set(s.id,caveOutline(s));
+
+  // Ombre portee geometrique (zero filtre SVG -> survit a l'export PNG sur tous les navigateurs).
+  // Pour chaque cellule de sol, on pose des rects noirs translucides decales vers le bas-droite
+  // (lumiere venant du haut-gauche). gShadow etant SOUS gFloor (opaque), l'ombre n'est visible
+  // que la ou elle deborde sur le fond exterieur (--paper-out) -> halo de relief cote bas-droite.
+  // On saute les cellules dont les voisins E/S/SE sont tous du sol : leur ombre ne deborde jamais
+  // et serait de toute facon recouverte par gFloor. Aucun tirage rng (graines preservees).
+  const vecCells=new Set(); // cellules des salles a rendu vectoriel (lissees + cavernes) : exclues de l'ombre cellulaire
+  for(const s of d.spaces)if(smooth(s)||caveGeo.has(s.id))for(const [cx,cy] of cellsOf(s))vecCells.add(cx+','+cy);
+  const SHADOW=[{dx:3,dy:3,op:0.16,rx:0},{dx:6,dy:6,op:0.11,rx:0},{dx:9,dy:9,op:0.06,rx:2}];
+  for(const Lp of SHADOW)for(const k of floorSet){
+    if(vecCells.has(k))continue; // forme vectorielle : ombre posee en vecteur ci-dessous
+    const p=k.split(','),cx=+p[0],cy=+p[1];
+    if(isFloor(cx+1,cy)&&isFloor(cx,cy+1)&&isFloor(cx+1,cy+1))continue;
+    gShadow.appendChild(svgEl('rect',{x:(X(cx)+Lp.dx).toFixed(1),y:(Y(cy)+Lp.dy).toFixed(1),
+      width:S,height:S,rx:Lp.rx,fill:'#000','fill-opacity':Lp.op}));
+  }
+  // Ombre des formes vectorielles : la forme decalee (le coeur est recouvert par gFloor,
+  // seul le debord bas-droite est visible) -> ombre qui epouse la courbe au lieu d'un escalier.
+  for(const Lp of SHADOW)for(const s of d.spaces){
+    if(smooth(s))gShadow.appendChild(smoothShapeEl(s,Lp.dx,Lp.dy,{fill:'#000','fill-opacity':Lp.op}));
+    else if(caveGeo.has(s.id))gShadow.appendChild(svgEl('path',{d:caveGeo.get(s.id).pathD,transform:`translate(${Lp.dx},${Lp.dy})`,fill:'#000','fill-opacity':Lp.op}));
+  }
+
   // sols + grille interne (par cellule, gere les formes non rectangulaires)
+  const isVec=s=>smooth(s)||caveGeo.has(s.id); // formes a rendu vectoriel (lissees + cavernes)
   for(const s of d.spaces){
+    if(isVec(s))continue; // rendues en vecteur plus bas
     const fill=s.water?c.water:c.paper;
     for(const [cx,cy] of cellsOf(s)){
       gFloor.appendChild(svgEl('rect',{x:X(cx),y:Y(cy),width:S,height:S,fill}));
@@ -1362,6 +1619,7 @@ function renderSVG(d, view){
   const drawnEdge=new Set();
   const once=(ax,ay,bx,by)=>{const k=ax<=bx&&ay<=by?`${ax},${ay}|${bx},${by}`:`${bx},${by}|${ax},${ay}`; if(drawnEdge.has(k))return false; drawnEdge.add(k); return true;};
   for(const s of d.spaces){
+    if(isVec(s))continue;
     for(const [cx,cy] of cellsOf(s)){
       // N
       if(!isFloor(cx,cy-1)){ if(!openOnEdge(s,'N',cx,cy)){roughLine(X(cx),Y(cy),X(cx+1),Y(cy),1.8);hatchUnit(X(cx),Y(cy),0,-1,true);} }
@@ -1378,12 +1636,114 @@ function renderSVG(d, view){
     }
   }
 
+  // Formes lissees (tache 4) : OCTOGONE (pans coupes) et ROND (ellipse) rendus en VECTEUR
+  // (sol + grille clippee + mur tremble + hachures), au lieu du masque de cellules en escalier
+  // facon watabou. Les ouvertures laissent un vide dans le mur ; pour le rond, un court "sas"
+  // relie l'ellipse a la cellule d'ouverture. _cells (masque) sert toujours a la logique
+  // (passabilite, jonctions de couloirs, ancrage des reperes) ; ici on ne touche qu'au visuel.
+  function hatchSeg(x1,y1,x2,y2,nx,ny){ // hachures vers l'exterieur le long d'un segment quelconque
+    const len=Math.hypot(x2-x1,y2-y1)||1, nn=Math.hypot(nx,ny)||1, ux=nx/nn, uy=ny/nn;
+    const steps=Math.max(2,Math.round(len/6));
+    for(let i=0;i<steps;i++){
+      const t=(i+rr(0.25,0.75))/steps, bx=x1+(x2-x1)*t, by=y1+(y2-y1)*t, L=rr(4,10), ang=Math.atan2(uy,ux)+rr(-0.5,0.5);
+      gHatch.appendChild(svgEl('line',{x1:bx.toFixed(1),y1:by.toFixed(1),x2:(bx+Math.cos(ang)*L).toFixed(1),y2:(by+Math.sin(ang)*L).toFixed(1),'stroke-width':rr(0.5,1).toFixed(2),opacity:rr(0.5,0.9).toFixed(2)}));
+    }
+  }
+  function octWalls(s,k){ // 4 bords droits (trous aux ouvertures via subtract) + 4 diagonales pleines
+    const x=s.x,y=s.y,w=s.w,h=s.h;
+    for(const [a,b] of subtract([x+k,x+w-k],s.openN||[])){if(b<=a)continue;roughLine(X(a),Y(y),X(b),Y(y),1.8);hatchSeg(X(a),Y(y),X(b),Y(y),0,-1);}
+    for(const [a,b] of subtract([x+k,x+w-k],s.openS||[])){if(b<=a)continue;roughLine(X(a),Y(y+h),X(b),Y(y+h),1.8);hatchSeg(X(a),Y(y+h),X(b),Y(y+h),0,1);}
+    for(const [a,b] of subtract([y+k,y+h-k],s.openW||[])){if(b<=a)continue;roughLine(X(x),Y(a),X(x),Y(b),1.8);hatchSeg(X(x),Y(a),X(x),Y(b),-1,0);}
+    for(const [a,b] of subtract([y+k,y+h-k],s.openE||[])){if(b<=a)continue;roughLine(X(x+w),Y(a),X(x+w),Y(b),1.8);hatchSeg(X(x+w),Y(a),X(x+w),Y(b),1,0);}
+    for(const [ax,ay,bx,by,nx,ny] of [[x+k,y,x,y+k,-1,-1],[x+w-k,y,x+w,y+k,1,-1],[x+w,y+h-k,x+w-k,y+h,1,1],[x,y+h-k,x+k,y+h,-1,1]]){
+      roughLine(X(ax),Y(ay),X(bx),Y(by),1.8);hatchSeg(X(ax),Y(ay),X(bx),Y(by),nx,ny);}
+  }
+  // Sas d'une salle ronde : rects px reliant l'ellipse a chaque ouverture. Sert au sol
+  // (roundWalls) ET au voile d'eclairage (gLight) pour couvrir tout le sol visible.
+  function roundVestibules(s){
+    const x=s.x,y=s.y,w=s.w,h=s.h,cxp=X(x+w/2),cyp=Y(y+h/2);
+    const out=[];
+    for(const [dir,iv] of [['N',s.openN],['S',s.openS],['W',s.openW],['E',s.openE]])for(const [a,b] of (iv||[])){
+      if(dir==='N')out.push({dir,a,b,x:X(a),y:Y(y),w:X(b)-X(a),h:cyp-Y(y)});
+      else if(dir==='S')out.push({dir,a,b,x:X(a),y:cyp,w:X(b)-X(a),h:Y(y+h)-cyp});
+      else if(dir==='W')out.push({dir,a,b,x:X(x),y:Y(a),w:cxp-X(x),h:Y(b)-Y(a)});
+      else out.push({dir,a,b,x:cxp,y:Y(a),w:X(x+w)-cxp,h:Y(b)-Y(a)});
+    }
+    return out;
+  }
+  function roundWalls(s,cxp,cyp,rxp,ryp){ // ellipse tremblee + sas vers chaque ouverture
+    const x=s.x,y=s.y,w=s.w,h=s.h, fill=s.water?c.water:c.paper;
+    const eT=px=>cyp-ryp*Math.sqrt(Math.max(0,1-((px-cxp)/rxp)**2)), eB=px=>cyp+ryp*Math.sqrt(Math.max(0,1-((px-cxp)/rxp)**2));
+    const eL=py=>cxp-rxp*Math.sqrt(Math.max(0,1-((py-cyp)/ryp)**2)), eR=py=>cxp+rxp*Math.sqrt(Math.max(0,1-((py-cyp)/ryp)**2));
+    const gaps=roundVestibules(s);
+    for(const g of gaps){
+      gFloor.appendChild(svgEl('rect',{x:g.x,y:g.y,width:g.w.toFixed(1),height:g.h.toFixed(1),fill}));
+      if(g.dir==='N'){roughLine(X(g.a),Y(y),X(g.a),eT(X(g.a)),1.8);roughLine(X(g.b),Y(y),X(g.b),eT(X(g.b)),1.8);}
+      else if(g.dir==='S'){roughLine(X(g.a),Y(y+h),X(g.a),eB(X(g.a)),1.8);roughLine(X(g.b),Y(y+h),X(g.b),eB(X(g.b)),1.8);}
+      else if(g.dir==='W'){roughLine(X(x),Y(g.a),eL(Y(g.a)),Y(g.a),1.8);roughLine(X(x),Y(g.b),eL(Y(g.b)),Y(g.b),1.8);}
+      else{roughLine(X(x+w),Y(g.a),eR(Y(g.a)),Y(g.a),1.8);roughLine(X(x+w),Y(g.b),eR(Y(g.b)),Y(g.b),1.8);}
+    }
+    const inGap=(mx,my)=>gaps.some(g=>g.dir==='N'?(mx>=X(g.a)&&mx<=X(g.b)&&my<cyp):g.dir==='S'?(mx>=X(g.a)&&mx<=X(g.b)&&my>cyp):g.dir==='W'?(my>=Y(g.a)&&my<=Y(g.b)&&mx<cxp):(my>=Y(g.a)&&my<=Y(g.b)&&mx>cxp));
+    const N=Math.max(36,Math.round((w+h)*3));
+    for(let i=0;i<N;i++){
+      const a0=i/N*2*Math.PI,a1=(i+1)/N*2*Math.PI;
+      const x0=cxp+rxp*Math.cos(a0),y0=cyp+ryp*Math.sin(a0),x1=cxp+rxp*Math.cos(a1),y1=cyp+ryp*Math.sin(a1);
+      if(inGap((x0+x1)/2,(y0+y1)/2))continue;
+      roughLine(x0,y0,x1,y1,1.7);hatchSeg(x0,y0,x1,y1,Math.cos((a0+a1)/2),Math.sin((a0+a1)/2));
+    }
+  }
+  for(const s of d.spaces){
+    if(!smooth(s))continue;
+    const x=s.x,y=s.y,w=s.w,h=s.h, round=s.shape==='round';
+    const cxp=X(x+w/2),cyp=Y(y+h/2),rxp=w*S/2,ryp=h*S/2, clipId='shp'+s.id, fill=s.water?c.water:c.paper;
+    gFloor.appendChild(smoothShapeEl(s,0,0,{fill}));
+    const clip=svgEl('clipPath',{id:clipId});clip.appendChild(smoothShapeEl(s,0,0));gGrid.appendChild(clip);
+    const grid=svgEl('g',{'clip-path':'url(#'+clipId+')'});
+    for(let gx=x+1;gx<x+w;gx++)grid.appendChild(svgEl('line',{x1:X(gx),y1:Y(y),x2:X(gx),y2:Y(y+h)}));
+    for(let gy=y+1;gy<y+h;gy++)grid.appendChild(svgEl('line',{x1:X(x),y1:Y(gy),x2:X(x+w),y2:Y(gy)}));
+    gGrid.appendChild(grid);
+    if(round)roundWalls(s,cxp,cyp,rxp,ryp);
+    else octWalls(s,Math.max(1,Math.round(Math.min(w,h)/4)));
+  }
+  // Cavernes (contour organique, cf. caveOutline) : sol = path ondule, grille clippee,
+  // murs roughLine epais + hachures sur les segments exterieurs. Les ouvertures restent des
+  // trous ; les cloisons avec un voisin sont tracees une seule fois (once(), meme cle de
+  // paire de cellules que la boucle generale -> le voisin non-cave a deja trace la sienne).
+  for(const s of d.spaces){
+    const geo=caveGeo.get(s.id); if(!geo)continue;
+    gFloor.appendChild(svgEl('path',{d:geo.pathD,fill:s.water?c.water:c.paper}));
+    const clipId='cav'+s.id;
+    const clip=svgEl('clipPath',{id:clipId});clip.appendChild(svgEl('path',{d:geo.pathD}));gGrid.appendChild(clip);
+    const grid=svgEl('g',{'clip-path':'url(#'+clipId+')'});
+    for(let gx=s.x+1;gx<s.x+s.w;gx++)grid.appendChild(svgEl('line',{x1:X(gx),y1:Y(s.y),x2:X(gx),y2:Y(s.y+s.h)}));
+    for(let gy=s.y+1;gy<s.y+s.h;gy++)grid.appendChild(svgEl('line',{x1:X(s.x),y1:Y(gy),x2:X(s.x+s.w),y2:Y(gy)}));
+    gGrid.appendChild(grid);
+    const {pts,segs,segStart}=geo;
+    for(let si=0;si<segs.length;si++){
+      const g=segs[si];
+      if(g.kind==='open')continue;
+      const a=segStart[si], b=segStart[(si+1)%segs.length];
+      if(g.kind==='shared'){
+        const [icx,icy]=g.cell, ecx=icx+g.nx, ecy=icy+g.ny;
+        if(once(icx,icy,ecx,ecy)){const p0=pts[a],p1=pts[b];roughLine(p0[0],p0[1],p1[0],p1[1],1.2);}
+        continue;
+      }
+      for(let i=a;i!==b;i=(i+1)%pts.length){
+        const p0=pts[i],p1=pts[(i+1)%pts.length];
+        roughLine(p0[0],p0[1],p1[0],p1[1],2.0);
+        hatchSeg(p0[0],p0[1],p1[0],p1[1],g.nx,g.ny);
+      }
+    }
+  }
+
   // cailloux et eclats au sol (texture)
   for(const s of d.rooms){
+    if(smooth(s))continue; // texture deja portee par le sol vectoriel
     const n=Math.min(6,Math.round(s.w*s.h*0.05));
     for(let i=0;i<n;i++){
-      const px=X(s.x+rr(0.4,s.w-0.4)),py=Y(s.y+rr(0.4,s.h-0.4));
-      gDeco.appendChild(svgEl('circle',{cx:px.toFixed(1),cy:py.toFixed(1),r:rr(0.7,1.5).toFixed(1),fill:c.ink,opacity:rr(0.2,0.45).toFixed(2)}));
+      const fx=rr(0.4,s.w-0.4),fy=rr(0.4,s.h-0.4),rd=rr(0.7,1.5),op=rr(0.2,0.45);
+      if(s._cells&&!isFloor(s.x+Math.floor(fx),s.y+Math.floor(fy)))continue; // forme speciale : pas de caillou hors du sol
+      gDeco.appendChild(svgEl('circle',{cx:X(s.x+fx).toFixed(1),cy:Y(s.y+fy).toFixed(1),r:rd.toFixed(1),fill:c.ink,opacity:op.toFixed(2)}));
     }
   }
 
@@ -1400,6 +1760,7 @@ function renderSVG(d, view){
   for(const s of d.spaces){
     if(!s.columns)continue;
     for(let gx=s.x+1;gx<s.x+s.w-1;gx+=2)for(let gy=s.y+1;gy<s.y+s.h-1;gy+=2){
+      if(s._cells&&!isFloor(gx,gy))continue; // forme speciale : pas de colonne hors du sol
       gDeco.appendChild(svgEl('circle',{cx:X(gx),cy:Y(gy),r:4.2,fill:c.ink}));
       gDeco.appendChild(svgEl('circle',{cx:X(gx),cy:Y(gy),r:2,fill:c.paper}));
     }
@@ -1419,7 +1780,9 @@ function renderSVG(d, view){
   for(const s of d.rooms){
     if(!s.props||!s.props.length)continue;
     s.props.forEach((t,i)=>{
-      const px=X(s.x + s.w*0.5 + (i? (i%2?0.8:-0.8):0)), py=Y(s.y + s.h - 0.62);
+      const a=anchorCell(s,s.x+Math.floor(s.w*0.5),s.y+s.h-1);
+      const px=a?X(a[0]+0.5 + (i? (i%2?0.8:-0.8):0)):X(s.x + s.w*0.5 + (i? (i%2?0.8:-0.8):0));
+      const py=a?Y(a[1]+0.38):Y(s.y + s.h - 0.62);
       drawProp(gDeco,t,px,py,c);
     });
   }
@@ -1455,7 +1818,8 @@ function renderSVG(d, view){
 
   // numeros de salle (carte MJ uniquement)
   if(view.gm) for(const s of d.rooms){
-    const cx=X(s.x+0.7),cy=Y(s.y+0.7);
+    const an=anchorCell(s,s.x,s.y); const bx=an?an[0]:s.x, by=an?an[1]:s.y;
+    const cx=X(bx+0.7),cy=Y(by+0.7);
     gLabel.appendChild(svgEl('circle',{cx,cy,r:8.5,fill:c.paper,stroke:c.ink,'stroke-width':1.6}));
     const t=svgEl('text',{x:cx,y:cy+0.5,'text-anchor':'middle','dominant-baseline':'middle','font-size':11,'font-weight':600,fill:c.ink});
     t.textContent=s.number; gLabel.appendChild(t);
@@ -1464,38 +1828,56 @@ function renderSVG(d, view){
   // reperes MJ: cle, piege, tresor (uniquement en vue MJ)
   if(view.gm) for(const s of d.rooms){
     if(s.hasKey){ // cle en haut a droite
-      const kx=X(s.x+s.w-0.55),ky=Y(s.y+0.55);
+      const ak=anchorCell(s,s.x+s.w-1,s.y); const kbx=ak?ak[0]:s.x+s.w-1, kby=ak?ak[1]:s.y;
+      const kx=X(kbx+0.45),ky=Y(kby+0.55);
       gGM.appendChild(svgEl('circle',{cx:kx,cy:ky,r:3.2,fill:'none',stroke:c.accent,'stroke-width':1.8}));
       gGM.appendChild(svgEl('line',{x1:kx+2.6,y1:ky,x2:kx+9,y2:ky,stroke:c.accent,'stroke-width':1.8}));
       gGM.appendChild(svgEl('line',{x1:kx+6,y1:ky,x2:kx+6,y2:ky+3,stroke:c.accent,'stroke-width':1.8}));
       gGM.appendChild(svgEl('line',{x1:kx+9,y1:ky,x2:kx+9,y2:ky+3.5,stroke:c.accent,'stroke-width':1.8}));
     }
     if(s.trap){ // triangle d'alerte au centre
-      const tx=X(s.x+s.w/2),ty=Y(s.y+s.h/2);
+      const at=anchorCell(s,s.x+Math.floor(s.w/2),s.y+Math.floor(s.h/2));
+      const tx=at?X(at[0]+0.5):X(s.x+s.w/2),ty=at?Y(at[1]+0.5):Y(s.y+s.h/2);
       gGM.appendChild(svgEl('polygon',{points:`${tx},${ty-6} ${tx-6},${ty+5} ${tx+6},${ty+5}`,fill:'none',stroke:c.accent,'stroke-width':1.6}));
       const t=svgEl('text',{x:tx,y:ty+4,'text-anchor':'middle','font-size':8,'font-weight':700,fill:c.accent});t.textContent='!';gGM.appendChild(t);
     }
     if(s.treasure){ // petit coffre en bas a gauche
-      const bx=X(s.x+0.55),by=Y(s.y+s.h-0.7);
+      const atr=anchorCell(s,s.x,s.y+s.h-1); const tbx=atr?atr[0]:s.x, tby=atr?atr[1]:s.y+s.h-1;
+      const bx=X(tbx+0.55),by=Y(tby+0.3);
       gGM.appendChild(svgEl('rect',{x:bx-0.5,y:by,width:11,height:8,fill:c.paper,stroke:c.ink,'stroke-width':1.4}));
       gGM.appendChild(svgEl('line',{x1:bx-0.5,y1:by+3,x2:bx+10.5,y2:by+3,stroke:c.ink,'stroke-width':1.2}));
       gGM.appendChild(svgEl('rect',{x:bx+4,y:by+2,width:2,height:3,fill:c.accent}));
     }
     if(s.encounter&&s.encounter.mobs&&s.encounter.mobs.length){ // epees croisees en bas a droite (repere MJ)
-      const ex=X(s.x+s.w-0.5),ey=Y(s.y+s.h-0.55);
+      const ae=anchorCell(s,s.x+s.w-1,s.y+s.h-1); const ebx=ae?ae[0]:s.x+s.w-1, eby=ae?ae[1]:s.y+s.h-1;
+      const ex=X(ebx+0.5),ey=Y(eby+0.45);
       drawSwords(gGM,ex,ey,c);
     }
   }
 
   // calque lumiere (tache 2) : voile sombre si une zone porte un etat .light
+  // Forme speciale (tache 4) : le voile doit epouser le SOL VISIBLE, pas la boite.
+  //  - round/oct (rendu vectoriel) : voile = la forme vectorielle (+ sas du rond), dans un
+  //    groupe a `opacity` UNIQUE (les chevauchements ellipse/sas ne doublent pas le voile).
+  //    Un voile par cellule (_cells) ferait des marches sur les pans coupes (masque != courbe).
+  //  - l/cave (rendu cellulaire) : voile pose cellule par cellule sur _cells.
+  //  - salle rectangulaire : 1 rect (inchange).
   if(view.light) for(const s of d.spaces){
     if(!s.light||s.light==='lit')continue;
     const op = s.light==='dark'?0.42:0.18;
-    gLight.appendChild(svgEl('rect',{x:X(s.x),y:Y(s.y),width:s.w*S,height:s.h*S,fill:'#0a0a0f',opacity:op}));
+    if(smooth(s)){
+      const v=svgEl('g',{fill:'#0a0a0f',opacity:op});
+      v.appendChild(smoothShapeEl(s,0,0,{}));
+      if(s.shape==='round')for(const g of roundVestibules(s))v.appendChild(svgEl('rect',{x:g.x,y:g.y,width:g.w.toFixed(1),height:g.h.toFixed(1)}));
+      gLight.appendChild(v);
+    }
+    else if(caveGeo.has(s.id)) gLight.appendChild(svgEl('path',{d:caveGeo.get(s.id).pathD,fill:'#0a0a0f',opacity:op})); // caverne : voile = contour ondule
+    else if(s._cells) for(const [cx,cy] of cellsOf(s)) gLight.appendChild(svgEl('rect',{x:X(cx),y:Y(cy),width:S,height:S,fill:'#0a0a0f',opacity:op}));
+    else gLight.appendChild(svgEl('rect',{x:X(s.x),y:Y(s.y),width:s.w*S,height:s.h*S,fill:'#0a0a0f',opacity:op}));
   }
   // calque brouillard (tache 3) : masque les cellules non revelees ; reveal = Set("cx,cy")
   if(view.fog && view.reveal){
-    for(const s of d.spaces)for(let cx=s.x;cx<s.x+s.w;cx++)for(let cy=s.y;cy<s.y+s.h;cy++){
+    for(const s of d.spaces)for(const [cx,cy] of cellsOf(s)){
       if(!view.reveal.has(cx+','+cy))
         gFog.appendChild(svgEl('rect',{x:X(cx)-0.5,y:Y(cy)-0.5,width:S+1,height:S+1,fill:'#0a0a0f',opacity:0.97}));
     }
@@ -1645,6 +2027,7 @@ const UI_CONTROLS = {
   'pp-locks':'c','pp-traps':'c','pp-treasure':'c','pp-occ':'c','pp-rubble':'c','pp-light':'c','pp-props':'c',
   'lock-rate':'v','mob-rate':'v','trap-rate':'v','treasure-rate':'v','light-rate':'v','props-rate':'v',
   'loot-value':'v','treasure-quality':'v',
+  'sh-round':'c','sh-oct':'c','sh-l':'c','sh-cave':'c','shape-rate':'v',
 };
 // cles courtes pour un hash compact
 const UI_KEY = {seed:'s',size:'sz',biome:'b',view:'vw',theme:'th','party-size':'pn','party-level':'pv',
@@ -1652,7 +2035,8 @@ const UI_KEY = {seed:'s',size:'sz',biome:'b',view:'vw',theme:'th','party-size':'
   'd-density':'dd','w-simple':'ws','w-double':'wd','w-barred':'wb','w-secret':'wx',
   'pp-locks':'pl','pp-traps':'pt','pp-treasure':'pr','pp-occ':'po','pp-rubble':'pu','pp-light':'pg','pp-props':'ppr',
   'lock-rate':'lr','mob-rate':'mr','trap-rate':'tr','treasure-rate':'tx','light-rate':'gr','props-rate':'pdr',
-  'loot-value':'lv','treasure-quality':'tq'};
+  'loot-value':'lv','treasure-quality':'tq',
+  'sh-round':'hr','sh-oct':'ho','sh-l':'hl','sh-cave':'hv','shape-rate':'hs'};
 let pendingNotesMode=null;
 // DEUX systemes 100% INDEPENDANTS :
 //   - #d= (URL) = CONFIG DU DONJON (graine + tous les UI_CONTROLS). Ecrite "live" a chaque
@@ -1729,6 +2113,7 @@ function syncOutputs(){
   $('o-treasqual').textContent=qualityOut('treasure-quality');
   $('o-light').textContent=pctOut('light-rate')+'%';
   $('o-props').textContent=pctOut('props-rate')+'%';
+  $('o-shaperate').textContent=pctOut('shape-rate')+'%';
   syncSubSliders();
   const ws=['simple','double','barred','secret'].map(k=>parseFloat($('w-'+k).value));
   const sum=Math.max(1,ws.reduce((a,b)=>a+b,0));
@@ -1744,6 +2129,10 @@ function syncSubSliders(){
     s.disabled=!on;
     const row=s.closest('.rng'); if(row)row.classList.toggle('off',!on);
   }
+  // "Proportion de formes speciales" : actif des qu'au moins une forme est cochee.
+  const sr=$('shape-rate');
+  if(sr){ const on=['sh-round','sh-oct','sh-l','sh-cave'].some(id=>$(id)&&$(id).checked);
+    sr.disabled=!on; const row=sr.closest('.rng'); if(row)row.classList.toggle('off',!on); }
 }
 
 /* ---- Difficulte / budget de PX du groupe (regles D&D 2024) ----
@@ -1808,6 +2197,7 @@ function build(){
   assignEncounters(current, currentParty());
   assignChestLoot(current, currentParty());                 // 9c : contenu des coffres (rarete party-level)
   assignDC(current, currentParty());                        // tache 6 : DC verrous/pieges scales sur le niveau
+  assignShapes(current, currentShapes());                   // tache 4 : formes de salles (masque _cells)
   const map=$('map'); map.innerHTML=''; map.appendChild(renderSVG(current, currentView()));
   paintNotes();
   paintDifficulty();
@@ -1815,6 +2205,24 @@ function build(){
 }
 // groupe d'aventuriers courant (nb PJ + niveau) + densite de mobs, pour le calibrage des rencontres
 function currentParty(){return {size:parseInt($('party-size').value,10)||4, level:parseInt($('party-level').value,10)||1, mobDensity:(parseFloat($('mob-rate').value)||45)/100, lootValue:parseInt($('loot-value').value,10)||3, treasureQuality:parseInt($('treasure-quality').value,10)||3};}
+// tache 4 : formes de salles cochees + proportion. Vide = 100% rectangulaire (comportement d'origine).
+function currentShapes(){
+  const enabled=[];
+  if($('sh-round').checked)enabled.push('round');
+  if($('sh-oct').checked)enabled.push('oct');
+  if($('sh-l').checked)enabled.push('l');
+  if($('sh-cave').checked)enabled.push('cave');
+  // PAS de `||25` ici : 0 est une valeur legitime (0% = aucune forme) et || l'ecraserait.
+  const v=parseFloat($('shape-rate').value);
+  return {enabled, rate:(isNaN(v)?25:v)/100};
+}
+// Re-carve les formes (rng dedie ':shape:') et redessine, SANS regenerer la geometrie ni les
+// rencontres : la forme ne depend que de la graine + des cases cochees (decouplee du contenu).
+function reshape(){
+  if(!current)return;
+  assignShapes(current, currentShapes());
+  const map=$('map'); map.innerHTML=''; map.appendChild(renderSVG(current, currentView()));
+}
 
 /* ---- notes : tri-etat masqué / tiroir / sous la carte ---- */
 let notesMode='drawer';
@@ -1942,7 +2350,7 @@ function exportPNG(){
 }
 function exportJSON(){
   const data={name:current.name,seed:current.seed,biome:current.biome,faction:current.faction,bounds:current.bounds,
-    rooms:current.rooms.map(r=>({id:r.id,number:r.number,x:r.x,y:r.y,w:r.w,h:r.h,water:r.water,columns:r.columns,stairsDown:r.stairsDown,isEntrance:!!r.isEntrance,
+    rooms:current.rooms.map(r=>({id:r.id,number:r.number,x:r.x,y:r.y,w:r.w,h:r.h,shape:r.shape||'rect',water:r.water,columns:r.columns,stairsDown:r.stairsDown,isEntrance:!!r.isEntrance,
       hasKey:!!r.hasKey,trap:r.trap||null,treasure:r.treasure||null,occupant:r.occupant||null,light:r.light||null,props:r.props,note:r.note,gm:r.gm,encounter:r.encounter||null})),
     corridors:current.spaces.filter(s=>s.type==='corr').map(s=>({x:s.x,y:s.y,w:s.w,h:s.h,rubble:!!s.rubble,light:s.light||null})),
     doors:current.doors.map(dr=>({cx:dr.cx,cy:dr.cy,type:dr.type,dc:dr.dc||null,difficulty:dr.diff||null,keyRoom:dr.keyRoom||null})),
@@ -2111,6 +2519,9 @@ $('loot-value').addEventListener('input',()=>{ syncOutputs(); reassignEncounters
 // Qualite des tresors : ne touche qu'au CONTENU des coffres (assignChestLoot), pas au placement
 // ni a la geometrie -> recalcul leger, comme la valeur du loot.
 $('treasure-quality').addEventListener('input',()=>{ syncOutputs(); reassignEncounters(); encodeStateToHash(); });
+// Formes de salles (tache 4) : re-carve + redessine sans regenerer (passe legere, decouplee).
+['sh-round','sh-oct','sh-l','sh-cave'].forEach(id=>$(id).addEventListener('change',()=>{ syncOutputs(); reshape(); encodeStateToHash(); }));
+$('shape-rate').addEventListener('input',()=>{ syncOutputs(); reshape(); encodeStateToHash(); });
 $('view').addEventListener('change',()=>{if(current){const map=$('map');map.innerHTML='';map.appendChild(renderSVG(current,currentView()));}encodeStateToHash();});
 $('png').addEventListener('click',exportPNG);
 $('svg').addEventListener('click',exportSVG);
