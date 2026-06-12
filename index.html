@@ -1,4 +1,4 @@
-<!DOCTYPE html> <html lang="fr"> <head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width,initial-scale=1"> <title>One Click Dungeon</title> <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=IM+Fell+English:ital@0;1&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" media="print" onload="this.media='all'" onerror="this.remove()"> <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=IM+Fell+English:ital@0;1&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap"></noscript> <style>:root{--paper:#efe6d0;--paper2:#e7dcc0;--ink:#23201a;--ink-soft:#5b5345;--line:#2a2620;--grid:rgba(60,52,38,.16);--accent:#7a3b2e;--water:#9fb7b0;--panel:#f6efdc;--edge:#cdbd97;--paper-out:#e0d8c3}[data-theme=plan]{--paper:#16314a;--paper2:#12283c;--ink:#dce9f4;--ink-soft:#9db8cf;--line:#cfe2f2;--grid:rgba(200,224,245,.16);--accent:#e8b04b;--water:#2c5a6e;--panel:#102a3f;--edge:#27506f;--paper-out:#0d1f30}[data-theme=encre]{--paper:#1c1a17;--paper2:#161412;--ink:#e9e2d2;--ink-soft:#a99f8a;--line:#e9e2d2;--grid:rgba(233,226,210,.13);--accent:#c8693f;--water:#324b4b;--panel:#211e19;--edge:#3a342b;--paper-out:#100e0c}body{--field:color-mix(in srgb, var(--ink) 8%, var(--panel));--chip:color-mix(in srgb, var(--ink) 6%, var(--panel));--chip-on:color-mix(in srgb, var(--accent) 16%, var(--panel));--hair:color-mix(in srgb, var(--ink) 12%, transparent);--shadow:0 18px 50px -12px rgba(0,0,0,.35)}*{box-sizing:border-box}body,html{margin:0;height:100%}body{background:radial-gradient(120% 120% at 50% 0,var(--paper) 0,var(--paper2) 100%);color:var(--ink);font-family:"EB Garamond",Georgia,serif;-webkit-font-smoothing:antialiased;height:100vh;overflow:hidden;display:flex;flex-direction:column}.app{flex:1 1 auto;display:flex;flex-direction:column;min-height:0}.topbar{flex:0 0 auto;height:56px;display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--panel);box-shadow:0 1px 0 var(--hair),0 8px 22px -16px rgba(0,0,0,.4);z-index:50}.brand{font-family:"IM Fell English SC","EB Garamond",Georgia,"Times New Roman",serif;font-size:18px;letter-spacing:.5px;white-space:nowrap;display:inline-flex;align-items:baseline;gap:6px}.brand span{color:var(--ink-soft)}.ver-btn{cursor:pointer;border:0;font-family:"EB Garamond",Georgia,serif;font-size:11px;letter-spacing:.3px;color:var(--ink-soft);opacity:.7;background:var(--chip);border-radius:999px;padding:4px 9px;align-self:center;white-space:nowrap;transition:opacity .15s ease,background .15s ease}.ver-btn:hover{opacity:1;background:var(--chip-on)}.ver-mobile{display:none}.grow{flex:1}.btn{cursor:pointer;border:0;border-radius:999px;padding:9px 16px;font-family:"EB Garamond",serif;font-size:14px;background:var(--field);color:var(--ink);transition:transform .06s ease,background .15s ease;white-space:nowrap}.btn:hover{background:var(--chip-on)}.btn:active{transform:translateY(1px)}.btn.primary{background:var(--accent);color:#fff;font-weight:600}.btn.ghost{background:0 0}.btn.ghost:hover{background:var(--field)}.btn.small{padding:7px 12px;font-size:13px}.export-wrap{position:relative}.export-menu{position:absolute;top:calc(100% + 8px);right:0;z-index:70;min-width:180px;background:var(--panel);border:1px solid var(--edge);border-radius:12px;box-shadow:var(--shadow);padding:6px;display:flex;flex-direction:column;gap:2px}.export-menu[hidden]{display:none}.export-menu .ex-item{border:0;background:0 0;color:var(--ink);text-align:left;cursor:pointer;font-family:"EB Garamond",serif;font-size:14px;padding:9px 12px;border-radius:8px;white-space:nowrap}.export-menu .ex-item:hover{background:var(--chip-on);color:var(--accent)}.stage{flex:1 1 auto;min-height:0;position:relative;overflow:auto;display:flex;align-items:flex-start;justify-content:center;padding:18px}.stage-col{display:flex;flex-direction:column;align-items:center;gap:18px;width:100%;max-width:1100px;margin:0 auto}.stage svg{max-width:100%;height:auto;filter:drop-shadow(0 14px 34px rgba(0,0,0,.22))}#notesInline{display:none;width:100%;max-width:780px;background:var(--panel);border-radius:16px;padding:18px 22px 24px;box-shadow:0 16px 40px -22px rgba(0,0,0,.45)}body.notes-inline-on #notesInline{display:block}.inline-title{font-family:"IM Fell English","EB Garamond",Georgia,"Times New Roman",serif;font-style:italic;font-size:22px;margin:0 0 4px;line-height:1.15}.seg{display:flex;width:100%;background:var(--chip);border-radius:12px;padding:3px}.seg button{flex:1;border:0;background:0 0;color:var(--ink-soft);padding:8px 6px;border-radius:10px;font-family:"EB Garamond",serif;font-size:13px;cursor:pointer;white-space:nowrap;transition:background .15s ease,color .15s ease}.seg button.on{background:var(--accent);color:#fff;font-weight:600}input[type=text],select{background:var(--field);color:var(--ink);border:0;border-radius:10px;padding:9px 11px;font-family:"EB Garamond",serif;font-size:14px;width:100%}select{appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--ink-soft) 50%),linear-gradient(135deg,var(--ink-soft) 50%,transparent 50%);background-position:calc(100% - 16px) 17px,calc(100% - 11px) 17px;background-size:5px 5px,5px 5px;background-repeat:no-repeat;padding-right:30px}.row{display:flex;gap:8px;align-items:center}.row .btn{flex:0 0 auto}.chips{display:flex;flex-wrap:wrap;gap:8px}.chip{display:inline-flex;align-items:center;gap:7px;padding:8px 13px;border-radius:999px;background:var(--chip);cursor:pointer;font-size:13px;color:var(--ink-soft);user-select:none;transition:background .15s ease,color .15s ease}.chip input{position:absolute;opacity:0;pointer-events:none}.chip:has(input:checked){background:var(--chip-on);color:var(--accent);font-weight:600}.rng{display:grid;grid-template-columns:1fr auto;align-items:center;gap:2px 8px;font-size:13px;color:var(--ink-soft);margin:10px 0}.rng input[type=range]{grid-column:1/-1;width:100%;accent-color:var(--accent)}.rng output{font-variant-numeric:tabular-nums}.rng.sub{margin:6px 0 12px;padding-left:13px;opacity:.92}.rng.off{opacity:.42}.rng.off input[type=range]{cursor:not-allowed}.sec{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-soft);margin:20px 0 9px}.sec:first-child{margin-top:4px}.opt-sec{border-top:1px solid var(--hair);margin-top:6px}.opt-sec>summary{list-style:none;cursor:pointer;user-select:none;display:flex;align-items:center;gap:8px;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-soft);padding:13px 2px 11px}.opt-sec>summary::-webkit-details-marker{display:none}.opt-sec>summary::before{content:"›";font-size:15px;line-height:1;letter-spacing:0;transition:transform .18s ease;transform:rotate(0);opacity:.8}.opt-sec[open]>summary::before{transform:rotate(90deg)}.opt-sec>summary:hover{color:var(--ink)}.opt-sec[open]>summary{color:var(--ink)}.opt-sec>:not(summary){margin-bottom:14px}.stack{display:grid;gap:9px}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:9px 14px}.note-mini{font-size:11px;color:var(--ink-soft);opacity:.75;margin:8px 0 0}.fld{display:grid;gap:5px;font-size:11px;letter-spacing:.6px;text-transform:uppercase;color:var(--ink-soft)}.diff{margin:12px 0 2px;background:var(--chip);border-radius:12px;padding:12px 13px}.diff .dhead{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--ink-soft);margin-bottom:9px}.diff .dl{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:14px;margin:6px 0}.diff .dn{display:flex;align-items:center;gap:9px;color:var(--ink-soft)}.diff .dot{width:9px;height:9px;border-radius:50%;flex:0 0 auto}.diff .dv{font-variant-numeric:tabular-nums;font-weight:600;color:var(--ink)}.diff .dfoot{font-size:11px;color:var(--ink-soft);opacity:.82;margin-top:10px;line-height:1.45}.sheet{position:fixed;z-index:40;background:var(--panel);color:var(--ink);box-shadow:var(--shadow);display:flex;flex-direction:column;transition:transform .28s cubic-bezier(.4,0,.2,1);overscroll-behavior:contain;z-index:60;top:56px;height:calc(100vh - 56px);width:min(390px,94vw)}#optionsPanel{left:0;transform:translateX(-103%)}#optionsPanel.open{transform:translateX(0)}#notesPanel{right:0;transform:translateX(103%)}#notesPanel.open{transform:translateX(0)}#changelogPanel{right:0;transform:translateX(103%)}#changelogPanel.open{transform:translateX(0)}.clog{margin:0;padding:0;list-style:none}.clog>li{margin:0 0 16px}.clog .cv{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}.clog .cv b{font-size:15px}.clog .cv .cd{color:var(--ink-soft);font-size:11.5px}.clog .cv .ct{font-style:italic;color:var(--ink-soft)}.clog ul{margin:5px 0 0 16px;padding:0}.clog ul li{margin:3px 0;font-size:13px;line-height:1.45}.sheet.open{transform:none}.sheet-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:16px 18px 6px;position:relative}.sheet-head h2{margin:0;font-family:"IM Fell English","EB Garamond",Georgia,"Times New Roman",serif;font-style:italic;font-size:20px;line-height:1.15}.sheet .x{border:0;background:0 0;font-size:16px;cursor:pointer;color:var(--ink-soft);padding:8px;border-radius:10px;line-height:1}.sheet .x:hover{background:var(--field)}.sheet-body{padding:6px 18px 30px;overflow:auto}#scrim{position:fixed;inset:0;background:rgba(0,0,0,.4);opacity:0;visibility:hidden;transition:opacity .25s ease;z-index:40}#scrim.show{opacity:1;visibility:visible}@media (min-width:721px){#scrim.show{opacity:0;visibility:hidden}}.sub{font-size:12px;color:var(--ink-soft);margin:0 0 14px}.notes{list-style:none;margin:0;padding:0}.notes li{display:flex;gap:10px;padding:11px 0;font-size:14px;line-height:1.4}.notes li+li{box-shadow:0 -1px 0 var(--hair)}.num{flex:0 0 auto;width:22px;height:22px;border-radius:50%;background:var(--field);color:var(--ink);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600}.notes li.has-gm .num{background:var(--chip-on);color:var(--accent)}.gm-line{display:block;font-size:12.5px;color:var(--accent);margin-top:3px}.gm-line b{font-weight:600}.enc-line{line-height:1.6}button.mob{display:inline;border:0;padding:1px 6px;margin:1px 0;border-radius:999px;cursor:pointer;font-family:"EB Garamond",serif;font-size:12.5px;font-weight:600;line-height:1.3;background:var(--chip-on);color:var(--accent);transition:background .12s ease}button.mob:hover{background:color-mix(in srgb,var(--accent) 28%,var(--panel))}.ogl-note{font-size:10.5px;color:var(--ink-soft);opacity:.7;margin-top:16px;line-height:1.45}.mob-pop{position:fixed;z-index:80;background:var(--panel);color:var(--ink);border:1px solid var(--edge);border-radius:14px;box-shadow:var(--shadow);padding:14px 16px 16px;max-width:94vw;max-height:calc(100vh - 24px);overflow:auto;overscroll-behavior:contain;font-family:"EB Garamond",Georgia,serif}.mob-pop[hidden]{display:none}.mob-pop .mp-x{position:absolute;top:8px;right:8px;border:0;background:0 0;cursor:pointer;color:var(--ink-soft);font-size:15px;line-height:1;padding:6px;border-radius:8px}.mob-pop .mp-x:hover{background:var(--field)}.mob-pop .mp-name{margin:0 22px 2px 0;font-family:"IM Fell English","EB Garamond",Georgia,serif;font-style:italic;font-size:19px;line-height:1.15;color:var(--ink)}.mob-pop .mp-orig{font-size:12px;color:var(--ink-soft);margin-bottom:2px}.mob-pop .mp-type{font-size:12px;color:var(--ink-soft);font-style:italic;margin-bottom:10px}.mob-pop .mp-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:6px 8px;margin-bottom:10px}.mob-pop .mp-stats>div{background:var(--chip);border-radius:8px;padding:5px 7px;display:flex;flex-direction:column}.mob-pop .mp-stats .mp-wide{grid-column:1/-1;flex-direction:row;align-items:baseline;gap:8px}.mob-pop .mp-stats span{font-size:10px;letter-spacing:.6px;text-transform:uppercase;color:var(--ink-soft)}.mob-pop .mp-stats b{font-size:15px;font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums}.mob-pop .mp-abil{display:grid;grid-template-columns:repeat(6,1fr);gap:5px;margin-bottom:12px}.mob-pop .mp-abil>div{text-align:center;background:var(--chip);border-radius:8px;padding:5px 2px}.mob-pop .mp-abil span{display:block;font-size:9.5px;letter-spacing:.5px;color:var(--ink-soft)}.mob-pop .mp-abil b{display:block;font-size:14px;font-weight:600;color:var(--ink)}.mob-pop .mp-abil i{display:block;font-size:10px;color:var(--accent);font-style:normal}.mob-pop .mp-link{display:inline-block;font-size:12.5px;color:var(--accent);text-decoration:none;font-weight:600}.mob-pop .mp-link:hover{text-decoration:underline}.mob-pop .mp-toggle{display:block;width:100%;margin:0 0 10px;padding:7px 10px;cursor:pointer;border:0;border-radius:9px;background:var(--chip);color:var(--accent);font-weight:600;font-family:"EB Garamond",serif;font-size:12.5px;text-align:left;transition:background .12s ease}.mob-pop .mp-toggle:hover{background:var(--chip-on)}.mob-pop .mp-sections{margin-bottom:12px;border-top:1px solid var(--hair);padding-top:4px}.mob-pop .mp-sec{margin-top:10px}.mob-pop .mp-sec h4{margin:0 0 4px;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--accent)}.mob-pop .mp-intro{margin:0 0 6px;font-size:12px;color:var(--ink-soft);font-style:italic;line-height:1.4}.mob-pop .mp-entry{margin:0 0 6px;font-size:12.5px;line-height:1.42;color:var(--ink)}.mob-pop .mp-entry b{color:var(--ink)}.mob-pop .mp-loot-toggle{display:block;width:100%;margin:0 0 10px;padding:7px 10px;cursor:pointer;border:0;border-radius:9px;background:var(--chip);color:var(--accent);font-weight:600;font-family:"EB Garamond",serif;font-size:12.5px;text-align:left;transition:background .12s ease}.mob-pop .mp-loot-toggle:hover{background:var(--chip-on)}.mob-pop .mp-loot{margin:0 0 12px;border-top:1px solid var(--hair);padding-top:8px}.mob-pop .mp-loot h4{margin:0 0 4px;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--accent)}.mob-pop .mp-loot-po{margin:0 0 6px;font-size:13px;font-weight:600;color:var(--ink)}.mob-pop .mp-loot-items{margin:0;padding-left:18px}.mob-pop .mp-loot-items li{font-size:12.5px;line-height:1.45;color:var(--ink);margin-bottom:3px}.mob-pop .loot-item,.notes .loot-item{background:0 0;border:0;padding:0;cursor:pointer;font:inherit;color:var(--accent);font-weight:600;text-align:left}.mob-pop .loot-item:hover,.notes .loot-item:hover{text-decoration:underline}.notes .chest-rar{color:var(--ink-soft);font-style:italic;font-size:.92em}.mob-pop .mp-loot-items .mp-rar{color:var(--ink-soft);font-style:italic}.mob-pop .mp-loot-items .mp-att{color:var(--ink-soft);font-size:11.5px}.mob-pop .mp-loot-none{margin:0;font-size:12px;color:var(--ink-soft);font-style:italic}.mob-pop .mp-loot-bab{margin:4px 0 0;padding-left:18px;list-style:'· '}.mob-pop .mp-loot-bab li{font-size:12px;line-height:1.4;color:var(--ink-soft);font-style:italic;margin-bottom:2px}@media (max-width:720px){.mob-pop.open{left:0!important;right:0;bottom:0;top:auto!important;width:auto!important;max-width:none;max-height:82vh;border-radius:16px 16px 0 0;border-bottom:0;padding-bottom:24px}}.item-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:60}.item-modal{position:fixed;z-index:61;left:50%;top:50%;transform:translate(-50%,-50%);width:min(440px,calc(100vw - 32px));max-height:80vh;overflow:auto;background:var(--paper,#f4ecd8);color:var(--ink);border:1px solid var(--hair);border-radius:14px;padding:20px 22px;box-shadow:0 16px 50px rgba(0,0,0,.35)}.item-modal .im-x{position:absolute;top:10px;right:12px;background:0 0;border:0;cursor:pointer;font-size:18px;line-height:1;color:var(--ink-soft)}.item-modal .im-x:hover{color:var(--ink)}.item-modal .im-name{margin:0 24px 2px 0;font-size:19px;color:var(--ink);font-family:"EB Garamond",serif}.item-modal .im-meta{font-size:12px;letter-spacing:.5px;text-transform:uppercase;color:var(--accent);margin-bottom:6px}.item-modal .im-att{font-size:12.5px;color:var(--ink-soft);font-style:italic;margin-bottom:10px}.item-modal .im-desc{font-size:13.5px;line-height:1.5;color:var(--ink);margin:0 0 14px;white-space:pre-wrap}.item-modal .im-notogl{color:var(--ink-soft);font-style:italic}.item-modal .im-link{display:inline-block;font-size:12.5px;color:var(--accent);text-decoration:none;font-weight:600}.item-modal .im-link:hover{text-decoration:underline}@media (max-width:720px){.item-modal{left:0;top:auto;bottom:0;transform:none;width:auto;right:0;max-height:82vh;border-radius:16px 16px 0 0;border-bottom:0}}.legend{margin-top:20px}.legend h3{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-soft);margin:0 0 8px}.legend .row{display:flex;align-items:center;gap:10px;font-size:13px;margin:6px 0;color:var(--ink-soft)}.legend svg{flex:0 0 auto}.hint{font-size:11px;color:var(--ink-soft);opacity:.8;margin-top:18px}@media (max-width:720px){.brand span{display:none}.ver-btn{font-size:10px;padding:3px 6px}.ver-desktop{display:none}.ver-mobile{display:inline-block}.stage{padding:10px}#notesPanel,#optionsPanel,.sheet{top:auto;left:0;right:0;bottom:0;width:auto;height:auto;max-height:86vh;transform:translateY(103%);border-radius:18px 18px 0 0}#notesPanel.open,#optionsPanel.open,.sheet.open{transform:translateY(0)}.sheet-head{padding-top:22px}.sheet-head::before{content:"";position:absolute;top:8px;left:50%;transform:translateX(-50%);width:42px;height:4px;border-radius:2px;background:var(--hair)}.grid2{grid-template-columns:1fr 1fr}}#printArea{display:none}#printArea .ptitle{font-family:"IM Fell English SC","EB Garamond",Georgia,"Times New Roman",serif;font-weight:400;font-size:26px;text-align:center;margin:0 0 4px}#printArea .tag{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#7a3b2e;text-align:center;margin-bottom:12px}#printArea .phook{font-style:italic;text-align:center;max-width:60ch;margin:0 auto 10px;font-size:15px}#printArea .pmeta{text-align:center;color:#5b5345;font-size:12px;margin:0 0 18px}#printArea .pnotes{list-style:none;padding:0;margin:0;columns:2;column-gap:28px}#printArea .pnotes li{break-inside:avoid;display:flex;gap:8px;margin:0 0 10px;font-size:13px;line-height:1.35}#printArea .pnum{flex:0 0 auto;width:20px;height:20px;border:1.4px solid #23201a;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600}#printArea .pgm{display:block;color:#7a3b2e;font-size:12px;margin-top:2px}#printArea .plegend{margin-top:16px;border-top:1px solid #cdbd97;padding-top:10px;break-inside:avoid}#printArea .plegend h2{font-family:"IM Fell English SC","EB Garamond",Georgia,"Times New Roman",serif;font-weight:400;font-size:14px;letter-spacing:1px;margin:0 0 8px}#printArea .prow{display:inline-flex;align-items:center;gap:8px;margin:4px 16px 4px 0;font-size:12px;color:#5b5345}#printArea .ogl-note{margin-top:14px;font-size:10px;color:#8a8270;text-align:center}#printArea .psheets{columns:2;column-gap:24px;margin-top:6px}#printArea .psheet{break-inside:avoid;border:1px solid #cdbd97;border-radius:6px;padding:8px 10px;margin:0 0 12px;font-size:11.5px;line-height:1.35}#printArea .ps-name{font-family:"IM Fell English SC","EB Garamond",Georgia,"Times New Roman",serif;font-weight:400;font-size:16px;margin:0}#printArea .ps-count{color:#7a3b2e;font-size:13px}#printArea .ps-orig{font-size:11px;color:#7a3b2e;margin:-1px 0 0}#printArea .ps-type{font-style:italic;color:#5b5345;font-size:11px;margin:1px 0 6px}#printArea .ps-abil,#printArea .ps-stats{display:flex;flex-wrap:wrap;gap:4px 10px;margin:0 0 6px}#printArea .ps-abil>div,#printArea .ps-stats>div{display:flex;align-items:baseline;gap:3px}#printArea .ps-abil span,#printArea .ps-stats span{font-size:9px;letter-spacing:1px;text-transform:uppercase;color:#8a8270}#printArea .ps-abil b,#printArea .ps-stats b{font-size:12px}#printArea .ps-abil i{font-style:normal;color:#5b5345;font-size:10px}#printArea .ps-stats .ps-wide{flex:1 1 100%}#printArea .ps-sec{margin-top:5px}#printArea .ps-sec h4{margin:0 0 2px;font-size:11px;letter-spacing:.5px;text-transform:uppercase;color:#7a3b2e;border-bottom:1px solid #e3d7ba}#printArea .ps-intro{font-style:italic;margin:0 0 3px}#printArea .ps-entry{margin:0 0 3px}#printArea .ps-rooms{font-size:9px;letter-spacing:1px;text-transform:uppercase;color:#8a8270;margin:0 0 4px}#printArea .ps-desc{margin:4px 0 0;white-space:pre-line}#printArea .ps-notogl{font-style:italic;color:#5b5345}@media print{@page{margin:1cm}body{overflow:visible;background:#fff;display:block}body>:not(#printArea){display:none!important}#printArea{display:block!important}#printArea .page{page-break-after:always;padding:0 0 .5cm;display:flex;flex-direction:column;align-items:center}#printArea .page:last-child{page-break-after:auto}#printArea .page.map svg{width:auto;max-width:100%;max-height:23cm;display:block}#printArea .page.doc{align-items:stretch}}</style> </head> <body data-theme="parchemin"> <div class="app"> <header class="topbar"> <div class="brand">One Click<span> Dungeon</span><button class="ver-btn ver-desktop" title="Nouveautés">v0.3.13</button></div> <div class="grow"></div> <button id="btn-options" class="btn ghost small">Options</button> <button id="gen" class="btn primary">Générer</button> <button id="btn-notes" class="btn ghost small">Notes</button> <div class="export-wrap"> <button id="btn-export" class="btn ghost small" aria-haspopup="true" aria-expanded="false">Export ▾</button> <div id="exportMenu" class="export-menu" hidden> <button id="png" class="ex-item">Image PNG</button> <button id="svg" class="ex-item">Vectoriel SVG</button> <button id="json" class="ex-item">Données JSON</button> <button id="print" class="ex-item">Imprimer</button> <button id="share" class="ex-item">Partager le lien</button> </div> </div> <div class="grow"></div> <button class="ver-btn ver-mobile" title="Nouveautés">v0.3.13</button> </header> <main class="stage"><div class="stage-col"><div id="map"></div><section id="notesInline"></section></div></main> </div> <section id="optionsPanel" class="sheet" aria-label="Options"> <div class="sheet-head"><h2>Options</h2><button class="x" data-close aria-label="Fermer">✕</button></div> <div class="sheet-body"> <div class="sec">Donjon</div> <div class="stack"> <div class="row"> <input id="seed" type="text" spellcheck="false" placeholder="graine"> <button id="rand" class="btn small" title="Graine aléatoire">Aléatoire</button> </div> <div class="grid2"> <select id="size" aria-label="Taille"> <option value="9">Petit</option> <option value="16" selected="selected">Moyen</option> <option value="26">Grand</option> <option value="38">Vaste</option> </select> <select id="view" aria-label="Vue"> <option value="mj" selected="selected">Vue MJ</option> <option value="player">Vue joueur</option> </select> <select id="biome" aria-label="Biome"> <option value="" selected="selected">Générique</option> <option value="auto">Auto</option> <option value="crypte">Crypte</option> <option value="donjon">Donjon / Prison</option> <option value="grotte">Grotte</option> <option value="temple">Temple</option> <option value="egout">Égout</option> <option value="mine">Mine</option> <option value="catacombes">Catacombes</option> <option value="manoir">Manoir hanté</option> <option value="sanctuaire">Sanctuaire</option> <option value="ruines">Ruines</option> <option value="postapo">Post-apocalyptique</option> <option value="cyberpunk">Cyberpunk</option> <option value="moderne">Moderne</option> <option value="dcc">Dungeon Crawler Carl</option> </select> <select id="theme" aria-label="Thème"> <option value="parchemin" selected="selected">Parchemin</option> <option value="plan">Plan bleu</option> <option value="encre">Encre sombre</option> </select> </div> </div> <details class="opt-sec" open data-sec="party"> <summary>Groupe d'aventuriers</summary> <div class="grid2"> <label class="fld">Joueurs <select id="party-size" aria-label="Nombre de joueurs"> <option>1</option><option>2</option><option>3</option> <option value="4" selected="selected">4</option><option>5</option><option>6</option> <option>7</option><option>8</option><option>9</option><option>10</option> </select> </label> <label class="fld">Niveau du groupe <select id="party-level" aria-label="Niveau du groupe"> <option>1</option><option>2</option><option value="3" selected="selected">3</option> <option>4</option><option>5</option><option>6</option><option>7</option> <option>8</option><option>9</option><option>10</option><option>11</option> <option>12</option><option>13</option><option>14</option><option>15</option> <option>16</option><option>17</option><option>18</option><option>19</option><option>20</option> </select> </label> </div> <div id="diffPanel" class="diff" aria-live="polite"></div> </details> <details class="opt-sec" data-sec="notes"> <summary>Affichage des notes</summary> <div class="seg" id="notesSeg"> <button type="button" data-nmode="hidden">Masqué</button> <button type="button" data-nmode="drawer" class="on">Tiroir</button> <button type="button" data-nmode="inline">Sous la carte</button> </div> </details> <details class="opt-sec" data-sec="struct"> <summary>Structure</summary> <div class="chips"> <label class="chip"><input type="checkbox" id="t-sym" checked="checked"><span>Symétrie locale</span></label> <label class="chip"><input type="checkbox" id="t-corr"><span>Longs couloirs</span></label> <label class="chip"><input type="checkbox" id="t-water" checked="checked"><span>Eau</span></label> <label class="chip"><input type="checkbox" id="t-col" checked="checked"><span>Colonnades</span></label> </div> </details> <details class="opt-sec" data-sec="shapes"> <summary>Formes de salles</summary> <div class="chips"> <label class="chip"><input type="checkbox" id="sh-round"><span>Arrondie</span></label> <label class="chip"><input type="checkbox" id="sh-oct" checked="checked"><span>Octogone</span></label> <label class="chip"><input type="checkbox" id="sh-l" checked="checked"><span>En L</span></label> <label class="chip"><input type="checkbox" id="sh-cave"><span>Caverne</span></label> </div> <div class="rng sub">Proportion de formes spéciales <output id="o-shaperate">25%</output><input type="range" id="shape-rate" min="0" max="50" value="25"></div> <p class="note-mini">Pourcentage du nombre total de salles (dans la limite des salles assez grandes). Sans case cochée, tout reste rectangulaire ; l'entrée, la sortie et les salles inondées gardent leur forme.</p> </details> <details class="opt-sec" data-sec="doors"> <summary>Portes</summary> <div class="rng">Proportion de portes <output id="o-density">70%</output> <input type="range" id="d-density" min="0" max="100" value="70"></div> <div class="grid2"> <div class="rng">Simple <output id="o-simple"></output><input type="range" id="w-simple" min="0" max="100" value="55"></div> <div class="rng">Double <output id="o-double"></output><input type="range" id="w-double" min="0" max="100" value="15"></div> <div class="rng">Herse <output id="o-barred"></output><input type="range" id="w-barred" min="0" max="100" value="15"></div> <div class="rng">Secrète <output id="o-secret"></output><input type="range" id="w-secret" min="0" max="100" value="15"></div> </div> <p class="note-mini">Le reste des ouvertures devient des passages ouverts (arches).</p> </details> <details class="opt-sec" data-sec="content"> <summary>Contenu (repères MJ)</summary> <div class="chips"> <label class="chip"><input type="checkbox" id="pp-locks" checked="checked"><span>Verrous et clés</span></label> <label class="chip"><input type="checkbox" id="pp-traps" checked="checked"><span>Pièges</span></label> <label class="chip"><input type="checkbox" id="pp-treasure"><span>Trésors</span></label> <label class="chip"><input type="checkbox" id="pp-occ" checked="checked"><span>Occupants</span></label> <label class="chip"><input type="checkbox" id="pp-rubble"><span>Éboulis</span></label> <label class="chip"><input type="checkbox" id="pp-light" checked="checked"><span>Éclairage</span></label> <label class="chip"><input type="checkbox" id="pp-props"><span>Props</span></label> </div> <div class="rng sub">Taux de verrous <output id="o-lock">25%</output><input type="range" id="lock-rate" min="0" max="100" value="25"></div> <div class="rng sub">Densité de mobs <output id="o-mobrate">45%</output><input type="range" id="mob-rate" min="0" max="100" value="45"></div> <div class="rng sub">Valeur du loot <output id="o-lootval">Standard</output><input type="range" id="loot-value" min="1" max="5" value="3"></div> <div class="rng sub">Densité de pièges <output id="o-trap">22%</output><input type="range" id="trap-rate" min="0" max="100" value="22"></div> <div class="rng sub">Densité de trésors <output id="o-treasure">25%</output><input type="range" id="treasure-rate" min="0" max="100" value="25"></div> <div class="rng sub">Qualité des trésors <output id="o-treasqual">Standard</output><input type="range" id="treasure-quality" min="1" max="5" value="3"></div> <div class="rng sub">Salles éclairées <output id="o-light">40%</output><input type="range" id="light-rate" min="0" max="100" value="40"></div> <div class="rng sub">Densité de props <output id="o-props">35%</output><input type="range" id="props-rate" min="0" max="100" value="35"></div> </details> <p class="hint">Astuce : barre d'espace pour régénérer. La même graine redonne toujours le même donjon. Exports (PNG, SVG, JSON, impression, lien) via le bouton <b>Export</b> en haut.</p> </div> </section> <section id="notesPanel" class="sheet" aria-label="Notes"> <div class="sheet-head"><h2 id="dname">Donjon</h2><button class="x" data-close aria-label="Fermer">✕</button></div> <div class="sheet-body"> <div id="notesHostDrawer"></div> <p class="hint">Les repères en couleur (clé, piège, trésor, DC des verrous) sont destinés au MJ.</p> </div> </section> <section id="changelogPanel" class="sheet" aria-label="Nouveautés"> <div class="sheet-head"><h2>Nouveautés</h2><button class="x" data-close aria-label="Fermer">✕</button></div> <div class="sheet-body"><div id="changelogBody"></div></div> </section> <div id="scrim"></div> <div id="mobPopover" class="mob-pop" role="dialog" aria-modal="false" hidden></div> <div id="itemModalBackdrop" class="item-modal-backdrop" hidden></div> <div id="itemModal" class="item-modal" role="dialog" aria-modal="true" hidden></div> <div id="printArea"></div> <script> "use strict";
+<!DOCTYPE html> <html lang="fr"> <head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width,initial-scale=1"> <title>One Click Dungeon</title> <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=IM+Fell+English:ital@0;1&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" media="print" onload="this.media='all'" onerror="this.remove()"> <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=IM+Fell+English:ital@0;1&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap"></noscript> <style>:root{--paper:#efe6d0;--paper2:#e7dcc0;--ink:#23201a;--ink-soft:#5b5345;--line:#2a2620;--grid:rgba(60,52,38,.16);--accent:#7a3b2e;--water:#9fb7b0;--panel:#f6efdc;--edge:#cdbd97;--paper-out:#e0d8c3;--stone:#b3a78f;--tree:#7d815c;--tree-deep:#5d6245}[data-theme=plan]{--paper:#16314a;--paper2:#12283c;--ink:#dce9f4;--ink-soft:#9db8cf;--line:#cfe2f2;--grid:rgba(200,224,245,.16);--accent:#e8b04b;--water:#2c5a6e;--panel:#102a3f;--edge:#27506f;--paper-out:#0d1f30;--stone:#2e5274;--tree:#375d52;--tree-deep:#264740}[data-theme=encre]{--paper:#1c1a17;--paper2:#161412;--ink:#e9e2d2;--ink-soft:#a99f8a;--line:#e9e2d2;--grid:rgba(233,226,210,.13);--accent:#c8693f;--water:#324b4b;--panel:#211e19;--edge:#3a342b;--paper-out:#100e0c;--stone:#484134;--tree:#4b573f;--tree-deep:#384230}body{--field:color-mix(in srgb, var(--ink) 8%, var(--panel));--chip:color-mix(in srgb, var(--ink) 6%, var(--panel));--chip-on:color-mix(in srgb, var(--accent) 16%, var(--panel));--hair:color-mix(in srgb, var(--ink) 12%, transparent);--shadow:0 18px 50px -12px rgba(0,0,0,.35)}*{box-sizing:border-box}body,html{margin:0;height:100%}body{background:radial-gradient(120% 120% at 50% 0,var(--paper) 0,var(--paper2) 100%);color:var(--ink);font-family:"EB Garamond",Georgia,serif;-webkit-font-smoothing:antialiased;height:100vh;overflow:hidden;display:flex;flex-direction:column}.app{flex:1 1 auto;display:flex;flex-direction:column;min-height:0}.topbar{flex:0 0 auto;height:56px;display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--panel);box-shadow:0 1px 0 var(--hair),0 8px 22px -16px rgba(0,0,0,.4);z-index:50}.brand{font-family:"IM Fell English SC","EB Garamond",Georgia,"Times New Roman",serif;font-size:18px;letter-spacing:.5px;white-space:nowrap;display:inline-flex;align-items:baseline;gap:6px}.brand span{color:var(--ink-soft)}.ver-btn{cursor:pointer;border:0;font-family:"EB Garamond",Georgia,serif;font-size:11px;letter-spacing:.3px;color:var(--ink-soft);opacity:.7;background:var(--chip);border-radius:999px;padding:4px 9px;align-self:center;white-space:nowrap;transition:opacity .15s ease,background .15s ease}.ver-btn:hover{opacity:1;background:var(--chip-on)}.ver-mobile{display:none}.grow{flex:1}.btn{cursor:pointer;border:0;border-radius:999px;padding:9px 16px;font-family:"EB Garamond",serif;font-size:14px;background:var(--field);color:var(--ink);transition:transform .06s ease,background .15s ease;white-space:nowrap}.btn:hover{background:var(--chip-on)}.btn:active{transform:translateY(1px)}.btn.primary{background:var(--accent);color:#fff;font-weight:600}.btn.ghost{background:0 0}.btn.ghost:hover{background:var(--field)}.btn.small{padding:7px 12px;font-size:13px}.export-wrap{position:relative}.export-menu{position:absolute;top:calc(100% + 8px);right:0;z-index:70;min-width:180px;background:var(--panel);border:1px solid var(--edge);border-radius:12px;box-shadow:var(--shadow);padding:6px;display:flex;flex-direction:column;gap:2px}.export-menu[hidden]{display:none}.export-menu .ex-item{border:0;background:0 0;color:var(--ink);text-align:left;cursor:pointer;font-family:"EB Garamond",serif;font-size:14px;padding:9px 12px;border-radius:8px;white-space:nowrap}.export-menu .ex-item:hover{background:var(--chip-on);color:var(--accent)}.stage{flex:1 1 auto;min-height:0;position:relative;overflow:auto;display:flex;align-items:flex-start;justify-content:center;padding:18px}.stage-col{display:flex;flex-direction:column;align-items:center;gap:18px;width:100%;max-width:1100px;margin:0 auto}.stage svg{max-width:100%;height:auto;filter:drop-shadow(0 14px 34px rgba(0,0,0,.22))}#notesInline{display:none;width:100%;max-width:780px;background:var(--panel);border-radius:16px;padding:18px 22px 24px;box-shadow:0 16px 40px -22px rgba(0,0,0,.45)}body.notes-inline-on #notesInline{display:block}.inline-title{font-family:"IM Fell English","EB Garamond",Georgia,"Times New Roman",serif;font-style:italic;font-size:22px;margin:0 0 4px;line-height:1.15}.seg{display:flex;width:100%;background:var(--chip);border-radius:12px;padding:3px}.seg button{flex:1;border:0;background:0 0;color:var(--ink-soft);padding:8px 6px;border-radius:10px;font-family:"EB Garamond",serif;font-size:13px;cursor:pointer;white-space:nowrap;transition:background .15s ease,color .15s ease}.seg button.on{background:var(--accent);color:#fff;font-weight:600}input[type=text],select{background:var(--field);color:var(--ink);border:0;border-radius:10px;padding:9px 11px;font-family:"EB Garamond",serif;font-size:14px;width:100%}select{appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--ink-soft) 50%),linear-gradient(135deg,var(--ink-soft) 50%,transparent 50%);background-position:calc(100% - 16px) 17px,calc(100% - 11px) 17px;background-size:5px 5px,5px 5px;background-repeat:no-repeat;padding-right:30px}.row{display:flex;gap:8px;align-items:center}.row .btn{flex:0 0 auto}.chips{display:flex;flex-wrap:wrap;gap:8px}.chip{display:inline-flex;align-items:center;gap:7px;padding:8px 13px;border-radius:999px;background:var(--chip);cursor:pointer;font-size:13px;color:var(--ink-soft);user-select:none;transition:background .15s ease,color .15s ease}.chip input{position:absolute;opacity:0;pointer-events:none}.chip:has(input:checked){background:var(--chip-on);color:var(--accent);font-weight:600}.rng{display:grid;grid-template-columns:1fr auto;align-items:center;gap:2px 8px;font-size:13px;color:var(--ink-soft);margin:10px 0}.rng input[type=range]{grid-column:1/-1;width:100%;accent-color:var(--accent)}.rng output{font-variant-numeric:tabular-nums}.rng.sub{margin:6px 0 12px;padding-left:13px;opacity:.92}.rng.off{opacity:.42}.rng.off input[type=range]{cursor:not-allowed}.sec{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-soft);margin:20px 0 9px}.sec:first-child{margin-top:4px}.opt-sec{border-top:1px solid var(--hair);margin-top:6px}.opt-sec>summary{list-style:none;cursor:pointer;user-select:none;display:flex;align-items:center;gap:8px;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-soft);padding:13px 2px 11px}.opt-sec>summary::-webkit-details-marker{display:none}.opt-sec>summary::before{content:"›";font-size:15px;line-height:1;letter-spacing:0;transition:transform .18s ease;transform:rotate(0);opacity:.8}.opt-sec[open]>summary::before{transform:rotate(90deg)}.opt-sec>summary:hover{color:var(--ink)}.opt-sec[open]>summary{color:var(--ink)}.opt-sec>:not(summary){margin-bottom:14px}.stack{display:grid;gap:9px}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:9px 14px}.note-mini{font-size:11px;color:var(--ink-soft);opacity:.75;margin:8px 0 0}.fld{display:grid;gap:5px;font-size:11px;letter-spacing:.6px;text-transform:uppercase;color:var(--ink-soft)}.diff{margin:12px 0 2px;background:var(--chip);border-radius:12px;padding:12px 13px}.diff .dhead{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--ink-soft);margin-bottom:9px}.diff .dl{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:14px;margin:6px 0}.diff .dn{display:flex;align-items:center;gap:9px;color:var(--ink-soft)}.diff .dot{width:9px;height:9px;border-radius:50%;flex:0 0 auto}.diff .dv{font-variant-numeric:tabular-nums;font-weight:600;color:var(--ink)}.diff .dfoot{font-size:11px;color:var(--ink-soft);opacity:.82;margin-top:10px;line-height:1.45}.sheet{position:fixed;z-index:40;background:var(--panel);color:var(--ink);box-shadow:var(--shadow);display:flex;flex-direction:column;transition:transform .28s cubic-bezier(.4,0,.2,1);overscroll-behavior:contain;z-index:60;top:56px;height:calc(100vh - 56px);width:min(390px,94vw)}#optionsPanel{left:0;transform:translateX(-103%)}#optionsPanel.open{transform:translateX(0)}#notesPanel{right:0;transform:translateX(103%)}#notesPanel.open{transform:translateX(0)}#changelogPanel{right:0;transform:translateX(103%)}#changelogPanel.open{transform:translateX(0)}.clog{margin:0;padding:0;list-style:none}.clog>li{margin:0 0 16px}.clog .cv{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}.clog .cv b{font-size:15px}.clog .cv .cd{color:var(--ink-soft);font-size:11.5px}.clog .cv .ct{font-style:italic;color:var(--ink-soft)}.clog ul{margin:5px 0 0 16px;padding:0}.clog ul li{margin:3px 0;font-size:13px;line-height:1.45}.sheet.open{transform:none}.sheet-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:16px 18px 6px;position:relative}.sheet-head h2{margin:0;font-family:"IM Fell English","EB Garamond",Georgia,"Times New Roman",serif;font-style:italic;font-size:20px;line-height:1.15}.sheet .x{border:0;background:0 0;font-size:16px;cursor:pointer;color:var(--ink-soft);padding:8px;border-radius:10px;line-height:1}.sheet .x:hover{background:var(--field)}.sheet-body{padding:6px 18px 30px;overflow:auto}#scrim{position:fixed;inset:0;background:rgba(0,0,0,.4);opacity:0;visibility:hidden;transition:opacity .25s ease;z-index:40}#scrim.show{opacity:1;visibility:visible}@media (min-width:721px){#scrim.show{opacity:0;visibility:hidden}}.sub{font-size:12px;color:var(--ink-soft);margin:0 0 14px}.notes{list-style:none;margin:0;padding:0}.notes li{display:flex;gap:10px;padding:11px 0;font-size:14px;line-height:1.4}.notes li+li{box-shadow:0 -1px 0 var(--hair)}.num{flex:0 0 auto;width:22px;height:22px;border-radius:50%;background:var(--field);color:var(--ink);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600}.notes li.has-gm .num{background:var(--chip-on);color:var(--accent)}.gm-line{display:block;font-size:12.5px;color:var(--accent);margin-top:3px}.gm-line b{font-weight:600}.enc-line{line-height:1.6}button.mob{display:inline;border:0;padding:1px 6px;margin:1px 0;border-radius:999px;cursor:pointer;font-family:"EB Garamond",serif;font-size:12.5px;font-weight:600;line-height:1.3;background:var(--chip-on);color:var(--accent);transition:background .12s ease}button.mob:hover{background:color-mix(in srgb,var(--accent) 28%,var(--panel))}.ogl-note{font-size:10.5px;color:var(--ink-soft);opacity:.7;margin-top:16px;line-height:1.45}.mob-pop{position:fixed;z-index:80;background:var(--panel);color:var(--ink);border:1px solid var(--edge);border-radius:14px;box-shadow:var(--shadow);padding:14px 16px 16px;max-width:94vw;max-height:calc(100vh - 24px);overflow:auto;overscroll-behavior:contain;font-family:"EB Garamond",Georgia,serif}.mob-pop[hidden]{display:none}.mob-pop .mp-x{position:absolute;top:8px;right:8px;border:0;background:0 0;cursor:pointer;color:var(--ink-soft);font-size:15px;line-height:1;padding:6px;border-radius:8px}.mob-pop .mp-x:hover{background:var(--field)}.mob-pop .mp-name{margin:0 22px 2px 0;font-family:"IM Fell English","EB Garamond",Georgia,serif;font-style:italic;font-size:19px;line-height:1.15;color:var(--ink)}.mob-pop .mp-orig{font-size:12px;color:var(--ink-soft);margin-bottom:2px}.mob-pop .mp-type{font-size:12px;color:var(--ink-soft);font-style:italic;margin-bottom:10px}.mob-pop .mp-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:6px 8px;margin-bottom:10px}.mob-pop .mp-stats>div{background:var(--chip);border-radius:8px;padding:5px 7px;display:flex;flex-direction:column}.mob-pop .mp-stats .mp-wide{grid-column:1/-1;flex-direction:row;align-items:baseline;gap:8px}.mob-pop .mp-stats span{font-size:10px;letter-spacing:.6px;text-transform:uppercase;color:var(--ink-soft)}.mob-pop .mp-stats b{font-size:15px;font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums}.mob-pop .mp-abil{display:grid;grid-template-columns:repeat(6,1fr);gap:5px;margin-bottom:12px}.mob-pop .mp-abil>div{text-align:center;background:var(--chip);border-radius:8px;padding:5px 2px}.mob-pop .mp-abil span{display:block;font-size:9.5px;letter-spacing:.5px;color:var(--ink-soft)}.mob-pop .mp-abil b{display:block;font-size:14px;font-weight:600;color:var(--ink)}.mob-pop .mp-abil i{display:block;font-size:10px;color:var(--accent);font-style:normal}.mob-pop .mp-link{display:inline-block;font-size:12.5px;color:var(--accent);text-decoration:none;font-weight:600}.mob-pop .mp-link:hover{text-decoration:underline}.mob-pop .mp-toggle{display:block;width:100%;margin:0 0 10px;padding:7px 10px;cursor:pointer;border:0;border-radius:9px;background:var(--chip);color:var(--accent);font-weight:600;font-family:"EB Garamond",serif;font-size:12.5px;text-align:left;transition:background .12s ease}.mob-pop .mp-toggle:hover{background:var(--chip-on)}.mob-pop .mp-sections{margin-bottom:12px;border-top:1px solid var(--hair);padding-top:4px}.mob-pop .mp-sec{margin-top:10px}.mob-pop .mp-sec h4{margin:0 0 4px;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--accent)}.mob-pop .mp-intro{margin:0 0 6px;font-size:12px;color:var(--ink-soft);font-style:italic;line-height:1.4}.mob-pop .mp-entry{margin:0 0 6px;font-size:12.5px;line-height:1.42;color:var(--ink)}.mob-pop .mp-entry b{color:var(--ink)}.mob-pop .mp-loot-toggle{display:block;width:100%;margin:0 0 10px;padding:7px 10px;cursor:pointer;border:0;border-radius:9px;background:var(--chip);color:var(--accent);font-weight:600;font-family:"EB Garamond",serif;font-size:12.5px;text-align:left;transition:background .12s ease}.mob-pop .mp-loot-toggle:hover{background:var(--chip-on)}.mob-pop .mp-loot{margin:0 0 12px;border-top:1px solid var(--hair);padding-top:8px}.mob-pop .mp-loot h4{margin:0 0 4px;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--accent)}.mob-pop .mp-loot-po{margin:0 0 6px;font-size:13px;font-weight:600;color:var(--ink)}.mob-pop .mp-loot-items{margin:0;padding-left:18px}.mob-pop .mp-loot-items li{font-size:12.5px;line-height:1.45;color:var(--ink);margin-bottom:3px}.mob-pop .loot-item,.notes .loot-item{background:0 0;border:0;padding:0;cursor:pointer;font:inherit;color:var(--accent);font-weight:600;text-align:left}.mob-pop .loot-item:hover,.notes .loot-item:hover{text-decoration:underline}.notes .chest-rar{color:var(--ink-soft);font-style:italic;font-size:.92em}.mob-pop .mp-loot-items .mp-rar{color:var(--ink-soft);font-style:italic}.mob-pop .mp-loot-items .mp-att{color:var(--ink-soft);font-size:11.5px}.mob-pop .mp-loot-none{margin:0;font-size:12px;color:var(--ink-soft);font-style:italic}.mob-pop .mp-loot-bab{margin:4px 0 0;padding-left:18px;list-style:'· '}.mob-pop .mp-loot-bab li{font-size:12px;line-height:1.4;color:var(--ink-soft);font-style:italic;margin-bottom:2px}@media (max-width:720px){.mob-pop.open{left:0!important;right:0;bottom:0;top:auto!important;width:auto!important;max-width:none;max-height:82vh;border-radius:16px 16px 0 0;border-bottom:0;padding-bottom:24px}}.item-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:60}.item-modal{position:fixed;z-index:61;left:50%;top:50%;transform:translate(-50%,-50%);width:min(440px,calc(100vw - 32px));max-height:80vh;overflow:auto;background:var(--paper,#f4ecd8);color:var(--ink);border:1px solid var(--hair);border-radius:14px;padding:20px 22px;box-shadow:0 16px 50px rgba(0,0,0,.35)}.item-modal .im-x{position:absolute;top:10px;right:12px;background:0 0;border:0;cursor:pointer;font-size:18px;line-height:1;color:var(--ink-soft)}.item-modal .im-x:hover{color:var(--ink)}.item-modal .im-name{margin:0 24px 2px 0;font-size:19px;color:var(--ink);font-family:"EB Garamond",serif}.item-modal .im-meta{font-size:12px;letter-spacing:.5px;text-transform:uppercase;color:var(--accent);margin-bottom:6px}.item-modal .im-att{font-size:12.5px;color:var(--ink-soft);font-style:italic;margin-bottom:10px}.item-modal .im-desc{font-size:13.5px;line-height:1.5;color:var(--ink);margin:0 0 14px;white-space:pre-wrap}.item-modal .im-notogl{color:var(--ink-soft);font-style:italic}.item-modal .im-link{display:inline-block;font-size:12.5px;color:var(--accent);text-decoration:none;font-weight:600}.item-modal .im-link:hover{text-decoration:underline}@media (max-width:720px){.item-modal{left:0;top:auto;bottom:0;transform:none;width:auto;right:0;max-height:82vh;border-radius:16px 16px 0 0;border-bottom:0}}.legend{margin-top:20px}.legend h3{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-soft);margin:0 0 8px}.legend .row{display:flex;align-items:center;gap:10px;font-size:13px;margin:6px 0;color:var(--ink-soft)}.legend svg{flex:0 0 auto}.hint{font-size:11px;color:var(--ink-soft);opacity:.8;margin-top:18px}@media (max-width:720px){.brand span{display:none}.ver-btn{font-size:10px;padding:3px 6px}.ver-desktop{display:none}.ver-mobile{display:inline-block}.stage{padding:10px}#notesPanel,#optionsPanel,.sheet{top:auto;left:0;right:0;bottom:0;width:auto;height:auto;max-height:86vh;transform:translateY(103%);border-radius:18px 18px 0 0}#notesPanel.open,#optionsPanel.open,.sheet.open{transform:translateY(0)}.sheet-head{padding-top:22px}.sheet-head::before{content:"";position:absolute;top:8px;left:50%;transform:translateX(-50%);width:42px;height:4px;border-radius:2px;background:var(--hair)}.grid2{grid-template-columns:1fr 1fr}}#printArea{display:none}#printArea .ptitle{font-family:"IM Fell English SC","EB Garamond",Georgia,"Times New Roman",serif;font-weight:400;font-size:26px;text-align:center;margin:0 0 4px}#printArea .tag{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#7a3b2e;text-align:center;margin-bottom:12px}#printArea .phook{font-style:italic;text-align:center;max-width:60ch;margin:0 auto 10px;font-size:15px}#printArea .pmeta{text-align:center;color:#5b5345;font-size:12px;margin:0 0 18px}#printArea .pnotes{list-style:none;padding:0;margin:0;columns:2;column-gap:28px}#printArea .pnotes li{break-inside:avoid;display:flex;gap:8px;margin:0 0 10px;font-size:13px;line-height:1.35}#printArea .pnum{flex:0 0 auto;width:20px;height:20px;border:1.4px solid #23201a;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600}#printArea .pgm{display:block;color:#7a3b2e;font-size:12px;margin-top:2px}#printArea .plegend{margin-top:16px;border-top:1px solid #cdbd97;padding-top:10px;break-inside:avoid}#printArea .plegend h2{font-family:"IM Fell English SC","EB Garamond",Georgia,"Times New Roman",serif;font-weight:400;font-size:14px;letter-spacing:1px;margin:0 0 8px}#printArea .prow{display:inline-flex;align-items:center;gap:8px;margin:4px 16px 4px 0;font-size:12px;color:#5b5345}#printArea .ogl-note{margin-top:14px;font-size:10px;color:#8a8270;text-align:center}#printArea .psheets{columns:2;column-gap:24px;margin-top:6px}#printArea .psheet{break-inside:avoid;border:1px solid #cdbd97;border-radius:6px;padding:8px 10px;margin:0 0 12px;font-size:11.5px;line-height:1.35}#printArea .ps-name{font-family:"IM Fell English SC","EB Garamond",Georgia,"Times New Roman",serif;font-weight:400;font-size:16px;margin:0}#printArea .ps-count{color:#7a3b2e;font-size:13px}#printArea .ps-orig{font-size:11px;color:#7a3b2e;margin:-1px 0 0}#printArea .ps-type{font-style:italic;color:#5b5345;font-size:11px;margin:1px 0 6px}#printArea .ps-abil,#printArea .ps-stats{display:flex;flex-wrap:wrap;gap:4px 10px;margin:0 0 6px}#printArea .ps-abil>div,#printArea .ps-stats>div{display:flex;align-items:baseline;gap:3px}#printArea .ps-abil span,#printArea .ps-stats span{font-size:9px;letter-spacing:1px;text-transform:uppercase;color:#8a8270}#printArea .ps-abil b,#printArea .ps-stats b{font-size:12px}#printArea .ps-abil i{font-style:normal;color:#5b5345;font-size:10px}#printArea .ps-stats .ps-wide{flex:1 1 100%}#printArea .ps-sec{margin-top:5px}#printArea .ps-sec h4{margin:0 0 2px;font-size:11px;letter-spacing:.5px;text-transform:uppercase;color:#7a3b2e;border-bottom:1px solid #e3d7ba}#printArea .ps-intro{font-style:italic;margin:0 0 3px}#printArea .ps-entry{margin:0 0 3px}#printArea .ps-rooms{font-size:9px;letter-spacing:1px;text-transform:uppercase;color:#8a8270;margin:0 0 4px}#printArea .ps-desc{margin:4px 0 0;white-space:pre-line}#printArea .ps-notogl{font-style:italic;color:#5b5345}@media print{@page{margin:1cm}body{overflow:visible;background:#fff;display:block}body>:not(#printArea){display:none!important}#printArea{display:block!important}#printArea .page{page-break-after:always;padding:0 0 .5cm;display:flex;flex-direction:column;align-items:center}#printArea .page:last-child{page-break-after:auto}#printArea .page.map svg{width:auto;max-width:100%;max-height:23cm;display:block}#printArea .page.doc{align-items:stretch}}</style> </head> <body data-theme="parchemin"> <div class="app"> <header class="topbar"> <div class="brand">One Click<span> Dungeon</span><button class="ver-btn ver-desktop" title="Nouveautés">v0.4.1</button></div> <div class="grow"></div> <button id="btn-options" class="btn ghost small">Options</button> <button id="gen" class="btn primary">Générer</button> <button id="btn-notes" class="btn ghost small">Notes</button> <div class="export-wrap"> <button id="btn-export" class="btn ghost small" aria-haspopup="true" aria-expanded="false">Export ▾</button> <div id="exportMenu" class="export-menu" hidden> <button id="png" class="ex-item">Image PNG</button> <button id="svg" class="ex-item">Vectoriel SVG</button> <button id="json" class="ex-item">Données JSON</button> <button id="print" class="ex-item">Imprimer</button> <button id="share" class="ex-item">Partager le lien</button> </div> </div> <div class="grow"></div> <button class="ver-btn ver-mobile" title="Nouveautés">v0.4.1</button> </header> <main class="stage"><div class="stage-col"><div id="map"></div><section id="notesInline"></section></div></main> </div> <section id="optionsPanel" class="sheet" aria-label="Options"> <div class="sheet-head"><h2>Options</h2><button class="x" data-close aria-label="Fermer">✕</button></div> <div class="sheet-body"> <div class="sec">Donjon</div> <div class="stack"> <div class="row"> <input id="seed" type="text" spellcheck="false" placeholder="graine"> <button id="rand" class="btn small" title="Graine aléatoire">Aléatoire</button> </div> <div class="grid2"> <select id="size" aria-label="Taille"> <option value="9">Petit</option> <option value="16" selected="selected">Moyen</option> <option value="26">Grand</option> <option value="38">Vaste</option> </select> <select id="view" aria-label="Vue"> <option value="mj" selected="selected">Vue MJ</option> <option value="player">Vue joueur</option> </select> <select id="biome" aria-label="Biome"> <option value="" selected="selected">Générique</option> <option value="auto">Auto</option> <option value="crypte">Crypte</option> <option value="donjon">Donjon / Prison</option> <option value="grotte">Grotte</option> <option value="temple">Temple</option> <option value="egout">Égout</option> <option value="mine">Mine</option> <option value="catacombes">Catacombes</option> <option value="manoir">Manoir hanté</option> <option value="sanctuaire">Sanctuaire</option> <option value="ruines">Ruines</option> <option value="postapo">Post-apocalyptique</option> <option value="cyberpunk">Cyberpunk</option> <option value="moderne">Moderne</option> <option value="dcc">Dungeon Crawler Carl</option> </select> <select id="theme" aria-label="Thème"> <option value="parchemin" selected="selected">Parchemin</option> <option value="plan">Plan bleu</option> <option value="encre">Encre sombre</option> </select> </div> </div> <details class="opt-sec" open data-sec="party"> <summary>Groupe d'aventuriers</summary> <div class="grid2"> <label class="fld">Joueurs <select id="party-size" aria-label="Nombre de joueurs"> <option>1</option><option>2</option><option>3</option> <option value="4" selected="selected">4</option><option>5</option><option>6</option> <option>7</option><option>8</option><option>9</option><option>10</option> </select> </label> <label class="fld">Niveau du groupe <select id="party-level" aria-label="Niveau du groupe"> <option>1</option><option>2</option><option value="3" selected="selected">3</option> <option>4</option><option>5</option><option>6</option><option>7</option> <option>8</option><option>9</option><option>10</option><option>11</option> <option>12</option><option>13</option><option>14</option><option>15</option> <option>16</option><option>17</option><option>18</option><option>19</option><option>20</option> </select> </label> </div> <div id="diffPanel" class="diff" aria-live="polite"></div> </details> <details class="opt-sec" data-sec="notes"> <summary>Affichage des notes</summary> <div class="seg" id="notesSeg"> <button type="button" data-nmode="hidden">Masqué</button> <button type="button" data-nmode="drawer" class="on">Tiroir</button> <button type="button" data-nmode="inline">Sous la carte</button> </div> </details> <details class="opt-sec" data-sec="struct"> <summary>Structure</summary> <div class="chips"> <label class="chip"><input type="checkbox" id="t-sym" checked="checked"><span>Symétrie locale</span></label> <label class="chip"><input type="checkbox" id="t-corr"><span>Longs couloirs</span></label> <label class="chip"><input type="checkbox" id="t-water" checked="checked"><span>Eau</span></label> <label class="chip"><input type="checkbox" id="t-col" checked="checked"><span>Colonnades</span></label> </div> </details> <details class="opt-sec" data-sec="shapes"> <summary>Formes de salles</summary> <div class="chips"> <label class="chip"><input type="checkbox" id="sh-round"><span>Arrondie</span></label> <label class="chip"><input type="checkbox" id="sh-oct" checked="checked"><span>Octogone</span></label> <label class="chip"><input type="checkbox" id="sh-l" checked="checked"><span>En L</span></label> <label class="chip"><input type="checkbox" id="sh-cave"><span>Caverne</span></label> </div> <div class="rng sub">Proportion de formes spéciales <output id="o-shaperate">25%</output><input type="range" id="shape-rate" min="0" max="50" value="25"></div> <p class="note-mini">Pourcentage du nombre total de salles (dans la limite des salles assez grandes). Sans case cochée, tout reste rectangulaire ; l'entrée, la sortie et les salles inondées gardent leur forme.</p> </details> <details class="opt-sec" data-sec="contours"> <summary>Contours</summary> <div class="grid2"> <label class="fld">Salles &amp; couloirs <select id="ct-room" aria-label="Contour des salles et couloirs"> <option value="points" selected="selected">Trame de points (défaut)</option> <option value="pierres">Pierres taillées</option> <option value="poche">Poché d'architecte</option> <option value="trame">Trame rétro (1-bit)</option> </select> </label> <label class="fld">Cavernes <select id="ct-cave" aria-label="Contour des cavernes"> <option value="roche" selected="selected">Roche brute (défaut)</option> <option value="foret">Lisière de forêt</option> <option value="points">Trame de points</option> <option value="trame">Trame rétro (1-bit)</option> </select> </label> </div> <p class="note-mini">Style du trait et des abords extérieurs des murs. Purement visuel : la même graine garde le même donjon.</p> </details> <details class="opt-sec" data-sec="doors"> <summary>Portes</summary> <div class="rng">Proportion de portes <output id="o-density">70%</output> <input type="range" id="d-density" min="0" max="100" value="70"></div> <div class="grid2"> <div class="rng">Simple <output id="o-simple"></output><input type="range" id="w-simple" min="0" max="100" value="55"></div> <div class="rng">Double <output id="o-double"></output><input type="range" id="w-double" min="0" max="100" value="15"></div> <div class="rng">Herse <output id="o-barred"></output><input type="range" id="w-barred" min="0" max="100" value="15"></div> <div class="rng">Secrète <output id="o-secret"></output><input type="range" id="w-secret" min="0" max="100" value="15"></div> </div> <p class="note-mini">Le reste des ouvertures devient des passages ouverts (arches).</p> </details> <details class="opt-sec" data-sec="content"> <summary>Contenu (repères MJ)</summary> <div class="chips"> <label class="chip"><input type="checkbox" id="pp-locks" checked="checked"><span>Verrous et clés</span></label> <label class="chip"><input type="checkbox" id="pp-traps" checked="checked"><span>Pièges</span></label> <label class="chip"><input type="checkbox" id="pp-treasure"><span>Trésors</span></label> <label class="chip"><input type="checkbox" id="pp-occ" checked="checked"><span>Occupants</span></label> <label class="chip"><input type="checkbox" id="pp-rubble"><span>Éboulis</span></label> <label class="chip"><input type="checkbox" id="pp-light" checked="checked"><span>Éclairage</span></label> <label class="chip"><input type="checkbox" id="pp-props"><span>Props</span></label> </div> <div class="rng sub">Taux de verrous <output id="o-lock">25%</output><input type="range" id="lock-rate" min="0" max="100" value="25"></div> <div class="rng sub">Densité de mobs <output id="o-mobrate">45%</output><input type="range" id="mob-rate" min="0" max="100" value="45"></div> <div class="rng sub">Valeur du loot <output id="o-lootval">Standard</output><input type="range" id="loot-value" min="1" max="5" value="3"></div> <div class="rng sub">Densité de pièges <output id="o-trap">22%</output><input type="range" id="trap-rate" min="0" max="100" value="22"></div> <div class="rng sub">Densité de trésors <output id="o-treasure">25%</output><input type="range" id="treasure-rate" min="0" max="100" value="25"></div> <div class="rng sub">Qualité des trésors <output id="o-treasqual">Standard</output><input type="range" id="treasure-quality" min="1" max="5" value="3"></div> <div class="rng sub">Salles éclairées <output id="o-light">40%</output><input type="range" id="light-rate" min="0" max="100" value="40"></div> <div class="rng sub">Densité de props <output id="o-props">35%</output><input type="range" id="props-rate" min="0" max="100" value="35"></div> </details> <p class="hint">Astuce : barre d'espace pour régénérer, touche <b>R</b> pour basculer l'inclinaison de la carte (à plat / 45°). La même graine redonne toujours le même donjon. Exports (PNG, SVG, JSON, impression, lien) via le bouton <b>Export</b> en haut.</p> </div> </section> <section id="notesPanel" class="sheet" aria-label="Notes"> <div class="sheet-head"><h2 id="dname">Donjon</h2><button class="x" data-close aria-label="Fermer">✕</button></div> <div class="sheet-body"> <div id="notesHostDrawer"></div> <p class="hint">Les repères en couleur (clé, piège, trésor, DC des verrous) sont destinés au MJ.</p> </div> </section> <section id="changelogPanel" class="sheet" aria-label="Nouveautés"> <div class="sheet-head"><h2>Nouveautés</h2><button class="x" data-close aria-label="Fermer">✕</button></div> <div class="sheet-body"><div id="changelogBody"></div></div> </section> <div id="scrim"></div> <div id="mobPopover" class="mob-pop" role="dialog" aria-modal="false" hidden></div> <div id="itemModalBackdrop" class="item-modal-backdrop" hidden></div> <div id="itemModal" class="item-modal" role="dialog" aria-modal="true" hidden></div> <div id="printArea"></div> <script> "use strict";
 
 // Cellules d'un espace : son masque _cells (forme speciale, tache 4) sinon le rectangle plein
 // [x,x+w[ x [y,y+h[. Source unique partagee par le rendu (cellsOf), le graphe (R3) et l'index
@@ -37,6 +37,17 @@ function makeRng(seedStr){
    entree EN TETE de cette liste — {v, d: 'AAAA-MM-JJ', t: titre court, items: puces}. On n'efface
    ni ne reecrit les entrees passees. Donnee pure (aucun rng, aucun impact sur la generation). */
 const CHANGELOG = [
+  {v:'0.4.1', d:'2026-06-12', t:'Inclinaison 45°', items:[
+    "Le donjon s'affiche incliné à 45° par défaut — touche R pour basculer à plat / incliné (choix mémorisé sur l'appareil).",
+    "La feuille, son grain, le titre, les numéros de salle et les repères MJ (clé, piège, coffre, épées, DC) restent droits ; le cadrage colle au donjon incliné, sans grandes marges.",
+    "Les exports SVG/PNG suivent la vue affichée ; l'impression reste à plat. Purement visuel : le donjon, la graine et le lien de partage ne changent pas.",
+  ]},
+  {v:'0.4.0', d:'2026-06-12', t:'Bibliothèque de contours', items:[
+    "Nouvelle section « Contours » dans les options — salles & couloirs : trame de points (nouveau défaut), poché d'architecte, trame rétro 1-bit, pierres taillées ; cavernes : roche brute (défaut), lisière de forêt (houppiers verts, sans trait de mur), trame de points, trame rétro 1-bit.",
+    "Grain de papier subtil sur toute la carte (mouchetis + fibres, visible aussi aux exports).",
+    "Les notes des cavernes suivent le style choisi : ambiance clairière/forêt en « lisière de forêt », minérale en « roche brute » (écran, impression et export JSON).",
+    "Purement visuel (la même graine garde le même donjon) et partagé dans le lien ; les anciens liens au style « croquis » s'ouvrent sur les nouveaux défauts.",
+  ]},
   {v:'0.3.13', d:'2026-06-11', t:'Changelog', items:[
     "Panneau « Nouveautés » : le bouton version (topbar, tout à droite) ouvre le résumé de chaque version.",
   ]},
@@ -215,6 +226,44 @@ function ambianceMob(enc, roomNum){
 function ambianceTrap(trap, roomNum){
   if(!trap || !trap.desc) return "";
   return `${TRAP_AMB[roomNum % TRAP_AMB.length]} : ${lcfirst(trap.desc)}.`;
+}
+
+/* ====== tache 10 : ambiance des cavernes selon le style de contour ======
+   Quand les cavernes sont rendues en « lisiere de foret » ou « roche brute », la phrase de
+   decor (FEAT, tres donjon : statue, autel, fresque...) jure avec l'image. CAVE_FLAVOR donne
+   des phrases assorties ; le troc se fait A L'AFFICHAGE (displayNote, 70-ui) — r.note genere
+   reste intact (zero tirage rng, graines stables), choix stable par graine+salle (idiome
+   MOB_AMB enrichi de la graine). croquis/fagots : pas de banque -> note d'origine. */
+const CAVE_FLAVOR = {
+  foret: [
+    "Cette zone extérieure débouche sur une clairière cernée de grands arbres.",
+    "L'odeur d'humus et de feuilles mortes emplit l'endroit.",
+    "L'humidité de cette zone naturelle perle sur les fougères et les racines.",
+    "Des fourrés épais ferment l'horizon entre les troncs.",
+    "Un tapis de mousse étouffe les pas ; quelques rais de lumière percent la canopée.",
+    "Des souches moussues et un vieux tronc foudroyé encombrent la clairière.",
+    "Le vent fait bruisser la lisière ; des branches craquent quelque part.",
+    "Des traces de passage — branches cassées, herbe couchée — traversent la zone.",
+    "Un parfum de résine et de terre mouillée flotte dans l'air libre.",
+    "Des baies sombres poussent en grappes au pied des arbres.",
+  ],
+  roche: [
+    "La roche brute suinte ; chaque goutte résonne dans le silence minéral.",
+    "Des stalactites hérissent la voûte au-dessus d'un sol inégal.",
+    "Des concrétions calcaires luisent faiblement le long des parois.",
+    "Un éboulis ancien barre une partie de la paroi, la poussière encore en suspension.",
+    "L'air froid sent la pierre humide et l'argile.",
+    "Des cristaux ternes affleurent dans une veine de la paroi.",
+    "Le moindre bruit revient en écho, déformé par la caverne.",
+    "Des fissures profondes lézardent la roche ; l'une d'elles exhale un courant d'air.",
+    "Le sol est strié de cannelures creusées par un ancien cours d'eau.",
+    "Des dépôts de salpêtre blanchissent la base des parois.",
+  ],
+};
+const seedSum = s => { let h=0; for(const ch of String(s)) h=(h+ch.charCodeAt(0))%997; return h; };
+function flavFeat(style, seed, roomNum){
+  const bank=CAVE_FLAVOR[style]; if(!bank) return null;
+  return bank[(roomNum + seedSum(seed)) % bank.length];
 }
 /* ============ R5 : biomes (option desactivable) ============ */
 // Config generique = comportement actuel (biome desactive)
@@ -640,7 +689,7 @@ function generateDungeon(opts){
     if(r.water)parts.push("Une eau noire et stagnante recouvre le sol.");
     if(r.columns)parts.push("Une rangée de colonnes soutient une voûte fissurée.");
     if(r.stairsDown)parts.push("Un escalier en colimaçon s'enfonce vers un niveau inférieur.");
-    parts.push(pick(B.feat));
+    const ft=pick(B.feat); r._feat=ft; parts.push(ft); // _feat memorise pour le troc d'ambiance des cavernes (displayNote, 70-ui)
     // Creatures et pieges ne sont PLUS decrits par un texte statique sans rapport avec la salle :
     // la mention est injectee a partir du contenu REEL -> ambianceMob (rencontre tiree, 45-encounters)
     // et ambianceTrap (piege pp.traps, plus bas). On consomme le rng a l'identique (1 tirage par
@@ -1524,7 +1573,10 @@ function renderSVG(d, view){
     paper:cs.getPropertyValue('--paper').trim(),
     paperOut:cs.getPropertyValue('--paper-out').trim()||cs.getPropertyValue('--paper2').trim(),
     water:cs.getPropertyValue('--water').trim(),
-    accent:cs.getPropertyValue('--accent').trim(),inkSoft:cs.getPropertyValue('--ink-soft').trim()};
+    accent:cs.getPropertyValue('--accent').trim(),inkSoft:cs.getPropertyValue('--ink-soft').trim(),
+    stone:cs.getPropertyValue('--stone').trim()||cs.getPropertyValue('--ink-soft').trim(),
+    tree:cs.getPropertyValue('--tree').trim()||cs.getPropertyValue('--ink').trim()};
+  c.treeDeep=cs.getPropertyValue('--tree-deep').trim()||c.tree; // vert des rangs lointains (foret), repli sur --tree
   const b=d.bounds;
   const W=(b.maxX-b.minX+M*2)*S, H=(b.maxY-b.minY+M*2)*S;
   const ox=(-b.minX+M)*S, oy=(-b.minY+M)*S;
@@ -1539,7 +1591,26 @@ function renderSVG(d, view){
   // plus bas (apres construction de floorSet) ; inseree SOUS gFloor au z-order.
   const gShadow=svgEl('g',{stroke:'none'});
   const gFloor=svgEl('g',{});const gGrid=svgEl('g',{stroke:c.grid,'stroke-width':1});
-  const gHatch=svgEl('g',{stroke:c.ink,fill:'none','stroke-linecap':'round'});
+  // calques des bordures stylees (tache 10) : fagots/pierres/roche SOUS la map (gFloor opaque
+  // recouvre tout chevauchement -> bordure nette, facon watabou), foret AU-DESSUS des murs
+  // (houppiers en surplomb de la lisiere). 
+  const gBandLow=svgEl('g',{stroke:c.ink,fill:'none','stroke-linecap':'round'});
+  // halos d'ombre des bandes (ref draw.png) : disques OPAQUES dans un groupe a opacity GLOBALE
+  // -> le compositing de groupe fusionne les chevauchements (halo uniforme, zero filtre
+  // SVG, export PNG sur). Premiers enfants de gBandLow : sous toute l'encre de bande et, comme
+  // elle, sous gFloor (le debord interieur disparait). c.ink = gris doux sur parchemin,
+  // lueur claire sur plan/encre. gHaloLow (0.10) = halo de la roche.
+  const gHaloLow=svgEl('g',{fill:c.ink,stroke:'none',opacity:0.10});gBandLow.appendChild(gHaloLow);
+  // sous-aplat mineral de la roche (ref cave.png) : lobes de gris --stone dans un groupe a
+  // opacite GLOBALE (les chevauchements fondent en une bande grise uniforme qui unifie les
+  // hachures, zero filtre SVG). Pose APRES le halo et AVANT l'encre de bande ; comme tout
+  // gBandLow, sous gFloor (le debord interieur disparait sous le sol opaque).
+  const gStoneLow=svgEl('g',{fill:c.stone,stroke:'none',opacity:0.45});gBandLow.appendChild(gStoneLow);
+  // nappe DEDIEE a la foret : meme principe (disques opaques, alpha de groupe) mais teintee du
+  // vert sombre du theme et plus presente -> sous-bois, la ou fagots/roche restent gris.
+  const gHaloForet=svgEl('g',{fill:c.treeDeep,stroke:'none',opacity:0.30});gBandLow.appendChild(gHaloForet); // 0.18->0.30 : herbe mieux visible (retour utilisateur)
+  const gCanopy=svgEl('g',{stroke:c.ink,fill:'none','stroke-linecap':'round'});
+  let gBand=gBandLow; // cible courante des decos de style (fixee par le registre CONTOURS)
   const gWall=svgEl('g',{stroke:c.ink,fill:'none','stroke-linecap':'round','stroke-linejoin':'round'});
   const gDeco=svgEl('g',{});const gDoor=svgEl('g',{});const gLabel=svgEl('g',{});const gGM=svgEl('g',{});
   const gLight=svgEl('g',{});const gFog=svgEl('g',{});
@@ -1716,26 +1787,403 @@ function renderSVG(d, view){
       p+=' L '+(x1+dx*t+px*j).toFixed(1)+' '+(y1+dy*t+py*j).toFixed(1);}
     gWall.appendChild(svgEl('path',{d:p,'stroke-width':width}));
   }
-  // hachures vers l'exterieur le long d'un segment unitaire (1 case)
-  function hatchUnit(x0,y0,nx,ny,horizontal){
-    for(let k=0;k<8;k++){
-      const t=rr(0.04,0.96);
-      const bx=horizontal?x0+t*S:x0, by=horizontal?y0:y0+t*S;
-      const ang=Math.atan2(ny,nx)+rr(-0.55,0.55), len=rr(3,10);
-      const sx=bx-nx*rr(0,1), sy=by-ny*rr(0,1);
-      gHatch.appendChild(svgEl('line',{x1:sx.toFixed(1),y1:sy.toFixed(1),
-        x2:(bx+Math.cos(ang)*len).toFixed(1),y2:(by+Math.sin(ang)*len).toFixed(1),
-        'stroke-width':rr(0.5,1).toFixed(2),opacity:rr(0.55,0.95).toFixed(2)}));
-    }
-    for(let k=0;k<3;k++){
-      const t=rr(0.1,0.9);
-      const bx=horizontal?x0+t*S:x0, by=horizontal?y0:y0+t*S;
-      const ang=Math.atan2(ny,nx)+rr(-0.4,0.4), len=rr(9,16);
-      gHatch.appendChild(svgEl('line',{x1:bx.toFixed(1),y1:by.toFixed(1),
-        x2:(bx+Math.cos(ang)*len).toFixed(1),y2:(by+Math.sin(ang)*len).toFixed(1),
-        'stroke-width':rr(0.4,0.8).toFixed(2),opacity:rr(0.25,0.5).toFixed(2)}));
+  /* ====== tache 10 : bibliotheque de contours ======
+     Chaque style = { wall(x1,y1,x2,y2,w)        trait du mur exterieur,
+                      unit(x0,y0,nx,ny,horiz)    deco d'une arete de cellule (1 case),
+                      seg(x1,y1,x2,y2,nx,ny)     deco d'un segment quelconque,
+                      batch                      true -> regrouper les mini-segments (arcs, ondulations)
+                                                 en cordes ~1 case avant d'appeler seg() }.
+     Selection par type d'espace via view.contours = {room, cave} (salles/couloirs vs cavernes).
+     Purement cosmetique (rrng seul) : aucune graine de generation n'est touchee. Defauts
+     arbitres (2026-06-12) : salles = points (trame 1-bit), cavernes = roche ; le croquis
+     historique et les essais fagots/ecailles/remplis ont ete retires (les vieux liens avec
+     une valeur disparue retombent sur le defaut via le codec).
+     NB : les styles consomment un nombre de tirages rrng different -> changer de style
+     redistribue aussi les decos aval (cailloux, eboulis, tremble des cloisons) pour une meme
+     graine ; la geometrie (caveOutline, tiree avant) ne bouge jamais. */
+  // trait net (presque droit) pour les styles "propres" (fagots, pierres)
+  function cleanWall(x1,y1,x2,y2,w){
+    gWall.appendChild(svgEl('line',{x1:x1.toFixed(1),y1:y1.toFixed(1),x2:x2.toFixed(1),y2:y2.toFixed(1),'stroke-width':w}));
+  }
+  // pierres (ref stones.png) : blocs rectangulaires en saillie le long du mur, facon watabou "stones"
+  function stoneSeg(x1,y1,x2,y2,nx,ny){
+    const len=Math.hypot(x2-x1,y2-y1)||1, nn=Math.hypot(nx,ny)||1;
+    const ux=(x2-x1)/len, uy=(y2-y1)/len, vx=nx/nn, vy=ny/nn; // u = le long du mur, v = vers l'exterieur
+    const quad=(a,b,c0,d0)=>[[a,c0],[b,c0],[b,d0],[a,d0]]
+      .map(([s0,o])=>(x1+ux*s0+vx*o).toFixed(1)+','+(y1+uy*s0+vy*o).toFixed(1)).join(' ');
+    const block=(pts)=>gBand.appendChild(svgEl('polygon',{points:pts,fill:c.stone,stroke:c.ink,'stroke-width':1.1})); // plein (pas d'alpha), teinte --stone du theme
+    let t=rr(0,2);
+    while(t<len-3){
+      const bl=Math.min(len-t,rr(8,20)), bd=rr(6,12), g0=rr(0.2,1);
+      block(quad(t,t+bl,g0,g0+bd));
+      if(rrng()<0.35){ // bloc secondaire en surplomb, plus loin du mur
+        const sl=bl*rr(0.4,0.7), st2=t+rr(0,bl-sl);
+        block(quad(st2,st2+sl,g0+bd,g0+bd+rr(3,7)));
+      }
+      t+=bl+rr(0.5,2);
     }
   }
+  /* ====== points (idee Luca) : trame de POINTS d'encre pleins, esthetique 1-bit / Macintosh.
+     Le gris vient de la DENSITE et du DIAMETRE des points (opacite 1 partout, zero alpha) :
+     quasi noir au contact du mur (rang serre fusionne, soude au trait), il s'eclaircit vers
+     ~0.75 case puis rien. Trame STRATIFIEE en rangs paralleles au mur (pas croissant, gabarit
+     decroissant, tremble en profondeur de plus en plus libre) : degrade regulier facon
+     halftone, sans les grumeaux d'un tirage uniforme. Chaque rang depasse d'un demi-pas aux
+     deux bouts (overshoot proportionnel a la profondeur) : les trames voisines se raccordent
+     sans couture par cellule et les coins convexes se comblent en biseau. Interstices etroits :
+     PAS de sonde — les nappes des deux murs fusionnent en gris continu, le debord sur le sol
+     d'en face est invisible sous gFloor. Quelques gros points epars pour le caractere.
+     Perf : un point = 'M x y h.1' rendu disque par le linecap:round du groupe, regroupes en
+     3 <path> par gabarit -> <=4 noeuds par appel. */
+  function pointsSeg(x1,y1,x2,y2,nx,ny){
+    const len=Math.hypot(x2-x1,y2-y1)||1, nn=Math.hypot(nx,ny)||1, ux=nx/nn, uy=ny/nn;
+    // 7 rangs paralleles au mur : [prof (case), pas (px), tremble prof (px), gabarit].
+    // Pas et tremble croissent avec la profondeur, gabarit decroit -> degrade de trame regulier
+    // (stratifie, pas de grumeaux Poisson) ; rang 0 quasi fusionne, soude au trait de mur.
+    const ROWS=[[0.03,1.7,0.5,2],[0.115,2.4,0.9,2],[0.21,3.2,1.4,1],[0.32,4.4,1.9,1],[0.44,6.6,2.4,0],[0.57,10,3,0],[0.71,16,4,0]];
+    const D=['','',''];
+    for(const [ru,st,uj,b] of ROWS){
+      const nd=Math.ceil(len/st)+1; // +1 et phase -0.5 : depasse d'un demi-pas a chaque bout,
+      for(let i=0;i<nd;i++){        // proportionnel a la profondeur -> les coins convexes se comblent
+        const t=((i-0.5+rr(0.3,0.7))*st)/len, u=ru*S+rr(-uj,uj);
+        D[b]+=`M${(x1+(x2-x1)*t+ux*u).toFixed(1)} ${(y1+(y2-y1)*t+uy*u).toFixed(1)}h.1`;
+      }
+    }
+    const W=[[0.85,1.10],[1.35,1.60],[1.75,2.00]]; // fin / moyen / gros (diametres px)
+    for(let b=0;b<3;b++)if(D[b])gBand.appendChild(svgEl('path',{d:D[b],'stroke-width':rr(W[b][0],W[b][1]).toFixed(2)}));
+    if(rrng()<len/(2.6*S)){ // gros point de caractere (~1 / 2.5 cases), dans la moitie externe
+      const t=rr(0.1,0.9), u=rr(0.32,0.62)*S;
+      gBand.appendChild(svgEl('circle',{cx:(x1+(x2-x1)*t+ux*u).toFixed(1),cy:(y1+(y2-y1)*t+uy*u).toFixed(1),
+        r:rr(1.20,1.70).toFixed(1),fill:c.ink,stroke:'none'}));
+    }
+  }
+  /* ====== trame (dither ORDONNE 1-bit, esprit jeu video retro / Mac classique) : pointillage
+     CARRE aligne sur une grille-MONDE fixe (pas P=S/15, coordonnees absolues modulo P -> les
+     nappes de deux murs voisins partagent les MEMES points et fusionnent sans couture, coins
+     compris). Un point existe si son seuil de Bayer 8x8 (64 niveaux, matrice recursive) est
+     inferieur a densite(distance au mur) : noir plein sur ~0.12 case contre le mur, puis
+     degrade lineaire jusqu'au papier a ~0.8 case. Distance au SEGMENT (capsule) -> conges
+     arrondis aux angles et aux bouts de murs ; l'union de deux bandes = min des distances par
+     construction (meme grille, meme seuil). Points fusionnes par RANGEES en traits horizontaux
+     (1 seul <path> par segment, linecap butt + stroke-width P = carres pleins qui pavent le
+     noir). Deterministe par position : AUCUN tirage rng (autres decos et graines intactes). ====== */
+  const BAYER8=(()=>{let m=[[0]];for(let s2=1;s2<8;s2<<=1){const q=[[0,2],[3,1]],n=[];
+    for(let i=0;i<2*s2;i++){n.push([]);for(let j=0;j<2*s2;j++)n[i][j]=4*m[i%s2][j%s2]+q[(i/s2)|0][(j/s2)|0];}m=n;}return m;})();
+  const trameDots=new Set(); // points deja poses (cle grille-monde), partages entre TOUS les segments : les recouvrements (coins, bouts de capsules voisins) ne sont encres qu'une fois
+  function trameSeg(x1,y1,x2,y2,nx,ny){
+    const P=S/15, D=0.80*S, D0=0.12*S; // pas de la trame (S/10->S/15 : pixels plus fins, retour utilisateur), portee du degrade, zone noire pleine
+    const len=Math.hypot(x2-x1,y2-y1)||1, tx=(x2-x1)/len, ty=(y2-y1)/len;
+    let px=-ty, py=tx; if(px*nx+py*ny<0){px=-px;py=-py;} // perpendiculaire orientee vers l'exterieur reel du mini-segment
+    // balayage de la grille-monde sur la boite englobante de la capsule (segment dilate de D)
+    const gi0=Math.floor((Math.min(x1,x2)-D)/P), gi1=Math.ceil((Math.max(x1,x2)+D)/P);
+    const gj0=Math.floor((Math.min(y1,y2)-D)/P), gj1=Math.ceil((Math.max(y1,y2)+D)/P);
+    let Dp='';
+    for(let gj=gj0;gj<=gj1;gj++){
+      const cy2=(gj+0.5)*P, row=BAYER8[((gj%8)+8)%8];
+      let r0=0,rn=0; // debut + longueur (en points) de la rangee en cours
+      for(let gi=gi0;gi<=gi1;gi++){
+        const cx2=(gi+0.5)*P, rx=cx2-x1, ry=cy2-y1;
+        let on=false;
+        if(rx*px+ry*py>=-P){ // cote sol (sous gFloor) coupe a 1 rangee : ancre la trame SOUS le trait de mur
+          const sc=Math.max(0,Math.min(len,rx*tx+ry*ty)), dist=Math.hypot(rx-tx*sc,ry-ty*sc);
+          if(dist<D){
+            const dens=dist<=D0?1:1-(dist-D0)/(D-D0); // rampe lineaire : zone de damier mediane bien lisible
+            on=(row[((gi%8)+8)%8]+0.5)/64<dens&&!trameDots.has(gi+','+gj);
+          }
+        }
+        if(on){trameDots.add(gi+','+gj);if(!rn)r0=gi;rn++;}
+        else if(rn){Dp+=`M${(r0*P).toFixed(1)} ${cy2.toFixed(1)}h${(rn*P).toFixed(1)}`;rn=0;}
+      }
+      if(rn)Dp+=`M${(r0*P).toFixed(1)} ${cy2.toFixed(1)}h${(rn*P).toFixed(1)}`;
+    }
+    if(Dp)gBand.appendChild(svgEl('path',{d:Dp,'stroke-width':P,'stroke-linecap':'butt'}));
+  }
+  /* ====== poche (plan d'architecte ancien) : bande de hachures PARALLELES au mur.
+     Passes fines (~0.85px) a interligne serre (~2.2-2.8px) sur ~0.55 case de profondeur ;
+     la PHASE (interligne + premier offset) est ancree par hash sur la droite porteuse du
+     mur -> toutes les cellules d'un meme mur partagent les memes passes, qui se raccordent
+     en LONGUES lignes continues (legere ondulation de main + ~1 rupture de plume sur 5).
+     La premiere passe part SOUS le trait de mur (gBandLow est sous gFloor et gWall : tout
+     debord interieur est avale, zero lisere — defaut n.1 des fagots). Contre-passe de
+     petits traits perpendiculaires sur ~0.2 case contre le mur (croisillon discret) ->
+     bord plus sombre, la bande s'eclaircit vers le dehors. Aux angles, les passes
+     depassent en MITRE (~la profondeur de la passe) : les nappes des deux murs se
+     croisent et remplissent le coin en croisillon, facon poché classique ; en continuite
+     de mur, depassement minime (la passe du voisin enchaine). Les FACETTES inclinees
+     (mini-segments ondules des cavernes, pans des bosses) passent en mode TERRASSE :
+     passes parallele a l'arete de BASE, calees sur la bosse locale -> hachure d'ensemble
+     coherente qui suit le contour en gradins (en tangente pure, les nappes des facettes
+     voisines se croisaient en eventails de pailles, cf. essais). Profondeur SONDEE vers
+     le sol d'en face : interstice etroit -> filet de papier nu au centre, jamais de
+     tissage sombre entre deux murs proches. 2 <path> par appel. ====== */
+  function pocheSeg(x1,y1,x2,y2,nx,ny){
+    const len=Math.hypot(x2-x1,y2-y1)||1, tx=(x2-x1)/len, ty=(y2-y1)/len;
+    const nn=Math.hypot(nx,ny)||1, nxu=nx/nn, nyu=ny/nn;
+    // normale REELLE du segment (en caverne, (nx,ny) = normale de l'arete de BASE, pas du
+    // mini-segment ondule) : perpendiculaire a la tangente, orientee comme (nx,ny)
+    let ux=ty,uy=-tx; if(ux*nx+uy*ny<0){ux=-ux;uy=-uy;}
+    // facette inclinee (>~15 deg sur l'arete de base) -> terrasse : axe des passes = base.
+    // Seulement si la normale FOURNIE est alignee sur les axes (mini-segments ondules des
+    // cavernes) : les cordes des ellipses passent une normale ANGULAIRE (pas la vraie
+    // perpendiculaire) — la prendre pour base tronquait les passes en touffes eparses.
+    const axisN=Math.abs(nxu)<1e-6||Math.abs(nyu)<1e-6;
+    const terr=axisN&&Math.abs(tx*nxu+ty*nyu)>0.25;
+    let ax0=x1,ay0=y1,lpx=tx,lpy=ty,span=len,ofx=ux,ofy=uy;
+    if(terr){
+      let tbx=nyu,tby=-nxu; if(tbx*tx+tby*ty<0){tbx=-tbx;tby=-tby;}
+      span=Math.max(4,(x2-x1)*tbx+(y2-y1)*tby); // projection de la facette sur la base
+      ax0=(x1+x2)/2-tbx*span/2; ay0=(y1+y2)/2-tby*span/2; lpx=tbx;lpy=tby; ofx=nxu;ofy=nyu;
+    }
+    // phase commune a tout le mur (hash de la coordonnee de sa droite porteuse) ; les
+    // bosses des cavernes changent d'ancrage -> gradins
+    const kc=Math.abs(lpy)<0.35?Math.round(ay0/3):Math.abs(lpx)<0.35?Math.round(ax0/3):Math.round((ax0+ay0)/3);
+    const h=(kc*2654435761)>>>0, step=2.2+(h%4)*0.2, d0=0.35+((h>>4)%4)*0.22;
+    // l'extremite continue-t-elle le MEME mur ? (sonde au-dela : sol dedans ET vide dehors
+    // -> le voisin enchaine, raccord 0.4-1.8px ; sinon mitre — un depassement au droit d'une
+    // ouverture file au-dessus du sol du couloir, donc sous gFloor : invisible)
+    const cont=(px,py,sg)=>{
+      const qx=px+sg*lpx*0.4*S, qy=py+sg*lpy*0.4*S;
+      return isFloor(Math.floor((qx-ofx*0.5*S-ox)/S),Math.floor((qy-ofy*0.5*S-oy)/S))
+          && !isFloor(Math.floor((qx+ofx*0.5*S-ox)/S),Math.floor((qy+ofy*0.5*S-oy)/S));
+    };
+    const mini=terr||span<S*0.95, chord=!axisN&&mini; // corde de salle ronde : voisine ANGULAIRE
+    // (cont() croirait le mur continu : l'interieur de l'ellipse est du sol au-dela du bout)
+    const c0=!terr&&!chord&&cont(ax0,ay0,-1), c1=!terr&&!chord&&cont(ax0+lpx*span,ay0+lpy*span,1);
+    // profondeur de bande SONDEE vers le sol d'en face (3 points, pas de 0.3 case) :
+    // interstice etroit -> chaque bord s'arrete avant le milieu, filet de papier nu au
+    // centre (sinon les nappes des deux murs se tissent en noeuds sombres)
+    let G=2.4;
+    for(const ts of [0.2,0.5,0.8]){
+      const px=x1+(x2-x1)*ts, py=y1+(y2-y1)*ts;
+      for(let q=0.55;q<G;q+=0.3)if(isFloor(Math.floor((px+ofx*q*S-ox)/S),Math.floor((py+ofy*q*S-oy)/S))){G=q;break;}
+    }
+    const dep=Math.min(0.55,Math.max(0.20,(G-0.45)*0.5))*S, D=['',''];
+    // depassement d'extremite : raccord 0.4-1.8px si le mur continue ; terrasse -> bride
+    // (facettes paralleles tous les ~14px, un grand depassement doublerait toute la nappe) ;
+    // corde de salle ronde (~25-30 deg d'arc par corde) -> mitre MOYENNE, assez longue pour
+    // souder les nappes voisines en anneau (sinon touffes separees) ; facette douce de
+    // caverne -> raccord court (la voisine, presque dans l'axe, enchaine) ; segment long
+    // -> mitre pleine (~profondeur de la passe), coins en croisillon facon poché
+    const eFor=(cN,dd)=>cN?rr(0.4,1.8)
+      :terr?Math.min(dd*0.35,3.5)+rr(-0.5,0.5)
+      :chord?Math.min(dd*rr(0.55,0.8),8)+rr(-0.6,0.6)
+      :mini?rr(0.6,2.2)
+      :Math.min(dd*rr(0.8,1.05),dep)+rr(-0.8,0.8);
+    for(let dd=d0;dd<dep;dd+=step){
+      const e0=eFor(c0,dd), e1=eFor(c1,dd);
+      const ax=ax0+ofx*dd-lpx*e0, ay=ay0+ofy*dd-lpy*e0, bx=ax0+lpx*(span+e1)+ofx*dd, by=ay0+lpy*(span+e1)+ofy*dd;
+      const L=Math.hypot(bx-ax,by-ay)||1, lx=(bx-ax)/L, ly=(by-ay)/L, n=Math.max(1,Math.round(L/13));
+      let p=`M${ax.toFixed(1)} ${ay.toFixed(1)}`, gap=(L>18&&rrng()<0.2)?rr(0.25,0.75):-1;
+      for(let i=1;i<=n;i++){
+        const t=i/n, j=i<n?rr(-0.5,0.5):0;
+        if(gap>0&&t>gap){const gx=ax+(bx-ax)*gap,gy=ay+(by-ay)*gap,g2=rr(1.5,3); // rupture de plume
+          p+=`L${gx.toFixed(1)} ${gy.toFixed(1)}M${(gx+lx*g2).toFixed(1)} ${(gy+ly*g2).toFixed(1)}`;gap=-1;}
+        p+=`L${(ax+(bx-ax)*t+ofx*j).toFixed(1)} ${(ay+(by-ay)*t+ofy*j).toFixed(1)}`;
+      }
+      D[0]+=p;
+    }
+    // contre-passe : petits traits quasi perpendiculaires colles au mur REEL (depart
+    // -1.5px, sous le trait de mur), croisant les 2 premieres passes -> croisillon du
+    // bord ; suit le segment ondule meme en mode terrasse (les flancs restent encres)
+    const nt=Math.max(2,Math.round(len/3.4));
+    for(let i=0;i<nt;i++){
+      const t=(i+rr(0.2,0.8))/nt, bx0=x1+(x2-x1)*t, by0=y1+(y2-y1)*t;
+      const a=Math.atan2(uy,ux)+rr(-0.22,0.22), L2=rr(0.16,0.22)*S;
+      D[1]+=`M${(bx0-Math.cos(a)*1.5).toFixed(1)} ${(by0-Math.sin(a)*1.5).toFixed(1)}L${(bx0+Math.cos(a)*L2).toFixed(1)} ${(by0+Math.sin(a)*L2).toFixed(1)}`;
+    }
+    if(D[0])gBand.appendChild(svgEl('path',{d:D[0],'stroke-width':rr(0.78,0.92).toFixed(2)}));
+    if(D[1])gBand.appendChild(svgEl('path',{d:D[1],'stroke-width':rr(0.60,0.75).toFixed(2)}));
+  }
+  /* ====== roche (ref cave.png) : bande minerale en lobes arrondis hachures ====== */
+  // 1) Sous-aplat : scallops de gris --stone (gStoneLow, opacite de groupe) qui se chevauchent
+  // -> bande grumeleuse CONTINUE ~0.5-0.9 case soudee au mur (la moitie interieure plonge sous
+  // gFloor). 2) FACETTES : grappes de 4-6 traits DROITS paralleles (0.3-0.6 case, epaisseur
+  // constante ~2.5px), UNE direction par TUILE-monde de ~0.55 case (palette 0/45/90/135 deg
+  // par hash de position -> patchwork qui tourne de 45-90 deg entre facettes voisines, stable
+  // d'un segment a l'autre) ; chaque grappe reserve un disque dans rockSpots (partage entre
+  // TOUS les segments) -> jamais deux directions superposees, coins et murs mitoyens encres
+  // une seule fois (~40-55% de papier dans la bande). Deux rangs (~0.3 et ~0.65 case) ->
+  // profondeur 0.5-0.9 case en continu, plafonnee a ~1 case.
+  // 2bis) Galets papier arrondis INCRUSTES dans la bande (~1 / 3-4 cases, ref cave.png).
+  // 3) Cailloux epars (2-3/case, points pleins + petits anneaux) a 0.2-0.5 case
+  // au-dela de la bande. wallSeg:true (cf. boucle cavernes) : la deco suit chaque mini-segment
+  // ONDULE du contour reel, pas la corde saillante -> profondeur constante par rapport au MUR
+  // et 100% du perimetre couvert (les cordes laissaient nus les creux du contour).
+  const rockSpots=[]; // centres reserves (grappes + galets), partages entre TOUS les segments
+  function rockSeg(x1,y1,x2,y2,nx,ny){
+    const len=Math.hypot(x2-x1,y2-y1)||1, nn=Math.hypot(nx,ny)||1, ux=nx/nn, uy=ny/nn;
+    // 1) halo mince : un disque tous les ~0.6 case, a peine decale vers l'exterieur
+    const nh=Math.max(1,Math.round(len/(S*0.6)));
+    for(let i=0;i<nh;i++){
+      const t=(i+0.5)/nh, dd=rr(0.02,0.18)*S;
+      gHaloLow.appendChild(svgEl('circle',{cx:(x1+(x2-x1)*t+ux*dd).toFixed(1),cy:(y1+(y2-y1)*t+uy*dd).toFixed(1),r:(rr(0.32,0.48)*S).toFixed(1)}));
+    }
+    // 1bis) lobes de roche : un scallop tous les ~0.38 case, centre 0.18-0.32 case dehors
+    // (rayon 0.30-0.46 case -> les voisins se chevauchent, bord exterieur grumeleux arrondi)
+    const nl=Math.max(1,Math.round(len/(S*0.38)));
+    for(let i=0;i<nl;i++){
+      const t=(i+0.5)/nl+rr(-0.1,0.1), dd=rr(0.10,0.28)*S; // rapproche du mur (retour utilisateur)
+      gStoneLow.appendChild(svgEl('circle',{cx:(x1+(x2-x1)*t+ux*dd).toFixed(1),cy:(y1+(y2-y1)*t+uy*dd).toFixed(1),r:(rr(0.30,0.50)*S).toFixed(1)}));
+    }
+    // 2) facettes : echantillonnage tous les ~0.24 case le long du mur, 2 rangs de profondeur ;
+    // une grappe ne se pose que si son disque (0.37 case) est libre dans rockSpots.
+    const step=S*0.24;
+    for(let s0=rr(0,1)*step;s0<len;s0+=step){
+      const t=s0/len, wx=x1+(x2-x1)*t, wy=y1+(y2-y1)*t;
+      for(const [d0,d1,p] of [[0.18,0.28,1],[0.50,0.62,0.85]]){ // rangs rapproches du mur (retour utilisateur)
+        if(rrng()>p)continue;
+        const dd=rr(d0,d1)*S, fx=wx+ux*dd, fy=wy+uy*dd;
+        let free=true;
+        for(const q of rockSpots){const ex=q[0]-fx,ey=q[1]-fy;if(ex*ex+ey*ey<0.1369*S*S){free=false;break;}} // 0.37^2
+        if(!free)continue;
+        rockSpots.push([fx,fy]);
+        const h=(Math.floor(fx/(S*0.55))*73856093^Math.floor(fy/(S*0.55))*19349663)>>>0;
+        const fa=(h&3)*Math.PI/4+rr(-0.12,0.12), ca=Math.cos(fa), sa=Math.sin(fa);
+        const m=4+(h>>2)%3, sp=rr(2.8,3.2);
+        let D='';
+        for(let k=0;k<m;k++){ // m traits paralleles, legerement decales le long de la facette
+          const o=(k-(m-1)/2)*sp, j=rr(-2,2), L=rr(0.19,0.30)*S;
+          const mx=fx-sa*o+ca*j, my=fy+ca*o+sa*j;
+          D+=`M${(mx-ca*L).toFixed(1)} ${(my-sa*L).toFixed(1)}L${(mx+ca*L).toFixed(1)} ${(my+sa*L).toFixed(1)}`;
+        }
+        gBand.appendChild(svgEl('path',{d:D,'stroke-width':rr(1.15,1.35).toFixed(2)}));
+      }
+    }
+    // 2bis) galet papier incruste dans la bande (~1 / 3.5 cases de perimetre), pose sur les
+    // grappes deja encrees ; reserve son disque pour que les suivantes l'evitent.
+    if(rrng()<len/(3.5*S)){
+      const t=rr(0.2,0.8), dd=rr(0.24,0.44)*S, bx=x1+(x2-x1)*t+ux*dd, by=y1+(y2-y1)*t+uy*dd;
+      rockSpots.push([bx,by]);
+      const rx=rr(0.10,0.17)*S;
+      gBand.appendChild(svgEl('ellipse',{cx:bx.toFixed(1),cy:by.toFixed(1),rx:rx.toFixed(1),ry:(rx*rr(0.7,1)).toFixed(1),
+        transform:'rotate('+rr(0,180).toFixed(0)+' '+bx.toFixed(1)+' '+by.toFixed(1)+')',
+        fill:c.paper,stroke:c.ink,'stroke-width':1.1}));
+    }
+    // 3) cailloux epars au-dela de la bande (pebbles de cave.png) : points pleins + ~1 anneau sur 5
+    const nd=Math.max(1,Math.round(len/(S*0.4)));
+    for(let i=0;i<nd;i++){
+      const t=rr(0.05,0.95), dd=rr(0.66,1.10)*S, bx=x1+(x2-x1)*t+ux*dd, by=y1+(y2-y1)*t+uy*dd; // suivent la bande rapprochee
+      if(rrng()<0.2)gBand.appendChild(svgEl('circle',{cx:bx.toFixed(1),cy:by.toFixed(1),r:rr(1.2,2.2).toFixed(1),fill:'none','stroke-width':1}));
+      else gBand.appendChild(svgEl('circle',{cx:bx.toFixed(1),cy:by.toFixed(1),r:rr(0.6,1.5).toFixed(1),fill:c.ink,stroke:'none'}));
+    }
+  }
+  // points a degager par la canopee (lisibilite) : portes, entrees/sorties, pastilles de
+  // numero. Liste independante de la vue (les numeros n'existent qu'en vue MJ mais on les
+  // garde toujours -> memes tirages rrng, cartes MJ et joueur superposables).
+  const treeKeep=[]; // [x,y,rayon] : gDoor/gLabel sont AU-DESSUS de gCanopy (glyphes et pastilles
+  // opaques, toujours lisibles) -> marges modestes ; triangles d'entree/sortie plus larges.
+  for(const dr of d.doors)treeKeep.push([X(dr.cx),Y(dr.cy),S*0.5]);
+  for(const st of d.stairs)treeKeep.push([X(st.cx),Y(st.cy),S*0.9]);
+  for(const s of d.rooms){const an=anchorCell(s,s.x,s.y);treeKeep.push([X((an?an[0]:s.x)+0.7),Y((an?an[1]:s.y)+0.7),S*0.62]);}
+  // foret (ref wood.png) : la masse d'arbres EST la bande de contour. Houppiers grumeleux —
+  // blobs a 6-9 lobes festonnes (chaque feston Q coupe en 2 bombes -> pointes 3-5 px, main
+  // watabou) — packes en 4 rangs quinconces sur ~0.5->2 cases de profondeur, couronnes
+  // ~0.5-0.9 case de diametre, pas serres -> chevauchement 30-50%, zero papier intra-massif.
+  // Degrade de VERTS desatures (demande utilisateur) sur 4 paliers : --tree clair en lisiere,
+  // mix --tree/--tree-deep, --tree-deep, puis quasi-silhouette (shadeC) au rang exterieur ;
+  // grain interne sur les 2 rangs proches seulement. Penombre stipplee COTE SOL au pied de la
+  // lisiere (dense ~0.5 case, eteinte vers ~1.5, ref wood.png). Nappe gHaloLow sous la masse
+  // = fusion avec l'ombre geometrique unifiee. Un houppier qui mordrait un sol voisin
+  // (salle/couloir au-dela du vide, marge ~0.3 case) ou un marqueur (treeKeep) est RAPPROCHE
+  // du mur et RETRECI (jusqu'a 3 replis) avant d'etre saute -> ceinture quasi continue le long
+  // des couloirs proches, sol jouable et reperes lisibles.
+  // Rendu au-dessus des murs (gCanopy) ; gDoor/gLabel restent au-dessus.
+  const hxC=h=>{const m=/^#?([0-9a-f]{6})$/i.exec(h.trim());return m?[1,3,5].map(i=>parseInt(m[1].slice(i-1,i+1),16)):null;};
+  const mixC=(a,b,t)=>{const A=hxC(a),B=hxC(b);return A&&B?'#'+A.map((v,i)=>Math.round(v+(B[i]-v)*t).toString(16).padStart(2,'0')).join(''):b;};
+  const shadeC=(a,f)=>{const A=hxC(a);return A?'#'+A.map(v=>Math.round(v*f).toString(16).padStart(2,'0')).join(''):a;};
+  function forestSeg(x1,y1,x2,y2,nx,ny){
+    const len=Math.hypot(x2-x1,y2-y1)||1, nn=Math.hypot(nx,ny)||1, ux=nx/nn, uy=ny/nn;
+    const tx=(x2-x1)/len, ty=(y2-y1)/len;
+    // nappe d'ombre VERTE sous la canopee (disques opaques, alpha de groupe gHaloForet) ->
+    // sous-bois teinte du vert sombre du theme, plus dense que la penombre grise des autres styles
+    const nh=Math.max(2,Math.ceil(len/(0.42*S)));
+    for(let i=0;i<nh;i++){
+      const t=(i+0.5)/nh, hd=rr(0.45,1.85)*S;
+      gHaloForet.appendChild(svgEl('circle',{cx:(x1+(x2-x1)*t+ux*hd).toFixed(1),
+        cy:(y1+(y2-y1)*t+uy*hd).toFixed(1),r:(rr(0.6,0.95)*S).toFixed(1)}));
+    }
+    const tree=(cx,cy,R,fill,sw,grain)=>{ // houppier : k sommets, festons Q dedoubles -> bord epineux
+      const k=6+Math.floor(rr(0,4)), rot=rr(0,2*Math.PI), st=2*Math.PI/k, P=[];
+      for(let i=0;i<k;i++){const a=rot+i*st, rad=R*rr(0.72,0.92);
+        P.push([cx+Math.cos(a)*rad,cy+Math.sin(a)*rad]);}
+      let p='M'+P[0][0].toFixed(1)+' '+P[0][1].toFixed(1);
+      for(let i=0;i<k;i++){const q=P[(i+1)%k], cr=R*rr(1.05,1.3), cr2=R*rr(1.05,1.3);
+        const mr=Math.max(R*0.78,Math.min(cr,cr2)-rr(3,5)), am=rot+(i+0.5)*st; // creux 3-5 px entre bombes
+        p+='Q'+(cx+Math.cos(rot+(i+0.28)*st)*cr).toFixed(1)+' '+(cy+Math.sin(rot+(i+0.28)*st)*cr).toFixed(1)
+          +' '+(cx+Math.cos(am)*mr).toFixed(1)+' '+(cy+Math.sin(am)*mr).toFixed(1)
+          +'Q'+(cx+Math.cos(rot+(i+0.72)*st)*cr2).toFixed(1)+' '+(cy+Math.sin(rot+(i+0.72)*st)*cr2).toFixed(1)
+          +' '+q[0].toFixed(1)+' '+q[1].toFixed(1);}
+      gBand.appendChild(svgEl('path',{d:p+'Z',fill,stroke:c.ink,
+        'stroke-width':sw,'stroke-linejoin':'round'}));
+      if(!grain)return; // rangs lointains : silhouettes pleines, sans grain ni lobe interne
+      const ng=1+Math.floor(rr(0,3)); // pointille interne, encre douce (texture de la ref)
+      for(let i=0;i<ng;i++){const a=rr(0,2*Math.PI), rad=R*rr(0.1,0.55);
+        gBand.appendChild(svgEl('circle',{cx:(cx+Math.cos(a)*rad).toFixed(1),
+          cy:(cy+Math.sin(a)*rad).toFixed(1),r:rr(0.6,1.1).toFixed(1),fill:c.ink,stroke:'none',opacity:0.3}));}
+    };
+    // cellule sous un point (px) -> sol ? (confinement : la canopee ne couvre jamais un sol)
+    const overFloor=(px,py)=>isFloor(Math.floor((px-ox)/S),Math.floor((py-oy)/S));
+    // sol d'un AUTRE espace ? (le surplomb lateral sur le PROPRE sol de la caverne — angles
+    // rentrants de l'onde — est tolere, comme dans wood.png ou la canopee epouse le contour)
+    const ownId=spaceIdAt(d,Math.floor(((x1+x2)/2-ux*S*0.6-ox)/S),Math.floor(((y1+y2)/2-uy*S*0.6-oy)/S));
+    const overOther=(px,py)=>{const fx=Math.floor((px-ox)/S),fy=Math.floor((py-oy)/S);
+      return isFloor(fx,fy)&&spaceIdAt(d,fx,fy)!==ownId;};
+    // penombre stipplee au pied de la lisiere, COTE SOL (ref wood.png) : dense sur ~0.5 case,
+    // eteinte vers ~1.5 case (tirage quadratique), posee uniquement sur du sol reel.
+    // Teintee en VERT sombre (mousse de sous-bois, demande utilisateur) et densifiee.
+    const stC=shadeC(c.treeDeep,0.8), nst=Math.round(len/S*14);
+    for(let i=0;i<nst;i++){
+      const t=rr(0.02,0.98), q=rrng(), sd=(0.08+1.4*q*q)*S;
+      const px=x1+(x2-x1)*t-ux*sd, py=y1+(y2-y1)*t-uy*sd;
+      if(!overFloor(px,py))continue;
+      gBand.appendChild(svgEl('circle',{cx:px.toFixed(1),cy:py.toFixed(1),r:rr(0.55,1.15).toFixed(1),
+        fill:stC,stroke:'none',opacity:(0.52*(1-0.75*q*q)).toFixed(2)}));
+    }
+    // 5 rangs quinconces, valeurs en degrade vers le dehors (lisiere claire -> quasi-silhouette).
+    // SANS trait de mur (registre : wall no-op, demande utilisateur) : le rang 0, colle au bord
+    // (0.22 case, petites couronnes qui surplombent legerement le sol), DESSINE le contour ;
+    // pas resserres (~25% d'arbres en plus) pour une masse sans trous.
+    const FILLS=[c.tree,mixC(c.tree,c.treeDeep,0.30),mixC(c.tree,c.treeDeep,0.60),c.treeDeep,shadeC(c.treeDeep,0.70)];
+    const SW=[1.15,1.05,0.9,0.7,0.6];
+    const DD=[0.22,0.58,0.98,1.40,1.82], RA=[[0.18,0.30],[0.26,0.40],[0.30,0.45],[0.30,0.44],[0.26,0.40]], PAS=[0.30,0.31,0.33,0.35,0.37];
+    for(let r=4;r>=0;r--){ // lointain d'abord : la lisiere (rang 0) recouvre les fonds
+      for(let i=0;;i++){
+        const s0=(i+r*0.5)*S*PAS[r]; if(s0>len)break; // quinconce par rang
+        const s=s0+rr(-0.18,0.18)*S;
+        let dd=DD[r]*S+rr(-0.12,0.12)*S, R=S*rr(RA[r][0],RA[r][1]);
+        // jamais sur un sol voisin ni un repere : debord reel des festons (~1.15R) + marge
+        // ~0.3 case ; si bloque, on RAPPROCHE du mur et on RETRECIT (jusqu'a 3 replis) au
+        // lieu de sauter -> la ceinture reste continue le long des couloirs proches.
+        for(let e=0;e<4;e++){
+          const cxp=x1+tx*s+ux*dd, cyp=y1+ty*s+uy*dd, ext=R*1.15+0.3*S;
+          let ok=!(overFloor(cxp,cyp)||overFloor(cxp+ux*ext,cyp+uy*ext)
+            ||overOther(cxp+tx*ext,cyp+ty*ext)||overOther(cxp-tx*ext,cyp-ty*ext)
+            ||overOther(cxp+(ux+tx)*ext*0.71,cyp+(uy+ty)*ext*0.71)
+            ||overOther(cxp+(ux-tx)*ext*0.71,cyp+(uy-ty)*ext*0.71));
+          if(ok)for(const [mx,my,mr] of treeKeep){const ex=cxp-mx,ey=cyp-my,kr=mr+R*1.15;
+            if(ex*ex+ey*ey<kr*kr){ok=false;break;}}
+          if(ok){tree(cxp,cyp,R,FILLS[r],SW[r],r<2);break;}
+          dd*=0.78;R*=0.84;
+        }
+      }
+    }
+  }
+  const unitToSeg=f=>(x0,y0,nx,ny,horiz)=>f(x0,y0,horiz?x0+S:x0,horiz?y0:y0+S,nx,ny);
+  const inBand=(G,f)=>(...a)=>{gBand=G;f(...a);}; // route la deco du style vers son calque (bas/canopee)
+  const CONTOURS={
+    pierres:{wall:(x1,y1,x2,y2,w)=>cleanWall(x1,y1,x2,y2,w*1.4), unit:inBand(gBandLow,unitToSeg(stoneSeg)),  seg:inBand(gBandLow,stoneSeg),  batch:true},
+    poche  :{wall:(x1,y1,x2,y2,w)=>cleanWall(x1,y1,x2,y2,w*1.5), unit:inBand(gBandLow,unitToSeg(pocheSeg)), seg:inBand(gBandLow,pocheSeg), batch:true, wallSeg:true}, // trait regle (plan d'architecte) ; wallSeg -> passes collees au contour reel des cavernes
+    trame  :{wall:(x1,y1,x2,y2,w)=>cleanWall(x1,y1,x2,y2,w*1.5), unit:inBand(gBandLow,unitToSeg(trameSeg)),  seg:inBand(gBandLow,trameSeg),  batch:true, wallSeg:true}, // dither ordonne (Bayer) sur grille-monde : nappes voisines raccord sans couture ; wallSeg -> trame collee au contour reel des cavernes
+    points :{wall:(x1,y1,x2,y2,w)=>cleanWall(x1,y1,x2,y2,w*1.7), unit:inBand(gBandLow,unitToSeg(pointsSeg)), seg:inBand(gBandLow,pointsSeg), batch:true, wallSeg:true}, // trame 1-bit : mur net + points soudes au trait ; wallSeg -> trame collee au contour reel des cavernes
+    roche  :{wall:(x1,y1,x2,y2,w)=>roughLine(x1,y1,x2,y2,w*1.25), unit:inBand(gBandLow,unitToSeg(rockSeg)),  seg:inBand(gBandLow,rockSeg),   batch:true, wallSeg:true}, // trait a peine plus gras que le croquis (meme main) ; wallSeg -> deco collee au contour reel des cavernes
+    // base:true -> deco posee UNE fois par segment de base fusionne (cavernes) : rangs d'arbres
+    // parfaitement reguliers sur toute la longueur du mur, pas par corde ondulee.
+    foret  :{wall:()=>{}, unit:inBand(gCanopy,unitToSeg(forestSeg)), seg:inBand(gCanopy,forestSeg), batch:true, base:true}, // SANS trait de mur (demande utilisateur) : la lisiere d'arbres EST le contour, comme wood.png ; les cloisons cave|salle (1.2, hors style) restent
+  };
+  const ctSel=view.contours||{};
+  const ctRoom=CONTOURS[ctSel.room]||CONTOURS.points, ctCave=CONTOURS[ctSel.cave]||CONTOURS.roche; // replis : defauts arbitres (croquis retire)
+  const styleFor=s=>s.shape==='cave'?ctCave:ctRoom;
+
   // murs : pour chaque cellule de sol, on regarde ses 4 cotes.
   // - voisin hors sol -> mur exterieur (trait epais + hachures vers l'exterieur)
   // - voisin d'un AUTRE espace -> cloison fine (tracee une seule fois)
@@ -1744,18 +2192,19 @@ function renderSVG(d, view){
   const once=(ax,ay,bx,by)=>{const k=ax<=bx&&ay<=by?`${ax},${ay}|${bx},${by}`:`${bx},${by}|${ax},${ay}`; if(drawnEdge.has(k))return false; drawnEdge.add(k); return true;};
   for(const s of d.spaces){
     if(isVec(s))continue;
+    const st=styleFor(s); // contour du style choisi (les cloisons internes restent roughLine 1.2)
     for(const [cx,cy] of cellsOf(s)){
       // N
-      if(!isFloor(cx,cy-1)){ if(!openOnEdge(s,'N',cx,cy)){roughLine(X(cx),Y(cy),X(cx+1),Y(cy),1.8);hatchUnit(X(cx),Y(cy),0,-1,true);} }
+      if(!isFloor(cx,cy-1)){ if(!openOnEdge(s,'N',cx,cy)){st.wall(X(cx),Y(cy),X(cx+1),Y(cy),1.8);st.unit(X(cx),Y(cy),0,-1,true);} }
       else if(floorSet.has(cx+','+(cy-1)) && spaceIdAt(d,cx,cy)!==spaceIdAt(d,cx,cy-1)){ if(!openOnEdge(s,'N',cx,cy)&&once(cx,cy,cx,cy-1))roughLine(X(cx),Y(cy),X(cx+1),Y(cy),1.2); }
       // S
-      if(!isFloor(cx,cy+1)){ if(!openOnEdge(s,'S',cx,cy)){roughLine(X(cx),Y(cy+1),X(cx+1),Y(cy+1),1.8);hatchUnit(X(cx),Y(cy+1),0,1,true);} }
+      if(!isFloor(cx,cy+1)){ if(!openOnEdge(s,'S',cx,cy)){st.wall(X(cx),Y(cy+1),X(cx+1),Y(cy+1),1.8);st.unit(X(cx),Y(cy+1),0,1,true);} }
       else if(spaceIdAt(d,cx,cy)!==spaceIdAt(d,cx,cy+1)){ if(!openOnEdge(s,'S',cx,cy)&&once(cx,cy,cx,cy+1))roughLine(X(cx),Y(cy+1),X(cx+1),Y(cy+1),1.2); }
       // W
-      if(!isFloor(cx-1,cy)){ if(!openOnEdge(s,'W',cx,cy)){roughLine(X(cx),Y(cy),X(cx),Y(cy+1),1.8);hatchUnit(X(cx),Y(cy),-1,0,false);} }
+      if(!isFloor(cx-1,cy)){ if(!openOnEdge(s,'W',cx,cy)){st.wall(X(cx),Y(cy),X(cx),Y(cy+1),1.8);st.unit(X(cx),Y(cy),-1,0,false);} }
       else if(spaceIdAt(d,cx,cy)!==spaceIdAt(d,cx-1,cy)){ if(!openOnEdge(s,'W',cx,cy)&&once(cx,cy,cx-1,cy))roughLine(X(cx),Y(cy),X(cx),Y(cy+1),1.2); }
       // E
-      if(!isFloor(cx+1,cy)){ if(!openOnEdge(s,'E',cx,cy)){roughLine(X(cx+1),Y(cy),X(cx+1),Y(cy+1),1.8);hatchUnit(X(cx+1),Y(cy),1,0,false);} }
+      if(!isFloor(cx+1,cy)){ if(!openOnEdge(s,'E',cx,cy)){st.wall(X(cx+1),Y(cy),X(cx+1),Y(cy+1),1.8);st.unit(X(cx+1),Y(cy),1,0,false);} }
       else if(spaceIdAt(d,cx,cy)!==spaceIdAt(d,cx+1,cy)){ if(!openOnEdge(s,'E',cx,cy)&&once(cx,cy,cx+1,cy))roughLine(X(cx+1),Y(cy),X(cx+1),Y(cy+1),1.2); }
     }
   }
@@ -1765,14 +2214,6 @@ function renderSVG(d, view){
   // facon watabou. Les ouvertures laissent un vide dans le mur ; pour le rond, un court "sas"
   // relie l'ellipse a la cellule d'ouverture. _cells (masque) sert toujours a la logique
   // (passabilite, jonctions de couloirs, ancrage des reperes) ; ici on ne touche qu'au visuel.
-  function hatchSeg(x1,y1,x2,y2,nx,ny){ // hachures vers l'exterieur le long d'un segment quelconque
-    const len=Math.hypot(x2-x1,y2-y1)||1, nn=Math.hypot(nx,ny)||1, ux=nx/nn, uy=ny/nn;
-    const steps=Math.max(2,Math.round(len/6));
-    for(let i=0;i<steps;i++){
-      const t=(i+rr(0.25,0.75))/steps, bx=x1+(x2-x1)*t, by=y1+(y2-y1)*t, L=rr(4,10), ang=Math.atan2(uy,ux)+rr(-0.5,0.5);
-      gHatch.appendChild(svgEl('line',{x1:bx.toFixed(1),y1:by.toFixed(1),x2:(bx+Math.cos(ang)*L).toFixed(1),y2:(by+Math.sin(ang)*L).toFixed(1),'stroke-width':rr(0.5,1).toFixed(2),opacity:rr(0.5,0.9).toFixed(2)}));
-    }
-  }
   function octWalls(s,k){ // 4 bords droits (cellule par cellule) + 4 diagonales pleines
     const x=s.x,y=s.y,w=s.w,h=s.h;
     // Un bord droit, cellule par cellule : porte -> rien ; cloison mitoyenne (voisin = autre
@@ -1789,7 +2230,7 @@ function renderSVG(d, view){
         if(openOnEdge(s,dir,cx,cy))continue;
         const ncx=cx+nx,ncy=cy+ny;
         if(isFloor(ncx,ncy)&&spaceIdAt(d,ncx,ncy)!==s.id){ if(once(cx,cy,ncx,ncy))roughLine(p0[0],p0[1],p1[0],p1[1],1.2); }
-        else{ roughLine(p0[0],p0[1],p1[0],p1[1],1.8);hatchSeg(p0[0],p0[1],p1[0],p1[1],nx,ny); }
+        else{ ctRoom.wall(p0[0],p0[1],p1[0],p1[1],1.8);ctRoom.seg(p0[0],p0[1],p1[0],p1[1],nx,ny); }
       }
     }
     const cols=[],rows=[];
@@ -1797,7 +2238,7 @@ function renderSVG(d, view){
     for(let cy=y+k;cy<y+h-k;cy++)rows.push(cy);
     edge('N',cols,0,-1); edge('S',cols,0,1); edge('W',rows,-1,0); edge('E',rows,1,0);
     for(const [ax,ay,bx,by,nx,ny] of [[x+k,y,x,y+k,-1,-1],[x+w-k,y,x+w,y+k,1,-1],[x+w,y+h-k,x+w-k,y+h,1,1],[x,y+h-k,x+k,y+h,-1,1]]){
-      roughLine(X(ax),Y(ay),X(bx),Y(by),1.8);hatchSeg(X(ax),Y(ay),X(bx),Y(by),nx,ny);}
+      ctRoom.wall(X(ax),Y(ay),X(bx),Y(by),1.8);ctRoom.seg(X(ax),Y(ay),X(bx),Y(by),nx,ny);}
   }
   // Sas d'une salle ronde : rects px reliant l'ellipse a chaque ouverture. Sert au sol
   // (roundWalls) ET au voile d'eclairage (gLight) pour couvrir tout le sol visible.
@@ -1819,19 +2260,28 @@ function renderSVG(d, view){
     const gaps=roundVestibules(s);
     for(const g of gaps){
       gFloor.appendChild(svgEl('rect',{x:g.x,y:g.y,width:g.w.toFixed(1),height:g.h.toFixed(1),fill}));
-      if(g.dir==='N'){roughLine(X(g.a),Y(y),X(g.a),eT(X(g.a)),1.8);roughLine(X(g.b),Y(y),X(g.b),eT(X(g.b)),1.8);}
-      else if(g.dir==='S'){roughLine(X(g.a),Y(y+h),X(g.a),eB(X(g.a)),1.8);roughLine(X(g.b),Y(y+h),X(g.b),eB(X(g.b)),1.8);}
-      else if(g.dir==='W'){roughLine(X(x),Y(g.a),eL(Y(g.a)),Y(g.a),1.8);roughLine(X(x),Y(g.b),eL(Y(g.b)),Y(g.b),1.8);}
-      else{roughLine(X(x+w),Y(g.a),eR(Y(g.a)),Y(g.a),1.8);roughLine(X(x+w),Y(g.b),eR(Y(g.b)),Y(g.b),1.8);}
+      if(g.dir==='N'){ctRoom.wall(X(g.a),Y(y),X(g.a),eT(X(g.a)),1.8);ctRoom.wall(X(g.b),Y(y),X(g.b),eT(X(g.b)),1.8);}
+      else if(g.dir==='S'){ctRoom.wall(X(g.a),Y(y+h),X(g.a),eB(X(g.a)),1.8);ctRoom.wall(X(g.b),Y(y+h),X(g.b),eB(X(g.b)),1.8);}
+      else if(g.dir==='W'){ctRoom.wall(X(x),Y(g.a),eL(Y(g.a)),Y(g.a),1.8);ctRoom.wall(X(x),Y(g.b),eL(Y(g.b)),Y(g.b),1.8);}
+      else{ctRoom.wall(X(x+w),Y(g.a),eR(Y(g.a)),Y(g.a),1.8);ctRoom.wall(X(x+w),Y(g.b),eR(Y(g.b)),Y(g.b),1.8);}
     }
     const inGap=(mx,my)=>gaps.some(g=>g.dir==='N'?(mx>=X(g.a)&&mx<=X(g.b)&&my<cyp):g.dir==='S'?(mx>=X(g.a)&&mx<=X(g.b)&&my>cyp):g.dir==='W'?(my>=Y(g.a)&&my<=Y(g.b)&&mx<cxp):(my>=Y(g.a)&&my<=Y(g.b)&&mx>cxp));
     const N=Math.max(36,Math.round((w+h)*3));
+    // deco : croquis hachure chaque mini-arc (rendu d'origine) ; les autres styles regroupent
+    // les arcs contigus en cordes ~1 case (sinon un fagot/bloc par arc de 6 px = bouillie).
+    let run=null; // {x0,y0,a0} debut de corde en cours
+    const flush=(x1,y1,a1)=>{ if(!run)return;
+      const am=(run.a0+a1)/2; ctRoom.seg(run.x0,run.y0,x1,y1,Math.cos(am),Math.sin(am)); run=null; };
     for(let i=0;i<N;i++){
       const a0=i/N*2*Math.PI,a1=(i+1)/N*2*Math.PI;
       const x0=cxp+rxp*Math.cos(a0),y0=cyp+ryp*Math.sin(a0),x1=cxp+rxp*Math.cos(a1),y1=cyp+ryp*Math.sin(a1);
-      if(inGap((x0+x1)/2,(y0+y1)/2))continue;
-      roughLine(x0,y0,x1,y1,1.7);hatchSeg(x0,y0,x1,y1,Math.cos((a0+a1)/2),Math.sin((a0+a1)/2));
+      if(inGap((x0+x1)/2,(y0+y1)/2)){flush(x0,y0,a0);continue;}
+      ctRoom.wall(x0,y0,x1,y1,1.7);
+      if(!ctRoom.batch){ctRoom.seg(x0,y0,x1,y1,Math.cos((a0+a1)/2),Math.sin((a0+a1)/2));continue;}
+      if(!run)run={x0,y0,a0};
+      if(Math.hypot(x1-run.x0,y1-run.y0)>=S*0.9)flush(x1,y1,a1);
     }
+    flush(cxp+rxp,cyp,2*Math.PI); // reliquat de la derniere corde (boucle fermee : point d'angle 0)
   }
   // id de clip unique PAR APPEL de renderSVG : a l'impression, plusieurs SVG (carte MJ/joueur,
   // fiches) coexistent dans le DOM -> sans prefixe, des ids 'shp42' dupliques feraient pointer
@@ -1873,11 +2323,28 @@ function renderSVG(d, view){
         if(once(icx,icy,ecx,ecy)){const p0=pts[a],p1=pts[b];roughLine(p0[0],p0[1],p1[0],p1[1],1.2);}
         continue;
       }
+      // deco : croquis hachure chaque morceau ondule (rendu d'origine) ; base:true (foret)
+      // pose la deco UNE fois sur l'arete de base entiere (rangs reguliers) ; wallSeg:true
+      // (roche) suit aussi chaque morceau ondule (bande soudee au mur REEL -> profondeur
+      // constante, 100% du perimetre, sans la bouillie du non-batch sur les arcs de 6px des
+      // salles rondes, qui gardent les cordes) ; les autres styles regroupent les morceaux
+      // en cordes ~1 case calees sur le point couvert le plus SAILLANT (corde parallele a
+      // l'arete de base) : la deco ne mord jamais le sol ondule.
+      if(ctCave.base)ctCave.seg(X(g.x1),Y(g.y1),X(g.x2),Y(g.y2),g.nx,g.ny);
+      const bx0=X(g.x1),by0=Y(g.y1), offN=p=>(p[0]-bx0)*g.nx+(p[1]-by0)*g.ny; // saillie exterieure
+      const chord=(pA,pB,om)=>{const sA=om-offN(pA),sB=om-offN(pB);
+        ctCave.seg(pA[0]+g.nx*sA,pA[1]+g.ny*sA,pB[0]+g.nx*sB,pB[1]+g.ny*sB,g.nx,g.ny);};
+      let run=null,om=0;
       for(let i=a;i!==b;i=(i+1)%pts.length){
         const p0=pts[i],p1=pts[(i+1)%pts.length];
-        roughLine(p0[0],p0[1],p1[0],p1[1],2.0);
-        hatchSeg(p0[0],p0[1],p1[0],p1[1],g.nx,g.ny);
+        ctCave.wall(p0[0],p0[1],p1[0],p1[1],2.0);
+        if(ctCave.base)continue; // deco deja posee sur la base
+        if(!ctCave.batch||ctCave.wallSeg){ctCave.seg(p0[0],p0[1],p1[0],p1[1],g.nx,g.ny);continue;}
+        if(!run){run=p0;om=offN(p0);}
+        om=Math.max(om,offN(p1));
+        if(Math.hypot(p1[0]-run[0],p1[1]-run[1])>=S*0.9){chord(run,p1,om);run=null;}
       }
+      if(run){const pe=pts[b];chord(run,pe,Math.max(om,offN(pe)));} // reliquat
     }
   }
 
@@ -1963,42 +2430,50 @@ function renderSVG(d, view){
   // escaliers descendants
   for(const s of d.spaces)if(s.stairsDown)drawStairsDown(gDeco,s,X,Y,c);
 
-  // numeros de salle (carte MJ uniquement)
+  // numeros de salle (carte MJ uniquement). class pin : en mode incline (touche R), chaque
+  // .pin est contre-pivote autour de son centre par applyMapTilt pour rester droit — texte
+  // seul ici, le cercle est invariant par rotation.
   if(view.gm) for(const s of d.rooms){
     const an=anchorCell(s,s.x,s.y); const bx=an?an[0]:s.x, by=an?an[1]:s.y;
     const cx=X(bx+0.7),cy=Y(by+0.7);
     gLabel.appendChild(svgEl('circle',{cx,cy,r:8.5,fill:c.paper,stroke:c.ink,'stroke-width':1.6}));
-    const t=svgEl('text',{x:cx,y:cy+0.5,'text-anchor':'middle','dominant-baseline':'middle','font-size':11,'font-weight':600,fill:c.ink});
+    const t=svgEl('text',{class:'pin',x:cx,y:cy+0.5,'text-anchor':'middle','dominant-baseline':'middle','font-size':11,'font-weight':600,fill:c.ink});
     t.textContent=s.number; gLabel.appendChild(t);
   }
 
-  // reperes MJ: cle, piege, tresor (uniquement en vue MJ)
+  // reperes MJ: cle, piege, tresor (uniquement en vue MJ). Chaque picto multi-traits est
+  // groupe dans un g.pin : la contre-rotation du mode incline pivote l'icone ENTIERE
+  // (element par element, une croix deviendrait un plus).
   if(view.gm) for(const s of d.rooms){
     if(s.hasKey){ // cle en haut a droite
       const ak=anchorCell(s,s.x+s.w-1,s.y); const kbx=ak?ak[0]:s.x+s.w-1, kby=ak?ak[1]:s.y;
       const kx=X(kbx+0.45),ky=Y(kby+0.55);
-      gGM.appendChild(svgEl('circle',{cx:kx,cy:ky,r:3.2,fill:'none',stroke:c.accent,'stroke-width':1.8}));
-      gGM.appendChild(svgEl('line',{x1:kx+2.6,y1:ky,x2:kx+9,y2:ky,stroke:c.accent,'stroke-width':1.8}));
-      gGM.appendChild(svgEl('line',{x1:kx+6,y1:ky,x2:kx+6,y2:ky+3,stroke:c.accent,'stroke-width':1.8}));
-      gGM.appendChild(svgEl('line',{x1:kx+9,y1:ky,x2:kx+9,y2:ky+3.5,stroke:c.accent,'stroke-width':1.8}));
+      const pk=svgEl('g',{class:'pin'});gGM.appendChild(pk);
+      pk.appendChild(svgEl('circle',{cx:kx,cy:ky,r:3.2,fill:'none',stroke:c.accent,'stroke-width':1.8}));
+      pk.appendChild(svgEl('line',{x1:kx+2.6,y1:ky,x2:kx+9,y2:ky,stroke:c.accent,'stroke-width':1.8}));
+      pk.appendChild(svgEl('line',{x1:kx+6,y1:ky,x2:kx+6,y2:ky+3,stroke:c.accent,'stroke-width':1.8}));
+      pk.appendChild(svgEl('line',{x1:kx+9,y1:ky,x2:kx+9,y2:ky+3.5,stroke:c.accent,'stroke-width':1.8}));
     }
     if(s.trap){ // triangle d'alerte au centre
       const at=anchorCell(s,s.x+Math.floor(s.w/2),s.y+Math.floor(s.h/2));
       const tx=at?X(at[0]+0.5):X(s.x+s.w/2),ty=at?Y(at[1]+0.5):Y(s.y+s.h/2);
-      gGM.appendChild(svgEl('polygon',{points:`${tx},${ty-6} ${tx-6},${ty+5} ${tx+6},${ty+5}`,fill:'none',stroke:c.accent,'stroke-width':1.6}));
-      const t=svgEl('text',{x:tx,y:ty+4,'text-anchor':'middle','font-size':8,'font-weight':700,fill:c.accent});t.textContent='!';gGM.appendChild(t);
+      const pt=svgEl('g',{class:'pin'});gGM.appendChild(pt);
+      pt.appendChild(svgEl('polygon',{points:`${tx},${ty-6} ${tx-6},${ty+5} ${tx+6},${ty+5}`,fill:'none',stroke:c.accent,'stroke-width':1.6}));
+      const t=svgEl('text',{x:tx,y:ty+4,'text-anchor':'middle','font-size':8,'font-weight':700,fill:c.accent});t.textContent='!';pt.appendChild(t);
     }
     if(s.treasure){ // petit coffre en bas a gauche
       const atr=anchorCell(s,s.x,s.y+s.h-1); const tbx=atr?atr[0]:s.x, tby=atr?atr[1]:s.y+s.h-1;
       const bx=X(tbx+0.55),by=Y(tby+0.3);
-      gGM.appendChild(svgEl('rect',{x:bx-0.5,y:by,width:11,height:8,fill:c.paper,stroke:c.ink,'stroke-width':1.4}));
-      gGM.appendChild(svgEl('line',{x1:bx-0.5,y1:by+3,x2:bx+10.5,y2:by+3,stroke:c.ink,'stroke-width':1.2}));
-      gGM.appendChild(svgEl('rect',{x:bx+4,y:by+2,width:2,height:3,fill:c.accent}));
+      const pb=svgEl('g',{class:'pin'});gGM.appendChild(pb);
+      pb.appendChild(svgEl('rect',{x:bx-0.5,y:by,width:11,height:8,fill:c.paper,stroke:c.ink,'stroke-width':1.4}));
+      pb.appendChild(svgEl('line',{x1:bx-0.5,y1:by+3,x2:bx+10.5,y2:by+3,stroke:c.ink,'stroke-width':1.2}));
+      pb.appendChild(svgEl('rect',{x:bx+4,y:by+2,width:2,height:3,fill:c.accent}));
     }
     if(s.encounter&&s.encounter.mobs&&s.encounter.mobs.length){ // epees croisees en bas a droite (repere MJ)
       const ae=anchorCell(s,s.x+s.w-1,s.y+s.h-1); const ebx=ae?ae[0]:s.x+s.w-1, eby=ae?ae[1]:s.y+s.h-1;
       const ex=X(ebx+0.5),ey=Y(eby+0.45);
-      drawSwords(gGM,ex,ey,c);
+      const pe=svgEl('g',{class:'pin'});gGM.appendChild(pe);
+      drawSwords(pe,ex,ey,c);
     }
   }
 
@@ -2031,10 +2506,55 @@ function renderSVG(d, view){
   }
 
   // titre du donjon en bas de page
-  const title=svgEl('text',{x:W/2,y:H-14,'text-anchor':'middle','font-size':18,'font-style':'italic',fill:c.inkSoft,'font-family':'IM Fell English, EB Garamond, serif'});
-  title.textContent=d.name; gLabel.appendChild(title);
+  const title=svgEl('text',{class:'titre-carte',x:W/2,y:H-14,'text-anchor':'middle','font-size':18,'font-style':'italic',fill:c.inkSoft,'font-family':'IM Fell English, EB Garamond, serif'});
+  title.textContent=d.name;   // pose a la racine du svg (cf. assemblage final) : reste droit en mode incline
 
-  svg.appendChild(gShadow);svg.appendChild(gFloor);svg.appendChild(gGrid);svg.appendChild(gDeco);svg.appendChild(gHatch);svg.appendChild(gWall);svg.appendChild(gDoor);svg.appendChild(gGM);svg.appendChild(gLight);svg.appendChild(gFog);svg.appendChild(gLabel);
+  /* ====== grain de papier ====== */
+  // Mouchetis + fibres dans un <pattern> (paint server : survit a exportSVG/PNG, contrairement
+  // aux filtres). RNG DEDIE (d.seed+':grain') : ne consomme rien sur rrng -> ajouter/retirer le
+  // grain ne re-jitter aucune deco existante. Tuile de 97 px (premier, non multiple de S=26) :
+  // aucun moire ni alignement perceptible avec la grille. Id prefixe par uid : a l'impression,
+  // 3 SVG coexistent (carte MJ, notes, carte joueur). c.ink s'adapte seul aux 3 themes
+  // (poussiere sombre sur parchemin, piquete clair sur plan/encre) ; opacites <=0.085 ->
+  // imperceptible sur l'encre du trait, subtil sur le papier. Cout : ~132 noeuds UNE fois dans
+  // defs + 1 rect, plus ~20 noeuds d'aureoles/marges (cf. plus bas).
+  const grng=makeRng(d.seed+':grain'), gr=(a,b)=>a+grng()*(b-a), GT=97;
+  const defs=svgEl('defs',{}), pat=svgEl('pattern',{id:uid+'grain',patternUnits:'userSpaceOnUse',width:GT,height:GT});
+  // specks : r<=0.9 px (~1/14 de case -> jamais lisible comme caillou/POI de jeu) et opacite
+  // ecretee a 0.055 pour les plus gros (sr>0.6) : les points les plus visibles restent poussiere.
+  for(let i=0;i<110;i++){const sr=gr(0.3,0.9),so=gr(0.04,0.085);
+    pat.appendChild(svgEl('circle',{cx:gr(0,GT).toFixed(1),cy:gr(0,GT).toFixed(1),r:sr.toFixed(2),fill:c.ink,'fill-opacity':(sr>0.6?Math.min(so,0.055):so).toFixed(3)}));}
+  for(let i=0;i<22;i++){const fx=gr(0,GT),fy=gr(0,GT),fl=gr(2,5),fa=gr(0,Math.PI); // fibres du papier
+    pat.appendChild(svgEl('line',{x1:fx.toFixed(1),y1:fy.toFixed(1),x2:(fx+Math.cos(fa)*fl).toFixed(1),y2:(fy+Math.sin(fa)*fl).toFixed(1),stroke:c.ink,'stroke-width':0.5,opacity:gr(0.03,0.06).toFixed(3)}));}
+  defs.appendChild(pat); svg.insertBefore(defs,bg); // defs en tete du svg
+  // pose : UN rect plein cadre (sol jouable ET hors-jeu), APRES gFloor / sous la grille et l'encre,
+  // au-dessus de l'ombre et des bandes basses.
+  const grain=svgEl('rect',{x:0,y:0,width:W,height:H,fill:'url(#'+uid+'grain)'});
+  // aureoles de vieillissement (basse frequence) : au zoom carte entiere le mouchetis disparait
+  // par sous-echantillonnage -> ces larges taches (1.4 a 3 cases de rayon, 1.2-3.2 % d'encre)
+  // gardent le "papier vivant". Degrade radial = paint server (survit aux exports, pas un filtre),
+  // bord a peine plus marque que le coeur, facon tache d'humidite sechee.
+  const age=svgEl('radialGradient',{id:uid+'age'});
+  [[0,0.012],[0.6,0.016],[0.88,0.032],[1,0]].forEach(([o,a])=>age.appendChild(svgEl('stop',{offset:o,'stop-color':c.ink,'stop-opacity':a})));
+  defs.appendChild(age);
+  // vignettage papier ancien : tirage des aureoles pousse vers les bords (pow<1 sur u in [-1,1])
+  // -> marges plus vecues, centres de salles plus propres ; + 4 bandes de marge (M=2 cases, donc
+  // jamais sur le sol jouable) qui resuperposent le pattern de grain a 45 % (+45 % de densite
+  // percue au bord du papier, sans nouveau pattern ni bord dur visible a ces opacites).
+  const gAge=svgEl('g',{class:'age'}),vg=t=>{const u=grng()*2-1;return t*0.5+Math.sign(u)*Math.pow(Math.abs(u),0.7)*t*0.5;};
+  for(let i=0,n=Math.max(7,Math.round(W*H/65000));i<n;i++){const ar=gr(1.4*S,3*S);
+    gAge.appendChild(svgEl('ellipse',{cx:vg(W).toFixed(0),cy:vg(H).toFixed(0),rx:ar.toFixed(0),ry:(ar*gr(0.6,1)).toFixed(0),fill:'url(#'+uid+'age)'}));}
+  const mg=1.5*S;
+  [[0,0,W,mg],[0,H-mg,W,mg],[0,mg,mg,H-2*mg],[W-mg,mg,mg,H-2*mg]].forEach(([x,y,w,h])=>gAge.appendChild(svgEl('rect',{x,y,width:w,height:h,fill:'url(#'+uid+'grain)',opacity:0.45})));
+
+  // Assemblage : les calques du DONJON vont dans deux groupes .monde pivotables (touche R,
+  // cf. applyMapTilt) encadrant grain et aureoles (qui s'intercalent entre sol et encre) ;
+  // la FEUILLE (fond, grain, vieillissement, titre) reste hors groupe : a plat, elle suit le
+  // canevas plutot que la rotation. Z-order strictement identique a l'assemblage historique.
+  const gMondeBas=svgEl('g',{class:'monde'}),gMondeHaut=svgEl('g',{class:'monde'});
+  [gShadow,gBandLow,gFloor].forEach(x=>gMondeBas.appendChild(x));
+  [gGrid,gDeco,gWall,gCanopy,gDoor,gGM,gLight,gFog,gLabel].forEach(x=>gMondeHaut.appendChild(x));
+  svg.appendChild(gMondeBas);svg.appendChild(grain);svg.appendChild(gAge);svg.appendChild(gMondeHaut);svg.appendChild(title);
   return svg;
 }
 
@@ -2089,7 +2609,7 @@ function drawDoor(g,dr,X,Y,c,gm){
   }else if(dr.type==='locked'){
     const fill=svgEl('rect',{x:horiz?cx-L/2:cx-T/2,y:horiz?cy-T/2:cy-L/2,width:horiz?L:T,height:horiz?T:L,fill:c.accent,stroke:c.ink,'stroke-width':1.8});g.appendChild(fill);
     g.appendChild(svgEl('circle',{cx,cy,r:2.1,fill:c.paper}));
-    if(dr.dc&&gm){const t=svgEl('text',{x:horiz?cx:cx+9,y:horiz?cy-7:cy+3,'text-anchor':'middle','font-size':8,'font-weight':700,fill:c.accent});t.textContent='DC'+dr.dc;g.appendChild(t);}
+    if(dr.dc&&gm){const t=svgEl('text',{class:'pin',x:horiz?cx:cx+9,y:horiz?cy-7:cy+3,'text-anchor':'middle','font-size':8,'font-weight':700,fill:c.accent});t.textContent='DC'+dr.dc;g.appendChild(t);}
   }else if(dr.type==='double'){
     if(horiz){rect(cx-L/2,cy-T/2,L/2-1.5,T);rect(cx+1.5,cy-T/2,L/2-1.5,T);}
     else{rect(cx-T/2,cy-L/2,T,L/2-1.5);rect(cx-T/2,cy+1.5,T,L/2-1.5);}
@@ -2098,7 +2618,7 @@ function drawDoor(g,dr,X,Y,c,gm){
     else{rect(cx-T/2,cy-L/2,T,L);for(let i=-1;i<=1;i++)bar(cx-S*0.28,cy+i*7,cx+S*0.28,cy+i*7,1.4);}
   }else if(dr.type==='secret'){
     const r=svgEl('rect',{x:horiz?cx-L/2:cx-T/2,y:horiz?cy-T/2:cy-L/2,width:horiz?L:T,height:horiz?T:L,fill:c.paper,stroke:c.ink,'stroke-width':1.4,'stroke-dasharray':'2 2'});g.appendChild(r);
-    const t=svgEl('text',{x:cx,y:cy+0.5,'text-anchor':'middle','dominant-baseline':'middle','font-size':8,fill:c.ink,opacity:.7});t.textContent='S';g.appendChild(t);
+    const t=svgEl('text',{class:'pin',x:cx,y:cy+0.5,'text-anchor':'middle','dominant-baseline':'middle','font-size':8,fill:c.ink,opacity:.7});t.textContent='S';g.appendChild(t);
   }
 }
 function drawEntrance(g,st,X,Y,c){
@@ -2175,6 +2695,7 @@ const UI_CONTROLS = {
   'lock-rate':'v','mob-rate':'v','trap-rate':'v','treasure-rate':'v','light-rate':'v','props-rate':'v',
   'loot-value':'v','treasure-quality':'v',
   'sh-round':'c','sh-oct':'c','sh-l':'c','sh-cave':'c','shape-rate':'v',
+  'ct-room':'v','ct-cave':'v',
 };
 // cles courtes pour un hash compact
 const UI_KEY = {seed:'s',size:'sz',biome:'b',view:'vw',theme:'th','party-size':'pn','party-level':'pv',
@@ -2183,7 +2704,8 @@ const UI_KEY = {seed:'s',size:'sz',biome:'b',view:'vw',theme:'th','party-size':'
   'pp-locks':'pl','pp-traps':'pt','pp-treasure':'pr','pp-occ':'po','pp-rubble':'pu','pp-light':'pg','pp-props':'ppr',
   'lock-rate':'lr','mob-rate':'mr','trap-rate':'tr','treasure-rate':'tx','light-rate':'gr','props-rate':'pdr',
   'loot-value':'lv','treasure-quality':'tq',
-  'sh-round':'hr','sh-oct':'ho','sh-l':'hl','sh-cave':'hv','shape-rate':'hs'};
+  'sh-round':'hr','sh-oct':'ho','sh-l':'hl','sh-cave':'hv','shape-rate':'hs',
+  'ct-room':'cr','ct-cave':'cv'};
 let pendingNotesMode=null;
 // nm n'est persiste qu'apres un choix EXPLICITE (clic segment, ou nm deja memorise reapplique au
 // boot). Tant que false, saveConfig n'ecrit pas o.nm -> le defaut terminal (mobile: inline /
@@ -2221,6 +2743,7 @@ function saveConfig(){
     // etat ouvert/ferme des deux tiroirs (panneaux)
     o.po = $('optionsPanel') ? $('optionsPanel').classList.contains('open') : null;
     o.pnp = $('notesPanel') ? $('notesPanel').classList.contains('open') : null;
+    o.tilt = mapTilt; // inclinaison 45° (touche R) : preference d'affichage, defaut incline
     localStorage.setItem(LS_KEY, JSON.stringify(o));
   }catch(e){/* localStorage indispo (mode prive, quota) : on ignore silencieusement */}
 }
@@ -2237,6 +2760,7 @@ function loadConfig(){
   }
   // memorise l'etat des tiroirs pour l'appliquer apres l'init (cf. openDefaultSheets)
   if(typeof o.po==='boolean' || typeof o.pnp==='boolean') pendingPanels={options:!!o.po, notes:!!o.pnp};
+  if(typeof o.tilt==='boolean')mapTilt=o.tilt; // avant le build() initial -> 1er rendu deja bon
   return true;
 }
 // Lit la CONFIG DU DONJON depuis l'URL #d= (graine + UI_CONTROLS). Ne touche pas au layout.
@@ -2246,7 +2770,8 @@ function applyStateFromHash(){
   const inv={}; for(const id in UI_KEY)inv[UI_KEY[id]]=id;
   for(const k in o){
     const id=inv[k]; if(!id)continue; const el=$(id); if(!el)continue;
-    if(UI_CONTROLS[id]==='c')el.checked=!!o[k]; else el.value=o[k];
+    if(UI_CONTROLS[id]==='c')el.checked=!!o[k];
+    else {el.value=o[k]; if(el.tagName==='SELECT'&&el.selectedIndex<0)el.selectedIndex=0;} // valeur inconnue (hash forge / style retire) -> 1re option, sinon select vide et '' re-persiste
   }
   return true;
 }
@@ -2255,7 +2780,74 @@ function pctOut(id){return Math.round(parseFloat($(id).value));}
 // Libelles des 5 crans des sliders de qualite (loot mob / tresors). Index 1..5.
 const QUALITY_LABELS=[null,'Misérable','Faible','Standard','Supérieur','Légendaire'];
 function qualityOut(id){return QUALITY_LABELS[parseInt($(id).value,10)]||'Standard';}
-function currentView(){return {gm: $('view').value==='mj', light:true};}
+// tache 10 : styles de contour choisis (salles/couloirs vs cavernes), transmis au rendu via view
+function currentView(){return {gm: $('view').value==='mj', light:true, contours:{room:$('ct-room').value, cave:$('ct-cave').value}};}
+/* ---- inclinaison 45° (touche R) : seul le DONJON tourne, la feuille reste a plat ----
+   Vue seule, rien dans l'URL. Les deux groupes .monde (sous et sur le grain, cf. renderSVG)
+   recoivent la meme rotation autour du centre du donjon, et le canevas est recadre au plus
+   pres de la bbox pivotee (+ marge + bandeau de titre) : pas de grands coins vides. Fond,
+   grain et vieillissement sont redimensionnes au nouveau canevas (le grain est un pattern
+   userSpaceOnUse : il tuile seul). Exports SVG/PNG = ce SVG, donc fideles ; impression a plat.
+   Incline PAR DEFAUT (retour utilisateur) ; le choix est memorise dans le layout localStorage
+   (cf. saveConfig/loadConfig), pas dans l'URL : c'est une preference d'affichage, pas du donjon. */
+let mapTilt=true;
+function applyMapTilt(){
+  if(!mapTilt)return;
+  const svg=$('map').querySelector('svg'); if(!svg)return;
+  const mondes=[...svg.querySelectorAll(':scope > .monde')]; if(!mondes.length)return;
+  const W=+svg.getAttribute('width'), H=+svg.getAttribute('height');
+  // pictos et numeros restent droits : contre-rotation de chaque .pin autour de son centre
+  // (rotate(45) du monde ∘ rotate(-45 centre) = picto droit, a sa place). Pose AVANT la
+  // mesure d'empreinte ci-dessous, qui integre ainsi leur encombrement re-dresse.
+  for(const p of svg.querySelectorAll('.monde .pin')){
+    let b; try{b=p.getBBox();}catch(_){continue;}
+    if(!b.width&&!b.height)continue;
+    p.setAttribute('transform',`rotate(-45 ${(b.x+b.width/2).toFixed(1)} ${(b.y+b.height/2).toFixed(1)})`);
+  }
+  // bbox REELLE du donjon pivote, mesuree feuille par feuille : getBBox d'un groupe mappe
+  // l'AABB de l'AABB de ses enfants transformes (trop lache, un donjon allonge ne touche
+  // presque jamais les coins de son rectangle a plat). Ici chaque feuille est projetee par
+  // (rotation ∘ ses propres transforms) et on unionne — empreinte au plus juste.
+  const R45=new DOMMatrix().rotate(45);
+  const inv=mondes[0].getCTM().inverse();   // viewport -> repere commun (a plat) des mondes
+  let x0=1/0,y0=1/0,x1=-1/0,y1=-1/0;
+  for(const m of mondes)for(const el of m.querySelectorAll('*')){
+    if(el.children.length)continue;          // feuilles seulement
+    const ctm=el.getCTM(); if(!ctm)continue;
+    let b; try{b=el.getBBox();}catch(_){continue;}
+    if(!b.width&&!b.height)continue;
+    const K=R45.multiply(inv.multiply(ctm));
+    for(const [px,py] of [[b.x,b.y],[b.x+b.width,b.y],[b.x,b.y+b.height],[b.x+b.width,b.y+b.height]]){
+      const x=K.a*px+K.c*py+K.e, y=K.b*px+K.d*py+K.f;
+      if(x<x0)x0=x; if(x>x1)x1=x; if(y<y0)y0=y; if(y>y1)y1=y;
+    }
+  }
+  if(x1<x0)return;
+  const PAD=18, BANDEAU=44;                          // marge du pourtour ; bande du titre en bas
+  const W2=Math.ceil(x1-x0)+PAD*2, H2=Math.ceil(y1-y0)+PAD+BANDEAU;
+  const tf=`translate(${(PAD-x0).toFixed(1)} ${(PAD-y0).toFixed(1)}) rotate(45)`;
+  mondes.forEach(m=>m.setAttribute('transform',tf));
+  // feuille a plat : fond et grain (seuls rects racine) re-couvrent le canevas,
+  // vieillissement (aureoles + bandes de marge) re-etire aux nouveaux bords.
+  svg.querySelectorAll(':scope > rect').forEach(r=>{r.setAttribute('width',W2);r.setAttribute('height',H2);});
+  const age=svg.querySelector(':scope > .age');
+  if(age)age.setAttribute('transform',`scale(${(W2/W).toFixed(4)} ${(H2/H).toFixed(4)})`);
+  // titre droit, centre dans le bandeau
+  const titre=svg.querySelector(':scope > .titre-carte');
+  if(titre){titre.setAttribute('x',W2/2);titre.setAttribute('y',H2-14);}
+  svg.setAttribute('width',W2); svg.setAttribute('height',H2); svg.setAttribute('viewBox',`0 0 ${W2} ${H2}`);
+}
+// Rendu (ou re-rendu) de la carte dans #map — point unique pour que l'inclinaison suive partout.
+function paintMap(){const map=$('map'); map.innerHTML=''; map.appendChild(renderSVG(current, currentView())); applyMapTilt();}
+// Note affichee d'une salle : pour une caverne rendue en foret/roche, la phrase de decor (FEAT,
+// memorisee dans r._feat) est troquee contre une phrase assortie au style (CAVE_FLAVOR, choix
+// stable graine+salle). r.note genere n'est JAMAIS modifie : memes graines, JSON/print coherents
+// avec ce que l'ecran montre via cette meme fonction.
+function displayNote(r){
+  if(r.shape!=='cave'||!r._feat||!current)return r.note;
+  const f=flavFeat($('ct-cave').value, current.seed, r.number);
+  return f ? r.note.replace(r._feat, f) : r.note;
+}
 function syncOutputs(){
   $('o-density').textContent=pctOut('d-density')+'%';
   $('o-lock').textContent=pctOut('lock-rate')+'%';
@@ -2351,7 +2943,7 @@ function build(){
   assignChestLoot(current, currentParty());                 // 9c : contenu des coffres (rarete party-level)
   assignDC(current, currentParty());                        // tache 6 : DC verrous/pieges scales sur le niveau
   assignShapes(current, currentShapes());                   // tache 4 : formes de salles (masque _cells)
-  const map=$('map'); map.innerHTML=''; map.appendChild(renderSVG(current, currentView()));
+  paintMap();
   paintNotes();
   paintDifficulty();
   encodeStateToHash();
@@ -2372,7 +2964,7 @@ function currentShapes(){
 function reshape(){
   if(!current)return;
   assignShapes(current, currentShapes());
-  const map=$('map'); map.innerHTML=''; map.appendChild(renderSVG(current, currentView()));
+  paintMap();
 }
 
 /* ---- notes : tri-etat masqué / tiroir / sous la carte ---- */
@@ -2418,7 +3010,7 @@ function notesBodyHTML(d, withTitle){
   h+=`<p class="sub">${meta}</p><ol class="notes">`;
   for(const r of d.rooms){
     const hasEnc = !!(r.encounter && r.encounter.mobs && r.encounter.mobs.length);
-    h+=`<li class="${(r.gm&&r.gm.length)||hasEnc?'has-gm':''}"><span class="num">${r.number}</span><span>${escapeHtml(r.note)}`;
+    h+=`<li class="${(r.gm&&r.gm.length)||hasEnc?'has-gm':''}"><span class="num">${r.number}</span><span>${escapeHtml(displayNote(r))}`;
     if(r.gm)for(const g of r.gm)h+=`<span class="gm-line"><b>MJ : </b>${escapeHtml(g)}</span>`;
     if(r.treasure&&r.treasure.items)h+=chestLineHTML(r.treasure);
     if(hasEnc)h+=encounterLineHTML(r.encounter, r.number);
@@ -2503,7 +3095,7 @@ function exportPNG(){
 function exportJSON(){
   const data={name:current.name,seed:current.seed,biome:current.biome,bounds:current.bounds,
     rooms:current.rooms.map(r=>({id:r.id,number:r.number,x:r.x,y:r.y,w:r.w,h:r.h,shape:r.shape||'rect',cells:r._cells||null,water:r.water,columns:r.columns,stairsDown:r.stairsDown,isEntrance:!!r.isEntrance,
-      hasKey:!!r.hasKey,trap:r.trap||null,treasure:r.treasure||null,light:r.light||null,props:r.props,note:r.note,gm:r.gm,encounter:r.encounter||null})),
+      hasKey:!!r.hasKey,trap:r.trap||null,treasure:r.treasure||null,light:r.light||null,props:r.props,note:displayNote(r),gm:r.gm,encounter:r.encounter||null})),
     corridors:current.spaces.filter(s=>s.type==='corr').map(s=>({x:s.x,y:s.y,w:s.w,h:s.h,rubble:!!s.rubble,light:s.light||null})),
     doors:current.doors.map(dr=>({cx:dr.cx,cy:dr.cy,type:dr.type,dc:dr.dc||null,difficulty:dr.diff||null,keyRoom:dr.keyRoom||null})),
     stairs:current.stairs, waterSteps:current.waterSteps, encounters:current.encounters||[]};
@@ -2518,7 +3110,7 @@ function buildPrintDoc(d){
   let meta=`Graine ${escapeHtml(d.seed)} . ${d.rooms.length} salles`;
   h+=`<p class="pmeta">${meta}</p><ol class="pnotes">`;
   for(const r of d.rooms){
-    h+=`<li><span class="pnum">${r.number}</span><span>${escapeHtml(r.note)}`;
+    h+=`<li><span class="pnum">${r.number}</span><span>${escapeHtml(displayNote(r))}`;
     for(const g of (r.gm||[]))h+=`<span class="pgm">MJ : ${escapeHtml(g)}</span>`;
     // tresor (doc MJ) : objets en clair, sans bouton (impression papier)
     if(r.treasure&&r.treasure.items){
@@ -2677,8 +3269,8 @@ function buildPrintItems(d){
 }
 function printDungeon(){
   if(!current)return;
-  const gm=renderSVG(current,{gm:true,light:true});
-  const player=renderSVG(current,{gm:false,light:true});
+  const gm=renderSVG(current,Object.assign(currentView(),{gm:true}));     // herite des contours (tache 10)
+  const player=renderSVG(current,Object.assign(currentView(),{gm:false}));
   [gm,player].forEach(s=>{s.removeAttribute('width');s.removeAttribute('height');s.setAttribute('style','width:auto;max-width:100%;height:auto');});
   const area=$('printArea'); area.innerHTML='';
   const page=(cls,inner)=>{const e=document.createElement('section');e.className='page '+cls;e.innerHTML=inner;return e;};
@@ -2716,7 +3308,7 @@ function reassignEncounters(){
   assignEncounters(current, currentParty());
   assignChestLoot(current, currentParty());                 // party-level pilote aussi la rarete des coffres
   assignDC(current, currentParty());                        // party-level pilote aussi les DC verrous/pieges
-  const map=$('map'); map.innerHTML=''; map.appendChild(renderSVG(current, currentView()));
+  paintMap();
   paintNotes();
 }
 // Groupe d'aventuriers : recalibre les seuils + re-assigne les rencontres (pas de regeneration).
@@ -2736,7 +3328,9 @@ $('treasure-quality').addEventListener('input',()=>{ syncOutputs(); reassignEnco
 // Formes de salles (tache 4) : re-carve + redessine sans regenerer (passe legere, decouplee).
 SHAPE_IDS.forEach(([id])=>$(id).addEventListener('change',()=>{ syncOutputs(); reshape(); encodeStateToHash(); }));
 $('shape-rate').addEventListener('input',()=>{ syncOutputs(); reshape(); encodeStateToHash(); });
-$('view').addEventListener('change',()=>{if(current){const map=$('map');map.innerHTML='';map.appendChild(renderSVG(current,currentView()));}encodeStateToHash();});
+// vue MJ/joueur + styles de contour (tache 10) : re-rendu seul, sans regeneration (cosmetique pur).
+// ct-cave rafraichit aussi les notes : l'ambiance des cavernes suit le style (displayNote/CAVE_FLAVOR).
+['view','ct-room','ct-cave'].forEach(id=>$(id).addEventListener('change',()=>{if(current){paintMap();if(id==='ct-cave')paintNotes();}encodeStateToHash();}));
 $('png').addEventListener('click',exportPNG);
 $('svg').addEventListener('click',exportSVG);
 $('json').addEventListener('click',exportJSON);
@@ -3011,6 +3605,9 @@ document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',
 document.querySelectorAll('#optionsPanel details.opt-sec').forEach(d=>d.addEventListener('toggle',saveConfig));
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeSheets();});
 document.addEventListener('keydown',e=>{if(e.code==='Space'&&e.target.tagName!=='INPUT'){e.preventDefault();$('seed').value=randSeed();build();}});
+// 'R' : bascule l'inclinaison 45° de la carte (inclinee par defaut). Vue seule, rien dans
+// l'URL ; le choix persiste via le layout localStorage.
+document.addEventListener('keydown',e=>{if((e.key==='r'||e.key==='R')&&!e.repeat&&!e.metaKey&&!e.ctrlKey&&!e.altKey&&!/INPUT|SELECT|TEXTAREA/.test(e.target.tagName)){mapTilt=!mapTilt;if(current)paintMap();saveConfig();}});
 
 // Initialisation. DEUX sources independantes :
 // 1) localStorage -> LAYOUT (mode notes, pli des sections, panneaux). Toujours charge.
